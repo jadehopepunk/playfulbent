@@ -1,0 +1,30 @@
+<div class="inline_form" id="new_response">
+	<div class="box">
+		<div class="box_heading">Your Privacy</div>
+		<div class="box_contents">
+			Anything you upload here is visible to the entire internet.<br />
+			<br />
+			You have been warned.
+		</div>
+	</div>
+	
+	<%= form_tag dare_responses_url(:dare_id => @dare, :id => nil), {:multipart => true} %>
+		<%= error_messages_for :dare_response %>
+	
+		<%= label "Photo of the deed", "", @dare.requires_photo %>
+		<div class="sub_label">You can upload multiple photos if you like. Please use jpg format.</div>
+
+		<div class="field">
+			<%= file_column_field 'dare_response', 'photo' %>
+		</div>
+		
+		<%= label "Your description", "dare_response[description]", @dare.requires_description %>
+		<div class="sub_label">This is your chance to wax lyrical about your escapade.</div>
+		
+		<div class="field">
+			<%= text_area 'dare_response', 'description' %>
+		</div>
+		
+		<%= image_submit_tag 'buttons/submit.png', :class => 'submit_button' %> or <%= cancel_link %>
+	</form>
+</div>

@@ -1,0 +1,9 @@
+<div id="welcome_text">
+	<% link_to_inline_form @profile, :edit_welcome_text do %>
+		<% if @profile.welcome_text.blank? && @can_edit %>
+			<p>This text is the welcome message. Hover the mouse over it, and you will see a 'Click to Edit' link.</p>
+		<% else %>
+			<%= simple_format(h(@profile.welcome_text)) %>
+		<% end %>
+	<% end %>	
+</div>

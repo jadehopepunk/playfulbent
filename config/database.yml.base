@@ -1,0 +1,36 @@
+
+development:
+  adapter: mysql
+  encoding: utf8
+  database: playfulbent_development
+  username: tsu
+  password: yellowcat
+
+benchmarking:
+  adapter: mysql
+  encoding: utf8
+  database: playfulbent_development
+  username: tsu
+  password: yellowcat
+
+test:
+  adapter: mysql
+  encoding: utf8
+  database: playfulbent_test
+  username: playfulbent	 
+  password: bootlace
+
+production:
+  adapter: mysql
+  encoding: utf8
+  database: playfulbent_production
+  username: playfulbent
+  password: bootlace
+
+staging:
+  adapter: mysql
+  encoding: utf8
+  database: playfulbent_staging
+  username: playfulbent
+  password: bootlace
+  

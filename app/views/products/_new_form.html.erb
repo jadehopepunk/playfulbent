@@ -1,0 +1,19 @@
+<% form_remote_for :product, @product, :url => formatted_products_path(:js), :builder => LabelledBuilder, :loading => trigger_footer(:new_product), :html => {:class => 'single_column', :id => 'new_product_form'} do |f| %>
+
+	<% form_step 1, @current_step, 'Find something on the web' do |active| %>
+		<%= f.select :category, Product.possible_classes.map {|product_class| [product_class.human_name, product_class.name]} %>
+		
+		<%= f.text_field :url, :class => 'text_field', :hint => "Find a web page where you can get the item and put it's URL here" %>
+
+		<%= form_footer(:new_product, :submit_name => 'Continue') if active %>
+	<% end %>
+
+	<% form_step 2, @current_step, "What is this #{@product.human_name}?" do |active| %>
+
+		<%= f.text_field :name, :class => 'text_field' %>		
+		<%= f.image_selector :image_url, @possible_images, :empty_image_url => 'no-person-photo.jpg', :label => 'Image', :hint => "An image of the #{@product.human_name}, so that people know what you mean", :other_validation_fields => [:product_image] %>
+
+		<%= form_footer(:new_product, :submit_name => 'Create') if active %>
+	<% end %>
+	
+<% end %>

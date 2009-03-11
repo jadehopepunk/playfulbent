@@ -1,0 +1,34 @@
+# == Schema Information
+# Schema version: 258
+#
+# Table name: relationship_types
+#
+#  id         :integer(11)   not null, primary key
+#  name       :string(255)   
+#  created_at :datetime      
+#  user_id    :integer(11)   
+#  position   :integer(11)   
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+friend:
+  id: 1
+  name: friend
+  position: 1
+  user_id: 1003
+wife:
+  id: 2
+  name: wife
+  position: 2
+  user_id: 1003
+pippins_friends:
+  id: 3
+  name: friend
+  position: 1
+  user_id: 11
+frodos_friends:
+  id: 4
+  name: friend
+  position: 1
+  user_id: 12
+    

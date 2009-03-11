@@ -1,0 +1,37 @@
+<div class="thumbnail_container" id="gallery_thumbnails_section">
+	<% if can_edit? && @photo_set.local? %>
+		<div id="reorderable_photo_section" <% unless sorting %>style="display: none"<% end %>>
+			<div id="thumbnails_list_header">
+				<strong>Re-ordering</strong>
+				<div>
+					Drag photos around to re-order them. <%= 'The first four photos display on your profile.' if @photo_set.is_default? %>
+				</div>				
+			</div>
+		
+			<ul id="reorderable_photo_thumbnails" class="photo_thumbnails">
+				<%= render :partial => 'my_photos/sortable_thumbnail', :collection => @gallery_photos %>				
+			</ul>
+		</div>
+	
+		<div id="deletable_photo_section" style="display: none">
+			<div id="thumbnails_list_header">
+				<strong>Deleting</strong>
+				<div>
+					Click on the photo you would like to delete.
+				</div>				
+			</div>
+
+			<ul id="deletable_photo_thumbnails" class="photo_thumbnails">
+				<%= render :partial => 'my_photos/deletable_thumbnail', :collection => @gallery_photos %>				
+			</ul>
+		</div>
+	<% end %>
+	
+	<ul id="photo_thumbnails" class="photo_thumbnails" <% if sorting %>style="display: none"<% end %>>
+		<% for listed_thumbnail in @gallery_photos %>
+			<li id="<%= dom_id(listed_thumbnail, 'listed') %>">
+				<%= link_to(image_tag(url_for_gallery_photo(listed_thumbnail, 'thumb'), :alt => listed_thumbnail.title), user_photo_set_my_photo_url(:user_id => @user, :photo_set_id => listed_thumbnail.photo_set, :id => listed_thumbnail, :tag => @tag)) %>
+			</li>
+		<% end %>
+	</ul>
+</div>

@@ -1,0 +1,66 @@
+<div class="stories_page">
+	<div class="page_description">
+		<%= image_tag 'areas/stories.jpg', :size => '80x80', :alt => 'Stories', :class => 'area_icon' %>
+		<h1>Current Stories</h1>
+
+		<p>Collaborative erotic stories. Have a read or help choose what happens next.</p>
+		<p>Got a creative idea?</p>
+		<p><%= link_to(image_tag('buttons/start_a_new_story.png', :alt => "Start a New Story"), new_story_url, :class => 'image_button') %></p>
+
+		<div class="search_box">
+			<% form_tag stories_url, :method => :get do %>
+				<h2>Search for stories containing...</h2>
+				<%= text_field_tag 'query', params[:query], :class => 'text_field' %>
+
+				<div class="footer">
+					<%= submit_tag 'Search' %>			
+				</div>
+			<% end %>
+		</div>
+
+		<%= tag_cloud @popular_tags, :story_ratio %>	
+		
+		<hr />
+		
+		<div class="advertisment">
+			<div class="ad_header">Jade recommends: <%= link_to "Water Bondage", "http://www.waterbondage.com/updates/full0.php?playfulbent" %></div>
+			<div class="add_description">We only recommend sites we like personally, and if you subscribe from here, we get money to help run Playful Bent. :)</div>
+			<%= link_to image_tag('sponsors/water_bondage/1.jpg', :alt => 'Water Bondage'), "http://www.waterbondage.com/updates/full0.php?playfulbent" %>
+		</div>
+		
+	</div>
+
+	<div class="stories">
+		<% for story in @stories %>
+			<div class="story" id="<%= dom_id(story) %>">
+				<h2><%=h story.title %></h2>
+				<div class="authors">
+					<%= story.page_version_count %> page<%= "s" if story.page_version_count != 1  %> from <%= story.unique_author_count %> <%= story.unique_author_count == 1 ? "author" : "different authors" %>
+					<% if logged_in? %>
+						<% new_count = story.number_unread_by(current_user) %>
+						<% if new_count > 0 %>
+							<div class="new_count">
+								<%= new_count %> unread
+							</div>
+						<% end %>
+					<% end %>
+				</div>
+
+				<div class="story_text">
+				  <%= mini_avatar_link_for(story.author) %> <%= nl2lb(truncate(story.first_page_text, 300)) %>
+				</div>
+
+				<%= link_to image_tag('buttons/read_on.png', :alt => 'Read On'), child_pages_url(story, 0), :class => 'image_button read_more' %>
+			</div>
+		<% end %>	
+
+		<div class="navigation">
+			<%= will_paginate @stories %>
+		</div>
+	</div>
+
+
+	<br />
+
+	
+</div>

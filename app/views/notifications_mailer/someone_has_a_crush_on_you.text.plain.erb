@@ -1,0 +1,17 @@
+Hi <%= @crush.subject.dummy? ? 'there' : @crush.subject.name %>,
+
+Somone on Playful Bent has a crush on you. It's a secret crush, so we can't tell you who it is, but this mystery person has written down their fantasy about you and it will be revealed to you only if you have a crush on them too.
+
+The only way that this can happen is if you find the people who you are attracted to on Playful Bent and create crushes on them. There's a link for this that says "Create a secret crush" on everyone's profile page, or you can visit:
+
+<%= new_crush_url %>
+
+If the feeling isn't mutual, you can just ignore this message, and they will never know or be offended.
+
+<% if @crush.subject.dummy? -%>
+Playful Bent is an adult social networking site. This message has been sent to you because one of our users entered your email address for their secret crush. Your address is not stored at wont be used for anything further by us. If you'd like to sign up (it's free) then you'll only be able to who sent this crush if you use the email address that this was sent to (<%= @crush.subject.email %>) as the address on the playful bent signup page (<%= new_session_url %>).
+
+<% end -%>
+cheers,
+
+Playful Bent

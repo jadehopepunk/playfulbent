@@ -1,0 +1,8 @@
+<% tab_page do %>
+	<%= render :partial => 'header' %>
+
+	<div class="interaction_section">
+		<%= render :partial => 'messages/unread_messages', :object => @unread_message_count %>
+		<%= render :partial => 'list' %>	
+	</div>
+<% end %>

@@ -1,0 +1,20 @@
+Hi<%= ' ' + @name unless @name.blank? %>,
+
+You've sent an email to <%= @recipient_name %> at Playful Bent. Playful Bent is a social networking website which lets you communicate without revealing your real identity.
+
+We're holding your email for now. To send it through, we need you to choose a Playful Bent username. Then, we'll deliver the original message and <%= @recipient_name %> will be able to contact you in return at your new Playful Bent email address without ever knowing your real name or address.
+
+To do this, or if you already have a Playful Bent account, click here:
+
+<%= verify_email_url(@email) %>
+
+I've you've changed your mind about contact <%= @recipient_name %>, just do nothing.
+
+cheers,
+Playful Bent
+
+ps: Here's the message you originally sent to <%= @recipient_name %>:
+
+-----------------------
+
+<%= @email.text_body %>

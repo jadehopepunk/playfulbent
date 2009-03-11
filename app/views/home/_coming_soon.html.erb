@@ -1,0 +1,13 @@
+<div style="padding-top: 90px; text-align: center;">
+	<div style="color: #aaaaaa; font-size: 24pt; letter-spacing: 3px; word-spacing: 3px">COMING SOON</div>
+	<%= form_remote_tag :url => formatted_notification_request_url(:js), :method => :post, :loading => "$('notification_request').disabled = true;", :complete => "$('notification_request').disabled = false;" %>
+		<div>
+			<div style="color: #aaaaaa; font-size: 12pt; letter-spacing: 2px; word-spacing: 2px; margin-bottom: 1em;">Playful Bent Dares</div>
+			<div style="color: #aaaaaa; font-size: 12pt; letter-spacing: 2px; word-spacing: 2px; margin-bottom: 1em;">Let me know when I can play</div>
+			<%= text_field 'notification_request', 'email_address', :value => 'your email here ', :onfocus => "this.value = '';", :onblur => "if (this.value == '') this.value = 'your email here';", :id => 'notification_request' %>			
+		</div>
+	</form>
+	<br />
+	<div id="address_result">
+	</div>
+</div>

@@ -1,0 +1,40 @@
+<% if @message.parent %>
+	<h2>Reply to <%= @message.parent.sender.name %></h2>
+<% elsif @recipient %>
+	<h2>Send a Private Message to <%= @recipient.name %></h2>
+<% else %>
+	<h2>Send a Private Message</h2>
+<% end %>
+
+<%= error_messages_for :message %>
+
+
+<% if @message.parent %>
+	<%= f.hidden_field :parent_id %>
+	<%= f.hidden_field :recipient_id %>
+	<%= f.hidden_field :subject %>
+
+	<div class="form_row">
+		<label>Subject</label>
+		<%= @message.subject %>
+	</div>
+<% else %>
+	<% if @recipient %>
+		<%= f.hidden_field :recipient_id %>
+	<% else %>
+		<div class="form_row">
+			<label>Recipient</label>
+			<%= f.collection_select(:recipient_id, Message.possible_recipients_for(@user), :id, :select_box_name, :include_blank => true) %>			
+		</div>
+	<% end %>
+
+	<div class="form_row">
+		<label>Subject</label>
+		<%= f.text_field :subject, :class => 'text_field title_field' %>
+	</div>
+<% end %>
+
+<div class="form_row">
+	<label>Body</label>
+	<%= f.text_area :body %>
+</div>

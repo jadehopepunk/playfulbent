@@ -1,0 +1,2 @@
+page.replace_html 'kink_tag_string', :partial => 'kinks'
+page.replace_html 'profile_analyser_container', :partial => 'profiles/profile_analyser'

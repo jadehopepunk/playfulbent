@@ -1,0 +1,20 @@
+<html>
+	<body>
+		<p>Hi <%= @recipient.name %>,</p>
+
+		<p><%= @new_page_version.author.name %> has continued a playful-bent story that you
+		asked to be notified about. You can 
+		<%= link_to "Click Here", page_version_url(@new_page_version) %>
+		to see this page on the web-site, or read it below.</p>
+
+		<div style="border: 2px solid #CBB5A5; background-color: #F1EAE5; padding: 1em">
+      <h1><%= h @new_page_version.story.title %> (page <%= @new_page_version.page_number %>)</h1>
+			<%= simple_format h(@new_page_version.text) %>
+		</div>
+
+		<p>If you received this email in error, please let us know at 
+		<a href="mailto:abuse@playfulbent.com">abuse@playfulbent.com</a>.
+    To unsubscribe, go <%= link_to "Here", page_version_url(@new_page_version) %>
+    and un-tick the notification checkboxes.</p>		
+	</body>
+</html>

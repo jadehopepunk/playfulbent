@@ -1,0 +1,17 @@
+<h1>Editing comment</h1>
+
+<%= error_messages_for :comment %>
+
+<% form_for(:comment, :url => comment_path(@conversation, @comment), :html => { :method => :put }) do |f| %>
+  <p>
+    <b>Content</b><br />
+    <%= f.text_area :content %>
+  </p>
+
+  <p>
+    <%= submit_tag "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', conversation_comment_url(@conversation, @comment) %> |
+<%= link_to 'Back', conversation_comments_url(@conversation) %>

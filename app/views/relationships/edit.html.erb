@@ -1,0 +1,22 @@
+<h1>Edit Relationship</h1>
+
+<% form_for :relationship, @relationship, :url => user_relationship_path(@user, @relationship), :html => {:method => :put, :class => 'inline_form'} do |f| %>
+
+	<div class="field">
+		<%= link_to_profile_for @relationship.subject %> is my... <%= f.text_field :name, :class => 'text_field' %>
+		<span class="label_description">
+			(friend, lover, wife, cousin... etc.)
+		</span>
+	</div>
+	
+	<div class="field">
+		<label>Description</label>
+		<%= f.text_area :description %>
+	</div>
+
+	<div class="footer">
+		<span><%= submit_tag 'Update' %> or</span>
+		<%= link_to 'Cancel', user_relationships_path(@user) %>
+	</div>
+
+<% end %>

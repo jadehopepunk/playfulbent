@@ -1,0 +1,45 @@
+<h2>How do you rate this <%= @product.human_name %>?</h2>
+
+<% if @product.is_a?(ProductSexToy) %>
+	<%= f.rating_selector :sexyness_rating, :max => Review::RATING_MAX, :label => 'Sexyness', :hint => 'Looks, presentation, does it make you want to use it?' %>
+	<%= f.rating_selector :durability_rating, :max => Review::RATING_MAX, :label => 'Durability', :hint => "Honey, I burned out another vibrator motor" %>
+	<%= f.rating_selector :cleaning_rating, :max => Review::RATING_MAX, :label => 'Ease of Cleaning', :hint => "If you think this isn't important, you aren't doing it right" %>
+	<%= f.rating_selector :pleasure_rating, :max => Review::RATING_MAX, :label => 'Your Pleasure', :hint => "Does it rock your world?" %>
+	<%= f.rating_selector :overall_rating, :max => Review::RATING_MAX, :label => 'Overall Score', :hint => "The bottom line, how do you rate it?" %>
+	
+	<h2>Write a Review</h2>
+	<p>Tell us all about it. Did it change your life, and you think everyone should have one, or was
+	the whole thing a bit of an anti-climax? Personal stories are best, we want to hear how you
+	used it, and how it made you feel.</p>
+
+	<%= f.textile_editor :body, :label => 'Your Story' %>	
+
+<% elsif @product.is_a?(ProductWebSite) %>
+
+	<%= f.rating_selector :overall_rating, :max => Review::RATING_MAX, :label => 'Overall Score', :hint => "The bottom line, how do you rate it?" %>
+
+	<h2>Write a Review</h2>
+	<p>Tell us all about the site. What was it for? Did it arouse or inspire you?</p>
+
+	<%= f.textile_editor :body, :label => 'Your Review' %>		
+
+<% elsif @product.is_a?(ProductBook) %>
+
+	<%= f.rating_selector :overall_rating, :max => Review::RATING_MAX, :label => 'Overall Score', :hint => "The bottom line, how do you rate it?" %>
+
+	<h2>Write a Review</h2>
+	<p>Tell us all about the book. Was it informative? Sexy? Would you recommend it to others?</p>
+
+	<%= f.textile_editor :body, :label => 'Your Review' %>		
+
+<% end %>
+
+<h2>Add some Tags</h2>
+<p>Tags are keywords that let people find this item. We use them instead of forcing you to
+pick particular fixed categories, but we suggest you use at least one tag that describes
+what the item is, such as: <strong>dildo, vibrator, butt plug, restraint,
+flogger</strong>, etc.</p>
+
+<%= f.text_area :tag_list, :hint => "separate with commas", :class => 'small' %>
+
+<%= textile_editor_initialize %>	

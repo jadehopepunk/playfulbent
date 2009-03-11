@@ -1,0 +1,73 @@
+# == Schema Information
+# Schema version: 258
+#
+# Table name: email_addresses
+#
+#  id          :integer(11)   not null, primary key
+#  address     :string(255)   
+#  verified_at :datetime      
+#  user_id     :integer(11)   
+#  created_at  :datetime      
+#  updated_at  :datetime      
+#
+
+bob:
+  id: 1000001
+  user_id: 1000001
+  address: craig@craigambrose.com
+
+existingbob:
+  id: 1000002
+  user_id: 1000002
+  address: existingbob@craigambrose.com
+
+longbob:
+  id: 1000003
+  user_id: 1000003
+  address: longbob@craigambrose.com
+
+quentin:
+  id: 1001
+  user_id: 1001
+  address: quentin@example.com
+  
+aaron:
+  id: 1002
+  user_id: 1002
+  address: aaron@example.com
+
+sam:
+  id: 1003
+  user_id: 1003
+  address: sam@craigambrose.com
+
+sponsoring_sam:
+  id: 1004
+  user_id: 1004
+  address: sam@craigambrose.com
+  
+disabled:
+  id: 1005
+  user_id: 1005
+  address: dis@abled.com
+
+pippin:
+  id: 11
+  user_id: 11
+  address: peregrin@took.com
+
+frodo:
+  id: 12
+  user_id: 12
+  address: frodo@baggins.com
+
+admin:
+  id: 13
+  user_id: 13
+  address: admin@playfulbent.com
+
+dummy:
+  id: 14
+  user_id: 14
+  address: dummy@craigambrose.com
+  

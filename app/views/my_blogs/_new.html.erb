@@ -1,0 +1,23 @@
+<div id="blog_form_container" class="exposed_sub_form">
+	<% remote_form_for :syndicated_blog, @syndicated_blog, :url => formatted_user_my_blogs_url(@user, :js), :method => :post, :loading => "Element.show('spinner_add_blog')", :html => {:class => 'single_column two_thirds'} do |f| %>
+		<h2>Add Your Blog</h2>
+		
+		<%= error_messages_for :syndicated_blog %>
+		
+		<p>By adding your blog, you agree to let us reproduce a copy of it here.</p>
+
+		<div class="form_row">
+			<label>Blog URL</label>
+			<div class="field_description">
+				(the address of your blog website or feed)
+			</div>
+			<%= f.text_field :site_url, :class => 'text_field' %>
+		</div>
+		
+		<div class="footer">
+			<%= submit_tag 'Fetch' %>
+			<%= spinner 'add_blog', 'fetching your blog...' %>
+		</div>
+		
+	<% end %>
+</div>

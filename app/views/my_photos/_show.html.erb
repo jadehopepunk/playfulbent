@@ -1,0 +1,68 @@
+<h1><%=h @user.name %>'s Photos</h1>
+
+<%= render :partial => 'photo_sets/previews', :locals => {:photo_sets => @photo_sets} %>
+
+<div class="thumbnails_and_links">
+	<% unless @gallery_photos.empty? %>
+		<%= render :partial => 'my_photos/thumbnails_section', :locals => {:sorting => false} %>
+
+		<% if can_edit? %>
+		 	<% if @photo_set.local? %>
+				<div id="photo_edit_links">
+					<%= link_to('Add a Photo', new_user_photo_set_my_photo_url(:user_id => @user, :photo_set_id => @photo_set, :id => nil, :tag => @tag), :method => :get) %>
+					<%= link_to_function('Delete a Photo', 'galleryPhotosToDeleteMode()') %>
+					<%= link_to_function('Re-order', "startSortingGalleryPhotos('#{reorder_user_photo_set_my_photos_url(@user, @photo_set)}');") unless @tag %>
+					<%= link_to('Delete Entire Set', user_photo_set_path(@user, @photo_set), :method => :delete, :confirm => "This will permanently delete this entire photo set and all photos in it.\n\nAre you sure?!") %>
+				</div>
+				<%= link_to_function('Done Re-ordering', 'stopSortingGalleryPhotos()', :id => 'done_reordering_link', :style => "display:none") %>
+				<%= link_to_function('Done Deleting', 'galleryPhotosStopDeleteMode()', :id => 'done_deleting_link', :style => "display:none") %>
+			<% else %>
+				<div id="photo_edit_links">
+					<%= link_to('Delete Entire Set', user_photo_set_path(@user, @photo_set), :method => :delete, :confirm => "This will permanently delete this entire photo set and all photos in it.\n\nAre you sure?!") %>
+				</div>
+			<% end %>
+			
+			<hr />
+		<% end %>
+
+		<%= render :partial => 'my_photos/tag_cloud' %>
+
+		<p>
+			<%= link_to 'Click here', photos_path %> to see everyone's photos.
+		</p>
+	<% else %>
+		<% if @photo_set.performing_first_import? %>
+		
+			<div class="no_data">
+				This photo set is importing
+				<%= image_tag("ajax-loader.gif", :alt => 'loading', :id => 'loading_photo_set', :class => 'ajax_loader') %>
+
+				<%= periodically_call_remote :url => check_importing_user_photo_set_path(@user, @photo_set), :method => :get, :frequency => 10 %>
+			</div>
+			
+		<% else %>
+			<% if can_edit? %>
+				<div class="no_data">
+					<% if @photo_set.is_default? %>
+						<p>You haven't uploaded a photo yet.</p>
+					<% else %>
+						<p>This photo set is empty.</p>
+					<% end %>
+					<%= link_to('Add a Photo', new_user_photo_set_my_photo_url(:user_id => @user, :photo_set_id => @photo_set, :id => nil, :tag => @tag)) if @photo_set.local? %>
+				</div>
+			<% else %>
+				<div class="no_data">
+					<% if @photo_set.is_default? %>
+						<%=h @user.name %> hasn't uploaded any photos.
+					<% else %>
+						This photo set is empty
+					<% end %>
+				</div>
+			<% end %>
+		<% end %>
+	<% end %>
+</div>
+
+<div id="feature_photo_container">
+	<%= render(:partial => 'my_photos/photo', :object => show) if show %>
+</div>

@@ -1,0 +1,3 @@
+page.visual_effect :fade, 'thumbnail_' + @id, :duration => 1
+page.replace_html 'photo_count', @new_count
+page.visual_effect :highlight, 'photo_count_description', :duration => 2

@@ -1,0 +1,17 @@
+# == Schema Information
+# Schema version: 258
+#
+# Table name: stories
+#
+#  id         :integer(11)   not null, primary key
+#  title      :string(255)   
+#  created_on :datetime      
+#  updated_at :datetime      
+#
+
+first:
+  id: 1
+  title: some story
+second:
+  id: 2
+  title: another story

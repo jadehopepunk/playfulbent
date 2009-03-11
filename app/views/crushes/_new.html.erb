@@ -1,0 +1,70 @@
+<div id="new_crush">
+	<% if @crush.subject %>
+		<%= render :partial => 'crush_ideas' %>
+
+		<div>
+			<%= avatar_link_for @crush.subject %>
+
+			<h1>Have a crush on <%=h @crush.subject.name %>?</h1>
+
+			<div class="form_description">
+				<p>This information is secret, unless <%=h @crush.subject.name %> feels the same way!</p>
+			</div>
+
+			<% form_for :crush, @crush, :url => crushes_url, :html => {:class => 'single_column two_thirds'} do |f| %>
+				<%= hidden_field_tag :subject_id, params[:subject_id] %>
+				<%= render :partial => 'form', :locals => {:f => f} %>
+
+				<%= form_footer :new_crush, :submit_name => 'Create', :cancel_link => profiles_path %>
+			<% end %>
+		</div>	
+	<% else %>
+		<div>
+			<h1>Have a crush on someone?</h1>
+
+			<div class="form_description">
+				<p><strong>Go on, you can tell us...</strong></p>
+
+				<p>When you log a crush here, we promise not to tell a soul, unless that person also happens
+				to mention that they have a crush on you too, in which case we'll tell both of you about your
+				mutual attraction.</p>
+
+				<p>The object of your crush will receive an email from us saying that <em>"someone"</em> on playful bent
+				has a crush on them, but we wont give them any clues as to who it is. If you change your mind, you can
+				cancel a crush at any time.</p>
+			</div>
+
+			<div class="important_section two_thirds">
+				<% form_remote_tag :url => formatted_new_crush_path(:js), :method => :get, :loading => show_spinner(:user_search), :complete => hide_spinner(:user_search), :html => {:class => 'search_form'} do -%>
+					<label>Who do you have a crush on?</label>
+					<div class="sub_label">(Type an email address, or the username of someone on playful bent)</div>
+
+					<div class="field">
+						<%= text_field_tag 'query', params[:query], :class => 'text_field' %>
+						<%= submit_tag 'Search' %> <%= spinner :user_search %>			
+					</div>
+				<% end -%>
+
+				<% if @users %>
+					<% if @users.empty? %>
+						<div class="no_data">
+							No matches for that name.
+						</div>
+						<p>We couldn't find the person you were searching for. Try another search above.</p>
+					<% else %>
+						<label>Did you mean one of these people?</label>
+						<div class="sub_label">Click on the person you meant. Don't see who you were searching for? You can refine your search above.</div>
+
+						<div class="large_avatar_set">
+							<% for user in @users %>
+								<%= link_to(avatar_and_name(user), new_crush_path(:subject_id => user.id), :class => 'avatar_link avatar_link_with_name') %>
+							<% end %>
+						</div>
+						<br style="clear: left">
+					<% end %>
+				<% end %>
+			</div>
+
+		</div>	
+	<% end %>
+</div>

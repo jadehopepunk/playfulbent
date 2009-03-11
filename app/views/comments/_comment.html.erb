@@ -1,0 +1,18 @@
+<li class="comment<%= ' odd' if comment.parent %>">
+	<a name="<%= dom_id(comment) %>" />
+	<%= avatar_and_name_link_for(comment.user) %>
+  <div class="content_container">
+		<div class="speech_mark"></div>
+		<div class="inner_content">
+			<span class="time_posted"><%= time_ago_in_words comment.created_at %> ago</span>
+			<%= simple_format h(comment.content) %>
+
+			<div id="<%= dom_id(comment, 'reply_button') %>">
+				<%= link_to_remote 'reply', :url => formatted_new_conversation_comment_path(:conversation_id => comment.conversation.to_param, :parent_id => comment.to_param, :format => :js), :method => :get, :loading => show_spinner(dom_id(comment, 'reply_button')), :complete => hide_spinner(dom_id(comment, 'reply_button')) %>
+				<%= spinner(dom_id(comment, 'reply_button')) %>				
+			</div>
+		</div>
+	</div>
+	<div id="<%= dom_id(comment, 'reply_container') %>">
+	</div>
+</li>

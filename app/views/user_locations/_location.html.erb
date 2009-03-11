@@ -1,0 +1,11 @@
+<% link_to_inline_form @profile, :edit_location, :user_locations do %>
+	<table class="definitions">
+		<tr>
+			<td class="label"><label>Location</label></td>
+			<td>
+				<%= @profile.location_name || 'unknown' %>
+				<%= '(' + link_to('map', "http://maps.google.com/maps?f=q&q=#{URI.encode(@profile.location_name)}", :target => '_blank') + ')' if @profile.location %>
+			</td>
+		</tr>	
+	</table>
+<% end %>	

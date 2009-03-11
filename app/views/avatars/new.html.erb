@@ -1,0 +1,26 @@
+<h1>Your Avatar Picture</h1>
+
+<div class="box about_form_box">
+	<div class="box_heading">Your Privacy</div>
+	<div class="box_contents">		
+			<p>Anything you upload here is visible to the entire internet, and it could
+			appear in search engines.</p>
+			
+			<p>You have been warned. :)</p>
+	</div>
+</div>	
+
+<% form_for :avatar, @avatar, :url => profile_avatar_url(@profile), :method => :post, :html => {:multipart => true} do %>
+	<p>This picture is used to represent <strong>"you"</strong> everywhere on Playful Bent. It could
+	be a picture of you, or just something you like.</p>
+	
+	<p>This probably is the best place for a really explicit image. There are plenty of other places
+	on the site to show those off. Most people we've spoken to tend to prefer not to see a cock
+	in someone's avatar photo.</p>
+
+	<h2>Upload an Image</h2>
+
+	<%= file_column_field "avatar", "image" %>
+
+	<%= form_footer :new_gallery_photo, :submit_name => 'Upload', :cancel_link => @profile.url %>
+<% end %>

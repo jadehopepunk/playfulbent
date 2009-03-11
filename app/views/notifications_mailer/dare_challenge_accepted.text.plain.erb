@@ -1,0 +1,12 @@
+Hi <%= @dare_challenge.user.name %>,
+
+<%= @dare_challenge.subject.name %> has accepted your dare challenge!
+
+This means that you can now describe a dare for <%= @dare_challenge.subject.gender.third_person_passive_pronoun %> to carry out.
+
+To do so, go here:
+<%= dare_challenge_url(@dare_challenge) %>
+
+have fun,
+
+Playful Bent

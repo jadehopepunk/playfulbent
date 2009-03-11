@@ -1,0 +1,18 @@
+set daemon 30 
+set logfile syslog facility log_daemon 
+set mailserver localhost
+set mail-format {from:craig@craigambrose.com} 
+set alert craig@craigambrose.com only on { timeout, nonexist } 
+set httpd port 9111
+  allow craig:pentex
+
+
+
+
+
+### THIS STUFF GOES ON THE DAEMONS SERVER
+	
+	
+check process flickr_import with pidfile /var/www/apps/playfulbent/shared/log/flickr_daemon.rb.pid
+  start program = "/bin/su -c 'cd /var/www/apps/playfulbent/current/ && ruby lib/daemons/flickr_daemon_ctl start production'"
+  stop program = "/bin/su -c 'cd /var/www/apps/playfulbent/current/ && ruby lib/daemons/flickr_daemon_ctl stop production'"

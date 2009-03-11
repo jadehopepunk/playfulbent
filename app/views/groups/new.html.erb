@@ -1,0 +1,18 @@
+<h1>New Group</h1>
+
+<p>Currently only Yahoo Groups are supported.</p>
+
+<% form_for :group, @group, :url => groups_path, :method => :post do |f| %>
+	<%= error_messages_for :group %>
+	
+	<div class="field">
+		<label>Yahoo Group Name</label>
+		<%= f.text_field :group_name, :class => 'text_field' %>
+	</div>
+	
+	<div class="footer">
+		<%= submit_tag 'Create' %> or
+		<%= link_to 'Cancel', groups_path %>
+	</div>
+	
+<% end %>

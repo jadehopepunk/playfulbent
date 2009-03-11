@@ -1,0 +1,48 @@
+<h1>Start a New Story</h1>
+
+<div class="box about_form_box">
+	<div class="box_heading">
+		Why Start a Story?
+	</div>
+	<div class="box_contents">
+		<p>Erotic stories here at Playful-Bent are an interactive experience. You get to write the story the way you want,
+		but other people get to write pages too, either following on from what you've written, or taking the story
+		off in a different direction.</p>
+		
+		<p>A story can be particularly fun if you can get a few people involved in writing it. Either invite a few
+		friend to start it with you (you get a chance to do that once you've written the first page), or write
+		something that might appeal to others too, and see who joins in.</p>
+		
+		<p>If you're not sure about this, try writing a page on someone else's story first, to see how it goes. But
+		if all else fails, dive in. You don't need to be a first class author to have a little fun, and get some
+		of your ideas and fantasies out where other people can enjoy them.</p>
+	</div>
+</div>	
+
+<% form_for(:story, :url => stories_url, :html => {:id => dom_id(@story, 'form'), :class => 'single_column two_thirds'}) do |f| %>
+
+	<%= error_messages_for :story %>
+
+	<label for="story[title]">Title</label>
+	<%= f.text_field :title, :class => 'text_field' %>
+	
+	<label for="story[first_page_text]">First Page</label>
+	<%= f.text_area :first_page_text, :class => 'first_page_text' %>
+
+	<label for="story[first_page_tag_list]">Tags</label>
+	Tags are keywords telling people what this story is about so far. <br>
+	<strong>For example:</strong> femdom bdsm gothic victorian vampire "pirates of the carribean"
+	<%= f.text_area :first_page_tag_list, :class => 'small' %>
+
+	<p>
+		<a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/" class="cc_link"><img alt="Creative Commons License" style="border-width: 0" src="http://i.creativecommons.org/l/by-sa/2.5/88x31.png"/></a>
+		By pressing "Create", I agree to licence this work under a 
+		<a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">Creative Commons Attribution-ShareAlike 2.5 License</a>.
+	</p>
+
+  <div class="footer">
+		<%= submit_tag "Create" %> or <%= link_to 'Cancel', stories_url %>    	
+  </div>
+
+<% end %>
+

@@ -1,0 +1,30 @@
+# == Schema Information
+# Schema version: 258
+#
+# Table name: tag_ranks
+#
+#  id                  :integer(11)   not null, primary key
+#  tag_id              :integer(11)   
+#  story_count         :integer(11)   default(0)
+#  profile_count       :integer(11)   default(0)
+#  created_at          :datetime      
+#  updated_at          :datetime      
+#  story_ratio         :integer(11)   default(0)
+#  profile_ratio       :integer(11)   default(0)
+#  dare_count          :integer(11)   default(0)
+#  dare_ratio          :integer(11)   default(0)
+#  blog_article_count  :integer(11)   default(0)
+#  blog_article_ratio  :integer(11)   default(0)
+#  global_ratio        :integer(11)   default(0)
+#  global_count        :integer(11)   default(0)
+#  gallery_photo_count :integer(11)   
+#  gallery_photo_ratio :integer(11)   
+#  review_count        :integer(11)   default(0)
+#  review_ratio        :integer(11)   default(0)
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+two:
+  id: 2

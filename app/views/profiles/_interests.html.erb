@@ -1,0 +1,8 @@
+<% link_to_inline_form @profile, :edit_interests do %>
+	<h2>Interests</h2>
+	<% if @profile.interest_tags.empty? && @can_edit %>
+		Pick some interests, for example: Cycling, Fishing, Morris Dancing
+	<% else %>
+		<% for tag in @profile.interest_tags %><% unless tag == @profile.interest_tags.first %>&nbsp;<span class="tag_divider">&nbsp;</span > <% end %><span class="tag<%= ' shared_tag' if !@can_edit && current_user.has_interest?(tag) %>"><%= tag.to_s %></span><% end %>
+	<% end %>
+<% end %>

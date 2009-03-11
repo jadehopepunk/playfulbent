@@ -1,0 +1,13 @@
+<%= render :partial => 'crush_ideas' %>
+
+<div>
+	<h1>Edit your crush on <%=h @crush.subject.name %>?</h1>
+
+	<% form_for :crush, @crush, :url => crush_url(@crush), :html => {:class => 'single_column two_thirds', :method => :put} do |f| %>
+		<%= render :partial => 'form', :locals => {:f => f} %>
+
+	  <div class="footer">
+			<%= submit_tag "Update" %> or <%= link_to 'Cancel', crush_url(@crush) %>
+		</div>
+	<% end %>
+</div>

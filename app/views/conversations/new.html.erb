@@ -1,0 +1,15 @@
+<h1>New conversation</h1>
+
+<%= error_messages_for :conversation %>
+
+<% form_for(:conversation, :url => conversations_url, :html => {:class => 'single_column two_thirds'}) do |f| %>
+	<label for="conversation[title_override]">Title</label>
+	<%= f.text_field :title_override, :class => 'text_field' %>
+
+	<label for="conversation[comment_text]">Text</label>
+	<%= f.text_area :comment_text %>
+
+  <div class="footer">
+		<%= submit_tag "Create" %> or <%= link_to 'Cancel', conversations_url %>    	
+  </div>
+<% end %>

@@ -1,0 +1,20 @@
+<div class="two_thirds">
+	<h1>Profile Disabled</h1>
+
+	<% if logged_in? && current_user == @user %>
+	
+		<p>Your account has been disabled. You can always 
+		<%= link_to 'Click Here', enable_profile_url(@profile), :method => :put %>
+		to enable it.</p>
+		
+	<% else %>
+
+		<p>Maybe this person got bored of Playful Bent, or maybe their mum found this page and they decided
+		to hide it in a hurry.</p>
+	
+		<p>Either way, there's no more fun to be had here, go find someone else to flirt
+		with.</p>
+
+	<% end %>
+	
+</div>

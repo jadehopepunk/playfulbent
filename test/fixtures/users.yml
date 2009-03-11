@@ -1,0 +1,109 @@
+# == Schema Information
+# Schema version: 258
+#
+# Table name: users
+#
+#  id                       :integer(11)   not null, primary key
+#  nick                     :string(80)    
+#  picture                  :string(255)   
+#  hashed_password          :string(255)   
+#  created_on               :datetime      
+#  gender_id                :integer(11)   
+#  likes_boys               :boolean(1)    
+#  likes_girls              :boolean(1)    
+#  is_admin                 :boolean(1)    
+#  permalink                :string(255)   
+#  updated_at               :datetime      
+#  last_logged_in_at        :datetime      
+#  is_review_manager        :boolean(1)    
+#  primary_email_address_id :integer(11)   
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+bob:
+  id: 1000001
+  primary_email_address_id: 1000001
+  nick: bob
+  permalink: bob
+
+existingbob:
+  id: 1000002
+  primary_email_address_id: 1000002
+  permalink: existingbob
+  nick: existingbob
+
+longbob:
+  id: 1000003
+  primary_email_address_id: 1000003
+  nick: longbob
+  permalink: longbob
+  gender_id: 2
+
+quentin:
+  id: 1001
+  primary_email_address_id: 1001
+  nick: quentin
+  hashed_password: <%= User.sha1('test') %>
+  created_on: <%= 5.days.ago.to_s :db %>
+  
+aaron:
+  id: 1002
+  primary_email_address_id: 1002
+  nick: aaron
+  hashed_password: <%= User.sha1('test') %>
+  created_on: <%= 1.days.ago.to_s :db %>
+
+sam:
+  id: 1003
+  primary_email_address_id: 1003
+  nick: sam
+  permalink: sam
+  hashed_password: <%= User.sha1('test') %>
+  created_on: <%= 1.days.ago.to_s :db %>
+  gender_id: 2
+
+sponsoring_sam:
+  id: 1004
+  primary_email_address_id: 1004
+  nick: sponsoring_sam
+  permalink: sponsoring_sam
+  hashed_password: <%= User.sha1('test') %>
+  created_on: <%= 1.days.ago.to_s :db %>
+  
+disabled:
+  id: 1005
+  primary_email_address_id: 1005
+  nick: merri
+  permalink: merri
+  created_on: <%= 3.months.ago.to_s :db %>
+
+pippin:
+  id: 11
+  primary_email_address_id: 11
+  nick: pippin
+  permalink: pippin
+  gender_id: 2
+  created_on: <%= 3.months.ago.to_s :db %>
+
+frodo:
+  id: 12
+  primary_email_address_id: 12
+  nick: frodo
+  permalink: frodo
+  gender_id: 2
+  created_on: <%= 3.months.ago.to_s :db %>
+
+admin:
+  id: 13
+  primary_email_address_id: 13
+  nick: admin
+  permalink: admin
+  created_on: <%= 3.months.ago.to_s :db %>
+  is_admin: 1
+
+dummy:
+  id: 14
+  primary_email_address_id: 14
+  created_on: <%= 3.months.ago.to_s :db %>
+  

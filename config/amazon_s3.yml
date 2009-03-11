@@ -1,0 +1,19 @@
+development:
+  bucket_name: playfulbent_development
+  access_key_id: 1ANEGEBVC0FBEDF83BR2
+  secret_access_key: lqKtpTuYsf63EJdG3TiQCjtFfz0qtb/neVRkcyzU  
+
+test:
+  bucket_name: playfulbent_test
+  access_key_id: 1ANEGEBVC0FBEDF83BR2
+  secret_access_key: lqKtpTuYsf63EJdG3TiQCjtFfz0qtb/neVRkcyzU  
+
+staging:
+  bucket_name: playfulbent_staging
+  access_key_id: 1ANEGEBVC0FBEDF83BR2
+  secret_access_key: lqKtpTuYsf63EJdG3TiQCjtFfz0qtb/neVRkcyzU  
+
+production:
+  bucket_name: playfulbent
+  access_key_id: 1ANEGEBVC0FBEDF83BR2
+  secret_access_key: lqKtpTuYsf63EJdG3TiQCjtFfz0qtb/neVRkcyzU  

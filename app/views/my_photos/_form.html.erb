@@ -1,0 +1,6 @@
+<p>
+	<%= error_message_on :gallery_photo, :image %>
+	<%= f.file_field :uploaded_data, :onchange => "new Effect.Fade(this, {duration: 0.2, to: 0.3}); this.form.submit();" %>
+</p>
+<div>or <%= link_to_close_redbox "Cancel" %></div>
+<iframe id='gallery_frame' name="gallery_frame" class="hidden_frame"></iframe>						

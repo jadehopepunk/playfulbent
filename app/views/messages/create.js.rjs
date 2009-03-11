@@ -1,0 +1,8 @@
+if @saved
+  page.call 'RB_close'
+  page.insert_html :bottom, 'flash_messages', flash_message(:heading => 'Message Sent', :text => "Your private message has been sent to #{@message.recipient.name}.", :type => :success)
+	page.visual_effect :appear, "flash_messages_container", {:queue => {:scope => 'flash', :position => 'end'}, :duration => 2.0}
+	page.visual_effect :fade, "flash_messages_container", {:queue => {:scope => 'flash', :position => 'end'}, :duration => 3.0}
+else  
+  page.replace 'new_message', :partial => 'new'
+end

@@ -1,0 +1,17 @@
+<h1>New conversation</h1>
+
+<p><%= link_to 'Andale', 'http://andale.playfulbent.com' %>'s mother likes to say, "if you can't say anything nice, don't say anything at all".</p>
+
+<%= error_messages_for :conversation %>
+
+<% form_remote_for(:conversation, :url => formatted_conversations_path(:js), :html => {:class => 'single_column two_thirds'}) do |f| %>
+	<label for="conversation[comment_text]">Text</label>
+	<%= f.text_area :comment_text %>
+	
+	<%= f.hidden_field :subject_id %>
+	<%= f.hidden_field :subject_type %>
+
+  <div class="footer">
+		<%= submit_tag "Create" %> or <%= link_to_function 'Cancel', "Element.hide('new_comment_container'); Element.show('new_comment_link');" %>
+  </div>
+<% end %>

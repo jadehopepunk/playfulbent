@@ -1,0 +1,14 @@
+<% tab_page do %>
+	<div class="section_header">
+		<h1>Members</h1>
+		<h2><%= @group.name %></h2>
+	</div>
+	
+	<div class="no_access">
+		<h2>This Members List is Private</h2>
+		
+		<p>You have to be a member of this group to see the list of members.</p>
+	</div>
+	
+	<%= render :partial => 'groups/join', :locals => {:group => @group} %>	
+<% end %>

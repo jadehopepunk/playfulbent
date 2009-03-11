@@ -1,0 +1,4 @@
+<div id="blog_form_container">
+	<%= link_to_remote 'Add your Blog', :url => formatted_new_user_my_blog_url(@user, :js), :method => :get, :loading => "Element.show('spinner_add_blog')" %>	
+	<%= spinner 'add_blog' %>
+</div>

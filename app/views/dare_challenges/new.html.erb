@@ -1,0 +1,33 @@
+<%= render :partial => 'types_of_challenges' %>
+
+<div class="dare_challenge_form">
+	<%= avatar_link_for @dare_challenge.subject %>
+	
+	<h1>Challenge <%=h @dare_challenge.subject.name %> to a dare</h1>
+
+	<div class="form_description">
+		<p>So, this is a challenge that you can issue to <%=h @dare_challenge.subject.name %>. It goes both ways, so read it first.</p>
+		
+		<p>Also, dare challenges can be one of three things. <strong>Flirty</strong>, <strong>Sexual</strong>
+		or <strong>Kinky</strong>. The catch is, <strong>they get to pick which one</strong>, you don't.</p>
+	</div>
+
+	<div class="important_section">
+		<%= render :partial => 'sample_message' %>
+	</div>
+
+	<strong>Here's how it works...</strong>
+	
+	<ol>
+		<li>We sound out the challenge to the person of your choice.</li>
+		<li>If they accept, then they get to say whether the challenge should be flirty, sexual or kinky, and they
+		write a dare for you to perform (but you don't get to see it yet).</li>
+		<li>We email you to let you know that you need to pick a dare for them to perform.</li>
+		<li>You both get sent the dare that the other person has given you.</li>
+		<li>You go do the deed, and then upload a photo and describe what it was like on a private page.</li>
+		<li>When you've both done this, then you both get to see each other's photos and descriptions. No one
+		else gets to see them.</li>
+	</ol>
+
+	<%= render :partial => 'send_challenge_form' %>
+</div>

@@ -1,0 +1,2 @@
+page.replace 'gallery_thumbnails_section', :partial => 'thumbnails_section', :locals => {:sorting => true}
+page.visual_effect :highlight, 'reorderable_photo_thumbnails', :startcolor => "'#999999'", :endcolor => "'#000000'"

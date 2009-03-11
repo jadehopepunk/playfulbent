@@ -1,0 +1,26 @@
+table.roles_table {
+}
+
+table.roles_table th {
+  padding: 5px 10px;
+  color: #333;
+  background-color: #CBB5A5;
+}
+
+table.roles_table td {
+  padding: 5px 10px;
+  background-color: #ECE3DC;
+}
+
+table.roles_table tr {
+  padding: 5px 10px;
+}
+
+table.roles_table input, table.roles_table select {
+  width: 100px;
+}
+
+#too_many_roles {
+  font-size: 90%;
+  color: #333;  
+}

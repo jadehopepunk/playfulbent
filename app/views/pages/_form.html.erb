@@ -1,0 +1,20 @@
+<% if current_user.is_admin && @page_version.author != current_user %>
+	<div class="warning">
+		This is not your story, editing as administrator. Please be careful!
+	</div>
+<% end %>
+
+<%= error_messages_for :page_version %>
+
+<label for="page_version[text]"><%= @story.new_record? ? 'Continue The Story' : 'Story Text' %></label>
+<%= f.text_area :text, :class => 'big' %>
+
+<label for="page_version[tag_list]">Tags</label>
+Tags are keywords telling people what this page is about. <br>
+<strong>For example:</strong> femdom bdsm gothic victorian vampire "pirates of the carribean"
+<%= f.text_area :tag_list, :class => 'small' %>
+
+<div class="form_row">
+	<label for="page_version[is_end]" class="checkbox">The End?</label>
+	<%= f.check_box :is_end %>
+</div>

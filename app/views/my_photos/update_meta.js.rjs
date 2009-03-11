@@ -1,0 +1,4 @@
+page.replace_html 'featured_photo_header_container', :partial => 'photo_header'
+page.replace 'tag_cloud_container', :partial => 'tag_cloud'
+page.visual_effect :highlight, 'featured_photo_header_container', :endcolor => "'#F1EAE5'"
+page.visual_effect :highlight, 'tag_cloud_container', :endcolor => "'#F1EAE5'"

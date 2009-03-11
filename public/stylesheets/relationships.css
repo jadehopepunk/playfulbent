@@ -1,0 +1,64 @@
+#relationship_tree div.relationship_details {
+  padding: 4px;
+  border: 2px solid #333;
+  width: 490px;
+  float: left;
+  overflow: hidden;
+  background-color: #EEE;
+}
+
+#relationship_tree div.relationship_details div.contents {
+  margin-left: 104px;
+}
+
+#relationship_tree div.relationship_details a.avatar_link {
+  margin-right: 20px;
+}
+
+#relationship_tree div.relationship_previews a.avatar_link {
+  margin: 5px 10px 5px 0;  
+}
+
+#relationship_tree div.relationship_set {
+  width: 490px;
+  float: left;
+  overflow: hidden;
+  padding: 4px;
+  border: 2px solid #333;
+  background-color: #EEE;
+}
+
+#relationship_tree div.relationship_set div.relationship_details {
+  width: 478px;
+  margin: 2px 0;
+  border-color: #AAA;
+}
+
+#relationship_tree div.relationship_details p {
+  margin-bottom: 0;
+}
+
+#relationship_tree div.not_reciprocated {
+  border-style: dashed;
+}
+
+#relationship_tree li.not_reciprocated div.relationship_set {
+  border-style: dashed;  
+}
+
+#relationship_tree li.not_reciprocated div.branch_label {
+  border-bottom-style: dashed;
+}
+
+#relationship_tree div.relationship_set a.not_reciprocated_avatar img.avatar_image {
+  border-style: dashed;
+}
+
+#relationship_tree div.relationship_set a.not_reciprocated_avatar img.avatar_image {
+  background-color: #666;
+}
+
+#relationship_tree div.relationship_notice {
+  margin-top: 1em;
+  font-weight: bold;
+}

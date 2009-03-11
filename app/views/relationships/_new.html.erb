@@ -1,0 +1,22 @@
+<h2>A New Relationship</h2>
+<%= error_messages_for :relationship %>
+
+<ol class="steps">
+	<li id="step1">
+		<h3><span class="step_number">Step 1</span> Pick Someone</h3>
+
+		<% form_remote_tag :url => formatted_new_user_relationship_url(:user_id => @user, :format => :js), :method => :get, :loading => show_spinner(:user_search), :complete => hide_spinner(:user_search), :html => {:class => 'search_form'} do -%>
+			<%= text_field_tag 'user_search_string', (@relationship.subject ? @relationship.subject.nick : ''), :class => 'text_field' %>
+			<%= submit_tag 'Search' %> <%= spinner :user_search %>
+		<% end -%>
+
+		<div id="search_results">
+			<%= render :partial => 'user_search_results' %>
+		</div>			
+
+		<%= spinner :step_1, 'loading...' %>
+	</li>
+
+	<%= render :partial => 'new_step_two' %>
+</ol>
+

@@ -1,0 +1,62 @@
+div.reviews_explanation
+{
+  margin-top: 3em;
+  width: 330px;
+  float: right;
+}
+
+.product_preview .product_image {
+  float: left;
+  border: 2px solid #000;
+  margin-right: 10px;
+}
+
+.product_preview h2.product_name {
+  margin-bottom: 0;
+}
+
+.review_preview img.product_image, .featured_review img.product_image {
+  float: left;
+  border: 2px solid black;
+  margin: 0 10px 10px 0;
+}
+
+.review_preview .review_body {
+  clear: left;
+}
+
+.review_preview .stars, .featured_review .stars {
+  float: right;
+}
+
+.action_shots img {
+  border: 2px solid black;
+}
+
+.review_preview .action_shots img, .featured_review .action_shots img {
+  width: 50px;
+  height: 50px;
+}
+
+.review_sidebar .product_image {
+  border: 2px solid black;
+}
+
+.featured_review {
+  background-color: #CBB5A5;
+  border: 2px solid #000;
+  float: right;
+  padding: 10px;
+  margin-bottom: 30px;
+  margin-top: 0;
+  width: 600px;
+}
+
+.featured_reviewer {
+  width: 330px;
+  float: left;
+}
+
+.featured_reviewer p {
+  margin-top: 0;
+}

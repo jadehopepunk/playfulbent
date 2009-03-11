@@ -1,0 +1,48 @@
+<div class="interaction_section">
+
+	<%= interaction_tickbox(InteractionShowStripshow) %>
+	<h2>Strip for <%= @user.name %></h2>
+
+	<% if current_user.strip_shows.empty? %>
+
+		<p>To do this, you're going to have to upload some photos of yourself
+		stripping off. These aren't publicly viewable, they only get shown to
+		people when you want to see some photos of theirs.</p>
+
+		<%= link_to "Click Here to Find Out More", :controller => 'stripshows', :action => 'about_upload' %>		
+
+	<% elsif current_user.all_stripshows_partially_viewed_by(@user) %>
+
+		<p><%= @user.name %> has already peeked at all of your strip-shows.</p>
+			
+	<% else %>	
+
+		<p>Think <%= @user.name %> might like 
+		<% if current_user.strip_shows.length > 1 %>
+			one of your strip shows?
+		<% else %>
+			your strip-show? 
+		<% end %>
+		You can send <%= @user.gender.third_person_passive_pronoun %>
+		a message inviting <%= @user.gender.third_person_passive_pronoun %> to take a look.</p>
+
+		<div class="stripshows">
+			<% for strip_show in current_user.strip_shows %>
+				<% already_invited = strip_show.some_viewed_by(@user) %>
+				<div class="stripshow<%= ' nothing_to_do' if already_invited %>">
+					<%= strip_show_thumb(strip_show) %>
+					<div class="description">
+						<h4><%= strip_show.title %></h4>
+						<% if already_invited %>
+							<%= @user.name %> has already viewed some of this strip-show.
+						<% else %>
+							<%= link_to "Send Invitation", {:controller => 'invitations', :action => 'stripshow_invite_user', :id => strip_show, :user_id => @user}, :class => 'button', :style => "width: 150px" %>
+						<% end %>
+					</div>
+				</div>
+			<% end %>			
+		</div>
+	
+	<% end %>
+	
+</div>

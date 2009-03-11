@@ -1,0 +1,9 @@
+<% remote_form_for :profile, @profile, :url => formatted_update_welcome_text_profile_path(@profile, :js), :loading => show_spinner(:edit_welcome_text), :html => {:class => 'inline'} do |f| %>
+	<p>
+		This is probably the first thing people will read when they visit your profile. Write any old crap that you like 
+		here, but you might want to consider describing yourself a little, and telling people what you're here for.
+	</p>
+	<%= f.text_area :welcome_text, :class => 'medium' %>
+		
+	<%= inline_form_footer @profile, :edit_welcome_text %>	
+<% end %>

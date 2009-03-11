@@ -1,0 +1,15 @@
+.event .location {
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+
+.event .date {
+  color: black;
+  font-weight: bold;
+}
+
+.event .time_range {
+  color: black;
+  font-weight: bold;
+}
+

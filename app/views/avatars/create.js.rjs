@@ -1,0 +1,4 @@
+page.call "RB_close"
+page.replace_html 'avatar_container', image_tag(@profile.avatar_polaroid_image_url, :id => 'avatar')
+page.replace_html 'avatar_redbox', :partial => 'avatars/form'
+page.replace_html 'profile_analyser_container', :partial => 'profiles/profile_analyser'

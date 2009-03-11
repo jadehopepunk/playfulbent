@@ -1,0 +1,6 @@
+if @parent
+  page.hide dom_id(@parent, 'reply_button')
+  page.replace_html dom_id(@parent, 'reply_container'), :partial => 'new'
+else
+  page.replace_html 'new_comment_container', :partial => 'new'
+end

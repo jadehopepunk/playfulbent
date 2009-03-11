@@ -1,0 +1,7 @@
+Hi <%=h @dare_challenge.subject.dummy? ? 'there' : @dare_challenge.subject.name %>,
+
+<p>You have been challenged by <%=h @dare_challenge.user ? @dare_challenge.user.name : 'YOUR NAME HERE' %> to a two-way Dare challenge.</p>
+
+<p>If you agree, then you get to make up a dare for <%=h @dare_challenge.user ? @dare_challenge.user.name : 'YOUR NAME HERE' %> to perform, and
+<%= current_user.gender.third_person_active_pronoun %> gets to make up one for you. However,
+you get to choose if you want the dare to be flirty, sexual, or downright kinky.</p>

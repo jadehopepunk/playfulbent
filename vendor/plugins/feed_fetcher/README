@@ -1,0 +1,71 @@
+FeedFetcher
+===========
+
+FeedFetcher is a plugin to help you to locate feeds. Currently it only locates RSS feeds. 
+FeedFetcher can be supplied with a URL and a RSS object will be populated from that URL,
+if the URL represents either a RSS resource, or a HTML resource that contains a link
+to a RSS page in head tag.
+
+This enables you to provide a nice simple "add feed" function to any site that aggregates
+RSS feeds where the user doesn't necessarily know the difference between a blog web page
+and a blog feed. They can just enter either, and feed fetcher will figure it out.
+
+
+Credits
+=======
+
+By Craig Ambrose
+craig@craigambrose.com
+
+Up to date details on this plugin located at:
+http://www.craigambrose.com/projects/feed_fetcher
+
+
+Licence
+=======
+
+MIT License
+
+http://www.opensource.org/licenses/mit-license.php
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation 
+files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, 
+modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software 
+is furnished to do so.
+
+
+Installation
+============
+
+script/plugin install svn://rubyforge.org/var/svn/ambroseplugins/feed_fetcher
+
+
+Usage
+=====
+
+The main function that you'll be using is the class method get_feed_source on the FeedFetcher class.
+If successful, it'll return a FeedSource object, that you can interrogate for the feed details or
+the items in the current feed. If it fails, it'll throw an exception that you can use to determine
+the problem and return a message to the user.
+
+Here's the code that I use to call the feed fetcher from within my Blog model. If it works, I'm 
+setting a couple of instance members on self.
+
+begin
+  result = FeedFetcher::FeedFetcher.get_feed_source(site_url)
+  if result
+    self.feed_url = result.url
+    self.title = result.title
+  end
+rescue FeedFetcher::NoFeedForPageError
+  @feed_error = "Sorry, we couldn't find a feed for this URL. Your blog needs to have a RSS feed facility for us to use it on Playful Bent."
+rescue FeedFetcher::PageFeedError
+  @feed_error = "You blog has a RSS feed, which is great. However, it doesn't work for us right now, which is less great. Sorry, this wont work."
+rescue FeedFetcher::PageDoesntExistError
+  @feed_error = "Are you sure you typed that right? We just tried to fetch that URL and we couldn't find anything there at all."
+end 
+
+
+
+
+

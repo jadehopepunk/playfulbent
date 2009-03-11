@@ -1,0 +1,19 @@
+<h1>Take Some Photos</h1>
+
+<p>This isn't a shopping website, it's a sex website. If you're game, we'd love to see
+some action shots of you using the toy. They will be public, so leave out your face if
+you're shy. We don't care about your gender or how sexy you think your body is, everyone
+enjoys sex toys, and people want to see how they actually look in action, rather than
+in a brochure.</p>
+
+<p>If you don't have any photos now, you can always add them to your review later.</p>
+
+<% form_for :action_shot, @action_shot, :url => review_action_shots_path(@review), :method => :post, :builder => LabelledBuilder, :html => {:class => 'single_column two_thirds', :multipart => true, :id => 'new_action_shot_form', :onsubmit => trigger_footer(:new_action_shot)} do |f| %>
+
+	<%= f.text_field :title, :hint => 'optional', :class => 'text_field' %>
+
+	<%= f.file_field :uploaded_data, :label => 'Your Image', :hint => 'jpg format please' %>
+
+	<%= form_footer(:new_action_shot, :submit_name => 'Submit', :cancel_name => "No photos for now", :cancel_link => review_path(@review)) %>
+
+<% end %>

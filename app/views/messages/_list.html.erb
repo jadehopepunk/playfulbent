@@ -1,0 +1,27 @@
+<ol class="message_preview_list">
+	<% for message in @messages %>
+		<li class="message_preview<%= ' unread_message_preview' if !message.read_by?(current_user) %>" id="<%= dom_id(message, 'preview') %>">
+			<%= mini_avatar_link_for(message.sender) %>
+			<div class="message_preview_details" onclick="Element.toggle('<%= dom_id(message, 'body_truncated') %>'); Element.toggle('<%= dom_id(message, 'body') %>'); Element.toggle('<%= dom_id(message, 'actions') %>'); if (Element.hasClassName('<%= dom_id(message, 'preview') %>', 'unread_message_preview')) { Element.removeClassName('<%= dom_id(message, 'preview') %>', 'unread_message_preview'); <%= remote_function(:url => read_user_message_url(current_user, message), :method => :post) %> } return false;">
+				<span class="time_ago"><%= time_ago_in_words message.created_on %> ago</span>
+				<h3><%=h message.subject %></h3>
+				<div class="message_body_truncated" id="<%= dom_id(message, 'body_truncated') %>">
+					<%=h truncate(message.body, 100) %>
+				</div>
+				<div class="message_body" id="<%= dom_id(message, 'body') %>" style="display:none">
+					<div class="from">
+						(from <%=h message.sender.name %>)
+					</div>
+					<%= simple_format h(message.body) %>
+				</div>
+			</div>
+			<div class="message_actions" id="<%= dom_id(message, 'actions') %>" style="display:none">
+				<%= link_to image_tag('messages/reply.png', :alt => 'reply'), new_user_message_url(:user_id => current_user, :parent_id => message), :class => 'image_button' %>
+			</div>
+		</li>
+	<% end %>
+</ol>
+
+<div class="navigation">
+	<%= will_paginate @messages %>
+</div>		

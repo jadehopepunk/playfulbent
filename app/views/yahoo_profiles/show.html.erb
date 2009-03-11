@@ -1,0 +1,35 @@
+<div class="external_profile">
+	<h1>Yahoo Profile: <%=h @yahoo_profile.name %></h1>
+
+	<%= image_tag @yahoo_profile.image_url, :alt => h(@yahoo_profile.name), :class => 'external_avatar' %>
+
+	<p>This is someone from <%= link_to 'yahoo.com', 'http://yahoo.com' %> who is participating in a group listed
+	on playful bent. To see more about this person,
+	<%= link_to 'click here to view their yahoo profile', 'http://profiles.yahoo.com/' + h(@yahoo_profile.identifier) %>.
+	</p>
+	
+	<% unless @yahoo_profile.claimed? -%>
+		<h2>Is This You?</h2>
+	
+		<p>If this is you, then you can claim this yahoo profile. This will let you access all the groups
+		that this person is a member of (and flirt with all the other members).</p>
+	
+		<div class="claim_profile_section important_section">
+			<h2>Claim This Profile</h2>
+	
+			<p>You enter your yahoo password, we try it to see if it works, and then we throw it away.</p>
+
+			<% if flash[:claim_profile_error] %>
+				<div class="errorExplanation"><%= flash[:claim_profile_error] %></div>
+			<% end %>
+
+			<% form_tag claim_yahoo_profile_path(@yahoo_profile) do -%>
+				<%= password_field_tag :password %>
+				<%= submit_tag 'Submit' %>
+			<% end -%>
+
+		</div>
+	<% end -%>
+	
+</div>
+

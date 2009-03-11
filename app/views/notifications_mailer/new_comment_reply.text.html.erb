@@ -1,0 +1,11 @@
+<p>Hi <%=h @comment.user.name %>,</p>
+
+<p><%= link_to_profile_for(@reply.user) %> has replied to your comment in the conversation about "<%= link_to h(@reply.conversation.subject_based_title), conversation_comments_url(@reply.conversation) %>" on Playful Bent. <%=h @reply.user.gender.third_person_active_pronoun.titleize %> wrote:</p>
+
+<div style="border: 2px solid #CBB5A5; background-color: #F1EAE5; padding: 1em">
+  <%= simple_format h(@reply.content) %>
+</div>
+
+<p>You can reply to this by <%= link_to('clicking here', new_conversation_comment_url(:conversation_id => @reply.conversation, :parent_id => @reply)) %>.</p>
+
+<p>There is currently no way to automatically unsubscribe from these messages (we're working on it). If they're bugging you, please contact <a href="mailto:jade@playfulbent.com">jade@playfulbent.com</a> and he will unsubscribe you manually.</p>

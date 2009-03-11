@@ -1,0 +1,108 @@
+<h1><%=h @user.name %>'s Dares</h1>
+
+<div class="interaction_section">
+	<%= interaction_tickbox(InteractionPerformDare) %>
+	<h2>Participate in one of <%=h @user.name %>'s Dares</h2>
+	
+	<% if @user.dares.empty? %>
+	
+		<p>Sorry, <%=h @user.name %> hasn't dared anyone yet.</p>
+		
+	<% else %>
+	
+		<p><%= @user.dares.count == 1 ? 'This is the dare' : 'These are the dares' %> that <%=h @user.name %> 
+		has posted for users to participate in. If you want to be noticed, you could show it by submitting a response. 
+		Or maybe you just want to take a peak at some of the other responses.</p>
+	
+		<div class="interaction_section_body">
+			<ul class="dares_list">
+				<% for dare in @user.dares %>
+					<li>
+						<div class="dare_header">...<%=h @user.name %> dared everyone <%= time_ago_in_words dare.created_on %> ago</div>
+						<%=h dare.request %>
+						<div class="response_buttons">
+							<%= link_to 'Read More', dare_url(dare), :class => 'respond' %> |
+							<%= link_to 'Try This', new_dare_response_url(:dare_id => dare), :class => 'respond' %>
+						</div>
+					</li>
+				<% end %>
+			</ul>
+			<div class="dares_photos">
+				<% for response in DareResponse.responses_with_picture_to(@user, :limit => 9) %>
+					<%= link_to(image_tag(url_for_file_column(response, 'photo', 'thumb'), :size => "80x80", :class => 'response_image'), dare_url(response.dare)) if response.photo %>
+				<% end %>
+			</div>
+		</div>	
+	
+	<% end %>
+	
+</div>
+
+<div class="interaction_section responded_to_you">
+	<%= interaction_tickbox(InteractionHaveDarePerformed) %>
+	<h2>Dare <%=h @user.name %> To Do Something Kinky</h2>
+	
+	<% if !logged_in? %>
+	
+		<p>To persuade someone to something that you dare them, you'll need to <%= link_to 'log in or sign up', new_session_url %>.</p>
+		
+	<% elsif current_user.dares.empty? %>
+
+		<p>You haven't dared anyone to do anything yet. Have a look over on the main dares page, and think about some
+		kinky things that <%=h @user.name %> might like to do. There can only be six dares open at once, so if there isn't a free
+		slot, then you might have to help out with the dares currently in the system before you can dare people yourself.</p>
+		
+	<% elsif @responses_to_user.empty? %>
+
+		<p>Sorry, <%=h @user.name %> hasn't tried any of your dares yet.</p>
+		
+	<% else %>
+
+		<p>These are the dares that you posted, and <%=h @user.name %> has participated in.</p>
+
+		<div class="interaction_section_body">
+			<ul class="dares_list">
+				<% for response in @responses_to_user %>
+					<li>
+						<div class="dare_response">
+							<%= link_to(image_tag(url_for_file_column(response, 'photo', 'thumb'), :size => "80x80", :class => 'dare_response_image'), dare_url(response.dare)) if response.photo %>
+							<div class="dare_header">...<%=h response.user.name %> responded to your dare <%= time_ago_in_words response.created_on %> ago</div>
+							<%= simple_format(truncate(h(response.description), 500)) %>
+							<div class="response_buttons">
+								<%= link_to 'Read More', dare_url(response.dare), :class => 'respond' %>
+							</div>
+						</div>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+		
+	<% end %>
+</div>
+
+<% unless @user.dares.empty? %>
+	<div class="interaction_section other_dare_responses">
+		<h2>...Other Steamy Things <%=h @user.name %> Has Done</h2>
+		<p>You might get some ideas about what <%=h @user.name %> is interested in from <%= @user.dares.length == 1 ? 'this' : 'these' %>.</p>
+	
+		<div class="interaction_section_body">
+			<ul class="dares_list">
+				<% for response in @user.dare_responses %>
+					<li>
+						<div class="dare_header">...responded to <%=h response.dare.creator.name %> <%= time_ago_in_words response.created_on %> ago</div>
+						<%= simple_format(truncate(h(response.description), 300)) %>
+						<div class="response_buttons">
+							<%= link_to 'Read More', dare_url(response.dare), :class => 'respond' %>
+						</div>
+					</li>
+				<% end %>
+			</ul>
+
+			<div class="dares_photos">
+				<% for response in @user.dare_responses.find(:all, :conditions => 'photo IS NOT NULL', :limit => 9) %>
+					<%= link_to(image_tag(url_for_file_column(response, 'photo', 'thumb'), :size => "80x80", :class => 'response_image'), dare_url(response.dare)) if response.photo %>
+				<% end %>
+			</div>		
+		</div>
+	</div>	
+<% end %>

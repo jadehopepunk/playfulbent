@@ -1,0 +1,17 @@
+Hi <%= @recipient.name %>,
+
+<%= @new_page_version.author.name %> has continued a playful-bent story that you asked to be notified about. You can
+use the following URL to see this page on the website:
+
+<%= page_version_url(@new_page_version) %>
+
+..or, you read it below:
+
+-----------------------------------------------
+<%= @new_page_version.story.title.upcase %> (page <%= @new_page_version.page_number %>)
+
+<%= @new_page_version.text %>
+-----------------------------------------------
+
+If you received this email in error, please let us know at abuse@playfulbent.com.
+To unsubscribe, visit the URL above and un-tick the notification check-boxes.

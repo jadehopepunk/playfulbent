@@ -1,0 +1,7 @@
+<% tab_page do %>
+	<% if own_profile? %>
+		<%= render :partial => 'own_stories' %>
+	<% else %>
+		<%= render :partial => 'write_story_with' %>
+	<% end %>
+<% end %>

@@ -1,0 +1,81 @@
+<h1>Reviews - sex toys, books and websites that we love or hate</h1>
+
+<% if @featured_review %>
+	<div class="featured_reviewer">
+		<h2>Featured Review</h2>
+		<%= avatar_link_for(@featured_review.user) %>
+		<p>Our very own <%= link_to_profile_for(@featured_review.user) %> does the hard
+		work so that you can get straight to the good stuff.</p>
+		
+		<p style="clear:left; margin-top: 20px">
+			Need advice with reviews, or want to us to try something out? 
+			<%= link_to "Drop #{h(@featured_review.user.name)} a message", (logged_in? ? new_user_message_path(:user_id => current_user, :recipient_id => @featured_review.user) : new_session_path) %>
+		</p>
+	</div>
+	
+	<div class="featured_review">		
+		<%= link_to image_tag(h(@featured_review.product.thumbnail_url), :alt => h(@featured_review.product.name), :size => '80x80', :class => 'product_image'), review_path(@featured_review) %>
+		
+		<%= stars(@featured_review.overall_rating) %>
+		
+		<h2><%= link_to h(@featured_review.product.name), review_path(@featured_review) %></h2>
+
+		<div class="review_body"><%= truncate(@featured_review.body, 350) + link_to('read more', review_path(@featured_review)) %></div>
+		
+		<% unless @featured_review.action_shots.empty? %>
+			<div class="action_shots">
+				<% for action_shot in @featured_review.action_shots %>
+					<%= link_to(image_tag(action_shot.public_filename(:thumb), :alt => action_shot.display_name), review_path(@featured_review)) %>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+	<br class="section_end" />
+<% end %>
+
+<div class="reviews_explanation">
+	<div class="area_description">
+		<strong>Try it out!</strong> Bend it, break it, lick it, fuck it, then drop in here and tell us all what you thought of it.
+	</div>
+
+	<p><%= link_to image_tag('buttons/write_a_review.png', :alt => "Write a Review"), new_product_path, :class => 'image_button' %></p>
+
+	<%= tag_cloud @popular_ranked_tags, :profile_ratio %>
+
+	<hr />
+	
+	<%= subscription_links %>
+	
+</div>
+
+<div class="reviews_section two_thirds">
+	<h2>Reviews by playful bent users</h2>
+	
+	<%= order_by_links @possible_orders %>
+	
+	<% for review in @reviews %>
+		<div class="review_preview record_preview important_section">
+			<%= link_to image_tag(h(review.product.thumbnail_url), :alt => h(review.product.name), :size => '80x80', :class => 'product_image'), review_path(review) %>
+			
+			<%= stars(review.overall_rating) %>
+			
+			<h2><%= link_to h(review.product.name), review_path(review) %></h2>
+			<div class="subtitle">reviewed by <%= link_to h(review.user.name), review.user.profile_url %></div>
+			<div class="time_ago"><%= time_ago_in_words review.created_at %> ago</div>
+
+			<div class="review_body"><%= truncate(review.body, 200) + link_to('read more', review_path(review)) %></div>
+			
+			<% unless review.action_shots.empty? %>
+				<div class="action_shots">
+					<% for action_shot in review.action_shots %>
+						<%= link_to(image_tag(action_shot.public_filename(:thumb), :alt => action_shot.display_name), review_path(review)) %>
+					<% end %>
+				</div>
+			<% end %>
+		</div>
+	<% end %>
+
+	<%= will_paginate @reviews %>
+	
+</div>
+

@@ -1,0 +1,14 @@
+<div class="review_form">
+	<h1>Review this <%=h @product.human_name %></h1>
+	
+	<%= render :partial => 'product_preview', :object => @product %>
+	
+	<div id="new_form_container">
+		<% form_for :review, @review, :url => reviews_path(:product_id => @product), :builder => LabelledBuilder, :html => {:class => 'single_column two_thirds', :id => 'new_review_form', :onsubmit => trigger_footer(:new_review)} do |f| %>
+
+			<%= render :partial => 'form', :locals => {:f => f} %>
+
+			<%= form_footer(:new_review, :submit_name => 'Submit', :cancel_link => reviews_path) %>
+		<% end %>
+	</div>
+</div>

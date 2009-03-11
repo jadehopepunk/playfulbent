@@ -1,0 +1,26 @@
+<%= render :partial => 'dare_details' %>
+
+<div id="dare_response_list">
+	<%= render :partial => 'response', :collection => @dare.responses %>
+</div>
+
+<% if logged_in? %>
+	<% if @dare.responses.empty? %>
+		<%= link_to_function image_tag('buttons/ive_done_this.png', :alt => "I've Done This"), "Element.hide('dare_response_list'); Element.hide('done_this'); new Effect.BlindDown('dare_response_form', {duration: 0.3});", :class => 'image_button', :id => 'done_this' %>
+	<% else %>
+		<%= link_to_function image_tag('buttons/ive_done_this_too.png', :alt => "I've Done This Too"), "Element.hide('dare_response_list'); Element.hide('done_this'); new Effect.BlindDown('dare_response_form', {duration: 0.3});", :class => 'image_button', :id => 'done_this' %>
+	<% end %>
+<% else %>
+	If you <%= link_to "Login", new_session_url %> then you can try this dare out yourself.
+<% end %>
+
+<div id="dare_response_form" style="display: none;">
+	<%= render :partial => 'dare_responses/form', :locals => {:cancel_link => link_to_function("Cancel", "new Effect.BlindUp('dare_response_form', {duration: 0.3}); new Effect.Appear('dare_response_list',{duration:0.1,queue:'end'}); new Effect.Appear('done_this',{duration:0.1,queue:'end'}); ")} %>
+</div>
+
+<hr />
+
+<div id="conversations_container">
+	<%= render :partial => 'conversations/show' %>
+</div>
+

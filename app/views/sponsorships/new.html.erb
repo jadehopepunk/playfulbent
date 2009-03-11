@@ -1,0 +1,59 @@
+
+<h1>Becoming a Sponsor</h1>
+
+<div class="two_thirds">
+	<p>Sponsorships are a small regular payment to us at 
+	<%= link_to 'Bent Productions', 'http://www.bentproductions.biz' %> (that's just 
+	<%= link_to 'Andale', 'http://andale.playfulbent.com' %> and <%= link_to 'Jade', 'http://jade.playfulbent.com' %>). They may
+	not be much money to you, but to us they help us plan ahead and build this site.</p>
+
+	<p>Unlike other adult websites, we've decided to leave the amount of the sponsorship up to you. You know
+	better than us how much you value this site, and how much you can afford.</p>
+	
+	
+	<div class="important_section">
+		<h2>Choose Your Sponsorship</h2>
+		
+		<p>
+			<%= radio_button_tag 'sponsorship', '5', false, :onclick => "$('submit_to_paypal').disabled = false; Element.hide('other_sponsorship'); $('paypal_a3').value = '5.00'" %> $5<br />
+			<%= radio_button_tag 'sponsorship', '10', false, :onclick => "$('submit_to_paypal').disabled = false; Element.hide('other_sponsorship'); $('paypal_a3').value = '10.00'" %> $10<br />
+			<%= radio_button_tag 'sponsorship', '15', false, :onclick => "$('submit_to_paypal').disabled = false; Element.hide('other_sponsorship'); $('paypal_a3').value = '15.00'" %> $15<br />
+			<%= radio_button_tag 'sponsorship', 'other', false, :onclick => "Element.show('other_sponsorship')" %> other:
+			<%= text_field_tag 'other_sponsorship', '', :style => "display:none", :onchange => "updateOtherSponsorship(this.value)", :onkeyup => "updateOtherSponsorship(this.value)" %>
+		</p>
+
+		<p>
+			<span class="field_description">(prices are in US$ per month)</span>
+		</p>
+						
+		<form action="<%= AppConfig.paypal_url %>" method="post">
+			<input type="hidden" name="cmd" value="_xclick-subscriptions">
+			<input type="hidden" name="business" value="<%= AppConfig.paypal_email %>">
+			<input type="hidden" name="item_name" value="Playful Bent Sponsorship">
+			<input type="hidden" name="item_number" value="PB">
+			<input type="hidden" name="no_shipping" value="1">
+			<input type="hidden" name="no_note" value="1">
+			<input type="hidden" name="currency_code" value="USD">
+			<input type="hidden" name="lc" value="NZ">
+			<input type="hidden" name="bn" value="PP-SubscriptionsBF">
+			<input type="hidden" id="paypal_a3" name="a3" value="20.00">
+			<input type="hidden" name="p3" value="1">
+			<input type="hidden" name="t3" value="M">
+			<input type="hidden" name="src" value="1">
+			<input type="hidden" name="sra" value="1">
+			<input type="hidden" name="image_url" value="http://www.playfulbent.com/images/layout/header_pics.gif">
+			<input type="hidden" name="rm" value="1">
+			<input type="hidden" name="return" value="<%= submitted_user_sponsorships_url(@user) %>">
+			<input type="hidden" name="cancel_return" value="http://www.playfulbent.com">
+			<input type="hidden" name="notify_url" value="<%= notify_user_sponsorships_url(@user) %>">
+			<%= submit_tag 'Proceed to Paypal', :disabled => true, :id => 'submit_to_paypal' %>
+		</form>
+	</div>
+	
+	<p>
+		You can easily stop your sponsorship at any time. We'll send you reminder emails every few
+		months so you don't forget that you're paying us money.
+	</p>
+	
+</div>
+

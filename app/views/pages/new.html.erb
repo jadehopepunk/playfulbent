@@ -1,0 +1,32 @@
+<div class="story_header">
+	<h1 class="story_title"><%= @story.title %></h1>
+	<h2 class="page_title">Page <%= @parent.page_number + 1 %></h2>
+</div>
+
+<div class="about_story">
+	<div class="box">
+		<div class="box_heading">
+			How the Previous Page Ended
+		</div>
+		<div class="box_contents">
+			<%= simple_format h(pre_truncate(@parent.text.to_s, 500)) %>
+		</div>
+	</div>	
+	<%= render :partial => 'story_subscriptions/form' %>
+</div>
+
+<% form_for(:page_version, :url => child_pages_url(@story, (@parent.nil? ? '0' : @parent)), :html => {:id => dom_id(@page_version, 'form'), :class => 'single_column two_thirds'}) do |f| %>
+
+	<%= render :partial => 'form', :locals => {:f => f} %>
+
+	<p>
+		<a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/" class="cc_link"><img alt="Creative Commons License" style="border-width: 0" src="http://i.creativecommons.org/l/by-sa/2.5/88x31.png"/></a>
+		By pressing "Create", I agree to licence this work under a 
+		<a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">Creative Commons Attribution-ShareAlike 2.5  License</a>.
+	</p>
+
+	<div class="footer">
+		<%= submit_tag "Create" %> or <%= link_to 'Cancel', child_pages_url(@story, (@parent.parent.nil? ? '0' : @parent.parent)) %>    	
+	</div>
+
+<% end %>

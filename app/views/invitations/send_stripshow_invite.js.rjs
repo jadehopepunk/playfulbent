@@ -1,0 +1,7 @@
+page.replace "send_invite_form", :partial => "send_invite_form"
+page.replace "email_preview", :partial => "sample"
+
+if @saved == true
+  page.visual_effect :appear, "sent_to"
+  page.insert_html :bottom, "sent_to_list", "<li>#{@invitation.name} &lt;#{@invitation.email_address}&gt;</li>"
+end

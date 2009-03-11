@@ -1,0 +1,7 @@
+<h1>New Product Url</h1>
+
+<% form_for(:product_url, @product_url, :url => product_urls_path(@product), :builder => LabelledBuilder, :html => {:method => :post, :class => 'single_column two_thirds', :onsubmit => trigger_footer(:edit_product_url)}) do |f| %>
+	<%= render :partial => 'form', :locals => {:f => f} %>
+	
+	<%= form_footer :edit_product_url, :submit_name => 'Update', :cancel_link => product_urls_path(@product) %>
+<% end %>

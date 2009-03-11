@@ -1,0 +1,44 @@
+<div class="box people">
+	<div class="box_heading">
+		People Following This Story
+	</div>
+	<div class="box_contents">
+		<% unless logged_in? %>
+			<div class="login_reminder">
+				If you want to show up as a reader of this story, you need to
+				<%= link_to "log in", new_session_url %> first.
+			</div>
+		<% end %>
+		<div class="authors">
+			<h2>Authors</h2>
+			<div class="avatar_set">
+				<% for user in @picture_authors %>
+					<%= avatar_link_for(user) %>
+				<% end %>					
+			</div>
+			<% unless @other_authors.empty? %>
+				<span class="plus">Plus</span>
+				<div class="other_users">
+					<%= @other_authors.collect {|user| link_to_profile_for(user)}.to_sentence %>
+				</div>
+			<% end %>
+		</div>
+		<div class="readers">
+			<h2>Readers</h2>
+			<div class="avatar_set">
+				<% for user in @picture_readers %>
+					<%= avatar_link_for(user) %>
+				<% end %>
+			</div>
+			<% unless @other_readers.empty? %>
+				<span class="plus">Plus</span>
+				<div class="other_users">
+					<%= @other_readers.collect {|user| link_to_profile_for(user)}.to_sentence %>
+				</div>
+			<% end %>
+			<% if @picture_readers.empty? && @other_readers.empty? %>
+				<p class="empty_text">No registered users are following this story yet.</p>
+			<% end %>
+		</div>
+	</div>
+</div>				

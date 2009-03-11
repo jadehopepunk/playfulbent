@@ -1,0 +1,44 @@
+<div id="<%= dom_id(photo, 'featured_section') %>">
+	<div id="featured_photo_and_header">
+		<div class="photo_nav_buttons">
+			<% higher_item = photo.higher_item_with_tag(@tag) %>
+			<% if higher_item %>
+				<%= link_to('<', user_photo_set_my_photo_url(:user_id => @user, :photo_set_id => higher_item.photo_set, :id => higher_item, :tag => @tag), :id => 'previous_photo', :class => 'photo_nav') %>
+			<% else %>
+				<span class="no_nav no_previous">|</span>
+			<% end %>
+	
+			<% lower_item = photo.lower_item_with_tag(@tag) %>
+			<% if lower_item %>
+				<%= link_to('>', user_photo_set_my_photo_url(:user_id => @user, :photo_set_id => lower_item.photo_set, :id => lower_item, :tag => @tag), :id => 'next_photo', :class => 'photo_nav') %>	
+			<% else %>
+				<span class="no_nav no_next">|</span>
+			<% end %>
+		</div>
+
+		<div id="featured_photo_header_container">
+			<%= render :partial => 'my_photos/photo_header', :object => photo %>	
+		</div>
+
+		<%= image_tag(url_for_gallery_photo(photo, 'main'), :alt => photo.title, :id => 'featured_photo') %>
+
+		<% if @photo_set.is_a?(FlickrPhotoSet) %>
+			<div class="exteral_photo_details">
+				<span class="external_location">
+					This photo is <%= link_to 'hosted on flickr', photo.external_page_url %>.
+				</span>
+				
+				<% if can_edit? && @photo_set.last_fetched_at %>	
+					<span class="last_updated">
+						Last updated <%= time_ago_in_words @photo_set.last_fetched_at %> ago.
+					</span>
+				<% end %>
+			</div>
+		<% end %>
+
+	</div>
+
+	<div id="conversations_container">
+		<%= render :partial => 'conversations/show' %>
+	</div>
+</div>

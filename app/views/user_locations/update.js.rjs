@@ -1,0 +1,2 @@
+page.replace_html 'location', :partial => 'location'
+page.replace_html 'profile_analyser_container', :partial => 'profiles/profile_analyser'

@@ -1,0 +1,3 @@
+<li id="<%= dom_id(deletable_thumbnail, 'deletable') %>">
+	<%= link_to_remote(image_tag(url_for_gallery_photo(deletable_thumbnail, 'thumb'), :alt => deletable_thumbnail.title), :url => formatted_user_photo_set_my_photo_url(deletable_thumbnail.user, deletable_thumbnail.photo_set, deletable_thumbnail.to_param, :js), :method => :delete, :confirm => "Permanently delete this photo '#{deletable_thumbnail.title}'?", :loading => "Effect.Fade('#{dom_id(deletable_thumbnail, 'deletable')}', {duration:0.2,to:0.3})") %>
+</li>

@@ -1,0 +1,37 @@
+# == Schema Information
+# Schema version: 258
+#
+# Table name: dares
+#
+#  id                   :integer(11)   not null, primary key
+#  request              :text          
+#  requires_photo       :boolean(1)    
+#  requires_description :boolean(1)    
+#  created_on           :datetime      
+#  creator_id           :integer(11)   
+#  responded_to         :boolean(1)    
+#  expired              :boolean(1)    
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+banana:
+  id: 1
+  request: eat a banana
+  creator_id: 1003
+  expired: 0
+  responded_to: 0
+not_responded_to:
+  id: 2
+  request: someone please do this
+  creator_id: 1003
+  expired: 0
+  responded_to: 0
+  requires_photo: 0
+  requires_description: 0
+expired_dare:
+  id: 3
+  request: no one did this
+  creator_id: 1003
+  expired: 1
+  responded_to: 0
+  

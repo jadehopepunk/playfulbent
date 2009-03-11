@@ -1,0 +1,22 @@
+<% remote_form_for :user, @User, :url => formatted_update_gender_and_sexuality_user_path(@user, :js), :method => :put, :loading => show_spinner(:edit_gender_and_sexuality), :html => {:class => 'inline'} do |f| %>
+	<table>
+		<tr>
+			<td class="label" valign="top"><label>Gender</label></td>
+			<td>
+				<%= f.select(:common_gender_name, Gender.default_options, {:prompt => 'unspecified'}, {:onchange => "if (this.options[this.selectedIndex].value == 'other') { Element.show('other_gender') } else { Element.hide('other_gender') }"}) %>
+				<div id="other_gender" <% if @user.other_gender_name.blank? %>style="display: none"<% end %>>
+					<%= f.text_field :other_gender_name %> (other gender name)
+				</div>	
+			</td>
+		</tr>	
+		<tr>
+			<td class="label"><label>Plays Well With</label></td>
+			<td>
+				<%= f.check_box :likes_boys %> boys
+				<%= f.check_box :likes_girls %> girls
+			</td>
+		</tr>
+	</table>
+		
+	<%= inline_form_footer @user, :edit_gender_and_sexuality %>	
+<% end %>

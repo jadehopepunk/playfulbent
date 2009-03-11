@@ -1,0 +1,34 @@
+<h1>Groups</h1>
+
+<div class="index_explanation groups">
+	<%#= image_tag 'areas/groups.jpg', :size => '80x80', :alt => 'Forum', :class => 'area_icon' %>
+	
+	A global collection of adult groups
+	
+	<hr />	
+	
+	<p>This part of Playful Bent is new. We're still adding groups slowly, and currently only Yahoo groups are supported.</p>
+	
+	<p>If you are a member or moderator of an adult yahoo group, and you'd like to see it here, please
+	<a href="mailto:jade@bentproductions.biz">email Jade</a>.</p>
+	
+	<hr />
+	
+</div>
+
+<div class="record_list">
+	<% for group in @groups %>
+		<div class="record_teaser">
+			<h2><%= link_to h(group.display_name), group_path(group) %></h2>
+			<div class="group_description">
+				<%= truncate(group.description, 200) %>
+				<%= link_to 'read more', group_path(group) %>
+			</div>
+		</div>
+	<% end %>
+	
+	<%= will_paginate @groups %>
+</div>
+
+
+<%= link_to('Create a Group', new_group_path) if is_admin? %>

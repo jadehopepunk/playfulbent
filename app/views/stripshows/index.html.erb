@@ -1,0 +1,50 @@
+<div id="stripshows_page">
+
+	<%= image_tag 'areas/stripshows.jpg', :size => '80x80', :alt => 'Strip-Shows', :class => 'area_icon' %>
+	<h1>Strip-Shows</h1>
+
+	<div class="page_description">	
+		Sit back and watch as playful-bent members perform an erotic striptease for you. These people aren't models,
+		they're regular, beautiful, wonderful people just like you. You can persuade people to get more and more
+		naked for you by showing them some strip-show action of your own. 
+	
+		<p><%= link_to "Find Out More", {:controller => 'stripshows', :action => 'about_upload'}, :class => 'button', :style => 'width: 150px' %> 
+	</div>
+
+
+	<% unless @strip_shows.empty? -%>
+		<div class="strip_show_preview_list">
+			<% @strip_shows.each do |strip_show| -%>
+				<div class="strip_show">
+					<%= link_to(strip_show_thumb(strip_show), strip_photo_url(strip_show.first_photo)) %>
+					<h2><%=h strip_show.title  %></h2>
+					<div class="author">
+						(by <%= link_to_profile_for strip_show.user %>)
+					</div>
+					<% if current_user == nil -%>
+					<% elsif strip_show.user == current_user %>
+						<div class="available">This is you!</div>
+					<% else  -%>
+						<div>Viewed: <%= strip_show.number_viewed_by(current_user) %> of <%= StripShow::PHOTOS_IN_SET %></div>
+						<% available = strip_show.number_unviewed_by_and_available_to(current_user) -%>
+						<% if available > 0 -%>
+							<div class="available new_count"><%= available %> New Picture<%= "s" unless available == 1 %> Available</div>
+						<% end -%>
+					<% end -%>
+				</div>
+			<% end -%>
+		</div>
+	<% end -%>
+
+	<div class="navigation" style="clear: both;">
+		<%= will_paginate @strip_shows %>
+	</div>
+	<br />
+
+	<a href="http://feeds.feedburner.com/playfulbentstripshows">
+		<%= image_tag "rss.gif" %>
+		Subscribe to New Strip-Shows
+	</a> |
+	<%= link_to "Upload a Strip-Show", :controller => 'stripshows', :action => 'about_upload' %>
+
+</div>

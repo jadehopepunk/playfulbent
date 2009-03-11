@@ -1,0 +1,64 @@
+<div class="dare_challenge_form">
+	<%= avatar_link_for @dare_challenge.user %>
+	
+	<h1><%=h @dare_challenge.user.name %> has challenged you, will you accept?</h1>
+
+	<div class="form_description">
+		<p>You have been challenged by <%=h @dare_challenge.user.name %> to a two-way Dare challenge.</p>
+		
+		<p>If you agree, then you get to make up a dare for <%=h @dare_challenge.user.name %> to perform, and
+		<%= @dare_challenge.user.gender.third_person_active_pronoun %> gets to make up one for you.</p>
+		
+		<p>If you're not interested, you can reject the offer and a polite rejection will be sent.</p>
+		
+		<%= button_to 'Reject the Challenge', reject_dare_challenge_path(@dare_challenge), :method => :delete %>
+
+		<% form_for :dare_challenge, @dare_challenge, :url => dare_challenge_url(@dare_challenge), :html => {:class => 'single_column two_thirds', :method => :put} do |f| %>
+			<div class="important_section">
+				<h2>Accepting the Challenge</h2>
+
+				<div class="form_row">
+					<label for="dare_challenge[dare_level]"><span class="step_number">Step 1</span> What type of dare should the challenge be?</label>
+					<%= error_message_on :dare_challenge, :dare_level, 'Dare Level ' %>
+			
+					<div class="dare_level_selector">
+						<div class="dare_level_description">
+							<%= image_tag "dares/levels/female/flirty.jpg", :alt => 'flirty', :class => 'dare_level_image', :size => '80x80' %>
+							<%= f.radio_button :dare_level, 'flirty' %>
+							<h2>Flirty Dares</h2>
+							No full frontal nudity. Dares to make you blush and try something new.			
+						</div>
+
+						<div class="dare_level_description inactive_dare_level">
+							<%= image_tag "dares/levels/female/sexual.jpg", :alt => 'sexual', :class => 'dare_level_image', :size => '80x80' %>
+							<%= f.radio_button :dare_level, 'sexual' %>
+							<h2>Sexual Dares</h2>
+							<p>Nudity and sex acts are fine. These dares can be as hot and steamy as you like.</p>
+						</div>
+
+						<div class="dare_level_description">
+							<%= image_tag "dares/levels/female/kinky.jpg", :alt => 'kinky', :class => 'dare_level_image', :size => '80x80' %>
+							<%= f.radio_button :dare_level, 'flirty' %>
+							<h2>Kinky Dares</h2>
+							<p>BDSM, fetish, and other unusual acts are fine.</p>
+						</div>
+						
+						<%= javascript_tag "DareLevelSelector.setup()" %>
+					</div>
+				</div>
+				
+				<div class="form_for">
+					<label for="dare_challenge[dare_level]"><span class="step_number">Step 2</span> What do you dare them to do?</label>
+					<%= error_message_on :dare_challenge, :subject_dare_text, 'Your dare ' %>
+		
+					<%= f.text_area :subject_dare_text %>
+				</div>
+				
+			  <div class="footer">
+					<%= image_submit_tag 'buttons/meet_the_challenge.png', :class => 'submit_button' %> or <%= link_to 'Cancel', @dare_challenge.subject.profile_url %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+
+</div>

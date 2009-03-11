@@ -1,0 +1,2 @@
+page.call "RB_close"
+page.replace_html 'avatar_container', image_tag(@profile.avatar_polaroid_image_url, :id => 'avatar')

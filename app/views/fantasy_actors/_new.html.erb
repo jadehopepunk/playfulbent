@@ -1,0 +1,14 @@
+<% form_for :fantasy_actor, :url => fantasy_actors_path, :method => :post, :builder => LabelledBuilder, :html => {:class => 'single_column two_thirds important_section', :onsubmit => trigger_footer(:new_fantasy_actor)} do |f| %>
+	<p>If you think that you would like to do this, then press the button below. When you do, we'll
+	show you the other people who fantasise about playing one of the roles in this fantasy.</p>
+	
+	<p><strong>But...</strong> as always, there's a catch.</p>
+	
+	<p>The other people who have listed this as their fantasy will be able to see that you fantasise
+	about playing this role. Also, we wont let you change your mind about it for a week (to stop people
+	from just taking a quick peek).</p>
+
+	<%= hidden_field_tag "fantasy_actor[fantasy_role_id]", @fantasy_role.id %>
+	<%= form_footer(:new_fantasy_actor, :submit_name => "I'd love to be in this role", :cancel_name => "Maybe not, take me back", :cancel_link => fantasy_path(@fantasy_role.fantasy)) %>
+<% end %>
+

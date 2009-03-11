@@ -1,0 +1,29 @@
+<div class="box next_photo_box">
+	<div class="box_heading">
+		Next Photo			
+	</div>
+	<div class="box_contents">
+	  <%= image_tag(@next_photo.image_thumb_url, :class => "next_photo", :size => "80x80") %>
+	    To view the next photo, you must upload a Strip-Show of your own.<br />
+	    <br />
+	    <% unless logged_in? -%>
+	      Already done that? Click here to <%= link_to("Login", new_session_url) %>.
+	    <% end -%>
+	</div>
+</div>
+
+<div class="box next_photo_info_box faded_box">
+	<div class="box_heading">
+		Why Do I Need to Upload a Strip-Show?	
+	</div>
+	<div class="box_contents">
+		<p>Playful-Bent Strip-Shows are a game of, "if you show me yours then I'll show you mine".
+		Each time you look at more of another person's photo set, it enables them to see
+		more of yours.</p>
+
+		<p>If you upload a Strip-Show, only the first photo will be publicly visible. All the others
+		only get shown only to people who you choose.</p>
+
+		<p><%= link_to("Find Out More", {:controller => "stripshows", :action => "about_upload"}, :class => "button find_out_more_button") %></p>
+	</div>
+</div>

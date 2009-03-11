@@ -1,0 +1,65 @@
+<% if logged_in? && @profile.user == current_user %>
+	<% profile_analyser = ProfileAnalyser.new(@profile) %>
+	
+	<% unless profile_analyser.is_complete? %>
+	
+		<div id="profile_completeness">
+			<% if profile_analyser.percent_complete == 0 %>
+				<h2>Where to Start?</h2>
+			
+				<p>Hi <%=h @user.name %>, welcome to your new Playful Bent profile.</p>
+			
+				<p>To gets started, you might want to upload a picture that will be used to represent you on this site.
+				To do this, click on the picture of the <strong>polaroid photo</strong> on the right.</p>
+			
+				<p>You could use a photo of you, or a picture that you think represents you in some way. It can
+				of course be erotic, although our extensive research has found that a picture of your cock is unlikely
+				to impress the ladies.</p>
+			<% else %>
+				<div id="percent_complete">Your profile is <strong><%= profile_analyser.percent_complete %>% complete</strong></div>
+			
+				<h2>What's next?</h2>
+
+				<% if profile_analyser.next == :avatar %>
+					<p>Next, you might want to upload a picture that will be used to represent you on this site.
+					To do this, click on the picture of the <strong>polaroid photo</strong> on the right.</p>
+		
+					<p>You could use a photo of you, or a picture that you think represents you in some way. It can
+					of course be erotic, although our extensive research has found that a picture of your cock is unlikely
+					to impress the ladies.</p>
+					
+				<% elsif profile_analyser.next == :gender %>
+					<p>To let other people know if they should flirt with you, specify your gender by moving the mouse
+					over the gender section below, and using the <strong>Click to Edit</strong> link that appears.</p>
+
+				<% elsif profile_analyser.next == :sexuality %>
+					<p>You can give people some hints about your sexuality by using the <strong>Plays Well With</strong>
+					checkboxes (just under gender). What this means is really up to you, but if you don't want to recieve
+					attention from members of a particular sex, then don't check that box.</p>
+				
+				<% elsif profile_analyser.next == :interests %>
+					<p>Click on the Interests section to list some things that you're interested in. You can use
+					these interests to compare to other people, or to search for people who are interested in them
+					too.</p>
+				
+				<% elsif profile_analyser.next == :kinks %>
+					<p>Click on the Kinks section to list some sexual things that you're into. This works the same way
+					as interests, but the idea is that they should be related to sex. Enquiring minds want to know. :)</p>
+				
+				<% elsif profile_analyser.next == :welcome_text %>
+					<p>You can fill out some welcome text on your profile. Hover over the block of text on the left hand
+					side of your profile and it'll let you write something about yourself. It doesn't have to be award
+					winning prose, but profiles without a few words of description on them aren't very interesting to look
+					at.</p>
+				
+				<% elsif profile_analyser.next == :gallery %>
+					<p>You can upload photos that you might want to show off to other people. These can be full size photos, 
+					we thumbnail them and provide links to the big version automatically. The first four photos in your
+					gallery are displayed in the four photo slots on your profile.</p>
+				
+				<% end %>
+			<% end %>
+		</div>
+		
+	<% end %>
+<% end %>

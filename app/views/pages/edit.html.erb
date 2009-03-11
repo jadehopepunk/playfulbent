@@ -1,0 +1,36 @@
+<div class="story_header">
+	<h1 class="story_title"><%= @story.title %></h1>
+	<h2 class="page_title">Page <%= @page_version.page_number %></h2>
+</div>
+
+<% if !@page_version.has_children? || current_user.is_admin %>
+	<div class="about_story">
+		<div class="about_editing_pages">
+			<p>
+				This page can only be edited while no one has written any more of the story
+				following on from this point.<br />
+				<br />
+				If you made any mistakes, you'd better correct
+				them now because you wont get another chance.		
+			</p>
+		</div>
+		<%= render :partial => 'story_subscriptions/form' %>
+	</div>
+
+	<% form_for(:page_version, @page_version, :url => page_url(:id => @page_version), :html => {:method => :put, :id => dom_id(@page_version, 'edit'), :class => 'single_column two_thirds'}) do |f| %>
+		<%= render :partial => 'form', :locals => {:f => f} %>
+
+	  <div class="footer">
+			<%= submit_tag "Update" %> or <%= link_to 'Cancel', child_pages_url(@story, (@parent.nil? ? '0' : @parent)) %>
+	  </div>
+
+	<% end %>
+<% else %>
+	<div class="cant_edit">
+		<p>
+			The story has already swept onwards on it's path, you can't change it now, or it
+			might confuse the authors who have followed on from here.
+		</p>
+		<%= link_to "Return to Story", child_pages_url(@story, (@parent.nil? ? '0' : @parent)), :class => 'return_to_story' %>
+	</div>
+<% end %>

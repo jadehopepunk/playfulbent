@@ -1,0 +1,34 @@
+<% if photo_sets.length > 1 || @user == current_user %>
+	<div id="photo_set_previews">
+		<% for photo_set in photo_sets %>
+			<div class="photo_set_preview<%= ' active_photo_set_preview' if photo_set == @photo_set %>">
+				<%= link_to(image_tag(photo_set_image_url(photo_set), :size => '75x75'), user_photo_set_path(photo_set.user, photo_set)) %>
+
+				<div class="photo_set_details">
+					<%= link_to h(photo_set.title), user_photo_set_path(photo_set.user, photo_set) %>
+					<div class="photo_set_description">
+						<span class="photo_count_string"><%= photo_set.photo_count %> <%= photo_set.photo_count == 1 ? 'photo' : 'photos' %></span>
+						<% if photo_set.user == current_user %>
+						 | <%= link_to 'Edit', (photo_set.new_record? ? new_user_photo_set_path(photo_set.user) : edit_user_photo_set_path(photo_set.user, photo_set)) %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		<% end %>
+		<% if @user == current_user %>
+			<% if photo_sets.length <= 1 %>
+				<div class="photo_set_controls_and_description">
+					<p>You can add more photo sets to help arrange your photos. You can also use photo sets to 
+					<strong>make some photos private</strong>, or to display photos from 
+					<strong>your flickr account</strong>.</p>
+					<%= link_to "Add new photo set", new_user_photo_set_path(@user) %>
+				</div>
+			<% else %>
+				<div class="photo_set_controls">
+					<%= link_to "Add new photo set", new_user_photo_set_path(@user) %>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+	<br class="section_end" />
+<% end %>

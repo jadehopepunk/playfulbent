@@ -1,0 +1,72 @@
+<% tab_page do %>
+	<h1>Messages with <%=h @user.name %></h1>
+
+	<div class="interaction_section">
+		<%= interaction_tickbox(InteractionExchangeMessages) %>
+		<h2>Exchange Private Messages with <%= @user.name %></h2>
+	
+		<% if !logged_in? %>
+	
+			<p>This is where you could send private messages to <%=h @user.name %> if you were
+			<%= link_to 'logged in', new_session_url %> to Playful Bent.</p>
+		
+			<p>Our messaging system is anonymous (your real email address is not revealed) and 
+			you don't get hordes of unsolicited messages, because messages can only be sent once you've
+			interacted with that person in a couple of different ways already.</p>
+		
+			<p>If you're not a member, you can <%= link_to 'sign up', new_session_url %> for free.</p>
+	
+		<% elsif !@can_send_messages %>
+	
+			<p>You can't send private messages to <%=h @user.name %> yet.</p>
+		
+			<p><strong>Why not?</strong></p>
+		
+			<p>This site is all about building flirtatious and sexy relationships, not about hordes of unsolicited 
+			propositions. To be able to message <%=h @user.name %>, you need to show 
+			<%= @user.gender.third_person_passive_pronoun %> that you're an interesting person by interacting with
+			them on this site somehow.</p>
+		
+			<p>Each way that you interact gives you a big green 'tick' with with <%= @user.name %>. You can see these
+			on the different tabs on <%= @user.gender.third_person_possessive %> profile. You need to collect 
+			<strong>two green ticks</strong> to be able to send messages back and forth.</p>
+		
+			<p>So, if this is what you want to do, try some dares, stories, or stripshows with this person, and
+			see how things go from there.</p>
+		
+		<% elsif @messages.length == 0 %>
+	
+			<p>You can send private messages to <%=h @user.name %> but <%= @user.gender.third_person_active_pronoun %>
+			hasn't sent any to you yet.</p>
+		
+			<p>
+				<%= link_to image_tag('messages/send_private_message.png', :alt => 'Send a Private Message'), new_user_message_url(:user_id => current_user, :recipient_id => @user), :class => 'image_button'  %>
+			</p>
+	
+		<% elsif @messages.length > 0 && !@have_exchanged_messages %>
+	
+			<p><%=h @user.name %> has sent you <%= @messages.length == 1 ? 'a message' : 'messages' %> but you
+			haven't sent any back yet. You need to respond to <%= 'one of ' if @messages.length > 1 %>
+			<%= @user.gender.third_person_possessive %> <%= @messages.length == 1 ? 'message' : 'messages' %> if you
+			want to get a 'tick' for this area of interaction with <%=h @user.name %>. </p>
+
+			<p>
+				<%= link_to image_tag('messages/send_private_message.png', :alt => 'Send a Private Message'), new_user_message_url(:user_id => current_user, :recipient_id => @user), :class => 'image_button'  %>
+			</p>
+
+			<%= render :partial => 'messages/list' %>	
+	
+		<% else %>
+	
+			<p><%=h @user.name %> has sent you the following messages.</p>
+	
+			<p>
+				<%= link_to image_tag('messages/send_private_message.png', :alt => 'Send a Private Message'), new_user_message_url(:user_id => current_user, :recipient_id => @user), :class => 'image_button'  %>
+			</p>
+
+			<%= render :partial => 'messages/list' %>	
+	
+		<% end %>
+
+	</div>
+<% end %>

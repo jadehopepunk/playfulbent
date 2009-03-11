@@ -1,0 +1,22 @@
+<% tab_page do %>
+	<h1><%= current_user == @user ? 'Your Blog' : "#{@user.name}'s Blog" %></h1>
+
+	<% if @syndicated_blog %>
+		<%= render :partial => 'show' %>
+	<% else %>
+		<p><strong>Do you have a blog or online journal somewhere that other Playful Bent people might be interested in?</strong></p>
+
+		<p>You can have a copy of that blog appear here on the site.</p>
+
+		<p>It'll make your profile page more interesting,
+		and also spread whatever you have to say to a bunch of new people here on Playful Bent. Your blog articles will
+		also appear on a combined and searchable blog page on the main blog tab.</p>
+
+		<p>If you do add your blog here, then all your blog entries will contain a link back to your main blog website,
+		wherever that might be, so you you should attract more traffic to your own website, and maybe boost your own
+		search engine rank a little. Also, you retain full copyright ownership of everything you write in your blog, and
+		you can remove it from Playful Bent at any time.</p>
+
+		<%= render :partial => 'new' %>
+	<% end %>
+<% end %>

@@ -1,0 +1,33 @@
+<p>Hi <%= @invitation.name %>,</p>
+<p>A friend of yours has uploaded some risqu&eacute; photos of themselves onto the web at playfulbent.com,
+and they thought you might like to take a look. 
+
+<% if @invitation.message.blank? -%>
+</p>
+<% else -%>
+They have added the following personal comments for you:</p>
+
+<div style="background-color: #FFCC33; padding: 6px;">
+<%= simple_format(h(@invitation.message)) %>
+</div>
+<% end -%>
+
+<p>We can't tell you who they are, unless it's clear from the above message, but they knew your email address, so we presume they know you. The first picture in their photographic strip-show is displayed below, so maybe that will give you
+a clue. If it's not displaying, then your mail reader might not be set to display images.</p>
+
+<%= image_tag(@invitation.strip_show.thumb_url, :alt => @invitation.strip_show.title) %>
+<div style="font-weight: bold; font-style: italic;">"<%= @invitation.strip_show.title %>"</div>
+
+<p>You can take a better look at this photo by 
+<%= link_to "Clicking Here", strip_photo_url(@invitation.strip_show.first_photo) %>
+, however, to see the rest of your friend's
+photos, you will need to show them some of yours. Photo sharing on playful-bent is secure and intimate, and
+if you're interested you can read more about that on the site.</p>
+
+<p>If you believe that you received this email in error, please let us know at 
+<a href="mailto:abuse@playfulbent.com">abuse@playfulbent.com</a> and we will give whoever sent this mail
+a sound spanking.</p>
+
+<p>Kind Regards</p>
+
+<p>Playful-Bent</p>

@@ -1,0 +1,1 @@
+page.replace 'new_crush', :partial => 'new'

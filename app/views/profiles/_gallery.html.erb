@@ -1,0 +1,13 @@
+<div class="gallery">
+	<% for photo in @gallery_photos %>
+		<%= link_to image_tag(url_for_gallery_photo(photo, 'thumb'), :size => '80x80', :alt => 'Change Photo'), user_photo_set_my_photo_path(photo.user, photo.photo_set, photo), :class => 'gallery_photo_link' %>
+	<% end %>
+
+	<% if own_profile? %>
+		<% for index in 1..(4 - @gallery_photos.length) %>
+			<%= link_to image_tag('profiles/no-gallery-image.jpg', :size => '80x80', :alt => 'Upload New Photo'), new_user_photo_set_my_photo_url(:user_id => @user, :photo_set_id => @user.default_photo_set, :id => nil), :id => "new_gallery_photo_link", :class => 'gallery_photo_link' %>
+		<% end %>
+	<% end %>
+
+	<%= link_to((own_profile? ? "Manage Your Images" : "View All Images"), user_photo_set_url(@profile.user, @profile.default_photo_set), :class => "view_all") if own_profile? || !@gallery_photos.empty? %>
+</div>

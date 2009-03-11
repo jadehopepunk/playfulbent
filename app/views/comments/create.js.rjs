@@ -1,0 +1,15 @@
+if @saved
+  if @parent
+    page.redirect_to conversation_comments_url(@conversation)
+  else
+    page.insert_html :bottom, 'comments', :partial => 'comment', :object => @comment
+    page.hide 'new_comment_container'
+    page.show 'new_comment_link'
+  end
+else
+  if @parent
+    page.replace_html dom_id(@parent, 'reply_container'), :partial => 'new'
+  else
+    page.replace_html 'new_comment_container', :partial => 'new'
+  end
+end

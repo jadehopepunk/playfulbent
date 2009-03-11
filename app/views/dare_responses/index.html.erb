@@ -1,0 +1,102 @@
+<h1>I dare you to...</h1>
+
+<div class="new_feature_notice">
+	<h2><strong>New:</strong> <%= link_to 'Click here', new_dare_challenge_path %> to try a dare challenge with another person</h2>
+	This means that you'll each agree to do a dare for each other, and wont see them until you've both done the deed.
+</div>
+
+<div class="dare_explanation">
+	<%= image_tag 'areas/dares.jpg', :size => '80x80', :alt => 'dares', :class => 'area_icon' %>
+	<div class="area_description">
+		<strong>Dares</strong> are a fun and flirtatious way to exercise your
+		voyeuristic or exhibitionist streak, and find out what other
+		playfully bent people are up to.
+	</div>
+	
+	<%= subscription_links %>
+	
+	<div class="help_pitch">
+		<div class="help_heading">Not sure where to start?</div>
+		
+		For lots of <strong>words</strong> and <strong>pictures</strong> explaining
+		what the hell to do, 
+		<%= link_to 'Click Here', about_dares_path %>.
+	</div>
+		
+	<div class="stats_box">
+		<div class="stat">			
+			<label>Indecent Proposals:</label> <%= tumbler(Dare.count) %>
+		</div>
+		<div class="stat">			
+			<label>Compromising Photos:</label> <%= tumbler(DareResponse.count_with_photo) %>
+		</div>
+		<div class="stat">			
+			<label>Unlikely Tales:</label> <%= tumbler(DareResponse.count_with_description) %>
+		</div>
+	</div>
+	
+	<hr>
+	
+	<%= tag_cloud @popular_tags, :dare_ratio %>
+	
+	<hr>
+	
+	<div class="advertisment">
+		<div class="ad_header">Jade recommends: <%= link_to "Men in Pain", "http://www.meninpain.com/updates/full0.php?playfulbent" %></div>
+		<div class="add_description">We only recommend sites we like personally, and if you subscribe from here, we get money to help run Playful Bent. :)</div>
+		<%= link_to image_tag('sponsors/men_in_pain/2967_1.jpg', :alt => 'Men in Pain'), "http://www.meninpain.com/updates/full0.php?playfulbent" %>
+	</div>
+		
+</div>
+
+<div class="dares_section">
+	<div class="box open_dares">
+		<div class="box_heading">
+			New Dares
+		</div>
+		<div class="box_contents">
+			<p><strong>Feeling game?</strong> Click on one of these to find out how to have a go...</p>
+			<ul class="dares">
+				<% for dare in @open_dares %>
+					<li class="dare">
+						<%= mini_avatar_link_for(dare.creator) %> <%= link_to dare.request, dare_url(dare), :class => 'dare' %>
+					</li>
+				<% end %>
+			</ul>
+			<div class="dares_footer">
+				<% if Dare.available_slots? %>
+					<%= link_to image_tag('buttons/dare_someone.png', :alt => 'Dare Someone'), new_dare_url, :class => 'dare_someone' %>
+					<div class="new_dares_explanation">We have room for <span class="number"><%= Dare.available_slot_count %></span> new dare<%= 's' if Dare.available_slot_count > 1 %>... </div>
+				<% else %>
+					<div class="new_dares_explanation">We only allow <%= Dare::MAX_OPEN %> open dares at a time. If you've got
+						something that you're just dying to see someone do, that's great, but you'll have to wait until someone has
+						had a shot at one of the dares above. That could be you of course. :)</div>
+				<% end %>
+			</div>
+		</div>
+	</div>	
+	
+	<% unless @dare_responses.empty? %>
+		<div class="dare_responses">
+			<% for dare_response in @dare_responses %>
+				<div class="dare_with_responses">
+					<% this_response_url = dare_url(dare_response.dare) + "##{dom_id(dare_response)}" %>
+					<div class="inner_text_block">
+						<h2><%= link_to truncate(h(dare_response.dare.request), 45), this_response_url %></h2>
+					
+						<%= mini_avatar_link_for(dare_response.user) %>
+						<%= link_to(image_tag(url_for_file_column(dare_response, 'photo', 'thumb'), :size => "80x80", :class => 'response_image'), this_response_url) unless dare_response.photo.blank? %>
+						<% suffix = (dare_response.description.length > 496 ? link_to('Read More', this_response_url) : '')%>
+						<%= simple_format(truncate(h(dare_response.description), 500) + ' ' + suffix) %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	
+		<%= will_paginate @dare_responses %>
+	<% else %>
+		<div class="no_data">No matching dares.</div>
+	<% end %>
+	
+</div>
+

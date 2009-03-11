@@ -1,0 +1,1 @@
+page.replace 'blog_form_container', :partial => 'new'

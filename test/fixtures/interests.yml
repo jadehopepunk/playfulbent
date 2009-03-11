@@ -1,0 +1,20 @@
+# == Schema Information
+# Schema version: 258
+#
+# Table name: interests
+#
+#  id         :integer(11)   not null, primary key
+#  profile_id :integer(11)   
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+first:
+  id: 1
+another:
+  id: 2
+sams_interests:
+  id: 3
+  profile_id: 3
+disabled_interests:
+  id: 4
+  profile_id: 5

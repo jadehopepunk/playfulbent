@@ -1,0 +1,36 @@
+<%= render :partial => 'types_of_challenges' %>
+
+<div class="dare_challenge_form">
+	<h1>Challenge someone to a dare</h1>
+	
+	<p>A dare challenge means that both you, and the person receiving the challenge (if they accept),
+	are agreeing to do a dare for each other. The person who you challenge gets to pick whether the
+	dares should be <strong>Flirty</strong>, <strong>Sexual</strong> or <strong>Kinky</strong>, but
+	apart from that, neither of you knows what you are going to be dared to do.</p>
+	
+	<strong>Here's how it works...</strong>
+	
+	<ol>
+		<li>We sound out the challenge to the person of your choice.</li>
+		<li>If they accept, then they get to say whether the challenge should be flirty, sexual or kinky, and they
+		write a dare for you to perform (but you don't get to see it yet).</li>
+		<li>We email you to let you know that you need to pick a dare for them to perform.</li>
+		<li>You both get sent the dare that the other person has given you.</li>
+		<li>You go do the deed, and then upload a photo and describe what it was like on a private page.</li>
+		<li>When you've both done this, then you both get to see each other's photos and descriptions. No one
+		else gets to see them.</li>
+	</ol>
+
+	<% form_remote_tag :url => formatted_possible_subjects_dare_challenges_path(:js), :method => :get, :loading => show_spinner(:user_search), :complete => hide_spinner(:user_search), :html => {:class => 'search_form'} do -%>
+		<label>Find Someone to Challenge</label>
+		<div class="sub_label">(Type a friends email address, or the username of someone on playful bent)</div>
+
+		<div class="field">
+			<%= text_field_tag 'user_search_string', '', :class => 'text_field' %>
+			<%= submit_tag 'Search' %> <%= spinner :user_search %>			
+		</div>
+	<% end -%>
+	
+	<div id="step_2_container"></div>
+	
+</div>

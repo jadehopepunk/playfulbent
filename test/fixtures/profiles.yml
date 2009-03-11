@@ -1,0 +1,42 @@
+# == Schema Information
+# Schema version: 258
+#
+# Table name: profiles
+#
+#  id           :integer(11)   not null, primary key
+#  user_id      :integer(11)   
+#  created_on   :integer(11)   
+#  welcome_text :text          default(), not null
+#  published    :boolean(1)    
+#  disabled     :boolean(1)    
+#  location_id  :integer(11)   
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+sam:
+  id: 3
+  user_id: 1003
+  welcome_text: welcome to sams profile
+  published: 1
+  location_id: 1
+unpublished:
+  id: 4
+  user_id: 1000001
+  welcome_text: some stuff
+  published: 0
+disabled:
+  id: 5
+  user_id: 1005
+  welcome_text: some stuff
+  published: 1
+  disabled: 1
+no_avatar:
+  id: 6
+  user_id: 1004
+  welcome_text: a profile with no avatar
+  published: 0
+pippin:
+  id: 7
+  user_id: 11
+  welcome_text: I'm pippin
+  published: 1

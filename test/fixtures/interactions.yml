@@ -1,0 +1,19 @@
+# == Schema Information
+# Schema version: 258
+#
+# Table name: interactions
+#
+#  id         :integer(11)   not null, primary key
+#  actor_id   :integer(11)   
+#  subject_id :integer(11)   
+#  type       :string(255)   
+#  created_at :datetime      
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+sam_messaged_frodo:
+  id: 1
+  actor_id: 1003
+  subject_id: 12
+  type: InteractionExchangeMessages
+  created_at: <%= 7.days.ago.to_s :db %>

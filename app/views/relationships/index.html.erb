@@ -1,0 +1,87 @@
+<% tab_page do %>
+	<h1><%= current_user == @user ? 'Your Relationships' : "#{@user.name}'s Relationships" %></h1>
+
+	<% if logged_in? && current_user != @user %>
+		<div class="interaction_section">
+			<%= interaction_tickbox(InteractionIsFriendOf) %>
+			<% if @users_relationship_with_you %>
+				<h2>You are <%= @user.name %>'s <%= @users_relationship_with_you.name %></h2>
+			<% else %>
+				<h2><%= @user.name %> hasn't listed you as a friend</h2>
+			<% end %>
+		
+			<%= interaction_tickbox(InteractionFriendsWith) %>
+			<% if @your_relationship_with_user %>
+				<h2><%= @user.name %> is your <%= @your_relationship_with_user.name %></h2>
+			<% else %>
+				<h2><%= @user.name %> isn't your friend</h2>
+				<%= link_to "(click to create a relationship with #{@user.name})", new_user_relationship_url(:user_id => current_user, :subject_id => @user) %>
+			<% end %>
+		</div>
+	<% end %>
+
+	<% if can_edit? %>
+		<p>
+			<%= link_to_function 'Create a New Relationship', "Element.hide('new_relationship_button'); Element.show('new_relationship_form')", :id => 'new_relationship_button' %>
+		</p>
+		<div class="inline_form" id="new_relationship_form" style="display:none">
+			<%= render :partial => 'new' %>
+		</div>
+	<% end %>
+
+	<% if @relationship_types.empty? %>
+		<% if @user == current_user %>
+			<div class="no_data">You haven't listed any relationships yet. Click the link above to create one.</div>
+		<% else %>
+		 	<div class="no_data"><%= @user.name %> doesn't much care for anyone here yet.</div>
+		<% end %>
+	<% else %>
+		<div class="big_tree" id="relationship_tree">
+			<div class="tree_root">
+				<%= avatar_link_for @user %>
+			</div>
+			<ul class="tree_branches" id="relationship_types">
+				<% for relationship_data in @relationship_types %>
+					<% relationship_type, relationships = relationship_data %>
+					<li id="<%= dom_id(relationship_type) %>" class="<%= relationship_type.is_reciprocated? ? 'reciprocated' : 'not_reciprocated' %>">
+						<div class="branch_label">
+							<span>
+								my <%=h relationships.length > 1 ? relationship_type.name.pluralize : relationship_type.name %>
+							</span>
+							<%= image_tag('drag_handle.png', :alt => 'Drag To Re-Order', :title => 'Drag to Re-Order', :class => 'handle') if can_edit? %>
+						</div>
+		
+						<% if relationships.length > 1 %>
+							<div class="relationship_set">
+								<div class="relationship_previews" id="<%= dom_id(relationship_type, 'previews') %>">
+									<%= link_to_function('Expand') do |page|
+												page.hide dom_id(relationship_type, 'previews')
+												page.show dom_id(relationship_type, 'expanded')
+										  end
+										 %>
+									<% for relationship in relationships %>
+										<%= avatar_link_for relationship.subject, :class => (relationship.is_reciprocated? ? 'reciprocated_avatar' : 'not_reciprocated_avatar') %>
+									<% end %>
+								</div>
+								<div class="relationship_details_set" style="display: none" id="<%= dom_id(relationship_type, 'expanded') %>">
+									<%= link_to_function('Contract') do |page|
+												page.hide dom_id(relationship_type, 'expanded')
+												page.show dom_id(relationship_type, 'previews')
+										  end
+										 %>
+									<%= render :partial => 'relationship', :collection => relationships %>							
+								</div>
+							</div>
+			
+						<% else %>
+							<%= render :partial => 'relationship', :object => relationships.first %>
+						<% end %>
+		
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<%= sortable_element("relationship_types", :url => reorder_user_relationships_path(@user), :handle => 'handle') if can_edit? %>
+<% end %>

@@ -1,0 +1,13 @@
+Hi <%= @crush.subject.name %>,
+
+Someone that you have a crush on feels the same way!
+
+We could tell you who it is, but that'd spoil the anticipation. Instead, you should go straight here:
+
+<%= crush_url(@crush.reciprocal) %>
+
+This may or may not be safe for work. It contains profile pictures, and probably some steamy language.
+
+have fun,
+
+Playful Bent

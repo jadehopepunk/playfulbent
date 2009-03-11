@@ -1,0 +1,11 @@
+<div class="modal_box" id="upload_gallery_photo_box">
+	<h1>Upload an Image</h1>
+	<p>These images are publicly visible, <br />
+	and will turn up in search engines.</p>
+
+	<div id="avatar_form">
+		<% form_for(:gallery_photo, @gallery_photo, {:url => user_photo_set_my_photos_path(:user_id => @user, :photo_set_id => (@photo_set || @user.default_photo_set), :id => nil, :tag => @tag), :method => :post, :html => {:multipart => true, :target => 'gallery_frame'}}) do |f| %>
+			<%= render :partial => 'my_photos/form', :locals => {:f => f} %>
+		<% end %>
+	</div>
+</div>

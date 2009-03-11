@@ -1,0 +1,3 @@
+page << "Element.removeClassName('#{dom_id(@page_version)}', 'following');"
+page.replace_html dom_id(@page_version, 'read'), read_on_text(@page_version)
+page.remove dom_id(@page_version, 'stop_following')

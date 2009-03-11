@@ -1,0 +1,114 @@
+img.avatar_image
+{
+  border: 2px solid #000;
+}
+
+img.mini_avatar
+{
+  border: 1px solid #000;
+  float: left;
+  margin: 0 2px 2px 0;
+}
+
+img.mini_avatar_pointer
+{
+  margin: 0 8px 2px 0;
+  float: left;
+}
+
+a.avatar_link
+{
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+div.avatar_set
+{
+  padding-top: 10px;
+  width: 290px;
+  overflow: hidden;
+}
+
+div.avatar_set a.avatar_link
+{
+  margin: 0 10px 10px 0;
+}
+
+div.large_avatar_set
+{
+  margin: 10px 0 10px 0;  
+}
+
+div.large_avatar_set a.avatar_link
+{
+  margin-bottom: 10px;
+}
+
+a.avatar_link_with_name
+{
+  background: #927B69 url(../images/forum/avatar_background.png) top left repeat;
+  border: 3px solid #000;
+  color: #000;
+  text-align: center;
+  line-height: 30px;
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+}
+
+a.avatar_link_with_name img.avatar_image
+{
+  border: 1px solid #000;
+  display: block;
+  margin: 10px 10px 0 10px;
+}
+
+a.avatar_link_with_name span.user_name
+{
+  width: 100px;
+  display: block;
+  position: relative;
+  z-index: 3;
+  line-height: 100%;
+  margin-top: 5px;
+  min-height: 2em;
+}
+
+span.avatar_image_collection
+{
+  position: relative;
+  display: block;
+  width: 84px;
+  height: 84px;
+}
+
+span.avatar_image_collection img.avatar_halo
+{
+  position: absolute;
+  left: 64px;
+  top: -12px;
+  border-width: 0;
+}
+
+img.avatar_and_name_halo
+{
+  position: absolute;
+  top: -90px;
+  left: 66px;
+  z-index: 3;
+  border-width: 0;
+}
+
+/*div.people span.avatar_image_collection
+{
+  width: 65px;
+  height: 65px;
+}
+
+div.people span.avatar_image_collection img.avatar_halo
+{
+  left: 45px;
+  top: -65px;
+  z-index: 2;
+}
+*/

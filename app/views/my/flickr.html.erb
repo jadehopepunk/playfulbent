@@ -1,0 +1,19 @@
+<h1>Sharing Your Flickr Photos</h1>
+
+<%= image_tag 'screencaps/photos_example.gif', :alt => "photos section screen shot", :class => 'screen_capture', :style => 'float:right' %>
+
+<div class="two_thirds">
+	<p>
+		Playful Bent lets you share your photo sets from flickr.com with other playful adults. Flickr provides a lot
+		of great tools for uploading and editing your images, so we make it easy to keep using them, but also
+		let you share them with anyone on playful bent.
+	</p>
+
+	<p>You can organise your photos using photo-sets and tags, and you can set different access permissions for each
+	set, in case you want to make some photos only viewable by your friends.</p>
+	
+	<p>To get started, go to <%= link_to 'your photos page', {:controller => 'my', :action => 'photos'} %> and
+	click on "Add new photo set". You'll be asked where the photos will be, and you can select "Streamed from flickr.com".
+	You will be directed to flickr and asked to authorise playful bent for read access to your photos.</p>
+
+</div>

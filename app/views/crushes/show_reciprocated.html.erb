@@ -1,0 +1,40 @@
+<h1>OMG! <%=h @reciprocal_crush.user.name %> has a crush on you too!</h1>
+
+<p><%=h @reciprocal_crush.user.name %> said that <%=h @reciprocal_crush.user.gender.third_person_active_pronoun %>
+would like to do the following to (or with) you.</p>
+
+<ol id="comments">  
+	<li class="comment even">
+		<%= avatar_and_name_link_for(@reciprocal_crush.user) %>
+	  <div class="content_container">
+			<div class="speech_mark"></div>
+			<div class="inner_content">
+				<%= simple_format(h(@reciprocal_crush.fantasy)) %>
+			</div>
+		</div>
+	</li>
+</ol>
+
+<p style="clear: both">You said that you would like to do the following to <%=h @reciprocal_crush.user.name %>.</p>
+
+<ol id="comments">  
+	<li class="comment odd">
+		<%= avatar_and_name_link_for(@crush.user) %>
+	  <div class="content_container">
+			<div class="speech_mark"></div>
+			<div class="inner_content">
+				<%= simple_format(h(@crush.fantasy)) %>
+			</div>
+		</div>
+	</li>
+</ol>
+
+<p style="clear: both"><%=h @reciprocal_crush.user.name %> has been emailed and informed of your mutual crush.</p>
+
+<h2>So, what now?</h2>
+
+<p>You're going to have to figure that out with <%=h @reciprocal_crush.user.name %>. We've given you another green
+interaction tick with <%=h @reciprocal_crush.user.name %>, so you two can now message each other (if you couldn't)
+already. Perhaps you should try talking about your fantasies further.</p>
+
+<%= link_to "Back to #{h(@reciprocal_crush.user.name)}'s profile", @reciprocal_crush.user.profile_url %>

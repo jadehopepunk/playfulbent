@@ -1,0 +1,16 @@
+<div id="select_title_panel">
+	<h2>Select a Title</h2>
+	<p>Give your strip-show an interesting name, like <em>"A soak in the hot tub"</em>, or <em>"Alone in the forest"</em>. Please
+		don't include your name, any any email addresses or web sites in the title.</p>
+	<div id="select_title_form">
+		<% if @error != nil -%>
+			<div class="errorExplanation">
+				<%= @error %>
+			</div>
+		<% end -%>
+		<%= form_remote_tag(:url => {:controller => 'stripshows', :action => 'set_title', :id => @strip_show, :format => 'js'}) %>
+			<label>Title: </label><%= text_field "upload", "title", :size => "100" %>
+			<%= submit_tag "Ok" %>
+		</form>
+	</div>
+</div>

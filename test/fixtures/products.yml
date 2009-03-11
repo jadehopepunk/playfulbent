@@ -1,0 +1,21 @@
+# == Schema Information
+# Schema version: 258
+#
+# Table name: products
+#
+#  id         :integer(11)   not null, primary key
+#  name       :string(255)   
+#  created_at :datetime      
+#  updated_at :datetime      
+#  type       :string(255)   
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+giantess:
+  id: 1
+  name: DVice Giantess Silicone Rubber Dildo
+  type: ProductSexToy
+ethical_slut:
+  id: 2
+  name: The Ethical Slut
+  type: ProductBook

@@ -1,0 +1,2 @@
+module DareChallengeResponsesHelper
+end

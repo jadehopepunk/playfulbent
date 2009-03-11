@@ -1,0 +1,102 @@
+
+<h1>Your Dares</h1>
+
+<div class="interaction_section responded_to_you">
+	<% unless @dare_challenges.empty? %>
+		<h2>Your Dare Challenges</h2>
+	
+		<br />
+		<% for dare_challenge in @dare_challenges %>
+			<% other_party = dare_challenge.other_party(@user) %>
+			<% if other_party %>
+				<div class="record_preview">
+					<%= mini_avatar_link_for(other_party) %>
+					<%= link_to "Challenge with #{h(other_party.name)}", dare_challenge_path(dare_challenge) %>,
+					<%=h dare_challenge.status_message_as(@user) %>.
+				</div>
+			<% end %>
+		<% end %>
+	<% end %>
+	
+	<h2>You Dared People To...</h2>
+	
+	<% if @user.dares.empty? %>
+
+		<p>You haven't dared anyone to do anything yet. Have a look over on the <%= link_to 'main dares page', dares_url %>, 
+			and think about some kinky things that you would like to see people do. There can only be six 
+			dares open at once, so if there isn't a free slot, then you might have to help out with 
+			the dares currently in the system before you can dare people yourself.</p>
+			
+	<% else %>
+
+		<p>These are your submitted dares and their responses.</p>
+
+		<div class="interaction_section_body">
+			<ul class="dares_list">
+				<% for dare in @user.dares %>
+
+					<li>
+						<div>
+							<h3><%=h dare.request %></h3>
+
+							<% for response in dare.responses %>
+								<div class="full_dare_response">
+									<%= mini_avatar_link_for(response.user) %>
+									<%= link_to(image_tag(url_for_file_column(response, 'photo', 'thumb'), :size => "80x80", :class => 'response_image'), dare_url(response.dare)) unless response.photo.blank? %>
+									<% suffix = (response.description.length > 496 ? link_to('Read More', dare_url(dare)) : '')%>
+									<%= simple_format(truncate(h(response.description), 500) + ' ' + suffix) %>																
+								</div>
+							<% end %>
+
+						</div>
+					</li>
+								
+				<% end %>
+
+			</ul>
+		</div>
+
+		
+	<% end %>
+</div>
+
+<div class="interaction_section responded_to_you">
+	<h2>Daring Things You've Done</h2>
+
+	<% if @user.dare_responses.empty? %>
+		
+		<p>You're currently not very daring.</p>
+
+		<p>To have a go, all you need to do is find a dare that you like on the <%= link_to 'main dares page', dares_url %>, 
+		and try it out. Then, submit a response, which can be a picture, a description, or both. If you're feeling shy 
+		about some  of the more erotic dares, then consider trying out something simpler, 
+		or find ways to stay anonymous, such as taking a photo of the act that doesn't include your face.</p>
+	
+	<% else %>	
+
+		<p>These are the dares that you have responded to.</p>
+
+		<div class="interaction_section_body">
+			<ul class="dares_list">
+				<% for response in @user.dare_responses %>
+					<li>
+						<div class="dare_response">
+							<%= link_to(image_tag(url_for_file_column(response, 'photo', 'thumb'), :size => "80x80", :class => 'dare_response_image'), dare_url(response.dare), :class => dare) if response.photo %>									
+
+							<div class="dare_header">
+								...You responded to <%=h response.dare.creator.name %>'s dare <%= time_ago_in_words response.created_on %> ago
+							</div>
+							<%= simple_format(truncate(h(response.description), 200)) %>
+
+							<div class="response_buttons">
+								<%= link_to 'Read More', dare_url(response.dare), :class => 'respond' %>
+							</div>
+						</div>
+					</li>
+				<% end %>
+
+			</ul>
+		</div>
+		
+	<% end %>
+</div>

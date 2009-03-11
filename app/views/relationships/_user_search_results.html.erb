@@ -1,0 +1,5 @@
+<div class="large_avatar_set">
+	<% for user in @users %>
+		<%= link_to_remote(avatar_and_name(user), {:url => formatted_new_user_relationship_path(:user_id => @user, :subject_id => user, :format => :js), :method => :get, :loading => show_spinner(:step_1), :complete => hide_spinner(:step_1)}, :class => 'avatar_link avatar_link_with_name') %>
+	<% end %>
+</div>

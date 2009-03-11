@@ -1,0 +1,36 @@
+<h1>Photo Set: <%= @photo_set.title %></h1>
+
+<div class="box about_form_box">
+	<div class="box_heading">Your Privacy</div>
+	<div class="box_contents">
+		
+		<% if @photo_set.viewable_by == 'friends' %>
+			<p>This photo set is only viewable by your friends. As long as you don't change this setting,
+			photos you upload here will not appear in search engines and wont be available to anyone 
+			who you haven't listed on your relationships page.</p>
+		<% elsif @photo_set.viewable_by = 'me' %>
+			<p>This photo set is only viewable by you. As long as you don't change this setting, anything
+			you upload here will be kept private, and wont be shown to other users or appear in search
+			engines.</p>
+		<% else @photo_set.viewable_by.blank? %>
+			<p>Anything you upload here is visible to the entire internet.</p>
+			
+			<p>You can change who can see your photos at any time by editing this photo set. Instead of being
+			public, photo sets can be set to only display photos to your friends, or even just to you.</p>
+		<% end %>
+	</div>
+</div>	
+
+<% form_for(:gallery_photo, @gallery_photo, :url => user_photo_set_my_photos_path(:user_id => @user, :photo_set_id => @photo_set, :id => nil, :tag => @tag), :method => :post, :builder => LabelledBuilder, :html => {:multipart => true, :class => 'single_column two_thirds'}) do |f| %>
+	<h2>Upload an Image</h2>
+
+	<%= error_messages_for :gallery_photo %>
+
+	<%= f.file_field :uploaded_data, :label => 'Your photo', :hint => 'max 1 megabyte' %>
+	
+	<%= f.text_field :title, :class => 'text_field' %>
+	
+	<%= f.text_area :tag_list, :class => 'small', :hint => "Separate your tags with commas. <br />For example: Beach, Holiday, Naked Waterskiing" %>
+
+	<%= form_footer :new_gallery_photo, :submit_name => 'Upload', :cancel_link => user_photo_set_url(@user, @photo_set) %>
+<% end %>

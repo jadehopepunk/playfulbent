@@ -1,0 +1,66 @@
+<h1>Profiles</h1>
+
+<div class="index_explanation profiles">
+	<%= image_tag 'areas/profiles.jpg', :size => '80x80', :alt => 'Forum', :class => 'area_icon' %>
+	
+	We're a community of playfully bent people. Find others with similar interests, and see what
+	they are up to on the site.
+	
+	<br /><br />
+	
+	<div class="search_box">
+		<% form_tag profiles_url, :method => :get do %>
+			<h2>Search for profiles containing...</h2>
+			<%= text_field_tag 'query', params[:query], :class => 'text_field' %>
+		
+			<div class="footer">
+				<%= submit_tag 'Search' %>			
+			</div>
+		<% end %>
+	</div>
+	
+	<%= tag_cloud @popular_ranked_tags, :profile_ratio %>
+
+	<hr />
+
+	<p>
+	<% if !logged_in? %>
+		<%= link_to image_tag('buttons/login_or_signup.png', :alt => 'Login or Signup'), new_session_url, :class => 'image_button your_profile' %>
+	<% elsif current_user.profile.nil? %>
+		<%= link_to image_tag('buttons/your_profile.png', :alt => 'Your Profile'), profile_url, :method => :post, :class => 'image_button your_profile' %>
+	<% else %>
+		<%= link_to image_tag('buttons/your_profile.png', :alt => 'Your Profile'), current_user.profile_url, :class => 'image_button your_profile' %>
+	<% end %>
+	</p>
+
+	
+</div>
+
+<div id="profile_list" class="record_list">
+	<div class="list_filter_boxes">
+		<% if params[:show_all] %>
+			Showing all, <%= link_to 'show pictures only', profiles_path(params.merge(:show_all => nil)) %>
+		<% else %>
+			Only with pictures, <%= link_to 'show all', profiles_path(params.merge(:show_all => true)) %>
+		<% end %>
+	</div>
+	
+	<h2>Order by</h2>
+	<%= order_by_links @possible_orders %>
+	
+	<% unless params[:query].blank? %>
+		<div class="query_notice">
+			<% if @profiles.empty? %>
+				You're searching for profiles matching the string <strong>"<%=h params[:query] %>"</strong>, none were found.<br />
+			<% else %>
+				You're searching for profiles matching the string <strong>"<%=h params[:query] %>"</strong>.
+			<% end %>
+			<%= link_to 'Click to show all profiles', profiles_path %>
+		</div>
+	<% end %>
+	
+	<%= render :partial => 'profile_teaser', :collection => @profiles %>
+	
+	<%= will_paginate @profiles %>
+</div>
+

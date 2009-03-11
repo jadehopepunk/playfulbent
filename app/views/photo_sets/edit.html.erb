@@ -1,0 +1,12 @@
+<% tab_page do %>
+	<h1>Your Photo Set</h1>
+	
+	<% form_for(:photo_set, @photo_set, :url => user_photo_set_path(@user, @photo_set), :builder => LabelledBuilder, :html => {:method => :put, :class => 'single_column', :onsubmit => trigger_footer(:edit_photo_set)}) do |f| %>
+		<%= f.text_field :title, :class => 'text_field' %>
+
+		<%= f.select :viewable_by, PhotoSet::VIEWABLE_OPTIONS %>
+	
+		<%= form_footer(:edit_photo_set, :submit_name => 'Save', :cancel_link => user_photo_set_path(@user, @photo_set)) %>
+	<% end %>
+	
+<% end %>

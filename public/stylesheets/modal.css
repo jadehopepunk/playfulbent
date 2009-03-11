@@ -1,0 +1,30 @@
+body
+{
+  font-family: sans-serif;
+  padding: 0px;
+  margin: 0px;
+
+  background-color: #181817;
+  background-image: url("../images/header_bg.gif");
+  background-repeat: repeat-x;
+  background-position: top left;
+}
+
+#container
+{
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  
+  background-image: url("../images/lightbg.gif");
+  background-repeat: repeat;
+  
+  padding: 10px;
+  
+  border: 5px solid black;
+}
+
+
+
+

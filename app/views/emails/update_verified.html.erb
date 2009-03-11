@@ -1,0 +1,13 @@
+<%= render :partial => 'message_sent' %>
+
+<h2>So, what now?</h2>
+
+<p>You could:</p>
+
+<ul>
+	<li><%= link_to 'Visit your profile', current_user.profile_url %></li>
+	<% if @email.recipient -%>
+		<li><%= link_to "Visit #{h(@email.recipient.name)}'s Profile", current_user.profile_url %></li>
+	<% end -%>
+	<li><%= link_to 'Manage your Messages', user_messages_path(current_user) %></li>
+</ul>

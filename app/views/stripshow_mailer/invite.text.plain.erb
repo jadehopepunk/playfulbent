@@ -1,0 +1,25 @@
+Hi <%= @invitation.name %>,
+
+A friend of yours has uploaded some risque photos of themselves onto the web at playfulbent.com, and they thought you might like to take a look.
+
+<% if !@invitation.message.blank? -%>
+They have added the following personal comments for you:
+
+--------------------
+<%= @invitation.message %>
+--------------------
+<% end -%>
+
+We can't tell you who they are, unless it's clear from the above message, but they knew your email address, so we presume they know you.
+
+You can take a better look at their photos by going to this URL:
+
+<%= strip_photo_url(@invitation.strip_show.first_photo) %>
+
+However, to see the rest of your friend's photos, you will need to show them some of yours. Photo sharing on playful-bent is secure and intimate, and if you're interested you can read more about that on the site.
+
+If you believe that you received this email in error, please let us know at abuse@playfulbent.com and we will give whoever sent this mail a sound spanking.
+
+Kind Regards
+
+Playful-Bent

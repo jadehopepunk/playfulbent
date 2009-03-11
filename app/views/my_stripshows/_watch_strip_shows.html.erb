@@ -1,0 +1,44 @@
+<% unless @user.strip_shows.empty? %>
+	<div class="interaction_section">
+		<%= interaction_tickbox(InteractionViewStripshow) %>
+		<h2>Watch <%= @user.name %> Stripping</h2>
+
+		<p>
+			<%= @user.name %> has uploaded 
+			<%= @user.strip_shows.length == 1 ? 'a set' : "#{@user.strip_shows.length} sets" %>
+			of <%= StripShow::PHOTOS_IN_SET %> photos of <%= @user.gender.third_person_self_pronoun %> getting slowly naked.<br />
+			You can watch, but you'll need to reveal something of yourself too.
+		</p>
+
+		<div class="stripshows">
+			<% for strip_show in @user.strip_shows %>
+				<a id="strip_show_<%= strip_show.id %>" class="stripshow<%= ' complete' if strip_show.all_viewed_by(current_user) %>" href="<%= strip_photo_url(strip_show.first_photo) %>">
+					<%= strip_show_thumb(strip_show, '120x120') %>				
+					<span class="description">
+						<span class="title"><%= strip_show.title %></span>
+				
+						<% if strip_show.all_viewed_by(current_user) %>
+				
+							<p>You've watched this whole show. You can always go back and look at any of the pictures again.</p>
+					
+						<% elsif strip_show.some_viewed_by(current_user) %>
+				
+							<p>You've watched some of this.</p>
+					
+						<% else %>
+				
+							<p>You have never even peeked at this strip-show. What are you waiting for?</p>
+					
+						<% end %>
+
+						<% unviewed = strip_show.number_unviewed_by_and_available_to(current_user) %>
+						<% if unviewed > 0 %>
+							<span class="unviewed"><%= unviewed.to_s %> new photo<%= 's' if unviewed > 1 %> available!</span>
+						<% end %>
+									
+					</span>
+				</a>
+			<% end %>			
+		</div>
+	</div>
+<% end %>

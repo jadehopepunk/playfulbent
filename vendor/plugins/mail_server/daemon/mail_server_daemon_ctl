@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require "daemons"
+require 'yaml'
+require 'erb'
+
+options = {}
+options[:dir_mode] = :script
+options[:dir] = '../../../../log'
+options[:multiple] = false
+options[:backtrace] = true
+options[:monitor] = false
+
+Daemons.run File.dirname(__FILE__) + '/mail_server_daemon.rb', options

@@ -1,0 +1,473 @@
+Return-Path: <sentto-17996247-1889-1184378913-playfulbent_test_collector=portallus.com@returns.groups.yahoo.com>
+Received: from n5b.bullet.sp1.yahoo.com by celmis.site5.com with smtp id 1I9X3k-0004vf-1B for <playfulbent_test_collector@portallus.com>; Sat, 14 Jul 2007 14:08:37 +1200
+Received: from [216.252.122.219] by n5.bullet.sp1.yahoo.com with NNFMP; Sat, 14 Jul 2007 14:08:34 +1200
+Received: from [66.218.69.6] by t4.bullet.sp1.yahoo.com with NNFMP; Sat, 14 Jul 2007 14:08:34 +1200
+Received: from [66.218.67.85] by t6.bullet.scd.yahoo.com with NNFMP; Sat, 14 Jul 2007 14:08:34 +1200
+Received: ; Sat, 14 Jul 2007 14:08:33 +1200
+Received: from unknown by m49.grp.scd.yahoo.com with QMQP; Sat, 14 Jul 2007 14:08:33 +1200
+Received: from unknown by mta8.grp.scd.yahoo.com with SMTP; Sat, 14 Jul 2007 14:08:32 +1200
+Received: by an-out-0708.google.com with SMTP id c35so155516anc for <Passion-True-Women@yahoogroups.com>; Sat, 14 Jul 2007 14:08:32 +1200
+Received: by 10.100.153.8 with HTTP; Sat, 14 Jul 2007 14:07:53 +1200
+Date: Sat, 14 Jul 2007 14:07:53 +1200
+From: Rossy <rosy987@gmail.com>
+Sender: Passion-True-Women@yahoogroups.com
+Reply-To: Passion-True-Women@yahoogroups.com
+To: 30somethingblacksingles@yahoogroups.com, 3aweniss@yahoogroups.com, 60acrereservesingles@yahoogroups.com, A-Clockwork-Orange@yahoogroups.com, assamesedating@yahoogroups.com,
+	centrallouisianasingles@yahoogroups.com, centraloregondating@yahoogroups.com, chicagowithoutstrings@yahoogroups.com, child_of_aphrodite2002uk@yahoogroups.com, clearwaterguy33@yahoogroups.com,
+	conanjam@yahoogroups.com, cosa_youth_singles@yahoogroups.com, country_music_dance_singles@yahoogroups.com, csenonline@yahoogroups.com, date2@yahoogroups.com, dating_hut@yahoogroups.com,
+	diver2@yahoogroups.com, dogparksingles@yahoogroups.com, doubleanal@yahoogroups.com, ESCORTAGENCYCZECK@yahoogroups.com, farmerdad@yahoogroups.com, faye2@yahoogroups.com, FGLG@yahoogroups.com,
+	fil_singles@yahoogroups.com, findingjuliette@yahoogroups.com, floridaisgothic@yahoogroups.com, freehardcoreamateurteenpics@yahoogroups.com, freesexpicturesworld@yahoogroups.com,
+	friendz-mail@yahoogroups.com, gayandlonely2@yahoogroups.com, geeksingles@yahoogroups.com, Global-Beauties-Babes@yahoogroups.com, Global-Beauties-Personals@yahoogroups.com,
+	globalLutheranSingles@yahoogroups.com, Heartbeats-Delhi@yahoogroups.com, hiregigolo@yahoogroups.com, hot_dating_singles_Arkansas@yahoogroups.com, hothotgirlallthetome@yahoogroups.com,
+	indiansmonterey@yahoogroups.com, InternationalQuirkyaloneDay@yahoogroups.com, ironman37a@yahoogroups.com, israelisingleslive@yahoogroups.com, JewishNewJerseySingles@yahoogroups.com,
+	julianm@yahoogroups.com, kentuckysinglesplace@yahoogroups.com, lebanes@yahoogroups.com, life_mates_pakistan@yahoogroups.com, MAKE_MONEY_IN_15MINUTES@yahoogroups.com, makohoneys@yahoogroups.com,
+	MasterST@yahoogroups.com, michellevalentinematchmaking@yahoogroups.com, muslim_charming_woman_dating@yahoogroups.com, my_sexy_groop@yahoogroups.com, nomooseadmin@yahoogroups.com,
+	ohiogayorgyclub@yahoogroups.com, oldandyoung2gether@yahoogroups.com, pacificdreamsclub@yahoogroups.com, parrot-headsingles3@yahoogroups.com, pearlandsingles@yahoogroups.com,
+	photolove2@yahoogroups.com, pleaserateme@yahoogroups.com, pskis_single@yahoogroups.com, raver2@yahoogroups.com, sangat_4ever@yahoogroups.com, separadostenerife@yahoogroups.com,
+	SEXY_BLACK_SINGLES_DAITN_IN_ROMANCE@yahoogroups.com, sexy_singles_dating_Kansas@yahoogroups.com, shahresarma@yahoogroups.com, shermananddensionsingles@yahoogroups.com, ShiaMatch@yahoogroups.com,
+	Single_Deck@yahoogroups.com, singleclub2@yahoogroups.com, singlegeeks@yahoogroups.com, singleparentsdating@yahoogroups.com, singleriders@yahoogroups.com, singlesclub2@yahoogroups.com,
+	SinglesInDanvilleIllinois@yahoogroups.com, singlesuzyriverside@yahoogroups.com, subhas_hegde@yahoogroups.com, TeEn_ScEnE_bLvD@yahoogroups.com, teens2005@yahoogroups.com, teresashouse@yahoogroups.com
+	, TERRY_2641035@yahoogroups.com, the_caring_men@yahoogroups.com, thedatingexchange@yahoogroups.com, thepichookup@yahoogroups.com, to_much_passion@yahoogroups.com, tornadoteasers@yahoogroups.com,
+	traceysplace@yahoogroups.com, tristatenynjconndating@yahoogroups.com, valadiesroom@yahoogroups.com, virtualcyberdating@yahoogroups.com, webcamcyberplace@yahoogroups.com,
+	wedgiepicsrus@yahoogroups.com, WELCOMETOTHEKIL@yahoogroups.com, whatwomenwant2@yahoogroups.com, whitesites@yahoogroups.com, wisconsinsingleschat@yahoogroups.com, womanalonewanttotalk@yahoogroups.com
+	, youngwidows3@yahoogroups.com, 20-30Singles@yahoogroups.com, 2Thick@yahoogroups.com, abotamer_@yahoogroups.com, ALCATRAZ-SOCIETY-II@yahoogroups.com, alinanewsletter@yahoogroups.com,
+	amateursoftheworld@yahoogroups.com, arab_gays_for_ever@yahoogroups.com, available-parents@yahoogroups.com, Beatitudes_Christian_Fellowship@yahoogroups.com, Blind_DateSF@yahoogroups.com,
+	blosom04@yahoogroups.com, building-relationship@yahoogroups.com, CANADALINK@yahoogroups.com, capitolareafriends@yahoogroups.com, captainfunscorner@yahoogroups.com, cruisingforlove@yahoogroups.com,
+	DYD-NYC@yahoogroups.com, fancydating@yahoogroups.com, fashionboots@yahoogroups.com, fatpigdad@yahoogroups.com, fcpapp@yahoogroups.com, feedmeamateurfacials@yahoogroups.com,
+	feetofkatemoss@yahoogroups.com, findtruelovesingles@yahoogroups.com, flexibewomenhavingsex@yahoogroups.com, flirts_r_us@yahoogroups.com, free-live-chat@yahoogroups.com, FreeMarriage@yahoogroups.com,
+	frolic_vagabond_living_relationship_in_gurgaon@yahoogroups.com, furry_ipep@yahoogroups.com, gamandfriends2@yahoogroups.com, glacia1976@yahoogroups.com, Gulf-BeautiesMatch@yahoogroups.com,
+	Gulf-BeautiesPeoples@yahoogroups.com, heavenspalaceofblackmales@yahoogroups.com, hikingsingleswithdogs@yahoogroups.com, hookin_up_made_EZ@yahoogroups.com, hotillinois_singles@yahoogroups.com,
+	hottguy32000Coolestgroup@yahoogroups.com, houstonsinglesBC@yahoogroups.com, i_wanna_find_a_disabled_girl@yahoogroups.com, Iran_doosti_love@yahoogroups.com, iraniansingles@yahoogroups.com,
+	islamiczawaj@yahoogroups.com, jalynnsjeanswetting@yahoogroups.com, janharrell@yahoogroups.com, jewishmates@yahoogroups.com, just_me_n_u@yahoogroups.com, Kinky_Singles@yahoogroups.com,
+	lala_lolo122@yahoogroups.com, leylaandinegar@yahoogroups.com, LimaOhioFriends@yahoogroups.com, lookingforalesbianlover@yahoogroups.com, lsdclub@yahoogroups.com, lukiehold65@yahoogroups.com,
+	MDSingleSwingers@yahoogroups.com, meet_single_women@yahoogroups.com, megazine_personals@yahoogroups.com, mushtaq_has@yahoogroups.com, MyLilSecret@yahoogroups.com, nmvarmit@yahoogroups.com,
+	northwestohiohotspot@yahoogroups.com, onetwofcku@yahoogroups.com, poolpartyweekend@yahoogroups.com, q8mov@yahoogroups.com, ROMANCE_ROMANCE_GROUPS@yahoogroups.com,
+	SacramentoCASinglelesbiansover40@yahoogroups.com, sexy_singles_dating_California@yahoogroups.com, sexy_singles_dating_Georgia@yahoogroups.com, sexy_singles_dating_NewHampshire@yahoogroups.com,
+	sexy_singles_dating_NorthCarolina@yahoogroups.com, sexy_singles_dating_SouthDakota@yahoogroups.com, sexyteenslive@yahoogroups.com, shadysingles@yahoogroups.com,
+	shewomanmanhatersclubnj@yahoogroups.com, singleinWales@yahoogroups.com, single-parents@yahoogroups.com, singlesfocus@yahoogroups.com, skyless_guys@yahoogroups.com, SPIDER_DEVIL_JAX@yahoogroups.com,
+	sweetwater-texas@yahoogroups.com, tammyshidingplace@yahoogroups.com, TATTOS@yahoogroups.com, temptingsecrets@yahoogroups.com, the_king_of_comedy@yahoogroups.com, The_Romantasy_Island@yahoogroups.com
+	, thehollisterdateinggroup@yahoogroups.com, TheMarinSocialNetwork@yahoogroups.com, thephoenixsingles@yahoogroups.com, TheSouthernTiersSinglesLine@yahoogroups.com,
+	thickblackwomenwannabateout@yahoogroups.com, tonyssinglesbar@yahoogroups.com, usasingles@yahoogroups.com, USAtheistdating@yahoogroups.com, vampirefreaks_singles@yahoogroups.com,
+	Venom_Sounds_Inc@yahoogroups.com, washingtonstatedating@yahoogroups.com, young_sexy_teens@yahoogroups.com, Ziyafat@yahoogroups.com, 2girlsandbigfatdildo@yahoogroups.com,
+	A1-TwinkCockLovers@yahoogroups.com, al_sendbad_net@yahoogroups.com, AsiaGirls-M@yahoogroups.com, austinover40singles@yahoogroups.com, bad_tv@yahoogroups.com,
+	beautiful_islamabadi_girls@yahoogroups.com, Being_Native_American@yahoogroups.com, bi_cupid2000@yahoogroups.com, BLONDEHAIRBLUEEYES@yahoogroups.com, bluffing_u@yahoogroups.com,
+	camgirlslive33@yahoogroups.com, celebrules@yahoogroups.com, central_ks_singles@yahoogroups.com, chennaigaygroup@yahoogroups.com, Christian-SI@yahoogroups.com, cute_singles2005@yahoogroups.com,
+	date_line_personals_phone@yahoogroups.com, date-a-geek@yahoogroups.com, desi_california@yahoogroups.com, Dpinlp@yahoogroups.com, drewalicious@yahoogroups.com, ebonyblanc@yahoogroups.com,
+	elgentel_7oda@yahoogroups.com, elhamedy_x@yahoogroups.com, FastDaterHouston@yahoogroups.com, femaleexecutions1@yahoogroups.com, firemeup@yahoogroups.com, freesignupswingerscontacts@yahoogroups.com,
+	Global-Beauties-Babe@yahoogroups.com, Global-Beauties-Match@yahoogroups.com, Global-Beauties-Peoples@yahoogroups.com, Global-Beauties-Teens2004@yahoogroups.com,
+	gothic_personals_members@yahoogroups.com, Great_Alternative_Group@yahoogroups.com, Gulf-Beautiesgirls@yahoogroups.com, Gulf-BeautiesSingles@yahoogroups.com, Gulf-BeautiesTeens@yahoogroups.com,
+	hollywood_singles_world@yahoogroups.com, Home-Beauties-Babes@yahoogroups.com, Home-Beauties-Bride@yahoogroups.com, Home-Beauties-Girl@yahoogroups.com, Home-Beauties-Teens@yahoogroups.com,
+	hot_slutsn-u-d-e@yahoogroups.com, iowasinglesclub@yahoogroups.com, isleofinnocence@yahoogroups.com, jaouramila@yahoogroups.com, July12thSinglesCruise@yahoogroups.com,
+	lahore_pakistan_sexy_girls@yahoogroups.com, latina17@yahoogroups.com, lonelywoman@yahoogroups.com, lovecircle248@yahoogroups.com, LPSingles@yahoogroups.com, MarriageAgency@yahoogroups.com,
+	matchmetonight@yahoogroups.com, Muslim_girl@yahoogroups.com, Nationwide_dating@yahoogroups.com, nerdlove@yahoogroups.com, not4realclub@yahoogroups.com, NYNJ_SinglesSocial@yahoogroups.com,
+	Olderwomanyougermen@yahoogroups.com, ooo_singled_out_ooo@yahoogroups.com, Passion-True-Ladies@yahoogroups.com, Passion-True-Women@yahoogroups.com, perfectmatchforyou@yahoogroups.com,
+	perfectmate_4u4@yahoogroups.com, Pic_Share_234324@yahoogroups.com, playmateconnections@yahoogroups.com, PLUSDATING@yahoogroups.com, PopPunkGirlsAndTheMenWhoLoveThem@yahoogroups.com,
+	samaael7ob@yahoogroups.com, Samiehasbigboobs@yahoogroups.com, sexy_singles_dating_Colorado@yahoogroups.com, sexy_singles_dating_Nebraska@yahoogroups.com,
+	sexy_singles_dating_Washington@yahoogroups.com, sexy_singles_dating_Wyoming@yahoogroups.com, sexykahanian@yahoogroups.com, sexyzone@yahoogroups.com, sfasian@yahoogroups.com,
+	Shaadi-Stories@yahoogroups.com, shaeraliale@yahoogroups.com, shaherwan_83@yahoogroups.com, single_women_wanting_sperm_donor@yahoogroups.com, singles_date_indians_singapore@yahoogroups.com,
+	Singles_World_Wide@yahoogroups.com, soha222222@yahoogroups.com, Sosexisingles@yahoogroups.com, sozam_2006@yahoogroups.com, SUMMERDOLL@yahoogroups.com, tabbysdatingadvise@yahoogroups.com,
+	teens-traffic@yahoogroups.com, TEXAS_LOVERS_LOKING@yahoogroups.com, Toronto_911_singles@yahoogroups.com, uahoopersonals@yahoogroups.com, unmarried_pakistani_girls@yahoogroups.com,
+	weclick@yahoogroups.com, Western_single_woman_and_man@yahoogroups.com, WORLD360@yahoogroups.com, Yongki@yahoogroups.com, zanjansingles@yahoogroups.com, 30_somethings@yahoogroups.com,
+	4militarysingles_46@yahoogroups.com, adena20@yahoogroups.com, allboysngirls@yahoogroups.com, amateurbikinibeach@yahoogroups.com, angel_man_11_33@yahoogroups.com,
+	angela-southshoresingles@yahoogroups.com, attractive_pakistani_women@yahoogroups.com, badgoodgirls@yahoogroups.com, c-b@yahoogroups.com, CEDS63701@yahoogroups.com, clubchurp@yahoogroups.com,
+	cogic_singles@yahoogroups.com, cooldeaf@yahoogroups.com, dahookupspot@yahoogroups.com, datingsucks2@yahoogroups.com, dishdadidan_group@yahoogroups.com, DWClub@yahoogroups.com,
+	fatboycam@yahoogroups.com, fathervssonwrestlingmatches@yahoogroups.com, femalefistingforfun@yahoogroups.com, femdomfootworship@yahoogroups.com, FlirtAndChat24-7@yahoogroups.com,
+	Get_Introduced@yahoogroups.com, Global-Beauties-Females2000@yahoogroups.com, Global-Beauties-Woman2000@yahoogroups.com, Gulf-BeautiesLovers@yahoogroups.com, gwinnettsingles@yahoogroups.com,
+	Heartbeats-Bangalore@yahoogroups.com, Home-Beauties-Lovers@yahoogroups.com, hot_sexy_lesbian9@yahoogroups.com, jeffsadultonlyroom@yahoogroups.com, Jewish_Matchmaker@yahoogroups.com,
+	loli_pop96@yahoogroups.com, marsandvenus_club@yahoogroups.com, meetrussianwomen@yahoogroups.com, MillionairesClubUSA@yahoogroups.com, moxieblog@yahoogroups.com, ncfoothillssingles@yahoogroups.com,
+	Passion-True-Brides@yahoogroups.com, Passion-True-Singles@yahoogroups.com, piersidesingles@yahoogroups.com, plcinc@yahoogroups.com, princessp@yahoogroups.com, RCMETALMILITIA@yahoogroups.com,
+	richp@yahoogroups.com, roos2r@yahoogroups.com, sexy_singles_dating_Idaho@yahoogroups.com, sexy_singles_dating_Louisiana@yahoogroups.com, sexy_singles_dating_Montana@yahoogroups.com,
+	sexy_singles_dating_Tennessee@yahoogroups.com, sexy_singles_dating_Utah@yahoogroups.com, sexy_southernbelles2@yahoogroups.com, sexyapple@yahoogroups.com, Shaadi-Ghar@yahoogroups.com,
+	singles_from_lahore@yahoogroups.com, Singles_of_Summerlin@yahoogroups.com, sixdegreesevents@yahoogroups.com, slaveformaster@yahoogroups.com, sluttisammi@yahoogroups.com,
+	spinthebottle2@yahoogroups.com, sukardi_ne@yahoogroups.com, SWIS@yahoogroups.com, TalkinboutMen@yahoogroups.com, TC_Gals@yahoogroups.com, the_coolpeople@yahoogroups.com,
+	they_call_me_romeo_69@yahoogroups.com, tigobitties@yahoogroups.com, uksingleslooking@yahoogroups.com, undertaker_1_group@yahoogroups.com, Vegas-Singles@yahoogroups.com,
+	wa3d_el_3yoon_group@yahoogroups.com, wanna_get_married@yahoogroups.com, warriors84_slcs@yahoogroups.com, WestTxPregnantAndSingle@yahoogroups.com, youconnect@yahoogroups.com,
+	0nlykidsingles9-17@yahoogroups.com, 30SomethingKoreans@yahoogroups.com, americansinglesaddicts@yahoogroups.com, babygril420433022000@yahoogroups.com, bharatabhagyavidata@yahoogroups.com,
+	BOYSTOYS@yahoogroups.com, boyz-group@yahoogroups.com, Calontir_Singles@yahoogroups.com, Canadien_Singles_228@yahoogroups.com, chriscook2005203@yahoogroups.com, crossroadsingles@yahoogroups.com,
+	cute_caramel_gurlz78@yahoogroups.com, DATINGSOULROMANCE@yahoogroups.com, dgowhippers@yahoogroups.com, EasyWorkFromHome123@yahoogroups.com, eesa20001@yahoogroups.com,
+	facefartingvideos@yahoogroups.com, fastsunlight@yahoogroups.com, favbodyparts@yahoogroups.com, female_submission@yahoogroups.com, femmelesbiandykesds@yahoogroups.com,
+	Girls-from-China@yahoogroups.com, GTASingles@yahoogroups.com, hesham_89@yahoogroups.com, hisexywomens@yahoogroups.com, Home-Beauties-Peoples@yahoogroups.com,
+	hot_dating_singles_California@yahoogroups.com, HotLittleBrandie@yahoogroups.com, hotspankablemen@yahoogroups.com, hottie1@yahoogroups.com, hussinloveegyptingirls@yahoogroups.com,
+	indian-singles@yahoogroups.com, KILCAWLYHOTSPOT@yahoogroups.com, lilpimpgk@yahoogroups.com, lolo12345@yahoogroups.com, lonelyotaku@yahoogroups.com, lovebug2@yahoogroups.com,
+	lovelyluckygroup@yahoogroups.com, MadisonH@yahoogroups.com, mahmoud_2010@yahoogroups.com, milwaukeebaby53@yahoogroups.com, new_orleansman@yahoogroups.com, nightmonkeyD03C@yahoogroups.com,
+	nyc_parties@yahoogroups.com, ohiofistingclub@yahoogroups.com, owalsh1@yahoogroups.com, Pretty_groups@yahoogroups.com, runningwild1969@yahoogroups.com, SeattleHipHopSingles@yahoogroups.com,
+	single_de@yahoogroups.com, single_fathers_looking@yahoogroups.com, Single_peeps@yahoogroups.com, singles_hook-up@yahoogroups.com, springfield_singles@yahoogroups.com, staywet692006@yahoogroups.com,
+	stgirl1963@yahoogroups.com, sweetfrds@yahoogroups.com, tahoesocialgroup@yahoogroups.com, TorontoLeatherYouth@yahoogroups.com, treelivesexcamsandchat@yahoogroups.com,
+	Webcam-Younger-Ladies@yahoogroups.com, WestKansasSingleTeens@yahoogroups.com, widowersandwidows@yahoogroups.com, YoungMenOlderWoman@yahoogroups.com
+Message-Id: <59aacc660707131907h5db51bedu3037524a1b869b23@mail.gmail.com>
+Subject: [Passion-True-Women] LOVE WITH ROMANCE
+Mime-Version: 1.0
+Content-Type: multipart/mixed; boundary=mimepart_469969a1d9a09_1161f7ba02aa
+Delivery-Date: Fri, 13 Jul 2007 22:08:37 -0400
+X-Originating-Ip: 209.85.132.240
+X-Antivirus-Scanner: This message has been scanned by ClamAV.
+Envelope-To: playfulbent_test_collector@portallus.com
+X-Apparently-To: Passion-True-Women@yahoogroups.com
+Precedence: bulk
+Dkim-Signature: a=rsa-sha1; c=relaxed/relaxed; d=gmail.com; s=beta; h=domainkey-signature:received:received:message-id:date:from:to;
+	b=ZaaOsQRZdKAVeXj6JqnFd+kTgsbsxm2BUGPAEhJlfp+Jvq7JHviecviAf+7pXNP924W4gJEcQs3Y60OnSmLSlgwHu+CII6rLe5yuf7EfBQLGQhn7OSVb20IP16afXtAf+OA31k16TJCH72VJbIiavI6Xh6TUtZ9hbeeZsNrsP1g=
+Mailing-List: list Passion-True-Women@yahoogroups.com; contact Passion-True-Women-owner@yahoogroups.com
+X-Yahoo-Newman-Id: 17996247-m1889
+Domainkey-Signature: a=rsa-sha1; q=dns; c=nofws; s=lima; d=yahoogroups.com;
+	b=UrAI9jTouWcNCRdb3OVAuJss+upOYwK/pwu+8+dgz6lsj1NA+xH23Q4Z9RhEvKHcQ8XgIu9cLWkM8W588Yx1c+QaP5rVX2sdmo3+zV5DiWhnNjeH/3hVy9zAS5mrNI1m;
+List-Unsubscribe: <mailto:Passion-True-Women-unsubscribe@yahoogroups.com>
+X-Yahoo-Newman-Property: groups-email-ff
+X-Egroups-Msg-Info: 1:0:0:0
+X-Yahoo-Profile: univez_jey
+Delivered-To: mailing list Passion-True-Women@yahoogroups.com
+Comment: DomainKeys? See http://antispam.yahoo.com/domainkeys
+X-Sender: rosy987@gmail.com
+List-Id: <Passion-True-Women.yahoogroups.com>
+
+
+
+
+
+--mimepart_469969a1d9a09_1161f7ba02aa
+Content-Type: multipart/alternative; boundary=mimepart_469969a1e5c4a_1161f7ba0393
+
+
+
+
+
+--mimepart_469969a1e5c4a_1161f7ba0393
+Content-Type: text/plain; format=flowed; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+If I could have just one wish,
+I would wish to wake up everyday
+to the sound of your breath on my neck,
+the warmth of your lips on my cheek,
+the touch of your fingers on my skin,
+and the feel of your heart beating with mine...
+Knowing that I could never find that feeling
+with anyone other than you.
+
+*- CLICK HERE <http://www.univez.com/chatdating.html> -*
+
+
+
+
+
+--mimepart_469969a1e5c4a_1161f7ba0393
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+</head>
+
+<!-- Network content -->
+
+
+<body style="background-color: #ffffff;">
+
+<!--~-|**|PrettyHtmlStartT|**|-~-->
+<div id="ygrp-mlmsg" style="width:655px; position:relative;">
+  <div id="ygrp-msg" style="width: 490px; padding: 0 15px 0 0; float:left;  z-index:1;">
+<!--~-|**|PrettyHtmlEndT|**|-~-->
+
+    <div id="ygrp-text">
+            <p><div align="center"><font color="#009900" size="4">If I could have just one wish,<br><font color="#ff9966">I would wish to wake up everyday</font><br><font color="#3333ff">to the sound of your breath on my neck,</font><br>
+<font color="#ff6666">the warmth of your lips on my cheek,</font><br><font color="#cc33cc">the touch of your fingers on my skin,</font><br><font color="#993399">and the feel of your heart beating with mine...</font><br><font color="#330033">
+Knowing that I could never find that feeling</font><br><font color="#333300">with anyone other than you.</font></font></div>
+<p align="center"><font size="6"><strong>- <a href="http://www.univez.com/chatdating.html">CLICK HERE</a> -</strong></font></p>
+<div align="center"><br>&nbsp;</div>
+</p>
+    </div>  
+
+    <!--~-|**|PrettyHtmlStart|**|-~-->
+    <span width="1" style="color: white;">__._,_.___</span>
+    <!-- Start the section with Message In topic -->
+    <div id="ygrp-actbar">
+              <span class="left">
+          <a href="http://groups.yahoo.com/group/Passion-True-Women/message/11260;_ylc=X3oDMTM3aHZlYXU2BF9TAzk3MzU5NzE0BGdycElkAzE3OTk2MjQ3BGdycHNwSWQDMTcwNTA4OTA4OQRtc2dJZAMxMTI2MARzZWMDZnRyBHNsawN2dHBjBHN0aW1lAzExODQzNzg5MTQEdHBjSWQDMTEyNjA-">
+            Messages in this topic          </a> (<span class="bld">1</span>)
+        </span>
+        <a href="http://groups.yahoo.com/group/Passion-True-Women/post;_ylc=X3oDMTJyc2ZyOGxwBF9TAzk3MzU5NzE0BGdycElkAzE3OTk2MjQ3BGdycHNwSWQDMTcwNTA4OTA4OQRtc2dJZAMxMTI2MARzZWMDZnRyBHNsawNycGx5BHN0aW1lAzExODQzNzg5MTQ-?act=reply&messageNum=11260">
+          <span class="bld">
+            Reply          </span> (via web post)
+        </a>  | 
+        <a href="http://groups.yahoo.com/group/Passion-True-Women/post;_ylc=X3oDMTJmMjMyMmJuBF9TAzk3MzU5NzE0BGdycElkAzE3OTk2MjQ3BGdycHNwSWQDMTcwNTA4OTA4OQRzZWMDZnRyBHNsawNudHBjBHN0aW1lAzExODQzNzg5MTQ-" class="bld">
+          Start a new topic        </a>
+          </div> 
+    <!-------     Start Nav Bar  ------>
+    <!-- |**|begin egp html banner|**| -->
+    <div id="ygrp-vitnav">
+                <a href="http://groups.yahoo.com/group/Passion-True-Women/messages;_ylc=X3oDMTJmcnNkNWMxBF9TAzk3MzU5NzE0BGdycElkAzE3OTk2MjQ3BGdycHNwSWQDMTcwNTA4OTA4OQRzZWMDZnRyBHNsawNtc2dzBHN0aW1lAzExODQzNzg5MTQ-">Messages</a>  
+            |    <a href="http://groups.yahoo.com/group/Passion-True-Women/files;_ylc=X3oDMTJndGZ1M3VuBF9TAzk3MzU5NzE0BGdycElkAzE3OTk2MjQ3BGdycHNwSWQDMTcwNTA4OTA4OQRzZWMDZnRyBHNsawNmaWxlcwRzdGltZQMxMTg0Mzc4OTE0">Files</a>  
+            |    <a href="http://groups.yahoo.com/group/Passion-True-Women/photos;_ylc=X3oDMTJmZHY1YnVxBF9TAzk3MzU5NzE0BGdycElkAzE3OTk2MjQ3BGdycHNwSWQDMTcwNTA4OTA4OQRzZWMDZnRyBHNsawNwaG90BHN0aW1lAzExODQzNzg5MTQ-">Photos</a>  
+            |    <a href="http://groups.yahoo.com/group/Passion-True-Women/links;_ylc=X3oDMTJnamZlaDgxBF9TAzk3MzU5NzE0BGdycElkAzE3OTk2MjQ3BGdycHNwSWQDMTcwNTA4OTA4OQRzZWMDZnRyBHNsawNsaW5rcwRzdGltZQMxMTg0Mzc4OTE0">Links</a>  
+            |    <a href="http://groups.yahoo.com/group/Passion-True-Women/database;_ylc=X3oDMTJkbTM3NGExBF9TAzk3MzU5NzE0BGdycElkAzE3OTk2MjQ3BGdycHNwSWQDMTcwNTA4OTA4OQRzZWMDZnRyBHNsawNkYgRzdGltZQMxMTg0Mzc4OTE0">Database</a>  
+            |    <a href="http://groups.yahoo.com/group/Passion-True-Women/polls;_ylc=X3oDMTJnN2FvdDNrBF9TAzk3MzU5NzE0BGdycElkAzE3OTk2MjQ3BGdycHNwSWQDMTcwNTA4OTA4OQRzZWMDZnRyBHNsawNwb2xscwRzdGltZQMxMTg0Mzc4OTE0">Polls</a>  
+            |    <a href="http://groups.yahoo.com/group/Passion-True-Women/members;_ylc=X3oDMTJmanZkMWExBF9TAzk3MzU5NzE0BGdycElkAzE3OTk2MjQ3BGdycHNwSWQDMTcwNTA4OTA4OQRzZWMDZnRyBHNsawNtYnJzBHN0aW1lAzExODQzNzg5MTQ-">Members</a>  
+            |    <a href="http://groups.yahoo.com/group/Passion-True-Women/calendar;_ylc=X3oDMTJlZzhkdGg2BF9TAzk3MzU5NzE0BGdycElkAzE3OTk2MjQ3BGdycHNwSWQDMTcwNTA4OTA4OQRzZWMDZnRyBHNsawNjYWwEc3RpbWUDMTE4NDM3ODkxNA--">Calendar</a>  
+    </div>  
+    <!-- |**|end egp html banner|**| -->
+
+    <!-- Do not have place to put it yet -->
+    <div id="ygrp-grft">
+          </div>
+
+    <!-- yahoo logo -->
+    <!-- |**|begin egp html banner|**| -->
+    <div id="ygrp-ft">
+      <a href="http://groups.yahoo.com/;_ylc=X3oDMTJlMTN1OGxjBF9TAzk3NDc2NTkwBGdycElkAzE3OTk2MjQ3BGdycHNwSWQDMTcwNTA4OTA4OQRzZWMDZnRyBHNsawNnZnAEc3RpbWUDMTE4NDM3ODkxNA--">
+      <img src="http://us.i1.yimg.com/us.yimg.com/i/yg/img/logo/ma_grp_160.gif" height="15" width="106" border="0" alt="Yahoo! Groups"></a> <br>
+      <a href="http://groups.yahoo.com/group/Passion-True-Women/join;_ylc=X3oDMTJnMnJtMm84BF9TAzk3NDc2NTkwBGdycElkAzE3OTk2MjQ3BGdycHNwSWQDMTcwNTA4OTA4OQRzZWMDZnRyBHNsawNzdG5ncwRzdGltZQMxMTg0Mzc4OTE0">Change settings via the Web</a> (Yahoo! ID required) <br>
+      Change settings via email: <a href="mailto:Passion-True-Women-digest@yahoogroups.com?subject=Email Delivery: Digest">Switch delivery to Daily Digest</a> | <a href = "mailto:Passion-True-Women-traditional@yahoogroups.com?subject=Change Delivery Format: Traditional">Switch format to Traditional</a> <br>
+
+      <a href="http://groups.yahoo.com/group/Passion-True-Women;_ylc=X3oDMTJla2JpNHR0BF9TAzk3NDc2NTkwBGdycElkAzE3OTk2MjQ3BGdycHNwSWQDMTcwNTA4OTA4OQRzZWMDZnRyBHNsawNocGYEc3RpbWUDMTE4NDM3ODkxNA--">
+        Visit Your Group 
+      </a> |
+      <a href="http://docs.yahoo.com/info/terms/">
+        Yahoo! Groups Terms of Use      </a> |
+      <a href="mailto:Passion-True-Women-unsubscribe@yahoogroups.com?subject=">
+        Unsubscribe      </a> 
+    </div>     <!-- |**|end egp html banner|**| -->
+  </div> <!-- ygrp-msg -->
+
+  
+  <!-- Sponsor -->
+  <!-- |**|begin egp html banner|**| -->
+  <div id="ygrp-sponsor" style="width:140px;float: left; clear: none; margin-left: 5px; background:white; margin-bottom:25px ;position:absolute; top:0; right: 0;">
+    <!-- Network content -->
+    
+    <!-- Start vitality -->
+    <div id="ygrp-vital">
+              <div id="vithd">Recent Activity</div>
+        <ul style="list-style-type:none; padding: 0; margin: 2px 0;">
+                <li style="clear: both;">
+      <div class="ct" style="float: right;"><span style="display:none">&nbsp;</span>122</div>
+      <div class="cat"><a href="http://groups.yahoo.com/group/Passion-True-Women/members;_ylc=X3oDMTJnM21pY2IxBF9TAzk3MzU5NzE0BGdycElkAzE3OTk2MjQ3BGdycHNwSWQDMTcwNTA4OTA4OQRzZWMDdnRsBHNsawN2bWJycwRzdGltZQMxMTg0Mzc4OTE0">New Members</a></div>
+    </li>
+  
+                <li style="clear: both;">
+      <div class="ct" style="float: right;"><span style="display:none">&nbsp;</span>1</div>
+      <div class="cat"><a href="http://groups.yahoo.com/group/Passion-True-Women/spnew;_ylc=X3oDMTJnMGIxMXZiBF9TAzk3MzU5NzE0BGdycElkAzE3OTk2MjQ3BGdycHNwSWQDMTcwNTA4OTA4OQRzZWMDdnRsBHNsawN2cGhvdARzdGltZQMxMTg0Mzc4OTE0">New Photos</a></div>
+    </li>
+  
+            
+                <li style="clear: both;">
+      <div class="ct" style="float: right;"><span style="display:none">&nbsp;</span>6</div>
+      <div class="cat"><a href="http://groups.yahoo.com/group/Passion-True-Women/links;_ylc=X3oDMTJoMDI4YmtjBF9TAzk3MzU5NzE0BGdycElkAzE3OTk2MjQ3BGdycHNwSWQDMTcwNTA4OTA4OQRzZWMDdnRsBHNsawN2bGlua3MEc3RpbWUDMTE4NDM3ODkxNA--">New Links</a></div>
+    </li>
+  
+            
+            
+        </ul>
+            <a href="http://groups.yahoo.com/group/Passion-True-Women;_ylc=X3oDMTJmNWdjNnVlBF9TAzk3MzU5NzE0BGdycElkAzE3OTk2MjQ3BGdycHNwSWQDMTcwNTA4OTA4OQRzZWMDdnRsBHNsawN2Z2hwBHN0aW1lAzExODQzNzg5MTQ-">
+        Visit Your Group      </a>
+    </div> 
+              
+    <!-- Network content -->
+              <div id="nc">
+              <div class="ad">
+                      <div id="hd1">Y! Messenger</div> 
+<p><a href="http://us.ard.yahoo.com/SIG=12jf8oosr/M=493064.10729668.11333359.8674578/D=groups/S=1705089089:NC/Y=YAHOO/EXP=1184386114/A=3848581/R=0/SIG=11umg3fun/*http://us.rd.yahoo.com/evt=42403/*http://messenger.yahoo.com">Instant hello</a></p> 
+<p>Chat in real-time</p> 
+<p>with your friends.</p>                  </div>
+                    <div class="ad">
+                      <div id="hd1">HDTV Support</div> 
+<p><a href="http://us.ard.yahoo.com/SIG=12jm9409k/M=493064.10972170.11554072.8674578/D=groups/S=1705089089:NC/Y=YAHOO/EXP=1184386114/A=4706132/R=0/SIG=11f8fj6tf/*http://tech.groups.yahoo.com/group/samsunghd/">The official Samsung</a></p> 
+<p>Y! Group for HDTVs</p> 
+<p>and devices.</p>                  </div>
+                    <div class="ad">
+                      <div id="hd1">Yahoo! 360&#176;</div> 
+<p><a href="http://us.ard.yahoo.com/SIG=12jv6ifv1/M=493064.10729662.11333353.8674578/D=groups/S=1705089089:NC/Y=YAHOO/EXP=1184386114/A=3848500/R=0/SIG=10mmpqqkm/*http://360.yahoo.com">Start Today</a></p> 
+<p>Get your own</p> 
+<p>place online</p>                  </div>
+          </div>
+    
+  </div>   <!-- |**|end egp html banner|**| -->
+  <div style="clear:both; color: #FFF; font-size:1px;">.</div>
+</div>   <img src="http://geo.yahoo.com/serv?s=97359714/grpId=17996247/grpspId=1705089089/msgId=11260/stime=1184378914/nc1=3848581/nc2=4706132/nc3=3848500" width="1" height="1"> <br>
+
+<span  style="color: white;">__,_._,___</span>
+<!--~-|**|PrettyHtmlEnd|**|-~-->
+</body>
+<!--~-|**|PrettyHtmlStart|**|-~-->
+<head>
+<style type="text/css">
+<!--
+#ygrp-mlmsg {font-size:13px; font-family: arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}
+#ygrp-mlmsg table {font-size:inherit;font:100%;}
+#ygrp-mlmsg select, input, textarea {font:99% arial,helvetica,clean,sans-serif;}
+#ygrp-mlmsg pre, code {font:115% monospace;*font-size:100%;}
+#ygrp-mlmsg * {line-height:1.22em;}
+#ygrp-text{
+    font-family: Georgia;	
+}
+#ygrp-text p{
+    margin: 0 0 1em 0;
+}
+#ygrp-tpmsgs{
+    font-family: Arial;	
+    clear: both;
+}
+#ygrp-vitnav{
+	padding-top: 10px;
+	font-family: Verdana;
+	font-size: 77%;
+	margin: 0;
+}
+#ygrp-vitnav a{
+	padding: 0 1px;
+}
+#ygrp-actbar{
+	clear: both;
+	margin: 25px 0;
+	white-space:nowrap;
+	color: #666;
+	text-align: right;
+}
+#ygrp-actbar .left{
+	float: left;
+	white-space:nowrap;
+}
+.bld{font-weight:bold;}
+#ygrp-grft{
+	font-family: Verdana;
+	font-size: 77%;
+	padding: 15px 0;
+}
+#ygrp-ft{
+  font-family: verdana;
+  font-size: 77%;
+  border-top: 1px solid #666; 
+  padding: 5px 0; 
+}
+#ygrp-mlmsg #logo{
+  padding-bottom: 10px;
+}
+
+#ygrp-vital{
+	background-color: #e0ecee;
+	margin-bottom: 20px;
+	padding: 2px 0 8px 8px;
+}
+#ygrp-vital #vithd{
+	font-size: 77%;
+	font-family: Verdana;
+	font-weight: bold;
+	color: #333;
+	text-transform: uppercase;
+}
+#ygrp-vital ul{
+	padding: 0;
+	margin: 2px 0;
+}
+#ygrp-vital ul li{
+  list-style-type: none;
+  clear: both;
+  border: 1px solid #e0ecee;  
+}
+#ygrp-vital ul li .ct{
+  font-weight: bold;
+  color: #ff7900;
+  float: right;
+  width: 2em;
+  text-align:right;
+  padding-right: .5em;
+}
+#ygrp-vital ul li .cat{
+  font-weight: bold;
+}
+#ygrp-vital a {
+	text-decoration: none;
+}
+
+#ygrp-vital a:hover{
+  text-decoration: underline;
+}
+
+#ygrp-sponsor #hd{
+	color: #999;
+	font-size: 77%;
+}
+#ygrp-sponsor #ov{
+	padding: 6px 13px;
+	background-color: #e0ecee;
+	margin-bottom: 20px;
+}
+#ygrp-sponsor #ov ul{
+	padding: 0 0 0 8px;
+	margin: 0;
+}
+#ygrp-sponsor #ov li{
+	list-style-type: square;
+	padding: 6px 0;
+	font-size: 77%;
+}
+#ygrp-sponsor #ov li a{
+	text-decoration: none;
+	font-size: 130%;
+}
+#ygrp-sponsor #nc {
+  background-color: #eee;
+  margin-bottom: 20px;
+  padding: 0 8px;
+}
+#ygrp-sponsor .ad{
+	padding: 8px 0;
+}
+#ygrp-sponsor .ad #hd1{
+	font-family: Arial;
+	font-weight: bold;
+	color: #628c2a;
+	font-size: 100%;
+	line-height: 122%;
+}
+#ygrp-sponsor .ad a{
+	text-decoration: none;
+}
+#ygrp-sponsor .ad a:hover{
+	text-decoration: underline;
+}
+#ygrp-sponsor .ad p{
+	margin: 0;
+}
+o {font-size: 0; }
+.MsoNormal {
+   margin: 0 0 0 0;
+}
+#ygrp-text tt{
+  font-size: 120%;
+}
+blockquote{margin: 0 0 0 4px;}
+.replbq {margin:4}
+-->
+</style>
+</head>
+<!--~-|**|PrettyHtmlEnd|**|-~-->
+</html><!--End group email -->
+
+
+
+
+
+
+--mimepart_469969a1e5c4a_1161f7ba0393--
+
+
+
+
+
+--mimepart_469969a1d9a09_1161f7ba02aa
+Content-Type: image/jpeg; name=42-18529033.jpg
+Content-Transfer-Encoding: Base64
+Content-Disposition: attachment; filename=42-18529033.jpg
+X-Attachment-Id: f_f43gir94
+
+/9j/4AAQSkZJRgABAQEBLAEsAAD/7QMWUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAowcAgAAAgAC
+HAJ0AB+pIENvcmJpcy4gIEFsbCBSaWdodHMgUmVzZXJ2ZWQuHAJuABypIEltYWdlbW9yZSBDby4s
+IEx0ZC4vQ29yYmlzHAJ4AEhZb3VuZyBXb21hbiBTbWVsbGluZyBSZWQgUm9zZXMgLS0tIEltYWdl
+IGJ5IKkgSW1hZ2Vtb3JlIENvLiwgTHRkLi9Db3JiaXMcAmkAHllvdW5nIFdvbWFuIFNtZWxsaW5n
+IFJlZCBSb3NlcxwCgwABTBwCBQALNDItMTg1MjkwMzMcAmcACDE4NTI5MDMzHAIZAAExHAIZAAsy
+MC0yNSB5ZWFycxwCGQAJMjBzIGFkdWx0HAIZAAsyNS0zMCB5ZWFycxwCGQAGQWR1bHRzHAIZAAhB
+cm9tYXRpYxwCGQAEQmFyZRwCGQAMQmFyZWJyZWFzdGVkHAIZAApDb3B5IHNwYWNlHAIZAAtDdXQg
+Zmxvd2VycxwCGQAJRW5qb3ltZW50HAIZAAdGZW1hbGVzHAIZABJIZWFkIGFuZCBzaG91bGRlcnMc
+AhkACU1pZC1hZHVsdBwCGQAPTWlkLWFkdWx0IHdvbWFuHAIZAA5Q

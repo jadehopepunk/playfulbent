@@ -1,0 +1,22 @@
+<p>Hi <%=h @recipient.name %>,</p>
+
+<p><%=h @viewer.name %> has viewed one of your strip-show photos, and in the process, they have allowed
+you to view <%= @photos.length > 1 ? "several" : "one" %> of theirs.</p>
+
+<% if @photos.length == 1 -%>
+To view the next available photo in this Strip-Show (login required):
+<%= link_to "Click Here", {:controller => 'stripshows', :action => 'next_unviewed', :id => @photos[0].strip_show, :only_path => false} %>
+<% else -%>
+To view the next available photo in each of these Strip-Shows (login required),
+click on one of the links below.
+<ul>
+<% @photos.each do |photo| -%>
+  <li>
+    <%= link_to photo.strip_show.title, {:controller => 'stripshows', :action => 'next_unviewed', :id => photo.strip_show, :only_path => false} %>
+  </li>
+<% end -%>
+</ul>
+<% end -%>
+
+<p>have fun :)<br />
+www.playfulbent.com</p>

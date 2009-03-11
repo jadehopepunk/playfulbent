@@ -1,0 +1,9 @@
+<p>Hi <%= @recipient.name %>,</p>
+
+<p><%= link_to_profile_for(@comment.user) %> has posted the a comment on your playfulBENT <%= !@comment.subject_url.blank? && @comment.subject_title.blank? ? link_to(@comment.subject_type_name, @comment.subject_url) : @comment.subject_type_name %><%= " (#{link_to(@comment.subject_title, @comment.subject_url)})" unless @comment.subject_title.blank? || @comment.subject_url.blank? %>. <%= @comment.user.gender.third_person_active_pronoun.capitalize %> wrote:</p>
+
+<div style="border: 2px solid #CBB5A5; background-color: #F1EAE5; padding: 1em">
+  <%= simple_format h(@comment.content) %>
+</div>
+
+There is currently no way to automatically unsubscribe from these messages (we're working on it). If they're bugging you, please contact jade@playfulbent.com and he will unsubscribe you manually.

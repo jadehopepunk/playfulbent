@@ -1,0 +1,7 @@
+sam:
+  id: 1003
+  nick: sam
+  permalink: sam
+  hashed_password: <%= User.sha1('test') %>
+  created_on: <%= 1.days.ago.to_s :db %>
+  gender_id: 2

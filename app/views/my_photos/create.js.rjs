@@ -1,0 +1,5 @@
+if @success
+  page.redirect_to user_photo_set_my_photo_path(@user, @photo_set, @gallery_photo)
+else
+  page.replace 'upload_gallery_photo_box', :partial => 'new'
+end

@@ -1,0 +1,17 @@
+# == Schema Information
+# Schema version: 258
+#
+# Table name: story_subscriptions
+#
+#  id                     :integer(11)   not null, primary key
+#  story_id               :integer(11)   
+#  user_id                :integer(11)   
+#  continue_page_i_wrote  :boolean(1)    default(true)
+#  continue_page_i_follow :boolean(1)    
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  story_id: 1
+  user_id: 1003

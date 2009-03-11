@@ -1,0 +1,34 @@
+<% if @email %>
+	<label>Challenge <%=h @email %></label>
+	<div class="sub_label">This is the message that will be sent if you click the button below.</div>
+	
+	<div class="important_section">
+		<%= render :partial => 'sample_message' %>
+	</div>
+	
+	<%= render :partial => 'send_challenge_form' %>
+<% else %>
+	<div class="important_section">
+		<% if @users.empty? %>
+			<label>No users found, and that doesn't look like an email address</label>
+		
+			<p>If you want to challenge someone who you've met through Playful Bent, then you need to type
+			all or part of their username into the box above. If you can't remember their name, it might
+			be easier to find them on the <%= link_to 'profiles page', profiles_path %> and then use the
+			"Create a Dare Challenge" link on their profile.</p>
+		
+			<p>If you want to challenge someone you know outside of Playful Bent, then just type their email
+			address in the box above.	</p>
+		<% else %>
+			<label>Click on the user you wish to challenge</label>
+			<div class="sub_label">Not what you want? You can refine your search above.</div>
+
+			<div class="large_avatar_set">
+				<% for user in @users %>
+					<%= link_to(avatar_and_name(user), new_dare_challenge_path(:subject_id => user.id), :class => 'avatar_link avatar_link_with_name') %>
+				<% end %>
+			</div>
+			<br style="clear: left">
+		<% end %>
+	</div>
+<% end %>

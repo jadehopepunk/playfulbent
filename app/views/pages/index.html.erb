@@ -1,0 +1,73 @@
+<div class="story_header">
+	<h1 class="story_title"><%= @story.title %></h1>
+	<h2 class="page_title">Page <%= @page.page_number %></h2>
+</div>
+
+<div class="meta_info">
+	<%= render :partial => 'people_following' %>
+	<%= render :partial => 'story_subscriptions/form' %>
+</div>
+
+<div class="page">
+	<% unless @leaf_pages.empty? %>
+		<div class="jump_aheads">
+			<div class="inner_text_block">
+				You've already read this, you can jump ahead to:
+				<ul>
+					<% for page in @leaf_pages %>
+						<li><%= link_to "Page #{page.page_number} (by #{page.version_authors.collect(&:name).to_sentence(:connector => 'or')})", child_pages_url(page.story, zero_or_id(page.parent)) %></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	<% end %>
+	
+	<% if @page.versions.length > 1 && !@page.being_followed_by(current_user) %>
+		<div class="explanation">
+			<strong>There are <span id="num_versions"><%= @page.versions.length %></span> alternative versions of this page of the story.</strong><br />
+			You should decide which one you like best, and then follow the
+			story on from there.
+		</div>
+	<% end %>
+	
+	<% for version in @page.versions(current_user) %>
+		<div class="version<%= ' following' if version.being_followed_by(current_user) %><%= ' only_version' if @page.versions.length == 1 %>" id="<%= dom_id(version) %>">
+			<%= avatar_link_for(version.author, :class => 'author') %>
+		
+			<%= simple_format version.text %>
+				
+			<div class="version_actions">
+				<%= link_to(read_on_text(version), child_pages_url(version.story, version), :id => dom_id(version, 'read'), :class => 'image_button read_on') if version.has_children? %>
+				<%= link_to(image_tag('buttons/continue_this_story.png', :alt => "Continue This Story"), new_child_page_url(version.story, version), :id => dom_id(version, 'continue'), :class => 'image_button continue_story') unless version.has_children? || version.is_end %>
+
+				<% version_links = [] %>
+				<% version_links << link_to_remote("Stop Following This", {:url => formatted_stop_following_child_page_url(@story, zero_or_id(version.parent), version, :js)}, :id => dom_id(version, 'stop_following'), :class => 'stop_following') if version.can_stop_following(current_user) %>				
+				<% version_links << link_to("Edit this Page", edit_page_url(version), :class => 'edit', :id => dom_id(version, 'edit')) if version.author == current_user %>
+				<% version_links << link_to("Edit as Admin", edit_page_url(version), :class => 'admin_edit', :id => dom_id(version, 'edit')) if version.author != current_user && current_user.is_admin %>
+				<%= version_links.join(' <span class="link_spacer">|</span> ') %>
+			</div>
+		</div>
+		
+		<% unless version == @page.versions.last %>
+			<p class="divider">Or maybe...</p>
+		<% end %>
+		
+	<% end %>
+
+	<% if @page.can_have_alternative? %>
+		<div class="page_actions">		
+			<span>...Don't like <%= @page.versions.length == 1 ? 'this' : 'these' %>?</span>
+			<%= link_to(image_tag('buttons/write_an_alternate_version.png', :alt => "Write an Alternative Version"), new_child_page_url(@story, zero_or_id(@parent)), :class => 'image_button write_alternative') %>
+		</div>
+	<% end %>
+</div>
+
+<%= link_to "Previous Page", child_pages_url(@story, zero_or_id(@page.grandparent)) unless @page.parent.nil? %>
+
+<p>
+	<a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/" class="cc_link"><img alt="Creative Commons License" style="border-width: 0" src="http://i.creativecommons.org/l/by-sa/2.5/88x31.png"/></a>
+</p>
+
+<div id="conversations_container">
+	<%= render :partial => 'conversations/show' %>
+</div>

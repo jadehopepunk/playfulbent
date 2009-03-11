@@ -1,0 +1,21 @@
+<html>
+	<body>
+		<p>Hi <%=h @recipient.name %>,</p>
+
+		<p>You and <%=h @darer.name %> have both agreed to a "<%=h @dare_challenge.dare_level %>" Dare Challenge on Playful Bent. Here's the dare that <%=h @darer.name %> has written for you to perform:</p>
+
+		<div style="border: 2px solid #CBB5A5; background-color: #F1EAE5; padding: 1em">
+			<%= simple_format(h(@dare)) %>
+		</div>
+
+		<p>You need to go away and do this, and then upload a photo of the act, and a short description, to the following page:</p>
+
+		<p><%= link_to dare_challenge_url(@dare_challenge), dare_challenge_url(@dare_challenge) %></p>
+
+		<p>There is also more information on that page (above) about your privacy, and what to do if you really don't want to do this dare. Remember, dares should not cause any harm to you or your relationships with others.</p>
+
+		<p>have fun,</p>
+
+		<p>Playful Bent</p>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<h1><%=h @user.name %>'s Stories</h1>
+
+<% versions = @user.page_versions.find(:all, :limit => 2, :order => 'created_on DESC') %>
+<% unless versions.empty? %>
+	<div class="interaction_section">
+		<%= interaction_tickbox(InteractionWriteInSameStory) %>
+		<h2>Join in One of <%= @user.name %>'s Stories</h2>
+	
+		<p>Here are snippets of <%= @user.name %>'s most recent erotic writing. If you want to know
+		how <%= @user.gender.third_person_possessive %> mind works, there's no better way than
+		to join in one of these stories yourself, and see where they go.</p>
+	
+		<% for version in versions %>
+			<div class="page_version">
+				<div class="story_title">From "<%= version.story.title %>", page <%= version.page_number %></div>
+			
+				<%= simple_format h truncate(version.text, 500) %>
+			
+				<%= link_to "Read More", page_version_url(version) %>
+			</div>
+		<% end %>
+	
+	</div>
+<% else %>
+
+	<div class="no_interaction">
+		<p><%= @user.name %> doesn't seem to be into stories yet, try something else.</p>		
+	</div>
+
+<% end %>

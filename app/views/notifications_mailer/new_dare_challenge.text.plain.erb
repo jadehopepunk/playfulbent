@@ -1,0 +1,16 @@
+Hi <%= @dare_challenge.subject.dummy? ? 'there' : @dare_challenge.subject.name %>,
+
+You have been challenged by <%= @dare_challenge.user.name %> to a two-way Dare challenge.
+
+If you agree, then you get to make up a dare for <%= @dare_challenge.user.name %> to perform, and <%= @dare_challenge.user.gender.third_person_active_pronoun %> gets to make up one for you. However, you get to choose if you want the dare to be flirty, sexual, or downright kinky.
+
+To find out more, and decide whether you want to accept or refuse, you can go here:
+<%= dare_challenge_url(@dare_challenge) %>
+
+<% if @dare_challenge.subject.dummy? -%>
+Since you haven't used Playful Bent before, you'll be asked to sign up first. It's free, and involves no spam and no obligations. Them, you can get down to the business of having fun with <%= @dare_challenge.user.name %>.
+
+<% end -%>
+have fun,
+
+Playful Bent

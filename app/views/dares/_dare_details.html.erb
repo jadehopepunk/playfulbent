@@ -1,0 +1,8 @@
+<%= avatar_link_for @dare.creator, :class => 'creator_avatar' %>
+
+<h1 style="padding-top: 60px"><%= @dare.creator_name %> dares you to...</h1>
+
+<p>"<%= @dare.request %>"</p>
+
+<p>To prove that you've done it, you must <%= @dare.proof_string %>.</p>
+

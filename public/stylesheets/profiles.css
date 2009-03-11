@@ -1,0 +1,97 @@
+#gender_and_sexuality {
+  width: 350px;
+}
+
+#location {
+  width: 450px;  
+}
+
+#profile_completeness {
+  border: 2px solid #00CB00;
+	background-color: #DFD; 
+	padding: 5px;
+	margin-left: 133px;
+	margin-right: 12px;
+}
+
+#profile_completeness h2 {
+  color: #000;
+  font-size: 130%;
+  font-weight: bold;
+}
+
+#profile_completeness p {
+  margin-bottom: 0;
+}
+
+#profile_completeness #percent_complete {
+  float: right;
+  font-size: 120%;
+}
+
+#profile_contents span.interaction_tick_list {
+  float: right;
+  margin-right: 270px;
+}
+
+#profile div.gallery {
+  margin: 0;
+  width: 600px;
+  overflow: hidden;
+  height: 86px;
+  margin-top: 5px;
+}
+
+#profile div.gallery a.gallery_photo img {
+  border: 1px solid #000;
+  float: left;
+  margin-right: 3px;
+}
+
+#profile div.gallery a.gallery_photo_link {
+  display: block;
+  width: 80px;
+  height: 80px;
+  float: left;
+  margin-right: 3px;
+  margin-left: 1px;
+  margin-top: 1px;
+  border: 1px solid #000;
+}
+
+#profile div.gallery a.gallery_photo_link:hover {
+  border: 2px solid #000;
+  margin-right: 2px;
+  margin-left: 0px;
+  margin-top: 0;
+}
+
+#profile div.gallery a.gallery_photo_link img:hover {
+	opacity: .4;
+	filter: alpha(opacity=40);
+}
+
+#profile a.view_all {
+  display: block;
+  width: 100px;
+  float: left;
+  margin-left: 10px;
+}
+
+#quick_interaction_bar {
+  border: 1px solid #CCC;
+  background-color: #EEE;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;  
+}
+
+.profile_teaser .last_logged_in {
+  font-size: 90%;
+  letter-spacing: 0;
+  word-spacing: 0;  
+  color: #999;
+  font-weight: normal;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}

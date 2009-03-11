@@ -1,0 +1,16 @@
+<div class="profile_teaser">
+	<%#= avatar_link_for(profile_teaser.user) %>
+
+	<div class="profile_teaser_contents">
+		<%= interaction_ticks_for(profile_teaser.user) %>		
+		<h2><%= link_to profile_teaser.user.name, profile_teaser.url %></h2>
+		<%= user_timestamp(profile_teaser.user) %>
+		<div class="interests tags">
+			<%= tags_with_bold_shared(profile_teaser, :interest, current_user, 25) %>
+		</div>
+		<div class="kinks tags">
+			<%= tags_with_bold_shared(profile_teaser, :kink, current_user, 25) %>
+		</div>		
+	</div>
+	
+</div>

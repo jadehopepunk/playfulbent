@@ -1,0 +1,13 @@
+<div class="box next_photo_box">
+	<div class="box_heading">
+		Next Photo			
+	</div>
+	<div class="box_contents">
+	  <%= link_to(image_tag(@next_photo.image_thumb_url, :alt => 'Next Photo', :class => "next_photo"), strip_photo_url(@next_photo), :class => "next_photo") %>
+	  <span>
+	    <%= link_to("View Next Photo", strip_photo_url(@next_photo)) %><br />
+	    <br />
+	    This is your own photo set. Other people don't get to browse it without your permission.
+	  </span>
+	</div>
+</div>

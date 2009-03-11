@@ -1,0 +1,9 @@
+<%= activity_actor_link(activity) %> has reviewed <%= activity_review_link(activity) %>
+<div class="activity_pictures">
+	<% if activity.review && activity.review.product.product_image %>
+		<%= link_to image_tag(activity.review.product.thumbnail_url, :alt => h(activity.review.product.name), :class => 'product_image'), review_path(activity.review) %>
+	<% end %>
+	<% for action_shot in activity.review.action_shots %>
+		<%= link_to image_tag(action_shot.public_filename(:preview), :alt => action_shot.display_name), review_path(activity.review) %>
+	<% end %>						
+</div>

@@ -1,0 +1,2 @@
+module UserLocationHelper
+end

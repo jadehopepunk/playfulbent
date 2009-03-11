@@ -1,0 +1,17 @@
+<html>
+	<body>
+		<p>Hi <%=h @message.recipient.name %>,</p>
+
+		<p>Here's a private message from <%= link_to h(@message.sender.name), @message.sender.profile_url %> on Playful Bent:</p>
+
+		<div style="border: 2px solid #CBB5A5; background-color: #F1EAE5; padding: 1em">
+			<%= simple_format h(@message.body) %>
+		</div>
+
+    <p>You can now reply to the messages by email. Just hit reply in your mail program, and delete this quoted text.</p>
+
+		<p>Your messages are also listed on your <a href="<%= user_messages_url(@message.recipient) %>">Playful Bent profile.</a></p>
+
+		<p>If you received this email in error, please let us know at <a href="mailto:abuse@playfulbent.com">abuse@playfulbent.com</a>.</p>
+	</body>
+</html>

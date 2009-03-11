@@ -1,0 +1,12 @@
+<% link_to_inline_form_if (can_edit? && @photo_set.local?), @gallery_photo, :edit_header, :my_photos do %>
+	<h2 class="photo_title">
+		<%= @gallery_photo.title %>
+	</h2>
+	<div class="photo_tags">
+		<% if @gallery_photo.can_be_edited_by?(current_user) && @gallery_photo.tags.empty? %>
+			No tags. Add tags to this photo to help people find it.
+		<% else %>
+			<%= format_tag_list @gallery_photo.tags %>
+		<% end %>
+	</div>
+<% end %>

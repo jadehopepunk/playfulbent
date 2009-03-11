@@ -1,0 +1,15 @@
+<div class="strip_show">
+	<%= link_to(strip_show_thumb(show_to_manage), strip_photo_url(show_to_manage.first_photo)) %>
+	
+	<div class="strip_show_details">
+		<h2><%=h show_to_manage.title %></h2>
+		<% if show_to_manage.registered_viewers_count > 0 -%> 
+			Viewed by <%= show_to_manage.registered_viewers_count %> 
+			registered user<%= "s" unless show_to_manage.registered_viewers_count == 1 %>
+		<% end -%>
+		<ul class="actions">
+			<li><%= link_to "Delete This Show Permanently", { :controller => "stripshows", :action => "delete", :id => show_to_manage }, :confirm => "This will permanently remove your files from our server. It cannot be undone. Are you sure?", :method => :post, :class => 'button', :style => "width: 250px" %></li>
+			<li><%= link_to "Invite a Friend to View", {:controller => 'invitations', :action => 'stripshow_invite', :id => show_to_manage}, :class => 'button', :style => "width: 250px" %></li>
+		</ul>
+	</div>
+</div>

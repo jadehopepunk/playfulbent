@@ -1,0 +1,20 @@
+<h1>Invite a Friend</h1>
+
+<p>If you want to invite a friend to view your strip-show, then they will receive an email from playful-bent
+like the message below. <br />
+<strong>This does not give away your identity.</strong></p>
+
+<%= render :partial => 'sample' %>
+
+<p>To send this invitation, enter the details of your recipient below. Please use this feature
+responsibly.</p>
+
+<div id="sent_to" style="display: none;">
+	<p>Sent to:</p>
+	<ul id="sent_to_list">
+	</ul>
+</div>
+
+<%= render :partial => 'send_invite_form' %>
+
+<br />

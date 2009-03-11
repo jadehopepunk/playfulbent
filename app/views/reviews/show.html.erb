@@ -1,0 +1,99 @@
+
+<div class="one_third sidebar review_sidebar">
+	<% if @review.product.product_image %>
+		<%= link_to image_tag(@review.product.thumbnail_url, :alt => h(@review.product.name), :class => 'product_image'), @review.product.product_image.public_filename, :rel => 'lightbox', :title => @review.product.name %>
+	<% end %>
+	
+	
+	<% if @review.can_have_action_shots? && !@review.action_shots.empty? || @review.user == current_user %>
+		<div class="action_shots">
+			<h3>See it in Action</h3>	
+
+			<% if @review.action_shots.empty? %>
+			
+				<div class="important_section">
+					<p>You haven't uploaded any photos.</p>
+					<p><%= link_to('Click to Upload a Photo', new_review_action_shot_path(@review)) %></p>					
+				</div>
+				
+			<% else %>
+				<% if @review.user == current_user %>
+					<p>
+						<%= link_to('Upload another photo', new_review_action_shot_path(@review)) %><br />
+						<%= link_to('Delete these photos', review_action_shot_path(@review, '*'), :method => :delete) %>
+					</p>
+				<% end %>
+
+				<div class="photos">
+					<% for action_shot in @review.action_shots %>
+						<%= link_to image_tag(action_shot.public_filename(:preview), :alt => action_shot.display_name), action_shot.public_filename, :rel => 'lightbox', :title => action_shot.display_name %>
+					<% end %>						
+				</div>
+			<% end %>
+		</div>
+	<% end %>
+	
+	<% unless @review.tags.empty? %>
+		<h3>Tags</h3>	
+		<% for tag in @review.tags %><% unless tag == @review.tags.first %>&nbsp;<span class="tag_divider">&nbsp;</span > <% end %><span class="tag"><%= tag.to_s %></span><% end %>
+	<% end %>
+	
+	
+</div>
+
+<div class="two_thirds review">
+	<%= avatar_link_for(@review.user) %>
+	<h1><%=h @review.product.name %></h1>
+	<h2 class="subtitle">reviewed by <%=h @review.user.name %></h2>
+	<div class="time_ago"><%= time_ago_in_words @review.created_at %> ago</div>
+
+	<br class="section_end" />
+
+	<strong>Found At:</strong>
+	<% for product_url in @review.display_urls %>
+		<div>
+			<%= link_to truncate(h(product_url.url), 60), h(product_url.url) %>
+		</div>
+	<% end %>
+	<% if is_review_admin? %>
+		<div>
+			<%= link_to('Edit Urls', product_urls_path(@review.product), :class => 'admin_link') %>
+		</div>
+	<% end %>
+	
+	<%= stars_with_label("#{@review.user.name}'s Rating", @review.overall_rating) %>
+
+	<div class="body important_section">
+		<%= @review.body %>
+	</div>
+	
+	<% ratings_with_titles = @review.ratings_with_titles -%>
+	<% unless ratings_with_titles.empty? -%>
+		<div class="other_ratings">
+			<h3>Other Ratings</h3>
+			
+			<% for pair in ratings_with_titles %>
+				<%= stars_with_label(pair[0].to_s, pair[1]) %>
+			<% end %>
+		</div>
+	<% end %>
+
+	<% if @review.user == current_user %>
+		<p><%= link_to 'Edit this Review', edit_review_path(@review) %></p>
+	<% else %>
+		<p>
+			<strong>Have an opinion on this?</strong><br />
+			<%= link_to 'Write your own review', new_review_path(:product_id => @review.product) %>
+			of <em>"<%=h @review.product.name %>"</em>
+		</p>
+	<% end %>
+	
+</div>
+
+<br class="section_end" />
+
+<hr />
+
+<div id="conversations_container">
+	<%= render :partial => 'conversations/show' %>
+</div>

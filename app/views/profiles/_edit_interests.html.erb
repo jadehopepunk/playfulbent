@@ -1,0 +1,8 @@
+<% remote_form_for :profile, @profile, :url => formatted_update_interests_profile_path(@profile, :js), :loading => "Element.show('spinner_edit_interests')", :html => {:class => 'inline'} do |f| %>
+	<p>
+	Separate your interests with commas. For example: Cycling, Fishing, Morris Dancing
+	</p>
+	<%= f.text_area :interest_tag_string, :class => 'small' %>
+		
+	<%= inline_form_footer @profile, :edit_interests %>	
+<% end %>

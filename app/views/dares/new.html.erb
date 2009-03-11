@@ -1,0 +1,54 @@
+<div class="box" id="dare_ideas">
+	<div class="box_heading">
+		Need some ideas?
+	</div>
+	<div class="box_contents">
+		What turns you on to think of other people doing?
+		<ul>
+			<li>showing flesh in public</li>
+			<li>putting ice on a nipple</li>
+			<li>using household objects suggestively</li>
+			<li>having a bubble bath</li>
+			<li>eating a strawberry</li>
+		</ul>
+		<p>No matter what your particular bent, there's bound to be someone else into it too. </p>
+		
+		Just keep it legal or we'll kick your ass.
+	</div>
+</div>
+
+<div id="new_dare">
+	<h1>Dare Someone</h1>
+
+	<div class="form_description">
+		<p>This is a public dare. Public dares should be playful, sexy, and fun - not hardcore sex acts. There will
+		be a chance for that later. Remember, life isn't much fun without any foreplay.</p>
+	</div>
+
+	<% form_for :dare, @dare, :url => dares_url do |f| %>
+		<%= error_messages_for :dare %>
+
+		<label for="dare[request]">I dare you to...</label>
+
+		<div class="field">
+			<%= f.text_area 'request', :class => 'small' %>
+		</div>
+
+		<label for="dare[requires_photo]">To prove it, you'll need to...</label>
+
+		<div class="field">
+			<%= f.check_box 'requires_photo' %> upload a photo <br />
+			<%= f.check_box 'requires_description' %> describe what it was like
+		</div>
+
+		<label for="dare[tag_list]">Some tags describing this dare</label>
+		<div class="sub_label">Separate with commas, eg: exhibitionism, nudity, whipped cream</div>
+
+		<div class="field">
+			<%= f.text_area 'tag_list', :class => 'small' %>
+		</div>
+
+		<br />
+		<%= submit_tag "Submit" %>
+	<% end %>
+</div>

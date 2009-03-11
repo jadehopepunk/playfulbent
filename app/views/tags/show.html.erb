@@ -1,0 +1,94 @@
+<div class="tag_page">
+	<div class="one_third">
+
+		<h1>Tag: <%= @tag.name %></h1>
+
+	</div>
+
+	<div class="two_thirds">
+	
+		<% unless @stories.empty? %>
+			<div class="box">
+				<div class="box_heading">
+					Stories
+				</div>
+				<div class="box_contents">
+					<ul>
+						<% for story in @stories %>
+							<li>
+								<h3><%= link_to h(story.title), story_url(story) %></h3>
+
+								<div class="story_text">
+								  <%= mini_avatar_link_for(story.author) %> <%= nl2lb(truncate(story.first_page_text, 200)) %>
+								</div>
+							</li>
+						<% end %>
+					</ul>
+				</div>
+			</div>
+		<% end %>
+	
+		<% unless @profiles.empty? %>
+			<div class="box">
+				<div class="box_heading">
+					People
+				</div>
+				<div class="box_contents">
+					<div class="image_list">
+						<% for profile in @profiles %>
+							<div class="avatar_link">
+								<%= avatar_link_for(profile.user) %>
+							</div>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	
+		<% unless @gallery_photos.empty? %>
+			<div class="box">
+				<div class="box_heading">
+					Pictures
+				</div>
+				<div class="box_contents image_list">
+					<% for gallery_photo in @gallery_photos %>
+						<%= link_to(image_tag(url_for_gallery_photo(gallery_photo, 'thumb'), :alt => gallery_photo.title), user_photo_set_my_photo_url(:user_id => gallery_photo.user, :photo_set_id => gallery_photo.photo_set, :id => gallery_photo)) %>
+					<% end %>
+				</div>
+			</div>
+		<% end %>
+	
+		<% unless @dare_responses.empty? %>
+			<div class="box">
+				<div class="box_heading">
+					Dares
+				</div>
+				<div class="box_contents">
+					<ul class="dares">
+						<% for dare_response in @dare_responses %>
+							<li>
+								<h3><%= link_to truncate(h(dare_response.dare.request), 45), dare_url(dare_response.dare) %></h3>
+					
+								<%= mini_avatar_link_for(dare_response.user) %>
+								<%= link_to(image_tag(url_for_file_column(dare_response, 'photo', 'thumb'), :size => "80x80", :class => 'response_image'), dare_url(dare_response.dare)) unless dare_response.photo.blank? %>
+								<% suffix = (dare_response.description.length > 496 ? link_to('Read More', dare_url(dare_response.dare)) : '')%>
+								<%= simple_format(truncate(h(dare_response.description), 500) + ' ' + suffix) %>
+							</li>
+						<% end %>
+					</ul>
+				</div>
+			</div>
+		<% end %>
+
+		<% unless @blog_articles.empty? %>
+			<div class="box">
+				<div class="box_heading">
+					title
+				</div>
+				<div class="box_contents">
+				</div>
+			</div>
+		<% end %>	
+		
+	</div>
+</div>

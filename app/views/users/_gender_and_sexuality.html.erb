@@ -1,0 +1,12 @@
+<% link_to_inline_form @user, :edit_gender_and_sexuality, :users do %>
+	<table class="definitions">
+		<tr>
+			<td class="label"><label>Gender</label></td>
+			<td><%= @user.gender_name %></td>
+		</tr>	
+		<tr>
+			<td class="label"><label>Plays Well With</label></td>
+			<td><%= @user.likes_string %></td>
+		</tr>
+	</table>
+<% end %>	

@@ -1,0 +1,30 @@
+<div id="login_form">
+	<% form_remote_tag :url => formatted_session_url(:js), :method => :post do -%>
+	
+		<% if @error %>
+			<div class="flash_error">
+				<%= @error %>
+			</div>
+		<% end %>
+
+	  <table cellspacing="0" cellpadding="0" class="form">
+	    <tr>
+	      <td class="label_column">
+	        <label for="login_user_nick">Nick</label>
+				</td>
+	      <td><%= text_field_tag('login', nil,  :size => 30, :class => 'text_field') %></td>
+	    </tr>
+	    <tr>
+	      <td class="label_column">
+	        <label for="login_user_nick">Password</label>
+				</td>
+	      <td><%= password_field_tag('password', nil, :size => 30, :class => 'text_field') %></td>
+	    </tr>
+	    <tr>
+	      <td></td>
+	      <td align="right"><input type="submit" value="Login" class="submit" /></td>
+	    </tr>
+	  </table>
+	
+	<% end -%>	
+</div>

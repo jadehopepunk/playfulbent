@@ -1,0 +1,12 @@
+<div class="modal_box">
+	<h1>Upload an Image</h1>
+
+	<div id="avatar_form">
+		<%= form_tag profile_avatar_url(:profile_id => @profile), :method => :post, :multipart => true %>
+			<p id="avatar_upload_container">
+				<%= file_column_field "avatar", "image", :onchange => "new Effect.Fade(this, {duration: 0.2, to: 0.3}); this.form.submit();" %>
+			</p>
+			<div>or <%= link_to_close_redbox "Cancel" %></div>
+		</form>
+	</div>
+</div>

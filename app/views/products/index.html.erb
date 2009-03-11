@@ -1,0 +1,7 @@
+<h1>Things to Review</h1>
+
+<% for product in @products %>
+	<div>
+		<%= link_to h(product.name), product_path(product) %>
+	</div>
+<% end %>

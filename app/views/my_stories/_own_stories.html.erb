@@ -1,0 +1,14 @@
+<h1>Your Stories</h1>
+
+<% if @user.stories.empty? %>
+	<p>You haven't written any stories yet. If you want to give it a try, hit the story tab at the top of the
+	page, and find a story that you'd like to continue, or start a new one.</p>
+<% else %>
+	<ul>
+		<% for story in @user.stories %>
+			<li>
+				<%= link_to story.title, story_url(story) %>
+			</li>
+		<% end %>
+	</ul>
+<% end %>

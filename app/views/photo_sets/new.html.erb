@@ -1,0 +1,33 @@
+<% tab_page do %>
+	<h1>Your Photo Set</h1>
+	
+	<% form_for(:photo_set, @photo_set, :url => user_photo_sets_path(@user), :builder => LabelledBuilder, :html => {:class => 'single_column', :onsubmit => trigger_footer(:new_photo_set)}) do |f| %>
+		<%= f.text_field :title, :class => 'text_field' %>
+
+		<%= f.select :viewable_by, PhotoSet::VIEWABLE_OPTIONS, :label => "Who can view these?" %>
+		
+		<%= f.select :type_name, [['Stored on Playful Bent', 'LocalPhotoSet'], ['Streamed from Flickr.com', 'FlickrPhotoSet']], 
+			{},
+			:label => "Where will the photos be?", 
+			:onchange => "if (this.options[this.selectedIndex].value == 'FlickrPhotoSet') Element.show('flickr_fields'); else Element.hide('flickr_fields');" %>
+		
+		<div class="form_pop_in" id="flickr_fields" <%= dont_display unless @photo_set.is_a?(FlickrPhotoSet) %>>
+			<% if @flickr_account %>
+				You are connected to flickr using your account "<strong><%=h @flickr_account.username %></strong>".
+				
+				<%= f.select :flickr_set_id, @flickr_account.flickr_photo_sets.map {|set| [set.title, set.id]}, :title => 'Flickr Photo Set' %>
+			<% else %>
+				<h2>Your Flickr Account</h2>
+			
+				<p>You haven't connected to a flickr account yet. To do so, you have to click on the link
+				below. Information about what this means is available on the following page. If you aren't sure
+				about your privacy, you can cancel this at any time.</p>
+			
+				<%= link_to 'Connect to Flickr', flickr_authorisation_path(:return_to => new_user_photo_set_url(:user_id => @user, :type_name => 'FlickrPhotoSet')), :method => :post %>
+			<% end %>
+		</div>
+		
+		<%= form_footer(:new_photo_set, :submit_name => 'Save', :cancel_link => user_photo_sets_path(@user)) %>
+	<% end %>
+	
+<% end %>

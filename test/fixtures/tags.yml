@@ -1,0 +1,16 @@
+# == Schema Information
+# Schema version: 258
+#
+# Table name: tags
+#
+#  id   :integer(11)   not null, primary key
+#  name :string(255)   
+#
+
+fluffy:
+  id: 1
+  name: fluffy
+  
+misc:
+  id: 2
+  name: Misc

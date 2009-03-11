@@ -1,0 +1,32 @@
+<div class="box next_photo_box">
+	<div class="box_heading">
+		Next Photo	
+	</div>
+	<div class="box_contents">
+		<%= image_tag(@next_photo.image_thumb_url, :class => "next_photo", :size => "80x80") %>
+		<span>
+		  You cannot yet view the next photo, as this user has not yet viewed the photo you
+		  made available to them.<br />
+			<br />
+			<%= link_to_remote 'Check Again', :url => formatted_next_strip_photo_path(@strip_photo, :js), :method => :get, :loading => show_spinner(:check_again), :complete => hide_spinner(:check_again) %>
+			<%= spinner(:check_again) %>
+		</span>
+	</div>
+</div>
+
+
+<div class="box next_photo_info_box faded_box">
+	<div class="box_heading">
+		Why Do I Have to Wait?
+	</div>
+	<div class="box_contents">
+		<p>You have already viewed one of this user's photos, and in doing so, you allowed them
+		to view the next one in your Strip-Show. However, just because someone <strong>can</strong>
+		share this experience with you, it doesn't mean they will.
+		</p>
+
+		<p>So, be patient, go view some of the other great Strip-Teases on this site, or check
+		out our erotic stories, and before you know it, some more photos might well be available
+		for you.</p>
+	</div>
+</div>

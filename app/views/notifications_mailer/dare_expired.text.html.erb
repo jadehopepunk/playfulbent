@@ -1,0 +1,19 @@
+<html>
+  <body>
+    <p>Hi <%=h @dare.creator.name %>,</p>
+
+    <p>You posted the following dare on <a href="http://www.playfulbent.com">Playful Bent</a>:<p>
+
+    <p><em>"<%=h @dare.request %>"</em></p>
+
+    <p>It's been sitting there for three weeks and no one has tried it. So, we're going to move it off the front page, and give some other dares a shot.</p>
+
+    <p>Feel free to try another one. If people aren't trying your dares, then maybe they are too confronting, or too complicated. Try something simpler. Or, it could just be bad luck. Either way, we really appreciate your contribution to the site.</p>
+
+    <p>If someone does want to try your dare later, they can still do so. A page for your dare is available here:</p>
+
+    <p><%= link_to dare_url(@dare), dare_url(@dare) %></p>
+
+    <p>If you received this email in error, please let us know at <a href="mailto:abuse@playfulbent.com">abuse@playfulbent.com</a>.</p>
+  </body>
+</html>

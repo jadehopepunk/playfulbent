@@ -1,0 +1,6 @@
+if @error != nil
+  page.replace 'select_title_panel', :partial => 'select_title'
+else
+  page.hide 'select_title_panel'
+  page.insert_html :bottom, 'upload_process', :partial => 'ready_to_publish'
+end

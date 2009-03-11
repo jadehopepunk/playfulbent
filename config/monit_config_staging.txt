@@ -1,0 +1,19 @@
+set daemon 30 
+set logfile syslog facility log_daemon 
+set mailserver localhost
+set mail-format {from:craig@craigambrose.com} 
+set alert craig@craigambrose.com only on { timeout, nonexist } 
+set httpd port 9111 
+  allow craig:pentex
+
+##### mongrel 8000 #####
+check process mongrel-8000 with pidfile /var/www/apps/playfulbent/shared/log/mongrel.8000.pid 
+  start program = "/usr/bin/mongrel_rails cluster::start -C /etc/mongrel_cluster/playfulbent.yml --clean --only 8000" 
+  stop program = "/usr/bin/mongrel_rails cluster::stop -C /etc/mongrel_cluster/playfulbent.yml --only 8000" 
+  if cpu is greater than 80% for 4 cycles then restart 
+  if 20 restarts within 20 cycles then timeout 
+  group playfulbent_mongrel
+
+check process flickr_import with pidfile /var/www/apps/playfulbent/shared/log/flickr_daemon.rb.pid
+  start program = "/usr/bin/ruby /var/www/apps/playfulbent/current/lib/daemons/flickr_daemon_ctl start staging"
+  stop program = "/usr/bin/ruby /var/www/apps/playfulbent/current/lib/daemons/flickr_daemon_ctl stop staging"

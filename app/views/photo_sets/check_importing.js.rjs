@@ -1,0 +1,3 @@
+unless @photo_set.performing_first_import?
+  page.redirect_to user_photo_set_path(@user, @photo_set)
+end

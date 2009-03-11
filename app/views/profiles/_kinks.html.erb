@@ -1,0 +1,8 @@
+<% link_to_inline_form @profile, :edit_kinks do %>
+	<h2>Kinks</h2>
+	<% if @profile.kink_tags.empty? && @can_edit %>
+		If you want, list some of your sexual interests, for example: BDSM, Massage, Rope Bondage
+	<% else %>
+		<% for tag in @profile.kink_tags %><% unless tag == @profile.kink_tags.first %>&nbsp;<span class="tag_divider">&nbsp;</span > <% end %><span class="tag<%= ' shared_tag' if !@can_edit && current_user.has_kink?(tag) %>"><%= tag.to_s %></span><% end %>
+	<% end %>
+<% end %>

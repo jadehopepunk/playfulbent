@@ -1,0 +1,8 @@
+<h1>The role of "<em><%= @fantasy_role.name %></em>"</h1>
+
+<% if @fantasy_role.is_actor?(current_user) %>
+	<p>You fantasise about this.</p>
+<% else %>
+	<%= render :partial => 'fantasy_actors/new' %>
+<% end %>
+

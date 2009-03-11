@@ -1,0 +1,10 @@
+
+div.external_profile img.external_avatar {
+  float: left;
+  margin: 0 10px 10px 0;
+  border: 2px solid #000;
+}
+
+div.claim_profile_section {
+  clear: both;
+}

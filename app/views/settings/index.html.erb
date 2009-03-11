@@ -1,0 +1,52 @@
+<% tab_page do %>
+	<h2>Account Settings</h2>
+
+	<fieldset>
+		<legend>Login Stuff</legend>
+
+		<table class="definitions">
+			<tr>
+				<td class="label"><label>Password</label></td>
+				<td>
+					<a href="change_password" onclick="javascript: this.style.display = 'none'; new Effect.Appear('password_form'); return false;" id="change_password_link">change password</a>
+					<div id="password_form" style="display: none"  class="sub_form">
+						<%= render :partial => 'users/password_form' %>
+					</div>				
+				</td>
+			</tr>	
+			<tr>
+				<td class="label"><label>Email</label></td>
+				<td>
+					<%= in_place_editor_field(:user, :email, {}, :url => set_user_email_user_setting_url(@user, @user)) %>
+				</td>
+			</tr>
+		</table>	
+
+		<p>
+			Worried you're oversharing?<br />
+			You can always <%= link_to 'Click Here', disable_profile_url(@user.profile), :method => :put %> to disable your account. (you can undo this)
+		</p>
+
+
+	</fieldset>
+
+	<% if !@user.is_sponsor? %>
+		<div class="sponsor_appeal">
+			<p>Playful-Bent has taken thousands of hours of time to develop, and has been created by 
+			<%= link_to 'Andale', 'http://andale.playfulbent.com' %> and <%= link_to 'Jade', 'http://jade.playfulbent.com' %> in 
+			their evenings and weekends.</p>
+
+			<p>If you like our work, and want to help us build the site even more, you might want to consider
+			becoming a Playful-Bent Sponsor. Sponsorships allow us to do some work on the site during the day (rather than
+			working for other clients) and they mean that you get more exciting features, faster.</p>
+
+			<p>Also, as a sponsor, you'll get a few bonus features to say "thank you" for your support. To find
+			out more, <%= link_to 'Click Here', new_user_sponsorship_url(current_user) %></p>	
+		</div>
+	<% else %>
+		<div class="sponsor_details">
+			<p>You are currently sponsoring playful bent. We like you :)</p>
+			<p>To view your subscription details, or unsubscribe, <%= link_to 'Click Here', paypal_cancel_url(@user) %></p>
+		</div>
+	<% end %>
+<% end %>

@@ -1,0 +1,32 @@
+<div class="box next_photo_box">
+	<div class="box_heading">
+		Next Photo			
+	</div>
+	<div class="box_contents">
+  		<%= link_to(image_tag(@next_photo.image_thumb_url, :alt => 'Next Photo', :class => "next_photo"), strip_photo_url(@next_photo), :class => "next_photo") %>
+
+	    <%= link_to("View Next Photo", strip_photo_url(@next_photo)) %><br />
+	    <br />
+	    <% unless @next_exposed_photos.empty? -%>
+	      Don't forget, doing so will allow this person to see your next photo (shown below)!
+	    <% else -%>
+	      This person can already see all the photos in your set, so you might as well go ahead
+	      and browse.
+	    <% end -%>
+	</div>
+</div>
+
+<% unless @next_exposed_photos.empty? -%>
+	<div class="box next_photo_info_box faded_box">
+		<div class="box_heading">
+			Your Next Photo
+		</div>
+		<div class="box_contents">
+		    <h2>Clicking next will reveal...</h2>
+		    <% @next_exposed_photos.each do |exposed_photo| -%>
+		      <%= image_tag(exposed_photo.image_thumb_url) %>
+		    <% end -%>
+		</div>
+	</div>
+<% end -%>
+

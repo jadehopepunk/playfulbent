@@ -1,0 +1,39 @@
+From craigambrose@gmail.com  Wed Feb 13 22:43:42 2008
+Return-Path: <craigambrose@gmail.com>
+Delivered-To: rails_mailer@playfulbent.com
+Received: from wa-out-1112.google.com (wa-out-1112.google.com [209.85.146.183])
+	by playful_staging (Postfix) with ESMTP id C0C03D8503
+	for <jade@playfulbent.com>; Wed, 13 Feb 2008 22:43:42 +0000 (UTC)
+Received: by wa-out-1112.google.com with SMTP id v27so279287wah.23
+        for <jade@playfulbent.com>; Wed, 13 Feb 2008 14:43:41 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:from:to:content-type:content-transfer-encoding:mime-version:subject:date:x-mailer:sender;
+        bh=k4WReqYQWhP4X2OmLvAHi6aLv9MR55ijkUrsOsevuS8=;
+        b=Ia8VEormSi++icAJ572PwvPoQh/I5iQvDiDuoBG9QXH3hU2uyydXzLX5DK4Zg1tCgQoLe/QX/hcb2braFZckDa1OKYvznaT1j80fXNPKGzbgj8+Jm4pUVRoH3lvhgC4K4WqG9IvXiUOJwArhfhLUnGHnTtnijT9Z1M2x7Csr9DE=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:from:to:content-type:content-transfer-encoding:mime-version:subject:date:x-mailer:sender;
+        b=a6JtIvQpSqMVt9Yu4jeD4v7FOQTWg/t6DmtKUaClFS7LmYirPlCn2oDxb14rfEVwogdiysmF7h2Kpf5Gwnm7Rxf02zGYfSjynVaJ3AVyd1IGIs3TY3P6t0qZKqObDHZSLYnINIYLEHj1S2p0WDG7dA+RZ/2zaqvDEM9ytmeLMqs=
+Received: by 10.114.103.1 with SMTP id a1mr612081wac.45.1202942621687;
+        Wed, 13 Feb 2008 14:43:41 -0800 (PST)
+Received: from ?192.168.0.81? ( [202.27.211.126])
+        by mx.google.com with ESMTPS id t1sm4178842poh.0.2008.02.13.14.43.39
+        (version=TLSv1/SSLv3 cipher=OTHER);
+        Wed, 13 Feb 2008 14:43:40 -0800 (PST)
+Message-Id: <52903E81-8A78-4E2F-B4C8-1C64A470DB46@craigambrose.com>
+From: Craig Ambrose <craig@craigambrose.com>
+To: jade@playfulbent.com,
+ jade@bentproductions.biz
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v915)
+Subject: testing
+Date: Thu, 14 Feb 2008 11:43:36 +1300
+X-Mailer: Apple Mail (2.915)
+Sender: Craig Ambrose <craigambrose@gmail.com>
+
+
+-----
+Craig Ambrose
+www.craigambrose.com

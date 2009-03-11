@@ -1,0 +1,12 @@
+<div class="redbox_form" id="new_message">
+	<% remote_form_for :message, @message, :url => formatted_user_messages_url(:user_id => @user, :format => :js), :method => :post, :html => {:class => 'single_column'} do |f| %>
+		<%= render :partial => 'form', :locals => {:f => f} %>
+		
+		<div class="footer">
+			<%= submit_tag 'Send' %>
+			or
+			<%= link_to_close_redbox 'Cancel' %>
+		</div>
+	<% end %>
+
+</div>

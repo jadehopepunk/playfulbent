@@ -1,0 +1,71 @@
+# == Schema Information
+# Schema version: 258
+#
+# Table name: taggings
+#
+#  id            :integer(11)   not null, primary key
+#  tag_id        :integer(11)   
+#  taggable_id   :integer(11)   
+#  taggable_type :string(255)   
+#  created_at    :datetime      
+#
+
+fluffy1:
+  id: 1
+  tag_id: 1
+  taggable_id: 1
+  taggable_type: Profile
+
+fluffy2:
+  id: 2
+  tag_id: 1
+  taggable_id: 2
+  taggable_type: Profile
+
+fluffy3: 
+  id: 3
+  tag_id: 1
+  taggable_id: 3
+  taggable_type: Profile
+  
+fluffy4:
+  id: 4
+  tag_id: 1
+  taggable_id: 1
+  taggable_type: Profile
+  
+fluffy5:
+  id: 5
+  tag_id: 1
+  taggable_id: 1
+  taggable_type: Story
+
+fluffy6:
+  id: 6
+  tag_id: 1
+  taggable_id: 2
+  taggable_type: Story
+
+fluffy7:
+  id: 7
+  tag_id: 1
+  taggable_id: 3
+  taggable_type: Story
+
+misc1:
+  id: 8
+  tag_id: 2
+  taggable_id: 1
+  taggable_type: Profile
+
+misc2:
+  id: 9
+  tag_id: 2
+  taggable_id: 1
+  taggable_type: Profile
+  
+misc3:
+  id: 10
+  tag_id: 2
+  taggable_id: 1
+  taggable_type: Story

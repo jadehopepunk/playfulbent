@@ -1,0 +1,4 @@
+page.select('#unread_messages').each do |unique|
+  page.replace 'unread_messages', :partial => 'unread_messages', :object => @unread_message_count
+  page.visual_effect :highlight, 'unread_messages'
+end

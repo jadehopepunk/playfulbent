@@ -1,0 +1,12 @@
+<h1>Invite <%= @user.name %> to View Your Strip-Show</h1>
+
+<p>If you hit the send button below, then <%= @user.name %> will receive an email from playful-bent 
+like the message below.</p>
+
+<%= error_messages_for :invitation %>
+
+<%= render :partial => 'sample' %>
+
+<%= button_to "Send Now", {:controller => 'invitations', :action => 'send_invite_user', :user_id => @user, :id => @strip_show} %>
+
+<br />

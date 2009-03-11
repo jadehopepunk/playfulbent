@@ -1,0 +1,2 @@
+page.replace_html 'gender_and_sexuality', :partial => 'gender_and_sexuality'
+page.replace_html 'profile_analyser_container', :partial => 'profiles/profile_analyser'

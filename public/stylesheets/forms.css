@@ -1,0 +1,131 @@
+input.text_field
+{
+  width: 300px;
+}
+
+form.search_form input.text_field
+{
+  width: 400px;
+}
+
+div.box input.text_field {
+  width: 280px;
+  display: block;
+}
+
+div.footer
+{
+  margin-top: 2em;
+}
+
+div.search_box {
+  background-color: #600;
+  border: 2px solid #000;
+  color: #FFF;
+  padding: 5px;
+}
+
+div.search_box .text_field {
+  border-color: #600;
+}
+
+div.search_box h2 {
+  margin-bottom: 0.3em;
+  color: #FFF;
+  font-size: 100%;
+}
+
+div.search_box div.footer {
+  margin-top: 0.3em;
+  text-align: right;
+}
+
+.sub_label
+{
+  color: #333333;
+}
+
+label .hint {
+  color: #666;
+  font-weight: normal;
+}
+
+span.step_number, span.option_number {
+  background-color: #000;
+  color: #FFF;
+  line-height: 140%;
+  padding: 5px;
+  font-weight: normal;
+}
+
+.form_step {
+  border: 2px solid #CBB5A5;
+  padding: 10px;
+  margin-top: 1em;  
+}
+
+.form_step h2 {
+  font-size: 120%;
+  letter-spacing: 0;
+  word-spacing: 0;
+  margin-bottom: 1em;
+}
+
+.active_form_step {
+  background-color: #FFF;
+}
+
+div.form_row
+{
+  margin-top: 1em;  
+}
+
+form.single_column
+{
+  width: 650px;
+}
+
+form.single_column label
+{
+  display: block;
+  margin-top: 1em;
+}
+
+form.single_column input.text_field
+{
+  width: 500px;
+}
+
+form.single_column label.checkbox
+{
+  display: inline;
+}
+
+form.single_column select {
+  min-width: 150px;
+}
+
+.rating_selector {
+  margin-bottom: 2em;
+}
+
+.rating_selector .button_and_label {
+  margin-right: 10px;
+  background-color: #CBB5A5;
+  padding: 4px 2px 2px 2px;
+  display: block;
+  width: 3em;
+  float: left;
+  border: 1px solid #827165;
+  text-align: center;
+}
+
+form h2 {
+  margin-top: 1em;
+}
+
+form div.form_pop_in {
+  border: 2px solid #CBB5A5;
+  padding: 10px;
+  margin: 1em 0;
+}

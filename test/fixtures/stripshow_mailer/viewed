@@ -1,0 +1,3 @@
+StripshowMailer#viewed
+
+Find me in app/views/stripshow_mailer/viewed.html.erb

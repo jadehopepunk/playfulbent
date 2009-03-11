@@ -1,0 +1,18 @@
+<div class="comments_section">
+	<% unless @conversation.nil? %>
+		<ol id="comments">  
+			<%= render :partial => 'comments/comment', :collection => @conversation.all_comments %>
+		</ol>
+	<% end %>
+
+	<div id="comment_footer">
+		<div id="new_comment_container" style="display: none">
+		</div>
+
+		<span id="comment_links_container">
+			<%= link_to_comment_on_this(@conversation, @subject) %>
+			<%= spinner('new_comment') %>
+		</span>
+
+	</div>
+</div>

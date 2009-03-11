@@ -1,0 +1,11 @@
+<h1>You have a crush on <%=h @crush.subject.name %></h1>
+
+<div class="important_section fantasy">
+	<%= simple_format(h(@crush.fantasy)) %>
+</div>
+
+<p>You can <%= link_to 'Edit', edit_crush_url(@crush) %> the wording above, 
+or if you've seen their bad side, you can <%= link_to 'Delete', crush_url(@crush), :method => :delete %>
+this crush.</p>
+
+<%= link_to 'Click here', @crush.subject.profile_url %> to return to <%=h @crush.subject.name %>'s profile page.

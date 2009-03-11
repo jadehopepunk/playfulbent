@@ -1,0 +1,27 @@
+
+div#group_description {
+  margin-bottom: 1em;
+  width: 400px;
+  float: left;
+}
+
+div#group_details .group_right_column {
+  margin-left: 420px;
+}
+
+
+div#group_details .group_inset {
+  background-color: #CBB5A5;
+  border: 2px solid #CBB5A5;
+  background-color: #F1EAE5;  
+  margin: 0 auto 1em auto;
+}
+
+div#group_details .group_inset .stats_box {
+  margin: 0 auto;
+}
+
+div#group_details .group_right_column #map {
+  margin: 0 auto;
+  border: 2px solid #333;
+}

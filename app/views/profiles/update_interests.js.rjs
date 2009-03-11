@@ -1,0 +1,2 @@
+page.replace_html 'interest_tag_string', :partial => 'interests'
+page.replace_html 'profile_analyser_container', :partial => 'profiles/profile_analyser'

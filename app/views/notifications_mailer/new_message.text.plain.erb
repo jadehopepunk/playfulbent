@@ -1,0 +1,14 @@
+Hi <%= @message.recipient.name %>,
+
+Here's a private message from <%= @message.sender.name %> on Playful Bent:
+
+-----------------------------------------------
+<%= @message.body %>
+-----------------------------------------------
+
+You can now reply to the messages by email. Just hit reply in your mail program, and delete this quoted text.
+
+Your messages are also listed on your profile page:
+<%= user_messages_url(@message.recipient) %>
+
+If you received this email in error, please let us know at abuse@playfulbent.com.

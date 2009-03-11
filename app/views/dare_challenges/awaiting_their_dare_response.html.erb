@@ -1,0 +1,16 @@
+<div class="dare_challenge_form">
+	<%= avatar_link_for @other_party %>
+	
+	<h1>Waiting for <%=h @other_party.name %></h1>
+
+	<div class="form_description">
+		<p>
+			You have uploaded your completed dare. Now you just have to wait for <%=h @other_party.name %> to do the same.
+			We'll send you an email when this happens.
+		</p>
+		<p>
+			<%= link_to "&lt; Back to #{h(@other_party.name)}'s Profile", @other_party.profile_url %>
+		</p>
+	</div>
+
+</div>

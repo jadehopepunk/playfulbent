@@ -1,0 +1,35 @@
+<div class="conversations_header">
+	<%= image_tag 'areas/forum.jpg', :size => '80x80', :alt => 'Forum', :class => 'area_icon' %>
+	<h1>Conversations</h1>
+
+	<p>Feel free to discuss any aspect of playful-bent here. Conversations are not moderated, but try and remember
+	that you are talking to real people, with feelings.</p>
+	
+	<%= subscription_links %>
+	
+	<% unless logged_in? %>
+		<hr />
+		<p>
+			If you <%= link_to 'login', new_session_url %> then
+			you will be able to see which conversations have new messages that you haven't read yet.
+		</p>
+	<% end %>
+	
+</div>
+
+<div class="conversations_body">
+	<ol class="conversations">
+		<% for conversation in @conversations %>
+		  <li id="<%= dom_id(conversation) %>" class="conversation">
+				<span class="comment_count"><%= conversation.comment_count %></span>
+				<% new_comment_count = conversation.new_comment_count(current_user) %>
+				<% if new_comment_count > 0 %>
+					<%= link_to("#{new_comment_count} new", conversation_comments_url(conversation), :class => 'new_count') %>
+				<% end %>
+				<%= link_to(h(conversation.title), conversation_comments_url(conversation)) %>
+			</li>
+		<% end %>
+	</ol>
+
+	<%= link_to 'New conversation', new_conversation_url %>
+</div>

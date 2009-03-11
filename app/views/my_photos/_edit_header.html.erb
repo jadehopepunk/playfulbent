@@ -1,0 +1,17 @@
+<% remote_form_for :gallery_photo, @gallery_photo, :url => formatted_update_meta_user_photo_set_my_photo_url(:user_id => @user, :photo_set_id => @gallery_photo.photo_set, :id => @gallery_photo, :tag => @tag, :format => :js), :html => {:method => :put} do |f| %>
+	<p>
+		<label for="gallery_photo_title">Title</label>
+		<%= f.text_field :title, :class => 'text_field' %>
+	</p>
+
+	<p>
+		<label for="gallery_photo_tag_list">Tags</label>
+		<div class="field_description">
+			Separate your tags with commas. <br />
+			For example: Beach, Holiday, Naked Waterskiing
+		</div>
+		<%= f.text_area :tag_list, :class => 'small' %>		
+	</p>
+	
+	<%= inline_form_footer @gallery_photo, :edit_header %>
+<% end %>

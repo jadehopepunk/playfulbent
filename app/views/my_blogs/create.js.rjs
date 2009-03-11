@@ -1,0 +1,5 @@
+if @syndicated_blog.new_record?
+  page.replace 'blog_form_container', :partial => 'new'
+else
+  page.replace_html 'blog_page_container', :partial => 'index'
+end

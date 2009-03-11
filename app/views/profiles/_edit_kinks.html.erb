@@ -1,0 +1,8 @@
+<% remote_form_for :profile, @profile, :url => formatted_update_kinks_profile_path(@profile, :js), :loading => "Element.show('spinner_edit_kinks')", :html => {:class => 'inline'} do |f| %>
+	<p>
+	Separate your kinks with commas. For example: BDSM, Massage, Rope Bondage
+	</p>
+	<%= f.text_area :kink_tag_string, :class => 'small' %>
+	
+	<%= inline_form_footer @profile, :edit_kinks %>	
+<% end %>

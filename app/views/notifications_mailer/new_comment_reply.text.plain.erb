@@ -1,0 +1,11 @@
+Hi <%= @comment.user.name %>,
+
+<%= @reply.user.name %> has replied to your comment in the conversation about "<%=h @comment.conversation.subject_based_title %>" on Playful Bent. <%= @reply.user.gender.third_person_active_pronoun.titleize %> wrote:
+
+-----------------------------------------------
+<%= @reply.content %>
+-----------------------------------------------
+
+You can reply to this at: <%= new_conversation_comment_url(:conversation_id => @reply.conversation, :parent_id => @reply) %>
+
+There is currently no way to automatically unsubscribe from these messages (we're working on it). If they're bugging you, please contact jade@playfulbent.com and he will unsubscribe you manually.

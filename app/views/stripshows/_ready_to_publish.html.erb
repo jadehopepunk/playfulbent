@@ -1,0 +1,13 @@
+<div id="ready_to_publish">
+	<h2>"<%=h @strip_show.title %>" is Ready to be Published</h2>
+	<p>If you are happy with your photo set, click the 'Publish Now' link below. You can
+	click on the photo thumbnails above to see your photos at their full size. Remember,
+	you can delete a published strip-show at any time from your playful-bent home page.
+	</p>
+
+	<div align="center" style="font-weight: bold; font-size: larger; margin-top: 40px; margin-bottom: 60px;">
+	  <div style="border: solid black 2px; width: 160px; padding: 10px;">
+	    <%= link_to("Publish Now", :controller => "stripshows", :action => "publish", :id => @strip_show) %>
+	  </div>
+	</div>
+</div>

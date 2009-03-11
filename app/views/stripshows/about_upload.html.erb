@@ -1,0 +1,78 @@
+<div id="stripshows_page">
+	<h1>Uploading a Strip-Show</h1>
+
+	<div class="page_description">
+	  <p>Strip-Shows are photo sets of you being beautiful and erotic as you flirt with your audience.</p>
+
+	  <p>
+	    All but the first two photos are only shown to people of your choice. However, uploading erotic
+	    photos of yourself onto the internet can have consequences, and so you had really better read
+	    the frequently asked questions below first.
+	  </p>
+	</div>
+	<br />
+
+	<h2>Who Can View My Photos?</h2>
+
+	<p>Anyone can view the first photo in your set. This lets people browse through the recently uploaded
+	strip-shows and pick ones that they might find interesting<p>
+
+	<p>Anyone who has uploaded a Strip-Show themselves can view the second photo in your set, BUT if they do so,
+	then you can view the third photo in theirs!</p>
+
+	<p><strong>No one can view any of the other photos in your set unless you allow them to do so</strong>,
+	by viewing photos in their set. This is like a game of "I'll show you mine if you show me yours". If
+	you go to view someone else's photo, you will be told if doing so will allow them to view any of
+	your photos, and you will be shown which ones.</p>
+	<br />
+
+	<h2>What If I Change My Mind?</h2>
+
+	<p>You can delete your strip-show at any time. If you do so, all your photos get permanently deleted from
+	this site. No record of them remains, but anyone who you have already allowed to view them may have
+	saved your photos on their hard disk, we can't do anything about that.<p>
+	<br />
+
+	<h2>Is This Anonymous?</h2>
+
+	<p>There is nothing available through this site that connects your set of photos to any other
+	information about you. Although we store which user user owns the photos (so that you can
+	delete them), we never publish any information about you along side your photos.</p>
+
+	<p>However, obviously you are in the pictures! If you are worried about anonymity, the best
+	bet is to take photos of yourself that obscure your face in some way. It's fine the photoshop your
+	photos to get this effect, but a real shadow, or a close up of sensual body parts, is much
+	more effective than an ugly black spot over your face. Remember that the first two photos are the most
+	widely viewed, and the first one can even be indexed by google! Either make them anonymous, or
+	keep them clean. We suggest the latter.</p>
+
+	<br />
+	<h2>What Sort of Photos Should I Take?</h2>
+
+	<p>Well, it's a strip-show. So start clothed, and end naked!<p>
+
+	<p>Why not get a little creative. Play with costume, setting. Tell a story. Whatever, you like, providing it
+	only takes <%= StripShow::PHOTOS_IN_SET %> photos.</p>
+
+	<p>Want to see how the pros do it? You could do worse that checking out
+	<a href="http://suicidegirls.com/">Suicide Girls</a> (membership required, we are not affilated) for
+	great examples of erotic strip show photo sets with interesting and varied women (they have amateur boys sets
+	too).</p>
+	<br />
+
+	<h2>I Can't Do This, I'm the Wrong Age/Sex/Shape</h2>
+
+	<p>Nonsense! Being a bit daring is always sexy.</p>
+
+	<p>We want to see boys and girls of all backgrounds, ages, and sizes. Everyone is beautiful to someone,
+	and this is a 100% criticism free way to go out on a limb and reach those poeple.</p>
+
+	<div align="center" style="font-weight: bold; font-size: larger; margin-top: 40px; margin-bottom: 60px;">
+	  <div style="width: 260px; padding: 10px;">
+	    OK, I'm still interested<br />
+		<br />
+	    <%= link_to("Upload a Strip-Show", {:controller => "stripshows", :action => "upload"}, :class => "button", :style => "width: 200px") %>
+	  </div>
+	</div>
+
+</div>

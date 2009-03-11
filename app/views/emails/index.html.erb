@@ -1,0 +1,11 @@
+<h1>Emails</h1>
+
+<ul>
+	<% for email in @emails %>
+		<li>
+			<%= link_to email.to_label, email_path(email) %>
+		</li>
+	<% end %>	
+</ul>
+
+<%= will_paginate(@emails) %>

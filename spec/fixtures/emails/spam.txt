@@ -1,0 +1,29 @@
+Return-Path: <custom@piracemafm.com.br>
+X-Spam-Checker-Version: SpamAssassin 3.1.3 (2006-06-01) on playful_email
+X-Spam-Level: ****
+X-Spam-Status: Yes, score=5.0 required=5.0 tests=NO_REAL_NAME, RCVD_IN_BL_SPAMCOP_NET,RCVD_IN_XBL autolearn=no version=3.1.3
+X-Original-To: suggestions@playfulbent.com
+Delivered-To: rails_mailer@playfulbent.com
+Received: from swxjka (unknown [121.136.37.158])
+	by playfulbent.com (Postfix) with SMTP id 031E864042
+	for <suggestions@playfulbent.com>; Wed, 5 Mar 2008 03:00:05 +0000 (UTC)
+Received: from eaqv ([206.104.160.239])
+	by swxjka (8.13.4/8.13.4) with SMTP id m25K3QIR004852;
+	Wed, 5 Mar 2008 12:03:26 -0800
+Message-ID: <002501c87efb$4f1a3db0$efa068ce@eaqv>
+From: <custom@piracemafm.com.br>
+To: <suggestions@playfulbent.com>
+Subject: Your ecard horoscope is waiting!
+Date: Wed, 5 Mar 2008 11:58:40 -0800
+MIME-Version: 1.0
+Content-Type: text/plain;
+	format=flowed;
+	charset="windows-1252";
+	reply-type=original
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+
+Please click here to view your Crazy Funny Ecard Online http://121.114.208.74/

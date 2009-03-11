@@ -1,0 +1,10 @@
+<h1>Message Sent</h1>
+
+<%= avatar_link_for(@email.recipient) if @email.recipient %>
+
+<p>Your message has been delivered to 
+<%= @email.recipient ? link_to_profile_for(@email.recipient) : "it's recipient" %>.</p>
+
+<p>Any further Playful Bent messages that you send from this address will go through automatically.</p>
+
+<br class="section_end" /><br />

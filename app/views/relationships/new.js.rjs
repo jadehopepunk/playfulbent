@@ -1,0 +1,7 @@
+page.replace_html 'search_results', :partial => 'user_search_results'
+
+page.select('#step2').each do |unique|
+  page.remove 'step2'
+end
+
+page.insert_html :after, 'step1', :partial => 'new_step_two'

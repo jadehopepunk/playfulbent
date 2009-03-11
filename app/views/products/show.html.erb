@@ -1,0 +1,7 @@
+<h1><%=h @product.name %></h1>
+
+<p><%= link_to h(@product.url), h(@product.url) %></p>
+
+<%= image_tag @product.thumbnail_url %>
+
+<p><%= link_to 'Review This', new_review_path(:product_id => @product) %></p>

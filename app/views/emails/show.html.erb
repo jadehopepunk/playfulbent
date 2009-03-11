@@ -1,0 +1,5 @@
+<h1>Email</h1>
+
+<p>To: <%= link_to(@email.recipient.name, @email.recipient.profile_url) if @email.recipient %></p>
+
+<%= nl2lb(h(@email.raw)) %>

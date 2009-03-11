@@ -1,0 +1,25 @@
+.email_sender_details {
+  border: 2px solid #CBB5A5;
+  background-color: #ECE3DC;
+  padding: 5px;
+  width: 960px;
+  overflow: hidden;
+  margin-bottom: 1em;
+}
+
+.email_sender_details .preview_label {
+  font-weight: bold;
+  float: left;
+  clear: left;
+}
+
+.email_sender_details .preview_details {
+  float: left;
+  margin-left: 10px;
+}
+
+.email_sender_details .email_subject {
+  font-weight: bold;
+  font-style: italic;
+  color: #333;
+}

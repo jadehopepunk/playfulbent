@@ -1,0 +1,205 @@
+.thumbnails_and_links
+{
+  float: left;  
+  width: 245px;
+  margin-right: 20px;
+  margin-top: 1em;
+}
+
+.thumbnail_container
+{
+  background-color: #000;
+  color: #FFF;
+  width: 245px; 
+  overflow: hidden;
+  margin-bottom: 1em;
+  border: 1px solid #666;
+}
+
+div#thumbnails_list_header
+{
+  margin: 6px;
+}
+
+div#thumbnails_list_header strong
+{
+  font-weight: normal;
+  font-size: 140%;
+}
+
+ul.photo_thumbnails
+{
+  list-style: none;
+  padding: 0;
+  margin: 6px auto;
+  width: 233px;
+  overflow: hidden;
+}
+
+ul.photo_thumbnails li
+{
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 46px;
+  height: 46px;
+}
+
+ul.photo_thumbnails li img
+{
+  width: 40px;
+  height: 40px;  
+  margin: 2px;
+  border: 1px solid #666;
+  background-color: #FFF;
+}
+
+ul#photo_thumbnails li a:hover img
+{
+  border: 2px solid #FFF;
+  margin: 1px;
+}
+
+ul#deletable_photo_thumbnails li a:hover img
+{
+  border: 2px solid #CB0000;
+  margin: 1px;  
+}
+
+div#featured_photo_and_header
+{
+  margin-top: 1em;
+  margin-left: 270px;
+}
+
+img#featured_photo
+{
+  border: 2px solid #000;
+  background-color: #FFF;
+  margin-top: 10px;  
+}
+
+div.photo_nav_buttons
+{
+  display: block;
+  width: 55px;
+  margin-right: 10px;
+  float: left;
+}
+
+.no_nav
+{
+  float: left;
+  width: 20px;
+  text-align: center;
+  background-color: #000;
+  margin-right: 5px;
+  color: #000;
+  border: 1px solid #666;
+}
+
+a.photo_nav, a.photo_nav:link
+{
+  float: left;
+  width: 20px;
+  text-align: center;
+  background-color: #000;
+  margin-right: 5px;
+  color: #FFF;
+  border: 1px solid #666;
+}
+
+a.photo_nav:hover
+{
+  background-color: #666;
+  border: 1px solid #AAA;
+  text-decoration: none;
+}
+
+a#next_photo
+{
+ float: right;
+}
+
+h2.photo_title
+{
+  line-height: 110%;
+}
+
+div#featured_photo_header_container
+{
+  width: 450px;
+  float: left;
+}
+
+div.inline_form_display_container
+{
+  border: solid 2px transparent;
+}
+
+.inline_form_container
+{
+  border: solid 2px #000;
+}
+
+.inline_form_container form
+{
+  margin: 10px;
+}
+
+.inline_form_container form textarea, .inline_form_container form input.text_field
+{
+  width: 100%;
+}
+
+#photo_edit_links a {
+  display: block;
+}
+
+div#photo_set_previews {
+  margin-top: 1em;
+}
+
+div.photo_set_preview {
+  text-align: center;
+  width: 140px;
+  border: 2px solid #666;
+  float: left;
+  margin-right: 5px;
+  padding: 10px 0;  
+}
+
+div.photo_set_preview img {
+  border: 1px solid #666;
+}
+
+div.photo_set_preview div.photo_set_details {
+  font-size: 90%;
+  line-height: 100%;
+}
+
+div.active_photo_set_preview {
+  background-color: #000;
+  border: 2px solid #333;
+  color: #CCC;
+}
+
+div.active_photo_set_preview a {
+  color: #FFF;
+}
+
+div.photo_set_controls_and_description {
+  border: 2px solid black;
+  padding: 10px;
+  float: left;
+  width: 600px;
+}
+
+div.photo_set_controls_and_description p {
+  margin-top: 0;
+}
+
+.exteral_photo_details {
+  color: #999;
+  font-size: 90%;
+}

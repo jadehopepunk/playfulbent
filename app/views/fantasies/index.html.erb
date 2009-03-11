@@ -1,0 +1,25 @@
+<h1>Fantasies</h1>
+
+<div class="index_explanation">
+	<%= image_tag 'areas/fantasies.jpg', :size => '80x80', :alt => 'fantasies', :class => 'area_icon' %>
+	<div class="area_description">
+		Tell us your <strong>Fantasies</strong>...<br />
+		We can help you make them come true, or we can just
+		give you an opportunity to discuss and explore them with like minded people.
+	</div>
+	
+	<%= link_to "Create a New Fantasy", new_fantasy_path %>
+	
+	<%= subscription_links %>
+</div>
+
+<div class="record_list">
+	<% for fantasy in @fantasies %>
+		<div class="record_teaser">
+			<%= truncate(fantasy.description, 700) %>
+			<%= link_to('(read more)', fantasy_path(fantasy)) %>
+		</div>
+	<% end %>
+	
+	<%= will_paginate @fantasies %>
+</div>

@@ -1,0 +1,30 @@
+div.image_selector {
+}
+
+div.image_selector ul.image_selections {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+div.image_selector ul.image_selections li {
+  list-style: none;
+  margin: 5px;
+  padding: 0;
+  display: block;
+  width: 90px;
+  float: left;
+  border: 1px solid #333;
+  background-color: #EEE;
+  text-align: center;
+}
+
+div.image_selector ul.image_selections li input {
+  display: block;
+  margin: 5px auto 5px auto;
+}
+
+div.image_selector ul.image_selections li img {
+  border: 1px solid #000;
+  margin: 0;
+}

@@ -1,0 +1,13 @@
+Hi <%= @invitation.recipient.name %>,
+
+<%= @invitation.user.name %> thought that you might like to take a look at their Playful Bent strip-show, entitled: "<%= @strip_show.title %>".
+
+To view the first photo in this strip-show, visit the following URL:
+
+<%= strip_photo_url(@strip_show.first_photo) %>
+
+If you believe that you received this email in error, please let us know at abuse@playfulbent.com and we will give whoever sent this mail a sound spanking.
+
+kind regards,
+
+Playful-Bent

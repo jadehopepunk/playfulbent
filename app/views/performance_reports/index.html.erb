@@ -1,0 +1,33 @@
+<h1>Performance Report for <%= @date.to_formatted_s :long %></h1>
+<p class="performance_navigation">
+	<%= link_to('< Previous', performance_reports_path(:date => @yesterday)) if @yesterday %>
+	<%= link_to('Next >', performance_reports_path(:date => @tomorrow)) if @tomorrow %>
+</p>
+
+<table class="performance_results">
+	<thead>
+		<tr>
+			<th class="string">Page</th>
+			<th class="number">Hits</th>
+			<th class="number">Average</th>
+			<th class="number">Min</th>
+			<th class="number">Max</th>
+			<th class="number">Std Dev</th>			
+		</tr>
+	</thead>
+	<tbody>
+		<% for time_record in @request_times %>
+			<% classes = []
+			   classes << 'total' if time_record.is_total?
+			   classes << 'too_high' if time_record.average > @max %>
+			<tr class="<%= classes.join(' ') %>">
+				<td class="string"><%= time_record.combined_name %></td>
+				<td class="number"><%= time_record.visit_count %></td>
+				<td class="number"><%= format("%0.3f", time_record.average) %></td>
+				<td class="number"><%= format("%0.3f", time_record.min) %></td>
+				<td class="number"><%= format("%0.3f", time_record.max) %></td>
+				<td class="number"><%= format("%0.3f", time_record.standard_deviation) %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

@@ -1,0 +1,2 @@
+module CrushesHelper
+end

@@ -1,0 +1,72 @@
+ol.threads {
+  padding: 0;
+  list-style: none;
+  width: 800px;
+}
+
+ol.threads li.thread {
+  margin-bottom: 20px;
+  width: 800px;
+}
+
+ol.threads li.thread h2 {
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+ol.thread_messages {
+  padding: 0;
+  list-style: none;  
+  margin-left: 61px;
+  clear: left;
+}
+
+ol.thread_messages li.thread_message {
+}
+
+ol.thread_messages li.thread_message img.mini_avatar {
+  margin-right: 5px;
+}
+
+ol.threads a.thread_message_link {
+  font-weight: normal;
+  display:block;
+  height: 1.2em;
+  overflow: hidden;
+  width: 690px;
+  margin-bottom: 2px;
+  padding: 2px 5px 0px 5px;
+  border: 2px solid #FFF;
+}
+
+ol.threads a.thread_message_link:hover {
+  text-decoration: none;
+  border: 2px solid #999;
+  background-color: #EEE;
+}
+
+li.thread div.thread_root {
+  width: 800px;
+  overflow: hidden;
+}
+
+li.thread div.thread_root a.avatar_link {
+  margin-bottom: 5px;
+}
+
+li.thread a.thread_root_message_link {
+  font-weight: normal;
+  display:block;
+  overflow: hidden;
+  width: 690px;
+  margin-bottom: 2px;
+  margin-left: -5px;
+  padding: 2px 5px 0px 5px;
+  border: 2px solid #FFF;  
+}
+
+li.thread a.thread_root_message_link:hover {
+  text-decoration: none;
+  border: 2px solid #999;
+  background-color: #EEE;
+}

@@ -1,0 +1,23 @@
+# == Schema Information
+# Schema version: 258
+#
+# Table name: product_urls
+#
+#  id            :integer(11)   not null, primary key
+#  original_url  :string(255)   
+#  affiliate_url :string(255)   
+#  product_id    :integer(11)   
+#  created_at    :datetime      
+#  updated_at    :datetime      
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+giantess_dvice:
+  id: 1
+  product_id: 1
+  original_url: http://www.dvice.co.nz/products/dildos/smooth/1127.php
+wiki_ethical_slut:
+  id: 2
+  product_id: 2
+  original_url: http://en.wikipedia.org/wiki/The_Ethical_Slut
+  

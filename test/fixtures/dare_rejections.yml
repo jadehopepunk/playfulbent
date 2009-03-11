@@ -1,0 +1,21 @@
+# == Schema Information
+# Schema version: 258
+#
+# Table name: dare_rejections
+#
+#  id                    :integer(11)   not null, primary key
+#  dare_challenge_id     :integer(11)   
+#  user_id               :integer(11)   
+#  rejected_dare_text    :text          
+#  rejection_reason_text :text          
+#  created_at            :datetime      
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+frodo_rejected_dare:
+  id: 1
+  dare_challenge_id: 5
+  user_id: 12
+  rejected_dare_text: Show me your feet.
+  rejection_reason_text: Didn't like it
+  created_at: <%= 3.days.ago.to_s :db %>

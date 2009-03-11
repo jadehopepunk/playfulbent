@@ -1,0 +1,16 @@
+<div class="dare_challenge_form">
+	<%= avatar_link_for @dare_challenge.subject %>
+	
+	<h1>Waiting for <%=h @dare_challenge.subject.name %></h1>
+
+	<div class="form_description">
+		<p>
+			You have issued your challenge to <%=h @dare_challenge.subject.name %>, and are waiting for them to respond.
+			So far, it's been <%= time_ago_in_words @dare_challenge.created_at %>.
+		</p>
+		<p>
+			<%= link_to "&lt; Back to #{h(@dare_challenge.subject.name)}'s Profile", @dare_challenge.subject.profile_url %>
+		</p>
+	</div>
+
+</div>

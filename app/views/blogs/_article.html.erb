@@ -1,0 +1,6 @@
+<h2 class="title"><%= link_to h(article.title), h(article.link) %></h2>
+<div class="date">written <%= time_ago_in_words article.published_at %> ago</div>
+<div class="tag_list"><%= format_tag_links article.tags %></div>
+<div class="description">
+	<%= article.short_content %>
+</div>

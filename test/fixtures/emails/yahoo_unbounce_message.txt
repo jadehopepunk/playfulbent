@@ -1,0 +1,64 @@
+Return-path: <probe-1184915947-1185265640-playfulbent_test_collector=portallus.com@returns.groups.yahoo.com>
+Envelope-to: playfulbent_test_collector@portallus.com
+Delivery-date: Tue, 24 Jul 2007 04:27:24 -0400
+Received: from n28b.bullet.sp1.yahoo.com ([209.131.38.247])
+        by celmis.site5.com with smtp (Exim 4.63)
+        (envelope-from <probe-1184915947-1185265640-playfulbent_test_collector=portallus.com@returns.groups.yahoo.com>)
+        id 1IDFjm-0002Ym-Uo
+        for playfulbent_test_collector@portallus.com; Tue, 24 Jul 2007 04:27:23 -0400
+Comment: DomainKeys? See http://antispam.yahoo.com/domainkeys
+DomainKey-Signature: a=rsa-sha1; q=dns; c=nofws; s=lima; d=yahoogroups.com;
+        b=Uy3IsrCr2rGJ+8XFpp1E4QJIwyvr/UJpt9WhPh4cSFNvKwyI2MfyKvh6CqTUTTJ5uMx72LqUNllh8cIFuz9nrMndXV6MQ31vKLTRqgaRdhXrYweAwDDouaa+BcQWPyGS;
+Received: from [216.252.122.219] by n28.bullet.sp1.yahoo.com with NNFMP; 24 Jul 2007 08:27:20 -0000
+Received: from [66.218.69.3] by t4.bullet.sp1.yahoo.com with NNFMP; 24 Jul 2007 08:27:20 -0000
+Received: from [66.218.66.86] by t3.bullet.scd.yahoo.com with NNFMP; 24 Jul 2007 08:27:20 -0000
+Date: 24 Jul 2007 08:27:20 -0000
+Message-ID: <1185265640.61.84665.w119@yahoogroups.com>
+X-Yahoo-Newman-Property: groups-notify
+From: Yahoo! Groups <confirm-unbounce-1184915947-317149611-55692@yahoogroups.com>
+Reply-To: confirm-unbounce-1184915947-317149611-55692@yahoogroups.com 
+To: playfulbent_test_collector@portallus.com 
+Subject: Please reactivate your Yahoo! Groups email address 
+MIME-Version: 1.0
+Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
+X-Antivirus-Scanner: This message has been scanned by ClamAV.
+
+
+
+Dear Yahoo! Groups member,
+
+You belong to one or more email groups provided by Yahoo! Groups 
+(groups.yahoo.com).
+
+Recently, messages sent to you from Yahoo! Groups have been
+returned to us as undeliverable. As a result, we have temporarily 
+turned off message delivery to this email address.
+
+If you are reading this message, the delivery problem appears to
+be fixed. To start receiving your groups messages by email again and
+turn your account back on, please visit:
+
+http://groups.yahoo.com/unbounce?adj=317149611,55692&p=1184915947 
+
+(You can also copy and paste this link into your browser, and hit the
+'Return' key.)
+
+Once you reactivate your Yahoo! Groups account by clicking the
+link above, you will receive messages from your group(s) again.
+
+Tip: You can read messages you might have missed while delivery was
+turned off by visiting your groups here:
+
+http://groups.yahoo.com/mygroups
+
+Thank you for using Yahoo! Groups!
+
+Yahoo! Groups Customer Care
+
+Your use of Yahoo! Groups is subject to http://docs.yahoo.com/info/terms/
+ 
+
+
+
+

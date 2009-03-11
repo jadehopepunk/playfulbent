@@ -1,0 +1,16 @@
+<% tab_page do %>
+	<%= render :partial => 'header' %>
+
+	<div class="interaction_section">
+		<div id="new_message">
+			<% form_for :message, @message, :url => user_messages_url(:user_id => @user), :method => :post, :html => {:class => 'single_column', :onsubmit => trigger_footer(:new_message)} do |f| %>
+				<%= render :partial => 'form', :locals => {:f => f} %>
+
+				<%= form_footer :new_message, :submit_name => 'Send', :cancel_link => user_messages_path(@user) %>
+			<% end %>
+
+		</div>
+
+
+	</div>
+<% end %>

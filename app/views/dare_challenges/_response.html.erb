@@ -1,0 +1,30 @@
+<p><%=h darer.name %> dared <%=h daree.name %> to:</p>
+
+<ol id="comments">  
+	<li class="comment even">
+		<%= avatar_and_name_link_for(darer) %>
+	  <div class="content_container">
+			<div class="speech_mark"></div>
+			<div class="inner_content">
+				<%= simple_format(h(dare_text)) %>
+			</div>
+		</div>
+	</li>
+</ol>
+<br style="clear: left" />
+
+<p ><%=h daree.name %> responded with:</p>
+
+<ol id="comments">  
+	<li class="comment odd">
+		<%= avatar_and_name_link_for(daree) %>
+	  <div class="content_container">
+			<div class="speech_mark"></div>
+			<div class="inner_content">
+				<%= simple_format(h(response.description)) %>
+				<%= image_tag(url_for_file_column(response, 'photo'), :class => 'feature_image') unless response.photo.blank?  %>
+			</div>
+		</div>
+	</li>
+</ol>
+<br style="clear: left" />

@@ -1,0 +1,52 @@
+<% tab_page do %>
+	<div class="section_header">
+		<h1>Mailing List</h1>
+		<h2><%= @group.display_name %></h2>
+	</div>
+	
+	<% if @root_messages.empty? %>
+		
+		<div class="no_data">
+			No messages have been received for this group yet.<br />
+			Messages sent via the yahoo group will be displayed here.
+		</div>
+		
+	<% else %>
+		<ol class="threads">
+			<% for root_message in @root_messages %>
+				<li class="thread">
+					<div class="thread_root">
+						<%= avatar_link_for_external_profile root_message.sender_external_profile %>
+						<h2><%= root_message.subject %></h2>
+
+						<a href="<%= group_mailing_list_message_url(root_message.group, root_message) %>" class="thread_root_message_link">
+							<strong><%= root_message.sender_name %></strong>
+							<%= truncate(h(root_message.text_body), 200) %>
+						</a>						
+					</div>
+										
+					<ol class="thread_messages">
+						<% for message in root_message.descendents %>
+							<li class="thread_message">
+								<%= mini_avatar_link_for_external_profile message.sender_external_profile %>
+
+								<a href="<%= group_mailing_list_message_url(message.group, message) %>" class="thread_message_link">
+									<strong><%= message.sender_name %>:</strong>
+									<%= truncate(h(message.text_body), 90) %>
+								</a>	
+							</li>
+						<% end %>
+					</ol>
+				</li>
+			<% end %>
+		</ol>	
+		
+		<%= will_paginate @root_messages %>
+	
+		<div class="copyright_notice">
+			Mailing list messages are the copyright of their respective authors. 
+		</div>
+	<% end %>
+	
+<% end %>
+

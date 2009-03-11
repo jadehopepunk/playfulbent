@@ -1,0 +1,7 @@
+<h1><%= @conversation.title %></h1>
+
+<% unless @conversation.subject_url.blank? %>
+	<p><%= link_to 'Click Here', @conversation.subject_url %> to view the <%= @conversation.subject.class.name.titleize %> being discussed.</p>
+<% end %>
+
+<%= render :partial => 'conversations/show' %>

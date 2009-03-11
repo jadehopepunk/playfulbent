@@ -1,0 +1,16 @@
+<div class="box next_photo_box">
+	<div class="box_heading">
+		What Now?
+	</div>
+	<div class="box_contents">
+		<p>If you enjoyed <%= link_to @strip_photo.user.name, @strip_photo.user.profile_url %>'s strip show, 
+		you might what to drop <%= @strip_photo.user.gender.third_person_passive_pronoun %> a line and see 
+		what else the two of you could do together.</p>
+		
+		<p>You now have the following interaction score with <%= link_to @strip_photo.user.name, @strip_photo.user.profile_url %>: 
+		<%= interaction_ticks_for( @strip_photo.user) %></p>
+		
+		<p>This means that if you wander over to <%= link_to "#{@strip_photo.user.name}'s Profile", @strip_photo.user.profile_url %>
+		you'll be able to send <%= @strip_photo.user.gender.third_person_passive_pronoun %> private messages.</p>
+	</div>
+</div>

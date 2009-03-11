@@ -1,0 +1,20 @@
+<div class="relationship_details <%= relationship.is_reciprocated? ? 'reciprocated' : 'not_reciprocated' %>">
+	<%= interaction_ticks_for relationship.subject if can_edit? %>
+	<%= avatar_link_for relationship.subject %>
+	
+	<div class="contents">
+		<h2><%= link_to_profile_for relationship.subject %></h2>
+
+		<% if can_edit? %>
+			<%= link_to 'Edit', edit_user_relationship_path(@user, relationship) %> |
+			<%= link_to 'Delete', user_relationship_path(@user, relationship), :method => :delete %>
+		<% end %>
+
+		<%= simple_format h(relationship.description) %>
+
+		<% if logged_in? && current_user != @user && relationship.subject == current_user && !relationship.is_reciprocated? %>
+			<div class="relationship_notice">This is you. <%= link_to 'Click Here', new_user_relationship_url(:user_id => current_user, :subject_id => @user) %> to describe your end of the relationship.</div>
+		<% end %>		
+	</div>
+		
+</div>

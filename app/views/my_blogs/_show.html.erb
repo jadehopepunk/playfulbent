@@ -1,0 +1,21 @@
+<% if @user == current_user %>
+	<div class="important_section">
+		Your blog	is being sucked down from 
+		<%= link_to 'This Link', @syndicated_blog.feed_url %>.<br />
+		You can 
+		<%= link_to_remote 'Click Here', :url => formatted_user_my_blog_url(@user, @syndicated_blog, :js), :method => :delete %>
+		at any time to stop displaying your blog on Playful Bent.
+	</div>
+<% end %>
+
+<ul class="blog_articles">
+	<% for article in @blog_articles %>
+		<li>
+			<%= render :partial => 'blogs/article', :object => article %>
+		</li>
+	<% end %>
+</ul>
+
+<div class="navigation">
+	<%= will_paginate @blog_articles %>
+</div>

@@ -1,0 +1,5 @@
+if @saved
+  page.redirect_to new_review_path(:product_id => @product)
+else
+  page.replace_html 'new_form_container', :partial => 'new_form'
+end

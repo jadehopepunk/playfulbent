@@ -1,0 +1,21 @@
+
+
+Spam Assassin and DKIM
+
+add to /etc/apt/sources.list:
+	deb http://archive.ubuntu.com/ubuntu dapper-backports main universe multiverse restricted
+
+apt-get update
+apt-get install dkim-filter spamassassin spamc
+
+add to /etc/spamassassin/init.pre:
+	loadplugin Mail::SpamAssassin::Plugin::DKIM
+	
+in /etc/default/spamassassin:
+	set ENABLED=1
+
+/etc/init.d/spamassassin start
+
+change /etc/aliases:
+	rails_mailer:   "|/usr/bin/spamc | RAILS_ENV=staging /var/www/apps/playfulbent/current/bin/mail_handler.rb"
+

@@ -1,0 +1,7 @@
+<% tab_page do %>
+	<% if own_profile? %>
+		<%= render :partial => 'own_stripshows' %>
+	<% else %>
+		<%= render :partial => 'other_persons_stripshows' %>	
+	<% end %>
+<% end %>

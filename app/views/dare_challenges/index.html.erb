@@ -1,0 +1,7 @@
+<% for dare_challenge in @dare_challenges %>
+	<div class="record_preview">
+		Challenge between <%= link_to "#{dare_challenge.user ? dare_challenge.user.name : 'Deleted User'} and #{h(dare
+_challenge.subject ? dare_challenge.subject.name : 'Deleted User')}", dare_challenge_path(dare_challenge) %>,
+    <%=h dare_challenge.status_message_as_admin %>.
+	</div>
+<% end %>

@@ -1,0 +1,10 @@
+Hi <%= @relationship.subject.name %>,
+
+Just a quick note to let you know that <%= @relationship.user.name %> has listed you on playful bent as <%= @relationship.user.gender.third_person_possessive %> <%= @relationship.name %>.
+
+More details on <%= @relationship.user.name %>'s friends page here:
+<%= user_relationships_url(@relationship.user) %>
+
+cheers,
+
+Playful Bent

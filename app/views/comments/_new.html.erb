@@ -1,0 +1,21 @@
+<div class="new_comment_form">
+	<h1><%= @parent ? 'Your Reply' : 'New Comment' %></h1>
+
+	<p><%= link_to 'Andale', 'http://andale.playfulbent.com' %>'s mother likes to say, "if you can't say anything nice, don't say anything at all".</p>
+
+	<%= error_messages_for :comment %>
+
+	<% form_remote_for(:comment, :url => formatted_conversation_comments_path(@conversation, :js), :loading => trigger_footer(dom_id(@comment, 'new_form')), :html => {:class => 'single_column two_thirds'}) do |f| %>
+		<%= hidden_field_tag(:parent_id, @parent.to_param) if @parent %>
+
+		<label for="comment[content]">Text</label>
+	  <%= f.text_area :content %>
+
+		<% if @parent %>
+			<% cancel_function = "Element.update('#{dom_id(@parent, 'reply_container')}', ''); Element.show('#{dom_id(@parent, 'reply_button')}')" %>
+		<% else %>
+			<% cancel_function = "Element.hide('new_comment_container'); Element.show('new_comment_link');" %>
+		<% end %>
+		<%= form_footer dom_id(@comment, 'new_form'), :submit_name => 'Create', :cancel_function => cancel_function %>
+	<% end %>
+</div>

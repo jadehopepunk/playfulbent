@@ -1,0 +1,5 @@
+if @saved
+  page.redirect_to group_path(@group)
+else
+  page.replace_html 'new_group_membership_form_container', :partial => 'new', :locals => {:group => @group}
+end

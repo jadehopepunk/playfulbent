@@ -1,0 +1,48 @@
+<div id="stripshows_page">
+
+	<h1>New Strip-Show</h1>
+
+	<p>A strip show consists of <%= StripShow::PHOTOS_IN_SET %> photos. Your photos should all be:</p>
+	<ul>
+	  <li>Saved in jpg format.</li>
+	  <li>No more than 600 pixels wide. If they're not, we'll try and shrink them for you.</li>
+	</ul>
+
+	<p><strong>By uploading a photo, you are agreeing that it doesn't violate anyone
+	else's privacy, or copyright, and that it doesn't break any of your laws. Uploading anything
+	non-consensual is not on (particularly kiddie porn).</strong></p>
+
+	<% unless @strip_show.strip_photos.empty? -%>
+	  <table style="background-color: black;">
+	    <tr valign="bottom">
+	      <% index = 1 -%>
+	      <% @strip_show.strip_photos.each do |photo| -%>
+	        <td id="thumbnail_<%= photo.id.to_s %>">
+	        <%= link_to(image_tag(photo.image_thumb_url, :size => '55x55'), {:action => "display_image", :id => photo.id.to_s}, {:rel => "lightbox[stripshow]", :title => "New Slideshow, Image " + index.to_s}) %>
+	        <% index += 1 -%>
+	        <div style="font-size: 10px;">
+	          <%= link_to_remote("Delete", :url => {:controller => "stripshows", :action => "delete_photo", :id => photo, :format => :js}) %>
+	        </div>
+	        </td>
+	      <% end unless @strip_show == nil -%>
+	    </tr>
+	  </table>
+	<% end -%>
+
+	<% if !@strip_show.strip_photos.empty?  -%>
+	<p>
+	  <span id="photo_count_description">Uploaded <span id="photo_count"><%=h @strip_show.strip_photos.length %></span> of <%= StripShow::PHOTOS_IN_SET %> photos.</span><br />
+	</p>
+	<% end -%>
+
+	<div id="upload_process">
+		<% if !@photos_ready -%>
+			<%= render :partial => 'upload_photos' %>
+		<% elsif @strip_show.title.blank?  -%>
+			<%= render :partial => "select_title" %>
+		<% else -%>
+			<%= render :partial => "ready_to_publish" %>
+		<% end -%>
+	</div>
+
+</div>

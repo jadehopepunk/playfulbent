@@ -1,0 +1,138 @@
+
+div.conversations_header
+{
+  width: 300px;
+  float: left;
+}
+
+div.conversations_body
+{
+  width: 600px;
+  float: right;  
+}
+
+ol.conversations
+{
+  padding: 0;
+}
+
+li.conversation
+{
+  list-style: none;
+  background-color: #FFF;
+  padding: 5px 5px 2px 5px;
+  border: 2px solid #CBB5A5;
+  margin-bottom: 5px;
+}
+
+li.conversation a
+{
+  color: #000;
+}
+
+span.comment_count
+{
+  color: #666;
+  float: right;
+}
+
+div.subscription_links
+{
+  float: none;
+}
+
+.conversations a.new_count, .conversations a.new_count:link, .conversations a.new_count:visited, .conversations a.new_count:hover
+{
+  color: #00CB00;
+  float: right;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+div.comments_section
+{
+  width: 980px;
+  margin: 0 auto;  
+}
+
+ol#comments
+{
+  padding: 0;
+  margin: 0;
+}
+
+li.comment
+{
+  list-style: none;
+  clear: both;
+  margin: 0 0 10px 0;
+}
+
+li.comment div.content_container
+{
+  margin-bottom: 10px;
+  margin-right: 0px;
+  margin-left: 117px;
+  position: relative;
+}
+
+li.comment div.inner_content
+{
+  padding: 10px;  
+  background-color: #FFF;
+  border: 2px solid #000;
+}
+
+
+li.comment a.avatar_link
+{
+  float: left;
+  margin: 0 0 10px 0;
+}
+
+li.comment div.speech_mark
+{
+  background-image: url(../images/forum/left_triangle.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 38px;  
+  z-index: 2;
+  position: absolute;
+  top: 30px;
+  left: -20px;
+}
+
+li.comment div.new_comment_form {
+  border: 2px solid #CBB5A5;
+  background-color: #FFF;
+  padding: 10px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  clear: both;
+}
+
+ol#comments li.odd a.avatar_link
+{
+  float: right;
+}
+
+ol#comments li.odd div.speech_mark
+{
+  background-image: url(../images/forum/right_triangle.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 38px;  
+  z-index: 2;
+  position: absolute;
+  top: 10px;
+  left: 861px;
+}
+
+ol#comments li.odd div.content_container
+{
+  margin-right: 117px;
+  margin-left: 0px;
+  position: relative;
+}

@@ -1,0 +1,30 @@
+<% if @users.length == 1 %>
+	<li id="step2">
+		<h3><span class="step_number">Step 2</span> Who are they to you?</h3>
+
+		<% form_for :relationship, :url => user_relationships_path(:user_id => @user), :method => :post do |f| %>
+		
+			<%= f.hidden_field :subject_id, :value => @relationship.subject_id %>
+
+			<%= link_to_profile_for @relationship.subject %> is my... <%= f.text_field :name, :class => 'text_field' %>
+			<span class="label_description">
+				(friend, lover, wife, cousin... etc.)
+			</span>
+			
+			<div class="field">
+				<label>Description</label>
+				<%= f.text_area :description, :class => 'small' %>
+			</div>			
+
+			<div class="footer">
+				<span id="create_new_relationship_button"><%= submit_tag 'Create' %> or</span>
+				<%= link_to_function 'Cancel', "Element.hide('new_relationship_form'); Element.show('new_relationship_button')" %>		
+			</div>
+
+		<% end %>		
+	</li>
+<% else %>
+	<li id="step2">
+		<%= link_to_function 'Cancel', "Element.hide('new_relationship_form'); Element.show('new_relationship_button')" %>				
+	</li>
+<% end %>

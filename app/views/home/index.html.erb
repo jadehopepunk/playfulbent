@@ -1,0 +1,137 @@
+<div class="home">
+	<div class="aside">
+		<div class="site_description">
+			<span class="two">An erotic and playful adult social network.</span>
+		</div>
+		<hr />
+
+		<div class="extra_links">
+			stay updated at<br />
+			<%= link_to 'The Playful-Bent Blog', 'http://playfulbent.wordpress.com' %>
+			<%= link_to image_tag('rss.gif', :alt => 'RSS'), 'http://playfulbent.wordpress.com/feed/' %>
+		</div>
+		
+		<div class="latest_blog_article">
+			<h2 class="title"><%= link_to h(@article.title), h(@article.link) %></h2>
+			<div class="description">
+				<%= @article.short_content %>
+			</div>
+		</div>		
+
+		<hr />
+
+		<div class="homepage_activities">
+			<h2>Recently...</h2>
+			<ul class="activity_stream">
+				<% for activity in @activities %>
+					<li class="activity global_activity">
+						<%= render :partial => "activities/global_#{activity.activity_class.name.underscore}", :locals => {:activity => activity} %>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+		
+	</div>
+	
+	<div class="things_to_do">
+		<div class="activity_area find">
+			<h1>Find...</h1>
+
+			<p>
+				Explore a whole bunch of
+				<%= link_to 'sexy people', profiles_path %>. 
+				Find <%= link_to 'boys', profiles_path(:query => 'gender:male') %>, 
+				<%= link_to 'girls', profiles_path(:query => 'gender:female') %>, 
+				<!--<%= link_to 'everyone near you', profiles_path(:near => '1'), :class => 'todo' %>, -->
+				or check out who's interested in 
+				<%= link_to 'bdsm', tag_path('bdsm') %>,
+				<%= link_to 'sex', tag_path('sex') %>, 
+				<%= link_to 'exhibitionism', tag_path('exhibitionism') %>, 
+				<%= link_to 'photography', tag_path('photography') %>,
+				<%= link_to 'music', tag_path('music') %>
+				or whatever takes your fancy. 
+
+				You can explore our <%= link_to 'blogs', blogs_path %> for ideas, or find that
+				special something with user submitted reviews of 
+				<%= link_to 'sex toys', reviews_path(:type => 'sextoy') %>, 
+				<%= link_to 'porn sites', reviews_path(:type => 'website') %> and 
+				<%= link_to 'books', reviews_path(:type => 'book') %>.
+			</p>
+			
+			<div class="thumbnail_group">
+				<% for avatar in @avatars %>
+					<%= link_to(image_tag(avatar.thumb_image_url, :size => '75x75'), avatar.profile.url) %>
+				<% end %>
+			</div>
+		</div>
+		
+		<div class="activity_area watch">
+			<h1>Watch...</h1>
+			
+			<p>
+				Just here for a quick perve? Checkout our <%= link_to 'photo galleries', photos_path %>,
+				see the pics people have uploaded in response to <%= link_to 'dares', dare_responses_path %>
+				from other users, or get hot under the collar with our our 
+				<%= link_to 'erotic stories', stories_path %>.
+			</p>
+			
+			<div class="thumbnail_group">
+				<% for photo in @gallery_photos %>
+					<%= link_to(image_tag(photo.image_url(:thumb), :size => '75x75'), '') %>
+				<% end %>
+			</div>
+			
+		</div>
+		
+		<div class="activity_area play">
+			<h1>Play...</h1>
+			
+			<p>
+				This is what it's all about. Make 
+				<%= link_to 'friends', {:controller => 'my', :action => 'relationships'} %>, 
+				find out who has a <%= link_to 'crush', new_crush_path %> on you, 
+				challenge them to a <%= link_to 'private dare', new_dare_challenge_path %> or
+				try out a <%= link_to 'public dare', dare_responses_path %>.
+				Watch someone do a <%= link_to 'strip show', {:controller => 'stripshows', :action => 'index'} %>, 
+				and do the same for them in return. Explore your fantasies
+				and collaborate on an <%= link_to 'erotic story', stories_path %>. 
+				Get down and dirty in the <%= link_to 'forums', conversations_path %>, 
+				or come along to one of our lazy sunday chats in the 
+				<%= link_to 'chat room', 'http://playfulbent.campfirenow.com/d3004' %>.				
+			</p>
+
+			<div class="thumbnail_group">
+				<% for dare_response in @dare_responses %>
+					<%= link_to(image_tag(url_for_file_column(dare_response, 'photo', 'thumb'), :size => "75x75", :class => 'response_image'), dare_url(dare_response.dare) + "##{dom_id(dare_response)}") %>
+				<% end %>
+			</div>
+
+		</div>
+
+		<div class="activity_area show_off">
+			<h1>Show Off..</h1>
+			
+			<p>
+				Tell us about all your kinks and interests, 
+				fill out a <%= link_to 'profile', {:controller => 'my', :action => 'profile'} %> 
+				then upload your <%= link_to 'photos', {:controller => 'my', :action => 'photos'} %> 
+				or stream them from <%= link_to 'flickr', {:controller => 'my', :action => 'flickr'} %>.
+				Checkout the six <%= link_to 'dares', dare_responses_path %> that no one has tried yet, 
+				or browse all the old ones and find one you're daring enough to do.				
+			</p>
+
+			<div class="thumbnail_group">
+				<% for strip_show in @strip_shows %>
+					<%= link_to(strip_show_thumb(strip_show), strip_photo_url(strip_show.first_photo)) %>
+				<% end %>
+			</div>
+
+		</div>
+		
+		<h2>...or, browse the whole site by tag</h2>
+
+		<%= global_tag_cloud @popular_ranked_tags %>
+
+	</div>
+</div>
+

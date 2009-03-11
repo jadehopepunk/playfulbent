@@ -1,0 +1,6 @@
+<div class="unread_notice" id="unread_messages">
+	<% if unread_messages > 0 %>
+		<%= unread_messages %> Unread Message<%= 's' unless unread_messages == 1 %>
+		<span class="sub_notice">(highlighted in green)</span>
+	<% end %>
+</div>

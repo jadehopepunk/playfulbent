@@ -1,0 +1,1 @@
+<%= activity_actor_link(activity) %> has started a new story<% if activity.story %>"<%= link_to h(truncate(activity.story.title, 100)), story_path(activity.story) %>"<% end %>

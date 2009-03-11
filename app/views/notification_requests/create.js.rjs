@@ -1,0 +1,4 @@
+page.replace_html 'address_result', @message
+page.show 'address_result'
+page.visual_effect :highlight, 'address_result'
+page.visual_effect :fade, 'address_result', :queue => 'end', :duration => 1

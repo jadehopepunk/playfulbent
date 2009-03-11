@@ -1,0 +1,3 @@
+<% tab_page do %>
+	<%= render :partial => (own_profile? ? 'my_dares/own_dares' : 'my_dares/other_persons_dares') %>
+<% end %>

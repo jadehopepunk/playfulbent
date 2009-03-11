@@ -1,0 +1,5 @@
+<%= link_to(image_tag(profile.avatar_thumb_image_url, :size => '80x80'), profile.url, :class => 'avatar_link') %>
+<h2><%= profile.user.name %></h2>
+<span>
+	<%= truncate(profile.welcome_text, 160) %>
+</span>

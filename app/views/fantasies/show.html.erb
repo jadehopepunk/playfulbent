@@ -1,0 +1,28 @@
+<h1>An anonymous fantasy...</h1>
+
+<div class="two_thirds">
+	<%= @fantasy.description %>
+	
+	<div class="important_section">
+		<h2>Is this something you fantasize about too?</h2>
+		
+		<p>If you get turned on by imagining yourself doing this, even if you might not actually
+		do it in real life, then let us know which role you see yourself in. If you do, we'll let
+		you know who else fantasizes about this too.</p>
+		
+		<label>Which role would you play?</label>
+		
+		<ul class="role_list">
+			<% for role in @fantasy.roles %>
+				<li>
+					<% if role.protagonist? %>
+						I fantasize about this happening to <%= link_to "me", fantasy_role_path(role) %>
+					<% else %>
+						I fantasize about being in the role of <%= link_to "#{role.name}", fantasy_role_path(role) %>
+					<% end %>
+				</li>
+			<% end %>
+		</ul>
+		
+	</div>
+</div>

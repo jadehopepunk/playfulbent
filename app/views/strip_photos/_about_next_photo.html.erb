@@ -1,0 +1,13 @@
+<% if @next_photo.nil? %>
+	<%= render(:partial => "whats_next") %>
+<% elsif @owned_by_viewer -%>
+	<%= render(:partial => "next_yours") %>
+<% elsif @next_requires_stripshow -%>
+	<%= render(:partial => "next_requires_stripshow") %>
+<% elsif !@next_is_accessable -%>
+	<%= render(:partial => "next_not_accessable") %>
+<% elsif @next_is_first_time -%>
+	<%= render(:partial => "next_for_first_time") %>
+<% else -%>
+	<%= render(:partial => "next_already_viewed") %>
+<% end -%>

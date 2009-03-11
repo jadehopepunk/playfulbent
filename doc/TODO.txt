@@ -1,0 +1,59 @@
+
+IMAGES NEEDED
+
+Buttons
+- I've done this
+- I've done this too
+- Dare someone
+
+that little black triangle thing to go next to the mini-avatars
+
+
+User Stories
+
+[X] You get notified by email when someone continues a story on from a page that you wrote. A checkbox
+    on the story page allows this feature to be disabled (defaults to 'on');
+
+[X] You get notified by email when someone continues a story that you are following, provided the continue
+    from the furthest point that you are following (ie: you want to hear about the story "continuing", not
+    about branches from earlier on). Email notifications for following a story can be turned on or off
+    from any page in the story. They default to off. They can also be turned off for the story from a link 
+    in the email itself.
+
+[X] Link to blog
+
+[X] Ability to "end" stories
+
+[X] Change stories to be registered under a CC license. Perhaps contact existing page writers to see if they mind licensing under this.
+
+[X] From interactions, can invite this user to watch your stripshows (started, commented out)
+
+[X] A general playful-bent discussion forum.
+
+[X] Page versions have tags, which can be set on the create or edit page version forms.
+
+[X] Can see top tags for each story on story index page.
+
+[X] Story index page has a tag cloud, which can be used to filter stories.
+
+[ ] After creating a story, you should be given an opportunity to invite others to join in the story.
+
+[ ] Story pages display popularity (as stars) when there is more than one version for a given page.
+
+[ ] Comments for strip-photos.
+
+[ ] Discussion thread for each story.
+
+
+
+
+
+[ ] Email notifications from someone continuing a story that you wrote can be disabled with a single click
+    from within the email itself.
+
+[ ] All Email notifications from playful-bent contain a link to disable all email notifications from playful-bent
+    of any sort. Email can be re-enabled somehow via the profile page.
+
+[ ] Email notifications for a page you wrote "and any subsequent pages"
+
+

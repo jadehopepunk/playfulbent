@@ -1,0 +1,14 @@
+<div class="dare_challenge">
+	<h1>Dare challenge between <%=h @dare_challenge.user.name %> and <%=h @dare_challenge.subject.name %></h1>
+
+	<%= render :partial => 'response', :locals => {:darer => @dare_challenge.user, :dare_text => @dare_challenge.user_dare_text, :daree => @dare_challenge.subject, :response => @dare_challenge.subject_response} %>
+	<%= render :partial => 'response', :locals => {:darer => @dare_challenge.subject, :dare_text => @dare_challenge.subject_dare_text, :daree => @dare_challenge.user, :response => @dare_challenge.user_response} %>
+	
+	<p>Hopefully you had a lot of fun doing that. :)</p>
+	
+	<p>
+		<%= link_to "Back to #{@other_party.name}'s profile", @other_party.profile_url %> |
+		<%= link_to "See more dares", dares_path %>
+	</p>
+
+</div>

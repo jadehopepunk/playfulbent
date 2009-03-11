@@ -1,0 +1,9 @@
+<h1>Recent Activity</h1>
+
+<ul>
+	<% for activity in @activities %>
+		<li class="activity global_activity">
+			<%= render :partial => "global_#{activity.activity_class.name.underscore}", :locals => {:activity => activity} %>
+		</li>
+	<% end %>
+</ul>

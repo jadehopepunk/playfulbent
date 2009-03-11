@@ -1,0 +1,22 @@
+<h1>Urls For "<%=h @product.name %>"</h1>
+
+<% for product_url in @product_urls %>
+	<p>
+		<div>
+			<%=h product_url.original_url %>
+		</div>
+		<div>
+			<%=h product_url.affiliate_url %>
+		</div>
+		<div>
+			<%= link_to 'Edit', edit_product_url_path(@product, product_url) %> | 
+			<%= link_to 'Delete', product_url_path(@product, product_url), :method => :delete, :confirm => "Are you sure?" %>
+		</div>
+	</p>
+<% end %>		
+
+<p>
+	<%= link_to 'Create New', new_product_url_path(@product) %>	|
+	<%= link_to('Back to Review', review_path(@product.reviews.first)) unless @product.reviews.empty? %>
+</p>
+

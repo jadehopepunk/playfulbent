@@ -1,0 +1,17 @@
+# == Schema Information
+# Schema version: 258
+#
+# Table name: locations
+#
+#  id         :integer(11)   not null, primary key
+#  country    :string(255)   
+#  city       :string(255)   
+#  created_at :datetime      
+#  updated_at :datetime      
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+melbourne:
+  id: 1
+  country: Australia
+  city: Melbourne

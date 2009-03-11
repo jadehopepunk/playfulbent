@@ -1,0 +1,66 @@
+<div class="box about_form_box">
+	<div class="box_heading">
+		Need some Ideas?
+	</div>
+	<div class="box_contents">
+		Dares work best if it's things that people can do themselves and photograph, unless you know that the other
+		person has a partner or otherwise willing accomplice.
+		
+		<% if @dare_challenge.subject.profile && @dare_challenge.subject.profile.kinks %>
+			<p>If it helps to get your thinking, <%=h @dare_challenge.subject.name %> has listed the following
+			kinks on <%= @dare_challenge.subject.gender.third_person_possessive %> profile:</p>
+			
+			<p><%=h @dare_challenge.subject.profile.kink_tag_string %></p>
+		<% end %>
+	</div>
+</div>
+
+<div class="dare_challenge_form">
+	<%= avatar_link_for @dare_challenge.user %>
+	
+	<h1><%=h @dare_challenge.subject.name %> has accepted your challenge</h1>
+
+	<div class="form_description">
+		<p><%=h @dare_challenge.subject.name %> has accepted your challenge, and has said that the dares should be
+		"<%=h @dare_challenge.dare_level %>".</p>
+		
+		<div class="important_section">
+			<% if @dare_challenge.dare_level == 'flirty' %>
+				<div class="dare_level_description">
+					<%= image_tag "dares/levels/female/flirty.jpg", :alt => 'flirty', :class => 'dare_level_image', :size => '80x80' %>
+					<h2>Flirty Dares</h2>
+					No full frontal nudity. Dares to make you blush and try something new.			
+				</div>
+			<% elsif @dare_challenge.dare_level == 'sexual' %>
+				<div class="dare_level_description">
+					<%= image_tag "dares/levels/female/sexual.jpg", :alt => 'sexual', :class => 'dare_level_image', :size => '80x80' %>
+					<h2>Sexual Dares</h2>
+					<p>Nudity and sex acts are fine. These dares can be as hot and steamy as you like.</p>
+				</div>
+			<% elsif @dare_challenge.dare_level == 'kinky' %>
+				<div class="dare_level_description">
+					<%= image_tag "dares/levels/female/kinky.jpg", :alt => 'kinky', :class => 'dare_level_image', :size => '80x80' %>
+					<h2>Kinky Dares</h2>
+					<p>BDSM, fetish, and other unusual acts are fine.</p>
+				</div>
+			<% end %>
+		</div>
+		<br />
+		
+		<% form_for :dare_challenge, @dare_challenge, :url => dare_challenge_url(@dare_challenge), :html => {:class => 'single_column two_thirds', :method => :put} do |f| %>
+				<h2>Your dare for <%=h @dare_challenge.subject.name %></h2>
+
+				<div class="form_for">
+					<label for="dare_challenge[user_dare_text]">What <%=h @dare_challenge.dare_level %> thing do you dare <%=h @dare_challenge.subject.name %> to do?</label>
+					<%= error_message_on :dare_challenge, :user_dare_text, 'Your dare ' %>
+		
+					<%= f.text_area :user_dare_text %>
+				</div>
+				
+			  <div class="footer">
+					<%= image_submit_tag 'buttons/submit.png', :class => 'submit_button' %> or <%= link_to 'Cancel', @dare_challenge.subject.profile_url %>
+				</div>
+		<% end %>
+	</div>
+
+</div>

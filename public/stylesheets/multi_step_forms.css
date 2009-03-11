@@ -1,0 +1,13 @@
+ol.steps {
+  padding: 0;
+}
+
+ol.steps li {
+  clear: both;
+  overflow: hidden;
+}
+
+ol.steps li h2 {
+  margin-bottom: 0.8em;
+}
+

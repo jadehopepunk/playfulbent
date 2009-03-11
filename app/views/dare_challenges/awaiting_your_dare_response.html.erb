@@ -1,0 +1,49 @@
+<div class="dare_challenge_form">
+	<h1><%=h @other_party.name %> dares you to...</h1>
+
+	<ol id="comments">  
+		<li class="comment even">
+			<%= avatar_and_name_link_for(@other_party) %>
+		  <div class="content_container">
+				<div class="speech_mark"></div>
+				<div class="inner_content">
+					<%= simple_format(h(@your_dare_text)) %>
+				</div>
+			</div>
+		</li>
+	</ol>
+	
+	<p style="clear: left">
+		If you really don't want to do this, you don't have to. You should never do a dare which harms anyone,
+		or which damages your relationships with others.
+	</p>
+	
+	<p>
+		<span class="step_number">Option 1</span> <%= link_to "I really can't do that", new_dare_rejection_path(:dare_challenge_id => @dare_challenge) %><br />
+	</p>
+	
+	<h2><span class="step_number">Option 2</span> Do the Deed!</h2>
+
+	<% form_for :dare_challenge_response, @dare_challenge_response, :url => dare_challenge_dare_challenge_responses_url(@dare_challenge), :html => {:class => 'single_column two_thirds important_section', :multipart => true} do |f| %>
+		<%= error_messages_for :dare_challenge_response %>
+
+		<%= label "Photo of the deed", "", true %>
+		<div class="sub_label">Please use jpg format.</div>
+
+		<div class="field">
+			<%= file_column_field 'dare_challenge_response', 'photo' %>
+		</div>
+	
+		<%= label "Your description", "dare_challenge_response[description]", true %>
+		<div class="sub_label">This is your chance to wax lyrical about your escapade.</div>
+	
+		<div class="field">
+			<%= f.text_area 'description' %>
+		</div>
+		
+	  <div class="footer">
+			<%= image_submit_tag 'buttons/submit.png', :class => 'submit_button' %> or <%= link_to 'Cancel', @other_party.profile_url %>
+		</div>		
+	<% end %>
+
+</div>

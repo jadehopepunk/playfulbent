@@ -1,0 +1,4 @@
+<%= activity_actor_link(activity) %> has added <%= activity.activity_count > 1 ? "<strong>#{activity.activity_count}</strong> new photos" : "a new photo" %>
+<div class="activity_pictures">
+	<%= activity_gallery_photo_thumbs(activity) %>
+</div>

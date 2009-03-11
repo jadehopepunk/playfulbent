@@ -1,0 +1,39 @@
+<h1>Playful Blogs</h1>
+
+<div class="blogs_explanation">
+	<%= image_tag 'areas/blogs.jpg', :size => '80x80', :alt => 'Blogs', :class => 'area_icon' %>
+	<div class="area_description">
+		These <strong>Blogs</strong> are written by Playful Bent users. The might be about
+		any topic - from candid descriptions of wild sex escapades, to recounting the
+		length of the queues at the supermarket. To read something more specific, you
+		can click on one of the tags below.
+	</div>
+
+	<%= subscription_links %>
+		
+	<hr>
+	
+	<%= tag_cloud @popular_tags, :blog_article_ratio %>
+	
+</div>
+
+<div class="blogs_section">
+	<% if logged_in? %>
+		Show Only: 
+		<%= filter_links %>
+	<% end %>
+	
+	<ul class="blog_articles">
+		<% for article in @blog_articles %>
+			<li>
+				<%= mini_avatar_link_for article.user %>
+				<%= render :partial => 'article', :object => article %>
+			</li>
+		<% end %>
+	</ul>
+	
+	<div class="navigation">
+		<%= will_paginate @blog_articles %>
+	</div>
+	
+</div>

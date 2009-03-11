@@ -1,0 +1,17 @@
+Hi <%= @recipient.name %>,
+
+You and <%= @darer.name %> have both agreed to a "<%= @dare_challenge.dare_level %>" Dare Challenge on Playful Bent. Here's the dare that <%= @darer.name %> has written for you to perform:
+
+--------
+<%= @dare %>
+--------
+
+You need to go away and do this, and then upload a photo of the act, and a short description, to the following page:
+
+<%= dare_challenge_url(@dare_challenge) %>
+
+There is also more information on that page (above) about your privacy, and what to do if you really don't want to do this dare. Remember, dares should not cause any harm to you or your relationships with others.
+  
+have fun,
+
+Playful Bent

@@ -1,0 +1,17 @@
+<% if logged_in? %>
+	<% form_for :dare_challenge, @dare_challenge, :url => dare_challenges_url, :html => {:class => 'single_column two_thirds'} do |f| %>
+		<%= f.hidden_field :subject_id %>
+		<%= hidden_field_tag(:email, @email) if @email %>
+
+	  <div class="footer">
+			<%= error_messages_for :dare_challenge %>
+			<%= image_submit_tag 'buttons/send_the_challenge.png', :class => 'submit_button' %> or <%= link_to 'Cancel', @dare_challenge.subject.profile_url %>
+		</div>
+	<% end %>
+<% else %>
+
+  <div class="footer">
+		<div class="login_required">You are going to need to <%= link_to 'login or signup', new_session_path %>
+		to playful bent in order to do this.</div>
+	</div>
+<% end %>

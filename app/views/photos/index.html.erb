@@ -1,0 +1,37 @@
+<h1>Playful Photos</h1>
+
+<div class="photos_explanation">
+	<%= image_tag 'areas/photos.jpg', :size => '80x80', :alt => 'Photos', :class => 'area_icon' %>
+	<div class="area_description">
+		These <strong>Photos</strong> are uploaded by our members, and depict whatever they happen to be interested in,
+		which could be anything from their antique tea-spoon collection, to a wild night at a swingers party. You have been
+		warned. :)
+	</div>
+	
+	<%= subscription_links %>
+	
+	<hr>
+	
+	<%= tag_cloud @popular_tags, :gallery_photo_ratio %>
+	
+	<div class="advertisment">
+		<%= link_to image_tag('http://www.hegre-art.com/thumb.jpg', :alt => 'Hegre Art'), "http://www.newnudecash.com/hit.php?s=1&p=2&w=111090&t=0&c=", :style => 'float: left; margin-right: 10px' %>
+		<div class="ad_header">Jade recommends: <%= link_to "Hegre Art", "http://www.newnudecash.com/hit.php?s=1&p=2&w=111090&t=0&c=" %></div>
+		<div class="add_description">We only recommend sites we like personally, and if you subscribe from here, we get money to help run Playful Bent. :)</div>
+	</div>
+		
+</div>
+
+<div class="photos_section">
+	<% for photo in @photos %>
+		<% if photo.user %>
+			<%= link_to(image_tag(url_for_gallery_photo(photo, 'thumb'), :alt => photo.title, :size => '75x75'), user_photo_set_my_photo_path(photo.user, photo.photo_set, photo)) %>
+		<% else %>
+			<%= image_tag(url_for_gallery_photo(photo, 'thumb'), :alt => photo.title, :size => '75x75') %>
+		<% end %>
+
+	<% end %>
+
+	<%= will_paginate @photos %>	
+</div>
+

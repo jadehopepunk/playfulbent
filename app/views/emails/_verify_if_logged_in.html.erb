@@ -1,0 +1,8 @@
+<p>You're logged in as <%=h current_user.name %></p>
+
+<p>If you sent this email, click the button below and all emails from this address will go though
+automatically from now on.</p>
+
+<%= button_to "Yes, I am \"#{h(@email.sender_address)}\"", update_verified_email_path(@email), :method => :put %>
+
+<p>Not <%=h current_user.name %>? <%= link_to 'Click here', session_path(:return_to => verify_email_path(@email)), :method => :delete %> to login as someone else.</p>

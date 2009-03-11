@@ -1,0 +1,43 @@
+# == Schema Information
+# Schema version: 258
+#
+# Table name: page_versions
+#
+#  id         :integer(11)   not null, primary key
+#  text       :text          
+#  author_id  :integer(11)   
+#  parent_id  :integer(11)   
+#  story_id   :integer(11)   
+#  created_on :datetime      
+#  is_end     :boolean(1)    
+#
+
+# == Schema Information
+# Schema version: 153
+#
+# Table name: page_versions
+#
+#  id         :integer(11)   not null, primary key
+#  text       :text          
+#  author_id  :integer(11)   
+#  parent_id  :integer(11)   
+#  story_id   :integer(11)   
+#  created_on :datetime      
+#  is_end     :boolean(1)    
+#
+one:
+  id: 1
+  author_id: 1000001
+  story_id: 1
+  text: the fat brown fox
+second_root:
+  id: 2
+  author_id: 1000001
+  story_id: 2
+  text: the fat brown fox
+second_child:
+  id: 3
+  author_id: 1000001
+  story_id: 2
+  parent_id: 2
+  text: the fat brown fox

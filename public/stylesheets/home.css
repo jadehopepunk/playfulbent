@@ -1,0 +1,82 @@
+.home .aside {
+  float: left;
+  width:  320px;
+  margin-right: 10px;
+}
+
+.home .site_description
+{
+  letter-spacing: 0.05em;
+  word-spacing: 0.1em;
+}
+
+.home .site_description .one
+{  
+  font-weight: bold;
+  line-height: 140%;
+}
+
+.home .site_description .two
+{ 
+  font-size: 16pt; 
+  word-spacing: 0.2em;
+}
+
+.home .things_to_do .activity_area {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #CBB5A5;
+  border: 2px solid #CBB5A5;
+  background-color: #FFF;
+  padding: 10px;
+}
+
+.home .things_to_do {
+  margin-left: 330px;
+}
+
+.home .things_to_do .activity_area h1 {
+  font-weight: bolder;
+  margin-bottom: 0;
+  letter-spacing: 0.1em;
+}
+
+.home .things_to_do .activity_area p {
+  font-size: 110%;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+
+.home .things_to_do .activity_area a {
+  font-size: 170%;
+  font-weight: normal;
+}
+
+.home .things_to_do .activity_area a.todo {
+  font-size: 170%;
+  font-weight: normal;
+  color: green;
+}
+
+.home .thumbnail_group {
+  margin: 10px auto 0 auto;
+  text-align: center;
+}
+
+.home .thumbnail_group a {
+  float: none;
+  display: inline;
+  margin: 0;
+}
+
+.home .thumbnail_group a img {
+  border: 2px solid black;
+}
+
+.home .tag_cloud {
+  text-align: center;
+}
+
+.home .latest_blog_article {
+  margin-top: 1em;
+}

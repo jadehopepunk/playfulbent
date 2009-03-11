@@ -1,0 +1,39 @@
+div.big_tree {
+  width: 780px;
+  overflow: hidden;
+}
+
+div.big_tree div.tree_root {
+  width: 100px;
+  overflow: hidden;
+  float: left;
+  padding-top: 20px;
+}
+
+div.big_tree ul.tree_branches {
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 680px;
+  padding-top: 20px;
+  list-style: none;
+}
+
+div.big_tree ul.tree_branches li {
+  display: block;
+  width: 680px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+div.big_tree div.branch_label {
+  width: 160px;
+  float: left;
+  font-weight: bold;
+  border-bottom: 2px solid #333;
+}
+
+div.big_tree div.branch_label span {
+  margin-left: 10px;
+}
+

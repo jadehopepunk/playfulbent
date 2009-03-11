@@ -1,0 +1,1 @@
+page.replace_html 'next_photo_section', :partial => 'about_next_photo'

@@ -1,0 +1,24 @@
+<% if logged_in?  %>
+	<div id="mail_settings">
+		<% if @show_errors %>
+			<%= error_messages_for :story_subscription %>
+		<% else %>
+			<h3>Email Me</h3>
+			<div class="when_somebody">When somebody continues:</div>
+			<div class="options">
+				<form id="story_subscription_form">
+					<div class="option"><%= check_box :story_subscription, :continue_page_i_wrote %> ... a page I wrote</div>
+					<div class="option"><%= check_box :story_subscription, :continue_page_i_follow %> ... a page I'm following</div>
+				</form>
+				<script type="text/javascript">
+				//<![CDATA[
+					new Form.Observer('story_subscription_form', 0, function(element, value) {new Ajax.Request('<%= story_story_subscriptions_url(:story_id => @story) %>', {asynchronous:true, evalScripts:true, method:'post', parameters:Form.serialize('story_subscription_form')})})
+				//]]>
+				</script>
+
+
+			</div>
+			<div class="fine_print">(settings are per story)</div>
+		<% end %>	
+	</div>
+<% end %>

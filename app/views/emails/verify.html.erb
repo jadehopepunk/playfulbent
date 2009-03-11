@@ -1,0 +1,23 @@
+<h1>Verifying Your Message</h1>
+
+<div class="email_sender_details">
+	<div class="preview_label">You wrote...</div>
+	<div class="email_parts_preview preview_details">
+		<div class="email_subject"><%=h truncate(@email.subject, 200) %></div>
+		<div class="email_body_preview"><%=h truncate(@email.text_body, 200) %></div>
+	</div>
+	
+	<div class="preview_label">From the address:</div>
+	<div class="email_address preview_details"><%=h @email.sender_address %></div>
+</div>
+
+<% if logged_in? %>
+	<%= render :partial => 'verify_if_logged_in' %>
+<% else %>
+	<%= render :partial => 'verify_if_not_logged_in' %>
+<% end %>
+
+
+
+
+

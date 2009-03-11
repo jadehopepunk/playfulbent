@@ -1,0 +1,57 @@
+<div class="fantasies">
+	<h1>Tell us your fantasy</h1>
+
+	<div class="box about_form_box">
+		<div class="box_heading">Fantasy examples</div>
+		<div class="box_contents">		
+			<p>Fantasies can be as long or as short as you like. They can be a simple description of what you
+			really want to do, like this:</p>
+		
+			<p><em>I've always wanted to give <strong>[Someone]</strong> oral sex while 
+			<strong>[Someone Else]</strong> is fucking me from behind.</em></p>
+		
+			<p>Or they can be an elaborate story describing your fantasy scenario, like this:</p>
+		
+			<p><em>I'm traveling alone for work, and it's been a long grueling week. Since work has paid for the hotel,
+			I decide to treat myself to a relaxing last evening in the hotel spa. There are a couple of families
+			finishing up in the pool area when I go down there, and several couples lounging in the spa. As the only
+			single person present, I feel	a bit nervous, and more than a bit lonely, as I slip into the spa with my
+			glass of champagne. People come and go and I lie back with my head on a towel and try and let my stress and
+			nervousness flow out of me. I must have drifted off because suddenly I'm bumped slightly and jerk awake. 
+			I see there is only one other <strong>[couple]</strong> with me in the spa now, and oh my god, they are 
+			making out right next to me. Not just making out, having sex. I can hear the heavy breathing, and there's
+			a leg that's touching my side and moving rhythmically with the motion of the bodies. Clearly they don't 
+			know that I'm awake, and I keep my head back, embarrassed, and more than a little excited...</em></p>
+		</div>
+	</div>	
+
+	<% form_for :fantasy, @fantasy, :url => fantasy_path(@fantasy), :method => :post, :builder => LabelledBuilder, :html => {:class => 'single_column two_thirds', :onsubmit => trigger_footer(:new_fantasy)} do |f| %>
+	
+		<p><strong>Here's how it works...</strong></p>
+
+		<p>You describe your fantasy below. Refer to yourself in the first person, using works like "I", "me", "my", 
+		etc. If there are other people in the fantasy, refer to them however you like, but put [square brackets] around
+		whatever you call them. This lets us know that it's a role that someone can play. You can give the other
+		people in the fantasy real names like <strong>[Adam]</strong>, or short descriptive names like 
+		<strong>[Dominant Man]</strong>, or simply call them <strong>[Person1]</strong>, <strong>[Person2]</strong>, 
+		etc. You only need to use the square brackets for each person once.</p>
+	
+		<%= f.text_area :description, :label => 'Describe your fantasy', :onkeypress => 'Fantasies.descriptionChanged(this);', :onblur => 'Fantasies.descriptionChanged(this);', :onkeypress => 'Fantasies.descriptionChanged(this);', :onkeyup => 'Fantasies.descriptionChanged(this);' %>
+
+		<%= error_message_on :fantasy, :description %>
+
+		<div class="form_row" id="roles_form_section" style="display:none">
+			<label for="fantasy_description">Roles for People</label>
+
+			<ul id="roles_list">
+			</ul>
+			</table>
+			<p id="too_many_roles" style="display:none">Have too many roles here?
+			Try removing some square brackets from your description.</p>
+		</div>
+		
+		<%= javascript_tag "Fantasies.descriptionChanged($('fantasy_description'));" %>
+
+		<%= form_footer(:new_fantasy, :submit_name => 'Submit', :cancel_link => fantasies_path) %>
+	<% end %>
+</div>

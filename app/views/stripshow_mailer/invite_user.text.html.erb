@@ -1,0 +1,18 @@
+<p>Hi <%= @invitation.recipient.name %>,</p>
+<p><%= @invitation.user.name %> thought that you might like to take a look at their Playful Bent 
+strip-show, entitled: <em>"<%= @strip_show.title %>"</em>.</p> 
+
+<img src="<%= @strip_show.thumb_url %>" alt="<%= @strip_show.title %>" />
+
+<p>
+  <%= link_to "Click Here", strip_photo_url(@strip_show.first_photo) %>
+  to view the first photo in this strip-photo.
+</p>
+
+<p>If you believe that you received this email in error, please let us know at 
+<a href="mailto:abuse@playfulbent.com">abuse@playfulbent.com</a> and we will give whoever sent this mail
+a sound spanking.</p>
+
+<p>kind regards,</p>
+
+<p>Playful-Bent</p>

@@ -1,0 +1,18 @@
+<h1>Your Strip-Shows</h1>
+
+<% if @user.strip_shows.empty? -%>
+
+	<p>You don't have a strip-show uploaded yet</p>
+	
+	<p>Strip-shows are sets of <%= StripShow::PHOTOS_IN_SET %> photos, of you slowly undressing for your audience. When you upload one,
+	people don't get to see it right away. Every time you look at a photo in someone else's strip-show, you
+	have to show them one more of yours in return. It becomes a game of <em>"I'll show you mine if you show
+	me yours"</em>.</p>
+	
+	<p><%= link_to "Click here to find out more.", {:controller => :stripshows, :action => :about_upload} %></p>
+	
+<% else %>
+	<div class="strip_show_preview_list stripshow_admin_preview_list">
+		<%= render :partial => 'stripshows/show_to_manage', :collection => @user.strip_shows %>
+	</div>
+<% end -%>

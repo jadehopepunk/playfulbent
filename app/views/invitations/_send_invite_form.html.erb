@@ -1,0 +1,29 @@
+<div class="sub_form" id="send_invite_form">	
+	<div align="center">
+		<%= form_remote_tag :url => {:controller => 'invitations', :action => 'send_stripshow_invite', :id => @strip_show, :format => 'js'} %>
+			<table cellpadding="2">
+				<tr>
+					<td colspan="2">
+						<%= error_messages_for 'invitation' %>
+					</td>
+				</tr>
+				<tr>
+					<td class="label" width="150"><label>Name:</label></td>
+					<td width="600"><%= text_field "invitation", "name", :size => 50 %></td>
+				</tr>
+				<tr>
+					<td class="label"><label>Email:</label></td>
+					<td><%= text_field "invitation", "email_address", :size => 50 %></td>
+				</tr>
+				<tr>
+					<td class="label" valign="top"><label>Personal Message:</label><br />(optional)</td>
+					<td><%= text_area "invitation", "message", :rows => 10 %></td>
+				</tr>
+			    <tr>
+			      <td></td>
+			      <td align="right"><%= submit_tag "Send" %></td>
+			    </tr>
+			</table>
+		</form>
+	</div>
+</div>

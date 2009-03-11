@@ -1,0 +1,9 @@
+<p>Hi <%=h @relationship.subject.name %>,</p>
+
+<p>Just a quick note to let you know that <%= link_to(h(@relationship.user.name), @relationship.user.profile_url) %> has listed you on playful bent as <%= @relationship.user.gender.third_person_possessive %> <%= @relationship.name %>.</p>
+
+<p>More details on <%= link_to "#{@relationship.user.name}'s friends page", user_relationships_url(@relationship.user) %>.</p>
+
+<p>cheers,</p>
+
+<p>Playful Bent</p>

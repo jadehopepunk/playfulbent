@@ -1,0 +1,93 @@
+
+<div id="profile_analyser_container">
+	<%= render(:partial => 'profile_analyser') %>
+</div>
+
+<% tab_page do %>
+	<div id="profile">
+
+		<div id="avatar_and_polaroid_container">
+			<%= image_tag("profiles/#{@profile.has_avatar? ? 'change' : 'set'}_your_user_image.png", :id => 'click_to_change', :style => 'display: none;') if @can_edit %>
+			<div id="avatar_container"><%= image_tag(@profile.avatar_polaroid_image_url, :id => 'avatar') %></div>
+			<% if @can_edit %>
+				<%= link_to(image_tag("profiles/polaroid_no_pc.gif", :size => '281x303', :id => 'polaroid'), new_profile_avatar_path(@profile), :class => 'avatar_image_link', :onmouseover => "Element.show('click_to_change');", :onmouseout => "Element.hide('click_to_change');") %>
+			<% else %>
+				<%= image_tag "profiles/polaroid_no_pc.gif", :size => '281x303', :id => 'polaroid' %>
+			<% end %>
+		</div>
+
+		<div id="profile_contents">
+			<%= link_to "Account Details", {:controller => 'users', :id => nil}, :class => "user_details_link" if @can_end %>
+			<h1 class="profile_name">
+				<%= interaction_ticks_for(@user) %>
+				<%= @profile.title %>
+			</h1>
+
+			<div class="member_since">
+				<% if @user.is_admin? %>
+					<strong>Playful Bent Admin</strong><br />
+				<% elsif @user.is_sponsor? %>
+					<strong>Playful Bent Sponsor</strong><br />
+				<% end %>
+				Member since <%= @profile.user.created_on.strftime '%B, %y' %><% if @user.last_logged_in_at %>, last logged in <%= time_ago_in_words @user.last_logged_in_at %> ago<% end %>
+			</div>
+			
+			<div id="gender_and_sexuality">
+				<%= render :partial => 'users/gender_and_sexuality' %>						
+			</div>
+			
+			<div id="location">
+				<%= render :partial => 'user_locations/location' %>				
+			</div>
+
+			<div id="gallery_container">
+				<%= render :partial => 'gallery' %>			
+			</div>
+			
+			<% unless own_profile? %>
+				<div id="quick_interaction_bar">
+					<strong>Like this person?</strong>
+					<% if crush = current_user.crush_on(@user) -%>
+						<%= link_to "You have a crush on #{h(@user.name)}", crush_url(crush) %>
+					<% else -%>
+						<%= link_to'Create a secret crush', new_crush_url(:subject_id => @user) %>
+					<% end -%>
+					| 
+					<% dare_challenge = current_user.current_dare_challenge_with(@user) %>
+					<% if current_user.current_dare_challenge_with(@user) %>
+						<%= link_to('Dare challenge in progress', dare_challenge_path(dare_challenge)) %>
+					<% else %>
+						<%= link_to('Challenge them to a mutual dare', new_dare_challenge_path(:subject_id => @user)) %>
+					<% end %>
+				</div>
+			<% end %>
+
+			<div id="welcome_and_tags">
+				<div id="welcome_text_container">
+					<%= render :partial => 'welcome_text' %>
+				</div>
+
+				<div class="tags_section">
+					<div id="interest_tag_string" class="tag_string">
+						<%= render :partial => 'interests' %>						
+					</div>
+
+					<div id="kink_tag_string" class="tag_string">
+						<%= render :partial => 'kinks' %>
+					</div>			
+				</div>			
+			</div>
+
+			<div class="email_details">
+				You can contact <%=h @user.name %> at: <%= link_to @user.playful_email, "mailto:#{@user.playful_email}" %>
+			</div>
+
+			<hr />
+
+			<div id="conversations_container">
+				<%= render :partial => 'conversations/show' %>
+			</div>
+
+		</div>	
+	</div>
+<% end %>	

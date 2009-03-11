@@ -1,0 +1,2 @@
+@syndicated_blog = nil
+page.replace_html 'blog_page_container', :partial => 'index'

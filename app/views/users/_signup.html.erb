@@ -1,0 +1,50 @@
+<div id="signup_form">
+	<% remote_form_for(:user, @user, :url => formatted_users_url(:js), :method => :post) do |f| %>
+
+	  <table cellspacing="0" cellpadding="0" class="form">
+	    <tr>
+	      <td class="label_column">
+	        <label for="user_nick">Nick</label>
+	        <span class="sub_label">Choose wisely,<br /> this name might stick!</span>
+				</td>
+	      <td>
+					<%= error_message_on :user, :nick %>
+					<%= f.text_field(:nick, :class => 'text_field') %>
+				</td>
+	    </tr>
+	    <tr>
+	      <td class="label_column">
+	        <label for="user_password">Choose a Password</label>
+				</td>
+	      <td>
+					<%= error_message_on :user, :password %>
+					<%= f.password_field :password, :size => 30, :class => 'text_field' %>
+				</td>
+	    </tr>
+	    <tr>
+	      <td class="label_column">
+	        <label for="user_password_confirmation">Re-Enter<br />Your Password</label>
+				</td>
+	      <td>
+					<%= error_message_on :user, :password_confirmation %>
+					<%= f.password_field :password_confirmation, :size => 30, :class => 'text_field' %>
+				</td>
+	    </tr>
+	    <tr>
+	      <td class="label_column">
+	        <label for="user_email">Email Address</label>
+	        <span class="sub_label">We wont send<br /> you spam. Ever.</span>
+				</td>
+	      <td>
+					<%= error_message_on :user, :email %>
+					<%= f.text_field(:email, :class => 'text_field') %>
+				</td>
+	    </tr>
+	    <tr>
+	      <td></td>
+	      <td align="right"><input type="submit" value="Submit" class="submit" /></td>
+	    </tr>
+	  </table>
+
+	<% end %>	
+</div>

@@ -1,0 +1,7 @@
+<div class="product_preview important_section">
+	<%= image_tag product_preview.thumbnail_url, :alt => h(product_preview.name), :class => 'product_image' %>
+	<h2 class="product_name"><%=h product_preview.name %></h2>
+	<div class="product_url"><%= link_to truncate(h(product_preview.url), 60), h(product_preview.url) %></div>
+	<br class="section_end" />
+</div>
+

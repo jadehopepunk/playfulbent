@@ -1,0 +1,36 @@
+<div class="box sidebar">
+	<div class="box_heading">
+		Already have a Playful Bent Account?
+	</div>
+	<div class="box_contents">
+		<% form_tag session_url do %>
+			<div class="form_row">
+        <label for="login">Nick</label>
+				<%= text_field_tag('login', nil, :class => 'text_field') %>				
+			</div>
+
+			<div class="form_row">
+        <label for="password">Password</label>
+	      <%= password_field_tag('password', nil, :class => 'text_field') %>
+			</div>
+			
+			<%= submit_tag 'Login' %>
+		<% end %>
+	</div>
+</div>
+
+<p>We need to get a few details from you in order to send your message.</p>
+
+<div id="signup_form">
+	<% form_for(:user, @user, :url => verify_new_user_email_path(@email), :method => :post, :builder => LabelledBuilder, :html => {:class => 'single_column two_thirds', :onsubmit => trigger_footer(:signup)}) do |f| %>
+		<%= f.text_field :nick, :label => 'Nickname', :hint => "Pic a name for yourself, probably not your real one" %>
+
+		<%= f.password_field :password, :hint => 'Used whenever you return to Playful Bent' %>
+	
+		<%= f.password_field :password_confirmation, :label => "Password Again", :hint => "to avoid mistakes" %>
+		
+		<%= f.text_field :email, :label => 'Primary Email', :hint => "Any responses you get will be sent here", :value => @email.sender_address %>
+	
+		<%= form_footer :signup, :submit_name => 'Make it so!', :requires_login => false %>
+	<% end %>	
+</div>

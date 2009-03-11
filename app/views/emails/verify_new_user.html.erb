@@ -1,0 +1,17 @@
+<%= render :partial => 'message_sent' %>
+
+<h2>So, what now?</h2>
+
+<p>As well as messages, Playful Bent has a lot other ways to interact and flirt with people. You can
+come back at any time and login with the nickname and password that you supplied.</p>
+
+<p>When your message is received by <%= @email.recipient ? h(@email.recipient.name) : "someone" %>,
+the first thing that they are likely to want do is find out a little bit more about what you're into.
+This means that it's a really good idea for you to fill out some information on your profile.</p>
+
+<p>Your profile is at <%= link_to current_user.profile_url, current_user.profile_url %>. You can
+visit it now to add some info, and you can always find it later by logging in to 
+<%= link_to "Playful Bent", 'http://www.playfulbent.com' %> and clicking on the link in the header
+that says "Your Profile".</p>
+
+<p>Have fun!</p>

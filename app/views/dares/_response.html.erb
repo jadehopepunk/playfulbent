@@ -1,0 +1,16 @@
+<div class="response">
+	<a name="<%= dom_id(response) %>" />
+	
+	<%= avatar_link_for response.user %>
+
+	<h2>Completed by <%=h response.user.name %></h2>
+	<div class="time_ago"><%= time_ago_in_words response.created_on %> ago</div>
+
+	<% unless response.description.blank? %>
+		<div class="description">
+			<%= simple_format(h(response.description)) %>
+		</div>
+	<% end %>
+
+	<%= image_tag(url_for_file_column(response, 'photo'), :class => 'feature_image') unless response.photo.blank?  %>
+</div>

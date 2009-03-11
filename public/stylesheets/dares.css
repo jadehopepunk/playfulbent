@@ -1,0 +1,352 @@
+/* DARE RESPONSES */
+
+#new_dare
+{
+  width: 600px;
+}
+
+#new_dare textarea
+{
+  width: 600px;
+}
+
+#dare_ideas
+{
+  float: right;
+  width: 320px;
+}
+
+#open_dares
+{
+  margin-top: 1em;
+  margin-bottom: 1em;  
+}
+
+#open_dares a.dare, #open_dares a.dare:link
+{
+  margin-bottom: 2px;
+  color: black; 
+  font-weight: normal;
+  display: block;
+}
+
+#open_dares a.dare:hover
+{
+  background-color: #CBB5A5;
+  text-decoration: none;
+}
+
+img.creator_avatar
+{
+  float: left;
+  margin-right: 10px;
+}
+
+#done_this
+{
+  width: 150px;
+}
+
+#response_photo_uploader
+{
+  height: 50px;
+  width: 100%;
+  border: none;
+}
+
+#new_response textarea
+{
+  width: 600px;
+  height: 100px;
+}
+
+#new_response div.box
+{
+  background-color: #CBB5A5;
+  float: right;
+  width: 300px;
+  padding: 2px;
+}
+
+#new_response .field
+{
+  width: 600px;
+}
+
+#new_response form
+{
+  width: 600px;  
+}
+
+/* DARES */
+
+.responses_count
+{
+  color: #666;
+  font-size: small;
+  font-weight: normal;  
+}
+
+#new_dare
+{
+  width: 600px;
+}
+
+#new_dare textarea
+{
+  width: 600px;
+}
+
+#dare_ideas
+{
+  float: right;
+  width: 320px;
+}
+
+img.creator_avatar
+{
+  float: left;
+  margin-right: 10px;
+}
+
+#done_this
+{
+  width: 150px;
+}
+
+#response_photo_uploader
+{
+  height: 50px;
+  width: 100%;
+  border: none;
+}
+
+#new_response textarea
+{
+  width: 600px;
+  height: 100px;
+}
+
+#new_response div.box
+{
+  background-color: #CBB5A5;
+  float: right;
+  width: 300px;
+  padding: 2px;
+}
+
+#new_response .field
+{
+  width: 600px;
+}
+
+#dare_response_list
+{
+  margin-bottom: 1em;
+}
+
+#dare_response_list div.response
+{
+  background-color: #FFF;
+  padding: 10px;
+  margin-bottom: 20px;
+  min-height: 100px;
+  border: 2px solid #CBB5A5;  
+}
+
+#dare_response_list div.response div.time_ago
+{
+  color: #666;
+}
+
+.responses_preview
+{
+  background-color: white;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.responses_preview img
+{
+  border: 1px solid black;
+}
+
+div.dares_section
+{
+  width: 630px;  
+}
+
+div.dare_explanation, div.photos_explanation
+{
+  width: 330px;
+  float: right;
+}
+
+div.open_dares
+{
+  width: 100%;
+}
+
+ul.dares
+{
+  margin-bottom: 40px;
+  list-style: none;
+}
+
+ul.dares li
+{
+  margin-bottom: 20px;
+}
+
+ul.dares li
+{
+  margin-bottom: 15px;
+  padding-top: 5px;
+}
+
+ul.dares img.mini_avatar
+{
+  position: relative;
+  top: -5px;
+  border: 1px solid #000;
+}
+
+ul.dares img.mini_avatar_pointer
+{
+  border: 0;
+  position: relative;
+  top: -5px;
+}
+
+div.dare_responses {
+  margin-top: 20px;
+}
+
+div.dare_with_responses
+{
+  border: 2px solid #CBB5A5;
+  margin: 0 0 5px 0;
+}
+
+ul.dares a.dare, ul.dares a.dare:link
+{
+  margin-bottom: 2px;
+  color: #000; 
+  font-weight: normal;
+  font-weight: bold;
+  color: #333;  
+}
+
+ul.dares a.dare:hover
+{
+  background-color: #CBB5A5;
+  text-decoration: none;
+}
+
+a.dare_someone
+{
+  float: right;
+}
+
+div.dares_footer
+{
+  width: 600px;
+  overflow: hidden;
+}
+
+div.response
+{
+  width: 606px;
+  overflow: hidden;
+  border-top: 2px solid #CBB5A5;
+  padding-top: 10px;
+}
+
+div.first_response
+{
+  border-width: 0;
+}
+
+div.dare_with_responses h2
+{
+  margin-bottom: 1em;
+}
+
+div.dare_with_responses h2 a
+{
+  font-weight: normal;
+}
+
+div.dare_with_responses p
+{
+  margin-top: 0;
+}
+
+div.response img.response_image
+{ 
+  border: 2px solid #000;
+  margin: 0 3px 2px 0;
+  float: left;
+}
+
+.dare_explanation img.area_icon {
+  float: right;
+}
+
+div.dare_level_description {
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+div.dare_level_description input {
+  float: left;
+  margin-right: 10px;
+}
+
+div.dare_level_description p {
+  margin-bottom: 0;
+}
+
+div.dare_level_description h2 {
+  margin-bottom: 0.5em;
+}
+
+img.dare_level_image {
+  border: 2px solid #333;
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+div.dare_challenge_message_preview {
+  border: 2px solid #CBB5A5;  
+}
+
+div.dare_challenge_form, div.review_form {
+  width: 640px;
+}
+
+div.dare_level_selector {
+  margin-top: 1em;
+}
+
+div.dare_level_selector div.dare_level_description {
+  width: 600px;
+	padding: 6px;
+	border: 2px solid #999;
+}
+
+div.dare_level_selector div.inactive_dare_level {
+	opacity: .4;
+	filter: alpha(opacity=40);
+}
+
+div.dare_level_selector div.inactive_dare_level:hover {
+	opacity: 1.0;
+	filter: alpha(opacity=100);
+	background-color: #EEE;
+}
+
+div.dare_challenge_form textarea {
+  margin-top: 1em;
+  width: 620px;
+}

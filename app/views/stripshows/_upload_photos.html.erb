@@ -1,0 +1,10 @@
+<% if @strip_show.strip_photos.empty?  -%>
+  <strong>Select your first photo to upload:</strong>
+<% else -%>
+  <strong>Select your next photo to upload:</strong>
+<% end -%>
+
+<%= error_messages_for 'next_photo' %>
+<% form_tag url_for(:controller => 'stripshows', :action => 'upload'), :multipart => true do %>
+  <%= file_column_field("next_photo", "image", :onchange => "this.form.submit();") %>
+<% end %>

@@ -1,0 +1,2 @@
+page.replace_html 'welcome_text_container', :partial => 'welcome_text'
+page.replace_html 'profile_analyser_container', :partial => 'profiles/profile_analyser'

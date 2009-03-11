@@ -1,0 +1,342 @@
+Return-path: <sentto-20541471-1-1184389270-playfulbent_test_collector=portallus.com@returns.groups.yahoo.com>
+Envelope-to: playfulbent_test_collector@portallus.com
+Delivery-date: Sat, 14 Jul 2007 01:01:14 -0400
+Received: from n9b.bullet.sp1.yahoo.com ([69.147.64.101])
+        by celmis.site5.com with smtp (Exim 4.63)
+        (envelope-from <sentto-20541471-1-1184389270-playfulbent_test_collector=portallus.com@returns.groups.yahoo.com>)
+        id 1I9Zkn-0007JX-1x
+        for playfulbent_test_collector@portallus.com; Sat, 14 Jul 2007 01:01:13 -0400
+Comment: DomainKeys? See http://antispam.yahoo.com/domainkeys
+DomainKey-Signature: a=rsa-sha1; q=dns; c=nofws; s=lima; d=yahoogroups.com;
+        b=dHGZdl6260KM5yAO0PeCQbe/QXPMvOW46yQKYuP2euvcIvvF5kWfJ2ZwSUFTfAiN7DMxGtCOgwz/g9vGloHKaNv5vLNg0dZAnaCqpV3Sxr0USFAhSXhD8W63Xm8k23eW;
+Received: from [216.252.122.217] by n9.bullet.sp1.yahoo.com with NNFMP; 14 Jul 2007 05:01:10 -0000
+Received: from [66.218.69.2] by t2.bullet.sp1.yahoo.com with NNFMP; 14 Jul 2007 05:01:10 -0000
+Received: from [66.218.67.94] by t2.bullet.scd.yahoo.com with NNFMP; 14 Jul 2007 05:01:10 -0000
+X-Yahoo-Newman-Id: 20541471-m1
+X-Sender: playfulbent_test_collector@portallus.com
+X-Apparently-To: craigsplayground@yahoogroups.com
+Received: (qmail 7725 invoked from network); 14 Jul 2007 05:01:09 -0000
+Received: from unknown (66.218.66.70)
+  by m37.grp.scd.yahoo.com with QMQP; 14 Jul 2007 05:01:09 -0000
+Received: from unknown (HELO n27.bullet.scd.yahoo.com) (66.94.237.56)
+  by mta12.grp.scd.yahoo.com with SMTP; 14 Jul 2007 05:01:09 -0000
+Received: from [66.218.69.1] by n27.bullet.scd.yahoo.com with NNFMP; 14 Jul 2007 05:00:41 -0000
+Received: from [66.218.66.85] by t1.bullet.scd.yahoo.com with NNFMP; 14 Jul 2007 05:00:41 -0000
+To: craigsplayground@yahoogroups.com
+Message-ID: <f79l9n+r8np@eGroups.com>
+In-Reply-To: <f791aq+k6qf@eGroups.com>
+User-Agent: eGroups-EW/0.82
+X-Mailer: Yahoo Groups Message Poster
+X-Originating-IP: 66.94.237.56
+X-eGroups-Msg-Info: 1:6:0:0
+X-Yahoo-Post-IP: 202.27.210.28
+From: "playfulbent_test_bot" <playfulbent_test_collector@portallus.com>
+X-Yahoo-Profile: playfulbent_test_bot
+Sender: craigsplayground@yahoogroups.com
+MIME-Version: 1.0
+Mailing-List: list craigsplayground@yahoogroups.com; contact craigsplayground-owner@yahoogroups.com
+Delivered-To: mailing list craigsplayground@yahoogroups.com
+List-Id: <craigsplayground.yahoogroups.com>
+Precedence: bulk
+List-Unsubscribe: <mailto:craigsplayground-unsubscribe@yahoogroups.com>
+Date: Sat, 14 Jul 2007 05:00:39 -0000
+Subject: [craigsplayground] Re: Lorem Ipsum
+Reply-To: craigsplayground@yahoogroups.com
+X-Yahoo-Newman-Property: groups-email-ff
+Content-Type: multipart/alternative;
+ boundary="CQOug0DORW46uFmVgQgn7jP3KJPHomhA3yEgoIg"
+X-Antivirus-Scanner: This message has been scanned by ClamAV.
+
+--CQOug0DORW46uFmVgQgn7jP3KJPHomhA3yEgoIg
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+My reply text
+
+
+--CQOug0DORW46uFmVgQgn7jP3KJPHomhA3yEgoIg
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+</head>
+
+<!-- Network content -->
+
+
+<body style="background-color: #ffffff;">
+
+<!--~-|**|PrettyHtmlStartT|**|-~-->
+<div id="ygrp-mlmsg" style="width:655px; position:relative;">
+  <div id="ygrp-msg" style="width: 490px; padding: 0 15px 0 0; float:left;  z-index:1;">
+<!--~-|**|PrettyHtmlEndT|**|-~-->
+
+    <div id="ygrp-text">
+            <p>My reply text<br>
+<br>
+</p>
+    </div>  
+
+    <!--~-|**|PrettyHtmlStart|**|-~-->
+    <span width="1" style="color: white;">__._,_.___</span>
+    <!-- Start the section with Message In topic -->
+    <div id="ygrp-actbar">
+              <span class="left">
+          <a href="http://groups.yahoo.com/group/craigsplayground/message/11;_ylc=X3oDMTMxOWpqNWRlBF9TAzk3MzU5NzE0BGdycElkAzIwNTQxNDcxBGdycHNwSWQDMTcwNTAxNjA2MQRtc2dJZAMxMgRzZWMDZnRyBHNsawN2dHBjBHN0aW1lAzExODQzODkyNzAEdHBjSWQDMTE-">
+            Messages in this topic          </a> (<span class="bld">0</span>)
+        </span>
+        <a href="http://groups.yahoo.com/group/craigsplayground/post;_ylc=X3oDMTJvbWc4YnRxBF9TAzk3MzU5NzE0BGdycElkAzIwNTQxNDcxBGdycHNwSWQDMTcwNTAxNjA2MQRtc2dJZAMxMgRzZWMDZnRyBHNsawNycGx5BHN0aW1lAzExODQzODkyNzA-?act=reply&messageNum=12">
+          <span class="bld">
+            Reply          </span> (via web post)
+        </a>  | 
+        <a href="http://groups.yahoo.com/group/craigsplayground/post;_ylc=X3oDMTJmcDI0ZGc3BF9TAzk3MzU5NzE0BGdycElkAzIwNTQxNDcxBGdycHNwSWQDMTcwNTAxNjA2MQRzZWMDZnRyBHNsawNudHBjBHN0aW1lAzExODQzODkyNzA-" class="bld">
+          Start a new topic        </a>
+          </div> 
+    <!-------     Start Nav Bar  ------>
+    <!-- |**|begin egp html banner|**| -->
+    <div id="ygrp-vitnav">
+                <a href="http://groups.yahoo.com/group/craigsplayground/messages;_ylc=X3oDMTJmZm9qMXJrBF9TAzk3MzU5NzE0BGdycElkAzIwNTQxNDcxBGdycHNwSWQDMTcwNTAxNjA2MQRzZWMDZnRyBHNsawNtc2dzBHN0aW1lAzExODQzODkyNzA-">Messages</a>  
+            |    <a href="http://groups.yahoo.com/group/craigsplayground/files;_ylc=X3oDMTJnb2R1ZWJzBF9TAzk3MzU5NzE0BGdycElkAzIwNTQxNDcxBGdycHNwSWQDMTcwNTAxNjA2MQRzZWMDZnRyBHNsawNmaWxlcwRzdGltZQMxMTg0Mzg5Mjcw">Files</a>  
+            |    <a href="http://groups.yahoo.com/group/craigsplayground/photos;_ylc=X3oDMTJmbXY2MXNkBF9TAzk3MzU5NzE0BGdycElkAzIwNTQxNDcxBGdycHNwSWQDMTcwNTAxNjA2MQRzZWMDZnRyBHNsawNwaG90BHN0aW1lAzExODQzODkyNzA-">Photos</a>  
+            |    <a href="http://groups.yahoo.com/group/craigsplayground/links;_ylc=X3oDMTJnZTNiYXJvBF9TAzk3MzU5NzE0BGdycElkAzIwNTQxNDcxBGdycHNwSWQDMTcwNTAxNjA2MQRzZWMDZnRyBHNsawNsaW5rcwRzdGltZQMxMTg0Mzg5Mjcw">Links</a>  
+            |    <a href="http://groups.yahoo.com/group/craigsplayground/database;_ylc=X3oDMTJkNGp0ZWZwBF9TAzk3MzU5NzE0BGdycElkAzIwNTQxNDcxBGdycHNwSWQDMTcwNTAxNjA2MQRzZWMDZnRyBHNsawNkYgRzdGltZQMxMTg0Mzg5Mjcw">Database</a>  
+            |    <a href="http://groups.yahoo.com/group/craigsplayground/polls;_ylc=X3oDMTJnMW05NDRmBF9TAzk3MzU5NzE0BGdycElkAzIwNTQxNDcxBGdycHNwSWQDMTcwNTAxNjA2MQRzZWMDZnRyBHNsawNwb2xscwRzdGltZQMxMTg0Mzg5Mjcw">Polls</a>  
+            |    <a href="http://groups.yahoo.com/group/craigsplayground/members;_ylc=X3oDMTJmNnFuNzdpBF9TAzk3MzU5NzE0BGdycElkAzIwNTQxNDcxBGdycHNwSWQDMTcwNTAxNjA2MQRzZWMDZnRyBHNsawNtYnJzBHN0aW1lAzExODQzODkyNzA-">Members</a>  
+            |    <a href="http://groups.yahoo.com/group/craigsplayground/calendar;_ylc=X3oDMTJlZ28xbjhoBF9TAzk3MzU5NzE0BGdycElkAzIwNTQxNDcxBGdycHNwSWQDMTcwNTAxNjA2MQRzZWMDZnRyBHNsawNjYWwEc3RpbWUDMTE4NDM4OTI3MA--">Calendar</a>  
+    </div>  
+    <!-- |**|end egp html banner|**| -->
+
+    <!-- Do not have place to put it yet -->
+    <div id="ygrp-grft">
+          </div>
+
+    <!-- yahoo logo -->
+    <!-- |**|begin egp html banner|**| -->
+    <div id="ygrp-ft">
+      <a href="http://groups.yahoo.com/;_ylc=X3oDMTJlbmp1cDJkBF9TAzk3MzU5NzE0BGdycElkAzIwNTQxNDcxBGdycHNwSWQDMTcwNTAxNjA2MQRzZWMDZnRyBHNsawNnZnAEc3RpbWUDMTE4NDM4OTI3MA--">
+      <img src="http://us.i1.yimg.com/us.yimg.com/i/yg/img/logo/ma_grp_160.gif" height="15" width="106" border="0" alt="Yahoo! Groups"></a> <br>
+      <a href="http://groups.yahoo.com/group/craigsplayground/join;_ylc=X3oDMTJnMXMzbG80BF9TAzk3MzU5NzE0BGdycElkAzIwNTQxNDcxBGdycHNwSWQDMTcwNTAxNjA2MQRzZWMDZnRyBHNsawNzdG5ncwRzdGltZQMxMTg0Mzg5Mjcw">Change settings via the Web</a> (Yahoo! ID required) <br>
+      Change settings via email: <a href="mailto:craigsplayground-digest@yahoogroups.com?subject=Email Delivery: Digest">Switch delivery to Daily Digest</a> | <a href = "mailto:craigsplayground-traditional@yahoogroups.com?subject=Change Delivery Format: Traditional">Switch format to Traditional</a> <br>
+
+      <a href="http://groups.yahoo.com/group/craigsplayground;_ylc=X3oDMTJlZ3IwcjJiBF9TAzk3MzU5NzE0BGdycElkAzIwNTQxNDcxBGdycHNwSWQDMTcwNTAxNjA2MQRzZWMDZnRyBHNsawNocGYEc3RpbWUDMTE4NDM4OTI3MA--">
+        Visit Your Group 
+      </a> |
+      <a href="http://docs.yahoo.com/info/terms/">
+        Yahoo! Groups Terms of Use      </a> |
+      <a href="mailto:craigsplayground-unsubscribe@yahoogroups.com?subject=">
+        Unsubscribe      </a> 
+    </div>     <!-- |**|end egp html banner|**| -->
+  </div> <!-- ygrp-msg -->
+
+  
+  <!-- Sponsor -->
+  <!-- |**|begin egp html banner|**| -->
+  <div id="ygrp-sponsor" style="width:140px;float: left; clear: none; margin-left: 5px; background:white; margin-bottom:25px ;position:absolute; top:0; right: 0;">
+    <!-- Network content -->
+    
+    <!-- Start vitality -->
+    <div id="ygrp-vital">
+              <div id="vithd">Recent Activity</div>
+        <ul style="list-style-type:none; padding: 0; margin: 2px 0;">
+                <li style="clear: both;">
+      <div class="ct" style="float: right;"><span style="display:none">&nbsp;</span>5</div>
+      <div class="cat"><a href="http://groups.yahoo.com/group/craigsplayground/members;_ylc=X3oDMTJnZm9xdTQ1BF9TAzk3MzU5NzE0BGdycElkAzIwNTQxNDcxBGdycHNwSWQDMTcwNTAxNjA2MQRzZWMDdnRsBHNsawN2bWJycwRzdGltZQMxMTg0Mzg5Mjcw">New Members</a></div>
+    </li>
+  
+            
+            
+            
+            
+            
+        </ul>
+            <a href="http://groups.yahoo.com/group/craigsplayground;_ylc=X3oDMTJmbzJ0Mm9jBF9TAzk3MzU5NzE0BGdycElkAzIwNTQxNDcxBGdycHNwSWQDMTcwNTAxNjA2MQRzZWMDdnRsBHNsawN2Z2hwBHN0aW1lAzExODQzODkyNzA-">
+        Visit Your Group      </a>
+    </div> 
+              
+    <!-- Network content -->
+              <div id="nc">
+              <div class="ad">
+                      <div id="hd1">Yahoo! Groups</div> 
+<p><a href="http://us.ard.yahoo.com/SIG=12jbfgiie/M=493064.10729651.11333342.8674578/D=groups/S=1705016061:NC/Y=YAHOO/EXP=1184396470/A=4617365/R=0/SIG=115gt68pf/*http://moderators.groups.yahoo.com/">Moderator Central</a></p> 
+<p>Connecting a world</p> 
+<p>of moderators</p>                  </div>
+                    <div class="ad">
+                      <div id="hd1">Real Food Group</div> 
+<p><a href="http://us.ard.yahoo.com/SIG=12j5c0er4/M=493064.11036139.11614791.8674578/D=groups/S=1705016061:NC/Y=YAHOO/EXP=1184396470/A=4725792/R=0/SIG=1192rfjiu/*http://groups.yahoo.com/group/realfood/">Share recipes</a></p> 
+<p>and favorite meals</p> 
+<p>w/ Real Food lovers.</p>                  </div>
+                    <div class="ad">
+                      <div id="hd1">HDTV Support</div> 
+<p><a href="http://us.ard.yahoo.com/SIG=12jlsl7gj/M=493064.10972170.11554072.8674578/D=groups/S=1705016061:NC/Y=YAHOO/EXP=1184396470/A=4706132/R=0/SIG=11f8fj6tf/*http://tech.groups.yahoo.com/group/samsunghd/">The official Samsung</a></p> 
+<p>Y! Group for HDTVs</p> 
+<p>and devices.</p>                  </div>
+          </div>
+    
+  </div>   <!-- |**|end egp html banner|**| -->
+  <div style="clear:both; color: #FFF; font-size:1px;">.</div>
+</div>   <img src="http://geo.yahoo.com/serv?s=97359714/grpId=20541471/grpspId=1705016061/msgId=12/stime=1184389270/nc1=4617365/nc2=4725792/nc3=4706132" width="1" height="1"> <br>
+
+<span  style="color: white;">__,_._,___</span>
+<!--~-|**|PrettyHtmlEnd|**|-~-->
+</body>
+<!--~-|**|PrettyHtmlStart|**|-~-->
+<head>
+<style type="text/css">
+<!--
+#ygrp-mlmsg {font-size:13px; font-family: arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}
+#ygrp-mlmsg table {font-size:inherit;font:100%;}
+#ygrp-mlmsg select, input, textarea {font:99% arial,helvetica,clean,sans-serif;}
+#ygrp-mlmsg pre, code {font:115% monospace;*font-size:100%;}
+#ygrp-mlmsg * {line-height:1.22em;}
+#ygrp-text{
+    font-family: Georgia;
+}
+#ygrp-text p{
+    margin: 0 0 1em 0;
+}
+#ygrp-tpmsgs{
+    font-family: Arial;
+    clear: both;
+}
+#ygrp-vitnav{
+        padding-top: 10px;
+        font-family: Verdana;
+        font-size: 77%;
+        margin: 0;
+}
+#ygrp-vitnav a{
+        padding: 0 1px;
+}
+#ygrp-actbar{
+        clear: both;
+        margin: 25px 0;
+        white-space:nowrap;
+        color: #666;
+        text-align: right;
+}
+#ygrp-actbar .left{
+        float: left;
+        white-space:nowrap;
+}
+.bld{font-weight:bold;}
+#ygrp-grft{
+        font-family: Verdana;
+        font-size: 77%;
+        padding: 15px 0;
+}
+#ygrp-ft{
+  font-family: verdana;
+  font-size: 77%;
+  border-top: 1px solid #666; 
+  padding: 5px 0; 
+}
+#ygrp-mlmsg #logo{
+  padding-bottom: 10px;
+}
+
+#ygrp-vital{
+        background-color: #e0ecee;
+        margin-bottom: 20px;
+        padding: 2px 0 8px 8px;
+}
+#ygrp-vital #vithd{
+        font-size: 77%;
+        font-family: Verdana;
+        font-weight: bold;
+        color: #333;
+        text-transform: uppercase;
+}
+#ygrp-vital ul{
+        padding: 0;
+        margin: 2px 0;
+}
+#ygrp-vital ul li{
+  list-style-type: none;
+  clear: both;
+  border: 1px solid #e0ecee;  
+}
+#ygrp-vital ul li .ct{
+  font-weight: bold;
+  color: #ff7900;
+  float: right;
+  width: 2em;
+  text-align:right;
+  padding-right: .5em;
+}
+#ygrp-vital ul li .cat{
+  font-weight: bold;
+}
+#ygrp-vital a {
+        text-decoration: none;
+}
+
+#ygrp-vital a:hover{
+  text-decoration: underline;
+}
+
+#ygrp-sponsor #hd{
+        color: #999;
+        font-size: 77%;
+}
+#ygrp-sponsor #ov{
+        padding: 6px 13px;
+        background-color: #e0ecee;
+        margin-bottom: 20px;
+}
+#ygrp-sponsor #ov ul{
+        padding: 0 0 0 8px;
+        margin: 0;
+}
+#ygrp-sponsor #ov li{
+        list-style-type: square;
+        padding: 6px 0;
+        font-size: 77%;
+}
+#ygrp-sponsor #ov li a{
+        text-decoration: none;
+        font-size: 130%;
+}
+#ygrp-sponsor #nc {
+  background-color: #eee;
+  margin-bottom: 20px;
+  padding: 0 8px;
+}
+#ygrp-sponsor .ad{
+        padding: 8px 0;
+}
+#ygrp-sponsor .ad #hd1{
+        font-family: Arial;
+        font-weight: bold;
+        color: #628c2a;
+        font-size: 100%;
+        line-height: 122%;
+}
+#ygrp-sponsor .ad a{
+        text-decoration: none;
+}
+#ygrp-sponsor .ad a:hover{
+        text-decoration: underline;
+}
+#ygrp-sponsor .ad p{
+        margin: 0;
+}
+o {font-size: 0; }
+.MsoNormal {
+   margin: 0 0 0 0;
+}
+#ygrp-text tt{
+  font-size: 120%;
+}
+blockquote{margin: 0 0 0 4px;}
+.replbq {margin:4}
+-->
+</style>
+</head>
+<!--~-|**|PrettyHtmlEnd|**|-~-->
+</html><!--End group email -->
+
+
+--CQOug0DORW46uFmVgQgn7jP3KJPHomhA3yEgoIg--

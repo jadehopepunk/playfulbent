@@ -1,0 +1,8 @@
+Hi <%= @dare_rejection.darer.name %>,
+
+<%= @dare_rejection.user.name %> wouldn't carry out your dare. You can find out more info, and give <%= @dare_rejection.user.gender.third_person_passive_pronoun %> another dare here:
+<%= dare_challenge_url @dare_rejection.dare_challenge %>
+
+have fun,
+
+Playful Bent

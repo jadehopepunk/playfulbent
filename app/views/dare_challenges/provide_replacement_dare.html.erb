@@ -1,0 +1,59 @@
+<div class="box about_form_box">
+	<div class="box_heading">
+		Need some Ideas?
+	</div>
+	<div class="box_contents">
+		Dares work best if it's things that people can do themselves and photograph, unless you know that the other
+		person has a partner or otherwise willing accomplice.
+		
+		<% if @other_party.profile && @other_party.profile.kinks %>
+			<p>If it helps to get your thinking, <%=h @other_party.name %> has listed the following
+			kinks on <%= @other_party.gender.third_person_possessive %> profile:</p>
+			
+			<p><%=h @other_party.profile.kink_tag_string %></p>
+		<% end %>
+	</div>
+</div>
+
+<div class="dare_challenge_form">
+	<%= avatar_link_for @other_party %>
+	
+	<h1>Sorry, <%=h @other_party.name %> wouldn't do that</h1>
+
+	<div class="form_description">
+		<p>While sometimes it's fun to feel like we <strong>have</strong> to do something, in the end it all has to stay
+		safe, sane and <strong>consensual</strong>. You dared <%=h @other_party.name %> to:</p>
+		
+		<div class="important_section">
+			<%= simple_format(h(@dare_rejection.rejected_dare_text)) %>			
+		</div>
+		
+		<% unless @dare_rejection.rejection_reason_text.blank? %>
+			<p><%=h @other_party.name %> wouldn't do this, <%=h @other_party.gender.third_person_active_pronoun %> said:</p>
+		
+			<div class="important_section">
+				<%= simple_format(h(@dare_rejection.rejection_reason_text)) %>			
+			</div>
+		<% else %>
+			<p><%=h @other_party.name %> wouldn't do this, <%=h @other_party.gender.third_person_active_pronoun %> didn't give a reason.</p>
+		<% end %>
+		
+		<p>You need to give <%=h @other_party.name %> a new "<%= @dare_challenge.dare_level %>" dare. </p>
+		
+		<% form_for :dare_challenge, @dare_challenge, :url => dare_challenge_url(@dare_challenge), :html => {:class => 'single_column two_thirds', :method => :put} do |f| %>
+			<% field = (@dare_challenge.user == current_user ? :user_dare_text : :subject_dare_text) %>
+			
+			<div class="form_for">
+				<label>What <%=h @dare_challenge.dare_level %> thing do you dare <%=h @other_party.name %> to do?</label>
+				<%= error_message_on :dare_challenge, field, 'Your dare ' %>
+	
+				<%= f.text_area field %>
+			</div>
+			
+		  <div class="footer">
+				<%= image_submit_tag 'buttons/submit.png', :class => 'submit_button' %> or <%= link_to 'Cancel', @other_party.profile_url %>
+			</div>
+		<% end %>
+	</div>
+
+</div>

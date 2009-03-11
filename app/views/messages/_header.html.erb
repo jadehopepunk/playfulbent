@@ -1,0 +1,9 @@
+<h1>Your Messages</h1>
+
+<div class="tabs_wrapper extramargin_top">
+	<ul class="tabs">
+		<li class="first_tab <%= 'active' if params[:action] == 'index' %>"><%= link_to 'Received', user_messages_path(@user) %></li>
+		<li class="<%= 'active' if params[:action] == 'sent' %>"><%= link_to 'Sent', sent_user_messages_path(@user) %></li>
+		<li class="<%= 'active' if params[:action] =~ /new|create/ %>"><%= link_to 'Compose', new_user_message_path(@user) %></li>
+	</ul>
+</div>

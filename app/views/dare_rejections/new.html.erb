@@ -1,0 +1,39 @@
+<h1>Bitten off more than you could chew?</h1>
+
+<p>While sometimes it's fun to feel like we <strong>have</strong> to do something, in the end it all has to stay
+safe, sane and <strong>consensual</strong>.</p>
+
+<p><%=h @dare_rejection.darer.name %> dared you to:</p>
+
+<ol id="comments">  
+	<li class="comment even">
+		<%= avatar_and_name_link_for(@dare_rejection.darer) %>
+	  <div class="content_container">
+			<div class="speech_mark"></div>
+			<div class="inner_content">
+				<%= simple_format(h(@dare_rejection.dare_text)) %>
+			</div>
+		</div>
+	</li>
+</ol>
+
+<p style="clear: left">
+	If this is something that you can't bring yourself to do, then you don't have to. Although you don't have to
+	explain yourself, you can fill in a reason below if you like. Since <%=h @dare_rejection.darer.name %> will
+	get a chance to give you another dare, you should list what was about this dare that hit your limits so that
+	they will have a better idea what to dare you to do next time.
+</p>
+
+<% form_for :dare_rejection, @dare_rejection, :url => dare_rejections_path do |f| %>
+	<%= error_messages_for :dare_rejection %>
+
+	<%= hidden_field_tag :dare_challenge_id, params[:dare_challenge_id] %>
+
+	<label for="dare_rejection[rejection_reason_text]">Your Reasons</label><br />
+	<%= error_message_on :dare_rejection, :rejection_reason_text, "Reason " %>
+	<%= f.text_area :rejection_reason_text %>
+	
+  <div class="footer">
+		<%= submit_tag "Submit" %> or <%= link_to 'Cancel', @cancel_url %>
+	</div>
+<% end %>
