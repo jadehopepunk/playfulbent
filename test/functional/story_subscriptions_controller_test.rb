@@ -82,22 +82,29 @@ class StorySubscriptionsControllerTest < Test::Unit::TestCase
   end
 
   def test_update_returns_access_denied_if_user_doesnt_own_subscription
-    load_story
-    load_frodos_subscription
-    login_as_mock @bilbo
-    put :update, {:story_id => '47', :id => '12', :story_subscription => {:continue_page_i_wrote => '0', :continue_page_i_follow => '1'}}
+    @story_subscription = Factory.create(:story_subscription)
+    
+    login_as Factory.create(:user)
+    put :update, {
+      :story_id => @story_subscription.story.to_param, 
+      :id => @story_subscription.to_param, 
+      :story_subscription => {:continue_page_i_wrote => '0', :continue_page_i_follow => '1'}}
+
     assert_response 401
   end
     
   def test_update_updates_the_specified_subscription
-    load_story
-    load_frodos_subscription
-    @story_subscription_12.expects(:update_attributes).with('continue_page_i_wrote' => '0', 'continue_page_i_follow' => '1').returns(true)
+    @story_subscription = Factory.create(:story_subscription)
     
-    login_as_mock @frodo
-    put :update, {:story_id => '47', :id => '12', :story_subscription => {:continue_page_i_wrote => '0', :continue_page_i_follow => '1'}}
+    login_as @story_subscription.user
+    put :update, {
+      :story_id => @story_subscription.story.to_param, 
+      :id => @story_subscription.to_param, 
+      :story_subscription => {:continue_page_i_wrote => '0', :continue_page_i_follow => '1'}}
   
     assert_response 200
+    assert !@story_subscription.reload.continue_page_i_wrote
+    assert @story_subscription.reload.continue_page_i_follow
   end
   
   

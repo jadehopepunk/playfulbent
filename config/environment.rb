@@ -29,6 +29,8 @@ Rails::Initializer.run do |config|
   # (create the session table with 'rake create_sessions_table')
   config.action_controller.session_store = :active_record_store
 
+  config.gem "thoughtbot-factory_girl", :lib => "factory_girl", :source => "http://gems.github.com"
+  
   # Enable page/fragment caching by setting a file-based store
   # (remember to create the caching directory and make it readable to the application)
   # config.action_controller.fragment_cache_store = :file_store, "#{RAILS_ROOT}/cache"

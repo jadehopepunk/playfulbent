@@ -1,8 +1,12 @@
 module AuthenticatedTestHelper
   
   # Sets the current user in the session from the user fixtures.
-  def login_as(user_fixture_name)
-    @request.session[:user] = user_fixture_name ? users(user_fixture_name).id : nil
+  def login_as(user)
+    if user.is_a?(User)
+      @request.session[:user] = user.id
+    else
+      @request.session[:user] = user ? users(user).id : nil
+    end
   end
   
   def login_as_mock(user)

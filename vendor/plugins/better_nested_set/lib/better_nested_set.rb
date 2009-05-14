@@ -119,6 +119,7 @@ module SymetrieCom
           # Loop through set using block
           # pass :nested => false when result is not fully parent-child relational
           # for example with filtered result sets
+          # Set options[:sort_on] to the name of a column you want to sort on (optional).
           def recurse_result_set(result, options = {}, &block)
             return result unless block_given? 
             inner_recursion = options.delete(:inner_recursion)
@@ -129,10 +130,11 @@ module SymetrieCom
             options[:nested] = true unless options.key?(:nested)
                    
             siblings = options[:nested] ? result_set.select { |s| s.parent_id == parent_id } : result_set           
+            siblings.sort! {|a,b| a.send(options[:sort_on]) <=> b.send(options[:sort_on])} if options[:sort_on]
             siblings.each do |sibling|
               result_set.delete(sibling)           
               block.call(sibling, options[:level])
-              opts = { :parent_id => sibling.id, :level => options[:level] + 1, :inner_recursion => true }           
+              opts = { :parent_id => sibling.id, :level => options[:level] + 1, :inner_recursion => true, :sort_on => options[:sort_on]}           
               recurse_result_set(result_set, opts, &block) if options[:nested]
             end
             result_set.each { |orphan| block.call(orphan, options[:level]) } unless inner_recursion
@@ -1093,12 +1095,14 @@ module SymetrieCom
         private
           # override the sql preparation method to exclude the lft/rgt columns
           # under the same conditions that the primary key column is excluded
-          def attributes_with_quotes(include_primary_key = true, include_readonly_attributes = true) #:nodoc:
-            quoted = attributes.inject({}) do |quoted, (name, value)|
+          def attributes_with_quotes(include_primary_key = true, include_readonly_attributes = true, attribute_names = @attributes.keys) #:nodoc:
+            left_and_right_column = [acts_as_nested_set_options[:left_column], acts_as_nested_set_options[:right_column]]
+            quoted = {}
+            connection = self.class.connection
+            attribute_names.each do |name|
               if column = column_for_attribute(name)
-                quoted[name] = quote_value(value, column) unless !include_primary_key && (column.primary || [acts_as_nested_set_options[:left_column], acts_as_nested_set_options[:right_column]].include?(column.name))
+                quoted[name] = connection.quote(read_attribute(name), column) unless !include_primary_key && (column.primary || left_and_right_column.include?(column.name))
               end
-              quoted
             end
             include_readonly_attributes ? quoted : remove_readonly_attributes(quoted)
           end

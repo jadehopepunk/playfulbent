@@ -3,8 +3,19 @@ require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
 require 'test_help'
 require 'mocha'
 require 'authenticated_test_helper'
+require File.expand_path(File.dirname(__FILE__) + "/factories") 
 
 class Test::Unit::TestCase
+  include AuthenticatedTestHelper
+
+  def assert_required_login
+    assert_redirected_to :controller => 'users', :action => 'login_or_signup'
+  end
+
+  def assert_permission_denied
+    assert_response 401
+  end
+
   # Transactional fixtures accelerate your tests by wrapping each test method
   # in a transaction that's rolled back on completion.  This ensures that the
   # test database remains unchanged so your fixtures don't have to be reloaded
