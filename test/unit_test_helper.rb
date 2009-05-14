@@ -6,7 +6,6 @@ require 'action_controller/test_process'
 require 'test_help'
 require 'rubygems'
 require 'mocha'
-require 'stubba'
 
 class UnitTest
   def self.TestCase
