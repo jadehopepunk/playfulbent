@@ -1,7 +1,8 @@
 <% for dare_challenge in @dare_challenges %>
 	<div class="record_preview">
-		Challenge between <%= link_to "#{dare_challenge.user ? dare_challenge.user.name : 'Deleted User'} and #{h(dare
-_challenge.subject ? dare_challenge.subject.name : 'Deleted User')}", dare_challenge_path(dare_challenge) %>,
+	  <% user_name = dare_challenge.user ? dare_challenge.user.name : 'Deleted User' %>
+	  <% subject_name = dare_challenge.subject ? dare_challenge.subject.name : 'Deleted User' %>
+		Challenge between <%= link_to "#{h(user_name)} and #{h(subject_name)}", dare_challenge_path(dare_challenge) %>,
     <%=h dare_challenge.status_message_as_admin %>.
 	</div>
 <% end %>
