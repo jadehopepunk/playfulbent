@@ -100,6 +100,7 @@
 					<li class="strip_shows"><%= link_to "<span>Strip-Shows</span>", {:controller => 'stripshows', :action => 'index', :id => nil, :only_path => false}, :class => (site_section == :stripshows) ? "active" : nil %></li>
 					<li><%= link_to "<span>Reviews</span>", reviews_url, :class => (site_section == :reviews) ? "active" : nil %></li>
 					<li><%= link_to "<span>Photos</span>", photos_url, :class => (site_section == :photos) ? "active" : nil %></li>
+					<li><%= link_to "<span>Fantasies</span>", fantasies_url, :class => (site_section == :fantasies) ? "active" : nil %></li>
 				</ul>
 			</td>
 			<td class="right">&nbsp;</td>

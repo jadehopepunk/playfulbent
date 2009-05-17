@@ -17,12 +17,18 @@ class FantasyRole < ActiveRecord::Base
   belongs_to :fantasy
   has_many :fantasy_actors, :dependent => :destroy
   has_many :actors, :through => :fantasy_actors, :class_name => 'User', :source => :user
-    
-  def self.new_first_person(user)
-    role = FantasyRole.new(:name => FIRST_PERSON_NAME)
-    role.actors << user
-    role
+  
+  class << self    
+    def new_first_person(user)
+      role = FantasyRole.new(:name => FIRST_PERSON_NAME)
+      role.actors << user
+      role
+    end
   end
+
+  def other_actors(user)
+    actors.other_than_user(user)
+  end    
   
   def protagonist?
     name == FIRST_PERSON_NAME

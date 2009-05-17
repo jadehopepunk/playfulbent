@@ -1,8 +1,52 @@
 <h1>The role of "<em><%= @fantasy_role.name %></em>"</h1>
 
-<% if @fantasy_role.is_actor?(current_user) %>
-	<p>You fantasise about this.</p>
-<% else %>
-	<%= render :partial => 'fantasy_actors/new' %>
-<% end %>
+<div class="box about_form_box">
+	<div class="box_heading">
+		A Shared Fantasy
+	</div>
+	<div class="box_contents">
+  	<%=h @fantasy.description %>
+	</div>
+</div>
+
+<div class="two_thirds">
+  <% if @fantasy.is_actor?(current_user) %>
+    <% if @fantasy_role.is_actor?(current_user) %>
+    	<p>You fantasise about this.</p>
+    <% else %>
+  	  <p>You fantasise about playing another role in this fantasy.</p>
+    <% end %>
+
+  	<% if @other_actors.empty? %>
+  	  <p>No other users fantasize about playing this role in this fantasy yet, but you can checkout the
+  	  other roles for this same fantasy.</p>
+
+  	<% else %>
+    	<p>Other people who fantasize about being in the same role are:</p>
+
+    	<%= render :partial => 'profiles/profile_teaser', :collection => @other_actors.map(&:profile) %>
+
+      <p>You can also checkout the other roles in this fantasy, to see if anyone shares your fantasy
+      from a different point of view.</p>  	
+    <% end %>
+
+    <ul class="role_list">
+  		<% for role in @fantasy.roles %>
+  			<li>
+  				<% if role.protagonist? %>
+  					People fantasizing about this happening to <%= link_to "them", fantasy_role_path(role) %>
+  				<% else %>
+  					People fantasizing about being in the role of <%= link_to "#{role.name}", fantasy_role_path(role) %>
+  				<% end %>
+  			</li>
+  		<% end %>
+  	</ul>
+
+  <% else %>
+  	<%= render :partial => 'fantasy_actors/new' %>
+  <% end %>
+
+  <%= link_to 'Back to the Fantasy', fantasy_path(@fantasy) %>
+  
+</div>
 

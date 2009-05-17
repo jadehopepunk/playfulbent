@@ -3,7 +3,8 @@ class FantasyActorsController < ApplicationController
   
   def create
     @fantasy_actor = FantasyActor.new(params[:fantasy_actor])
-    @fantasy_actor.save
+    @fantasy_actor.user = current_user
+    @fantasy_actor.save!
     
     respond_to do |format|
       format.html do

@@ -20,6 +20,14 @@ class Fantasy < ActiveRecord::Base
     write_attribute :description, value
     calculate_roles
   end
+
+  def is_actor?(user)
+    roles.detect {|role| role.is_actor?(user)}
+  end
+  
+  def roles_for_user(user)
+    roles.select {|role| role.is_actor?(user)}
+  end
   
   protected
   

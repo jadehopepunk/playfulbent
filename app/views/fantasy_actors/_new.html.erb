@@ -1,4 +1,4 @@
-<% form_for :fantasy_actor, :method => :post, :builder => LabelledBuilder, :html => {:class => 'single_column two_thirds important_section', :onsubmit => trigger_footer(:new_fantasy_actor)} do |f| %>
+<% form_for :fantasy_actor, @fantasy_actor, :url => fantasy_actors_path, :method => :post, :builder => LabelledBuilder, :html => {:class => 'single_column two_thirds important_section', :onsubmit => trigger_footer(:new_fantasy_actor)} do |f| %>
 	<p>If you think that you would like to do this, then press the button below. When you do, we'll
 	show you the other people who fantasise about playing one of the roles in this fantasy.</p>
 	

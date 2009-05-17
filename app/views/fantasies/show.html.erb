@@ -1,28 +1,49 @@
 <h1>An anonymous fantasy...</h1>
 
 <div class="two_thirds">
-	<%= @fantasy.description %>
+	<blockquote>"<%= @fantasy.description %>"</blockquote>
 	
 	<div class="important_section">
-		<h2>Is this something you fantasize about too?</h2>
-		
-		<p>If you get turned on by imagining yourself doing this, even if you might not actually
-		do it in real life, then let us know which role you see yourself in. If you do, we'll let
-		you know who else fantasizes about this too.</p>
-		
-		<label>Which role would you play?</label>
-		
-		<ul class="role_list">
-			<% for role in @fantasy.roles %>
-				<li>
-					<% if role.protagonist? %>
-						I fantasize about this happening to <%= link_to "me", fantasy_role_path(role) %>
-					<% else %>
-						I fantasize about being in the role of <%= link_to "#{role.name}", fantasy_role_path(role) %>
-					<% end %>
-				</li>
-			<% end %>
-		</ul>
-		
+    <% if @fantasy.is_actor?(current_user) %>
+      <h2>You fantasize about this</h2>
+      
+      <p>You fantasize about playing the <%= @your_roles.length == 1 ? 'role' : 'roles' %> 
+      of <%= @your_roles.map(&:name).map {|name| content_tag :strong, h(name)}.to_sentence %></p>
+      
+      <p>To see who else shares this fantasy, view one of the roles below:</p>
+      
+  		<ul class="role_list">
+  			<% for role in @fantasy.roles %>
+  				<li>
+    				<% if role.protagonist? %>
+    					People fantasizing about this happening to <%= link_to "them", fantasy_role_path(role) %>
+    				<% else %>
+    					People fantasizing about being in the role of <%= link_to "#{role.name}", fantasy_role_path(role) %>
+    				<% end %>
+  				</li>
+  			<% end %>
+  		</ul>      
+    <% else %>
+		  <h2>Is this something you fantasize about too?</h2>
+
+  		<p>If you get turned on by imagining yourself doing this, even if you might not actually
+  		do it in real life, then let us know which role you see yourself in. If you do, we'll let
+  		you know who else fantasizes about this too.</p>
+
+  		<label>Which role would you play?</label>
+
+  		<ul class="role_list">
+  			<% for role in @fantasy.roles %>
+  				<li>
+  					<% if role.protagonist? %>
+  						I fantasize about this happening to <%= link_to "me", fantasy_role_path(role) %>
+  					<% else %>
+  						I fantasize about being in the role of <%= link_to "#{role.name}", fantasy_role_path(role) %>
+  					<% end %>
+  				</li>
+  			<% end %>
+  		</ul>
+    <% end %>
 	</div>
 </div>
+

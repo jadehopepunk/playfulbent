@@ -28,6 +28,7 @@ class FantasiesController < ApplicationController
   
   def show
     @fantasy = Fantasy.find(params[:id])
+    @your_roles = @fantasy.roles_for_user(current_user)
   end
   
 end

@@ -16,4 +16,5 @@ class FantasyActor < ActiveRecord::Base
   
   validates_presence_of :role, :user
   validates_uniqueness_of :user_id, :scope => :fantasy_role_id
+    
 end

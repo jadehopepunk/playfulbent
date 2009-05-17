@@ -136,7 +136,9 @@ module ApplicationHelper
   end
   
   def site_section
-    if ['reviews', 'products', 'action_shots'].include?(controller.controller_name)
+    if ['fantasies', 'fantasy_roles', 'fantasy_actors'].include?(controller.controller_name)
+      return :fantasies
+    elsif ['reviews', 'products', 'action_shots'].include?(controller.controller_name)
       return :reviews
     elsif ['photos', 'my_photos'].include?(controller.controller_name)
       return :photos

@@ -25,6 +25,12 @@ code {
   background: url("../images/layout/edge_background.png") top left repeat;   
 }
 
+blockquote {
+  color: #666;
+  font-size: 110%;
+  margin-left: 1em;
+}
+
 hr
 {
   color: #CBB5A5;

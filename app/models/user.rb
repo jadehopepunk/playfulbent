@@ -78,6 +78,8 @@ class User < ActiveRecord::Base
   attr_protected :is_admin, :allow_dummy, :is_review_manager
   
   alias_method :original_gender, :gender
+
+  named_scope :other_than_user, lambda {|user| {:conditions => ["users.id != ?", user.id]}}
   
   def self.new_or_existing_dummy_for(params)
 	  params = {} if params.nil?  
