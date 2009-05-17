@@ -56,9 +56,9 @@ module Additional
       else
         result += display_container_no_edit_start
       end
-      concat(result, proc.binding)
+      concat(result)
       yield
-      concat("</div>", proc.binding)
+      concat("</div>")
     end
     
     def inline_form_footer(record, form_partial)

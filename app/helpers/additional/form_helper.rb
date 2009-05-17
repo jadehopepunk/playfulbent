@@ -52,9 +52,9 @@ module Additional
       
         active = (current_step == step_number)
       
-        concat(result, proc.binding)
+        concat(result)
         yield(active)
-        concat("</div>", proc.binding)
+        concat("</div>")
       end
     end
     

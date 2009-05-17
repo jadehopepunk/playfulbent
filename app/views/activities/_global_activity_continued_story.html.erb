@@ -1,2 +1,2 @@
 <%= activity_actor_link(activity) %> has added <%= link_to "page #{activity.page_version.page_number}", activity.page_version.url %> 
-to the story "<%= link_to h(truncate(activity.story.title, 100)), story_path(activity.story) %>"
+to the story "<%= link_to h(truncate(activity.story.title, :length => 100)), story_path(activity.story) %>"

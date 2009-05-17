@@ -6,9 +6,8 @@
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
-require 'plugins/app_config/lib/configuration'
 
-RAILS_GEM_VERSION = '2.1.0' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.2.2' unless defined? RAILS_GEM_VERSION
 
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence those specified here
@@ -47,18 +46,6 @@ Rails::Initializer.run do |config|
 
   # See Rails::Configuration for more options
   
-  # PAYPAL INTEGRATION
-  config.app_config.paypal_url = 'https://www.sandbox.paypal.com/cgi-bin/webscr'
-  config.app_config.paypal_email = 'payments@playfulbent.com'
-
-  # GOOGLE MAPS
-  config.app_config.google_maps_key = 'ABQIAAAAeBPm_-KwgwjbZtYJENq_NxT2gEarVg5Z7ax6cK4j8CNFWrqRgRSqDzTXjPkqz80sBYjUYwDBaombxA'
-  
-  # FLICKR
-  config.app_config.flickr_api_key = '2a8764233e0d991553857f5f5d0490ab'
-  config.app_config.flickr_shared_secret = '7c7e089b1f6a298d'
-  
-  config.app_config.support_address = 'craig@craigambrose.com'
   
 end
 

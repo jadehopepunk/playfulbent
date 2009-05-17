@@ -47,7 +47,7 @@
 				</div>
 
 				<div class="story_text">
-				  <%= mini_avatar_link_for(story.author) %> <%= nl2lb(truncate(story.first_page_text, 300)) %>
+				  <%= mini_avatar_link_for(story.author) %> <%= nl2lb(truncate(story.first_page_text, :length => 300)) %>
 				</div>
 
 				<%= link_to image_tag('buttons/read_on.png', :alt => 'Read On'), child_pages_url(story, 0), :class => 'image_button read_more' %>

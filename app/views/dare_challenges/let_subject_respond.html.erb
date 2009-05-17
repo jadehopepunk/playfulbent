@@ -19,7 +19,7 @@
 
 				<div class="form_row">
 					<label for="dare_challenge[dare_level]"><span class="step_number">Step 1</span> What type of dare should the challenge be?</label>
-					<%= error_message_on :dare_challenge, :dare_level, 'Dare Level ' %>
+					<%= error_message_on :dare_challenge, :dare_level, :prepend_text => 'Dare Level ' %>
 			
 					<div class="dare_level_selector">
 						<div class="dare_level_description">
@@ -49,7 +49,7 @@
 				
 				<div class="form_for">
 					<label for="dare_challenge[dare_level]"><span class="step_number">Step 2</span> What do you dare them to do?</label>
-					<%= error_message_on :dare_challenge, :subject_dare_text, 'Your dare ' %>
+					<%= error_message_on :dare_challenge, :subject_dare_text, :prepend_text => 'Your dare ' %>
 		
 					<%= f.text_area :subject_dare_text %>
 				</div>

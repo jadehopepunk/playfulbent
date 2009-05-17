@@ -10,11 +10,11 @@ module Additional
     end
 
     def pre_truncate(string, max_length)
-      truncate(string.reverse, max_length).reverse
+      truncate(string.reverse, :length => max_length).reverse
     end
 
     def text_preview(string, max_length)
-      simple_format(h(truncate(string, max_length)))
+      simple_format(h(truncate(string, :length => max_length)))
     end
 
     

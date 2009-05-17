@@ -21,5 +21,3 @@ config.action_mailer.delivery_method = :test
 ActionController::UrlWriter.default_url_options[:host] = "test.host"
 ActionController::UrlWriter.default_url_options[:only_path] = false
 ActionController::Base.session_options[:session_domain] = 'test.host'
-
-config.app_config.flickr_api_key = 'some_bollocks'

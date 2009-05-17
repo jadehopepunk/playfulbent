@@ -5,7 +5,7 @@
 <ul>
 	<% for crush in @crushes %>
 		<li>
-			<%= link_to h(crush.user.name), crush.user.profile_url %> has a crush on <%= link_to h(crush.subject.name), crush.subject.profile_url %>: "<%=h truncate(crush.fantasy, 100) %>"
+			<%= link_to h(crush.user.name), crush.user.profile_url %> has a crush on <%= link_to h(crush.subject.name), crush.subject.profile_url %>: "<%=h truncate(crush.fantasy, :length => 100) %>"
 		</li>
 	<% end %>	
 </ul>

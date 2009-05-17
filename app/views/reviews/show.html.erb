@@ -52,7 +52,7 @@
 	<strong>Found At:</strong>
 	<% for product_url in @review.display_urls %>
 		<div>
-			<%= link_to truncate(h(product_url.url), 60), h(product_url.url) %>
+			<%= link_to truncate(h(product_url.url), :length => 60), h(product_url.url) %>
 		</div>
 	<% end %>
 	<% if is_review_admin? %>

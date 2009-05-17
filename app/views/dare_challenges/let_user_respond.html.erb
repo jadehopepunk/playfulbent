@@ -52,7 +52,7 @@
 
 				<div class="form_for">
 					<label for="dare_challenge[user_dare_text]">What <%=h @dare_challenge.dare_level %> thing do you dare <%=h @dare_challenge.subject.name %> to do?</label>
-					<%= error_message_on :dare_challenge, :user_dare_text, 'Your dare ' %>
+					<%= error_message_on :dare_challenge, :user_dare_text, :prepend_text => 'Your dare ' %>
 		
 					<%= f.text_area :user_dare_text %>
 				</div>

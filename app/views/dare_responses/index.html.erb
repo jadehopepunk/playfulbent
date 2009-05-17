@@ -82,12 +82,12 @@
 				<div class="dare_with_responses">
 					<% this_response_url = dare_url(dare_response.dare) + "##{dom_id(dare_response)}" %>
 					<div class="inner_text_block">
-						<h2><%= link_to truncate(h(dare_response.dare.request), 45), this_response_url %></h2>
+						<h2><%= link_to truncate(h(dare_response.dare.request), :length => 45), this_response_url %></h2>
 					
 						<%= mini_avatar_link_for(dare_response.user) %>
 						<%= link_to(image_tag(url_for_file_column(dare_response, 'photo', 'thumb'), :size => "80x80", :class => 'response_image'), this_response_url) unless dare_response.photo.blank? %>
 						<% suffix = (dare_response.description.length > 496 ? link_to('Read More', this_response_url) : '')%>
-						<%= simple_format(truncate(h(dare_response.description), 500) + ' ' + suffix) %>
+						<%= simple_format(truncate(h(dare_response.description), :length => 500) + ' ' + suffix) %>
 					</div>
 				</div>
 			<% end %>

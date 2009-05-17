@@ -37,16 +37,16 @@ module Additional
       raise ArgumentError, "Missing block" unless block_given?
 
       content = capture(&block)
-      concat('<div class="multi_page_content">', block.binding)
-        concat(area_tabs, block.binding)
-        concat('<div id="tabbable_page_content_container">', block.binding)
-          concat('<div id="tabbable_page_content">', block.binding)
-            concat('<div class="tabbable_page_body">', block.binding)
-              concat(content, block.binding)
-            concat('</div>', block.binding)
-          concat('</div>', block.binding)
-        concat('</div>', block.binding)
-      concat('</div>', block.binding)
+      concat('<div class="multi_page_content">')
+        concat(area_tabs)
+        concat('<div id="tabbable_page_content_container">')
+          concat('<div id="tabbable_page_content">')
+            concat('<div class="tabbable_page_body">')
+              concat(content)
+            concat('</div>')
+          concat('</div>')
+        concat('</div>')
+      concat('</div>')
     end    
     
   end

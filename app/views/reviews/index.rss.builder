@@ -17,7 +17,7 @@ xml.rss "version" => "2.0" do
   <div>
 	  #{ stars(review.overall_rating) }
 	</div>
-	<div class="review_body">#{ truncate(review.body, 200) + link_to('read more', review_url(review)) }</div>
+	<div class="review_body">#{ truncate(review.body, :length => 200) + link_to('read more', review_url(review)) }</div>
 </div>
 HTML
       end 

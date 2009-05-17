@@ -20,7 +20,7 @@
 		
 		<h2><%= link_to h(@featured_review.product.name), review_path(@featured_review) %></h2>
 
-		<div class="review_body"><%= truncate(@featured_review.body, 350) + link_to('read more', review_path(@featured_review)) %></div>
+		<div class="review_body"><%= truncate(@featured_review.body, :length => 350) + link_to('read more', review_path(@featured_review)) %></div>
 		
 		<% unless @featured_review.action_shots.empty? %>
 			<div class="action_shots">
@@ -63,7 +63,7 @@
 			<div class="subtitle">reviewed by <%= link_to h(review.user.name), review.user.profile_url %></div>
 			<div class="time_ago"><%= time_ago_in_words review.created_at %> ago</div>
 
-			<div class="review_body"><%= truncate(review.body, 200) + link_to('read more', review_path(review)) %></div>
+			<div class="review_body"><%= truncate(review.body, :length => 200) + link_to('read more', review_path(review)) %></div>
 			
 			<% unless review.action_shots.empty? %>
 				<div class="action_shots">

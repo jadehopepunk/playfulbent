@@ -67,7 +67,7 @@
 						<div class="dare_response">
 							<%= link_to(image_tag(url_for_file_column(response, 'photo', 'thumb'), :size => "80x80", :class => 'dare_response_image'), dare_url(response.dare)) if response.photo %>
 							<div class="dare_header">...<%=h response.user.name %> responded to your dare <%= time_ago_in_words response.created_on %> ago</div>
-							<%= simple_format(truncate(h(response.description), 500)) %>
+							<%= simple_format(truncate(h(response.description), :length => 500)) %>
 							<div class="response_buttons">
 								<%= link_to 'Read More', dare_url(response.dare), :class => 'respond' %>
 							</div>
@@ -90,7 +90,7 @@
 				<% for response in @user.dare_responses %>
 					<li>
 						<div class="dare_header">...responded to <%=h response.dare.creator.name %> <%= time_ago_in_words response.created_on %> ago</div>
-						<%= simple_format(truncate(h(response.description), 300)) %>
+						<%= simple_format(truncate(h(response.description), :length => 300)) %>
 						<div class="response_buttons">
 							<%= link_to 'Read More', dare_url(response.dare), :class => 'respond' %>
 						</div>

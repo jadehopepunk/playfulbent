@@ -3,8 +3,8 @@
 <div class="email_sender_details">
 	<div class="preview_label">You wrote...</div>
 	<div class="email_parts_preview preview_details">
-		<div class="email_subject"><%=h truncate(@email.subject, 200) %></div>
-		<div class="email_body_preview"><%=h truncate(@email.text_body, 200) %></div>
+		<div class="email_subject"><%=h truncate(@email.subject, :length => 200) %></div>
+		<div class="email_body_preview"><%=h truncate(@email.text_body, :length => 200) %></div>
 	</div>
 	
 	<div class="preview_label">From the address:</div>

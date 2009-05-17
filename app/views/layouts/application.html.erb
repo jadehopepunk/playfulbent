@@ -6,7 +6,7 @@
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
 	
 	<% if @meta_description %>
-		<meta name="description" content="<%=h truncate(@meta_description, 500) %>">
+		<meta name="description" content="<%=h truncate(@meta_description, :length => 500) %>">
 	<% end %>
 	<% if @meta_keywords %>
 		<meta name="keywords" content="<%=h @meta_keywords %>">

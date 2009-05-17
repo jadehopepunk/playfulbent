@@ -19,7 +19,7 @@
 								<h3><%= link_to h(story.title), story_url(story) %></h3>
 
 								<div class="story_text">
-								  <%= mini_avatar_link_for(story.author) %> <%= nl2lb(truncate(story.first_page_text, 200)) %>
+								  <%= mini_avatar_link_for(story.author) %> <%= nl2lb(truncate(story.first_page_text, :length => 200)) %>
 								</div>
 							</li>
 						<% end %>
@@ -67,12 +67,12 @@
 					<ul class="dares">
 						<% for dare_response in @dare_responses %>
 							<li>
-								<h3><%= link_to truncate(h(dare_response.dare.request), 45), dare_url(dare_response.dare) %></h3>
+								<h3><%= link_to truncate(h(dare_response.dare.request), :length => 45), dare_url(dare_response.dare) %></h3>
 					
 								<%= mini_avatar_link_for(dare_response.user) %>
 								<%= link_to(image_tag(url_for_file_column(dare_response, 'photo', 'thumb'), :size => "80x80", :class => 'response_image'), dare_url(dare_response.dare)) unless dare_response.photo.blank? %>
 								<% suffix = (dare_response.description.length > 496 ? link_to('Read More', dare_url(dare_response.dare)) : '')%>
-								<%= simple_format(truncate(h(dare_response.description), 500) + ' ' + suffix) %>
+								<%= simple_format(truncate(h(dare_response.description), :length => 500) + ' ' + suffix) %>
 							</li>
 						<% end %>
 					</ul>

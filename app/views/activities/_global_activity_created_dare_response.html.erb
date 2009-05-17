@@ -1,6 +1,6 @@
 <%= activity_actor_link(activity) %> has performed the dare 
 <% this_response_url = dare_path(activity.dare_response.dare) + "##{dom_id(activity.dare_response)}" %>
-"<%= link_to h(truncate(activity.dare_response.dare.request, 100)), this_response_url %>"
+"<%= link_to h(truncate(activity.dare_response.dare.request, :length => 100)), this_response_url %>"
 <div class="activity_pictures">
 	<%= link_to(image_tag(url_for_file_column(activity.dare_response, 'photo', 'thumb'), :class => 'response_image'), this_response_url) unless activity.dare_response.photo.blank? %>
 </div>

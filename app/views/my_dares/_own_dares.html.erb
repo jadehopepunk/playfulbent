@@ -44,7 +44,7 @@
 									<%= mini_avatar_link_for(response.user) %>
 									<%= link_to(image_tag(url_for_file_column(response, 'photo', 'thumb'), :size => "80x80", :class => 'response_image'), dare_url(response.dare)) unless response.photo.blank? %>
 									<% suffix = (response.description.length > 496 ? link_to('Read More', dare_url(dare)) : '')%>
-									<%= simple_format(truncate(h(response.description), 500) + ' ' + suffix) %>																
+									<%= simple_format(truncate(h(response.description), :length => 500) + ' ' + suffix) %>																
 								</div>
 							<% end %>
 
@@ -86,7 +86,7 @@
 							<div class="dare_header">
 								...You responded to <%=h response.dare.creator.name %>'s dare <%= time_ago_in_words response.created_on %> ago
 							</div>
-							<%= simple_format(truncate(h(response.description), 200)) %>
+							<%= simple_format(truncate(h(response.description), :length => 200)) %>
 
 							<div class="response_buttons">
 								<%= link_to 'Read More', dare_url(response.dare), :class => 'respond' %>

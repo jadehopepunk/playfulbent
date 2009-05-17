@@ -172,7 +172,7 @@ class ProfileTest < Test::Unit::TestCase
     
     avatar = profile.reload.avatar
     assert avatar
-    assert_equal 'system/user/avatar/image/1/logo.gif', avatar.image_url
+    assert_equal '/system/user/avatar/image/1/logo.gif', avatar.image_url
   end
   
   #-----------------------------------------------------

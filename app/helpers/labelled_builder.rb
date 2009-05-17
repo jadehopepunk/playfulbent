@@ -22,7 +22,7 @@ class LabelledBuilder < BaseBuilder
       error_fields = [label]
       error_fields += other_validation_fields if other_validation_fields
       error_text = error_fields.map do |error_field|
-        @template.error_message_on(@object_name, error_field, "<strong>Sorry</strong>, #{field_human_name} ")      
+        @template.error_message_on(@object_name, error_field, :prepend_text => "<strong>Sorry</strong>, #{field_human_name} ")
       end
       error_text = error_text.join(' ')
       

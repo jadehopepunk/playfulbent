@@ -16,7 +16,7 @@
 <div class="record_list">
 	<% for fantasy in @fantasies %>
 		<div class="record_teaser">
-			<%= truncate(fantasy.description, 700) %>
+			<%= truncate(fantasy.description, :length => 700) %>
 			<%= link_to('(read more)', fantasy_path(fantasy)) %>
 		</div>
 	<% end %>

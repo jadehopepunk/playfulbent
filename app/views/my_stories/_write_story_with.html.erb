@@ -14,7 +14,7 @@
 			<div class="page_version">
 				<div class="story_title">From "<%= version.story.title %>", page <%= version.page_number %></div>
 			
-				<%= simple_format h truncate(version.text, 500) %>
+				<%= simple_format h truncate(version.text, :length => 500) %>
 			
 				<%= link_to "Read More", page_version_url(version) %>
 			</div>

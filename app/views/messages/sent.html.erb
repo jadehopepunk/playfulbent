@@ -10,7 +10,7 @@
 						<span class="time_ago"><%= time_ago_in_words message.created_on %> ago</span>
 						<h3><%=h message.subject %></h3>
 						<div class="message_body_truncated" id="<%= dom_id(message, 'body_truncated') %>">
-							<%=h truncate(message.body, 100) %>
+							<%=h truncate(message.body, :length => 100) %>
 						</div>
 						<div class="message_body" id="<%= dom_id(message, 'body') %>" style="display:none">
 							<div class="from">

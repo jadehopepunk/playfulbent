@@ -9,7 +9,7 @@
 			How the Previous Page Ended
 		</div>
 		<div class="box_contents">
-			<%= simple_format h(pre_truncate(@parent.text.to_s, 500)) %>
+			<%= simple_format h(pre_truncate(@parent.text.to_s, :length => 500)) %>
 		</div>
 	</div>	
 	<%= render :partial => 'story_subscriptions/form' %>

@@ -30,7 +30,7 @@ safe, sane and <strong>consensual</strong>.</p>
 	<%= hidden_field_tag :dare_challenge_id, params[:dare_challenge_id] %>
 
 	<label for="dare_rejection[rejection_reason_text]">Your Reasons</label><br />
-	<%= error_message_on :dare_rejection, :rejection_reason_text, "Reason " %>
+	<%= error_message_on :dare_rejection, :rejection_reason_text, :prepend_text => "Reason " %>
 	<%= f.text_area :rejection_reason_text %>
 	
   <div class="footer">
