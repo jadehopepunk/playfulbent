@@ -2,59 +2,61 @@ require File.expand_path(File.dirname(__FILE__) + '<%= '/..' * class_nesting_dep
 
 describe <%= controller_class_name %>Controller do
   describe "route generation" do
-
-    it "should map { :controller => '<%= table_name %>', :action => 'index' } to /<%= table_name %>" do
+    it "maps #index" do
       route_for(:controller => "<%= table_name %>", :action => "index").should == "/<%= table_name %>"
     end
   
-    it "should map { :controller => '<%= table_name %>', :action => 'new' } to /<%= table_name %>/new" do
+    it "maps #new" do
       route_for(:controller => "<%= table_name %>", :action => "new").should == "/<%= table_name %>/new"
     end
   
-    it "should map { :controller => '<%= table_name %>', :action => 'show', :id => 1 } to /<%= table_name %>/1" do
-      route_for(:controller => "<%= table_name %>", :action => "show", :id => 1).should == "/<%= table_name %>/1"
+    it "maps #show" do
+      route_for(:controller => "<%= table_name %>", :action => "show", :id => "1").should == "/<%= table_name %>/1"
     end
   
-    it "should map { :controller => '<%= table_name %>', :action => 'edit', :id => 1 } to /<%= table_name %>/1<%= resource_edit_path %>" do
-      route_for(:controller => "<%= table_name %>", :action => "edit", :id => 1).should == "/<%= table_name %>/1<%= resource_edit_path %>"
+    it "maps #edit" do
+      route_for(:controller => "<%= table_name %>", :action => "edit", :id => "1").should == "/<%= table_name %>/1/edit"
     end
+
+  it "maps #create" do
+    route_for(:controller => "<%= table_name %>", :action => "create").should == {:path => "/<%= table_name %>", :method => :post}
+  end
+
+  it "maps #update" do
+    route_for(:controller => "<%= table_name %>", :action => "update", :id => "1").should == {:path =>"/<%= table_name %>/1", :method => :put}
+  end
   
-    it "should map { :controller => '<%= table_name %>', :action => 'update', :id => 1} to /<%= table_name %>/1" do
-      route_for(:controller => "<%= table_name %>", :action => "update", :id => 1).should == "/<%= table_name %>/1"
-    end
-  
-    it "should map { :controller => '<%= table_name %>', :action => 'destroy', :id => 1} to /<%= table_name %>/1" do
-      route_for(:controller => "<%= table_name %>", :action => "destroy", :id => 1).should == "/<%= table_name %>/1"
+    it "maps #destroy" do
+      route_for(:controller => "<%= table_name %>", :action => "destroy", :id => "1").should == {:path =>"/<%= table_name %>/1", :method => :delete}
     end
   end
 
   describe "route recognition" do
-
-    it "should generate params { :controller => '<%= table_name %>', action => 'index' } from GET /<%= table_name %>" do
+    it "generates params for #index" do
       params_from(:get, "/<%= table_name %>").should == {:controller => "<%= table_name %>", :action => "index"}
     end
   
-    it "should generate params { :controller => '<%= table_name %>', action => 'new' } from GET /<%= table_name %>/new" do
+    it "generates params for #new" do
       params_from(:get, "/<%= table_name %>/new").should == {:controller => "<%= table_name %>", :action => "new"}
     end
   
-    it "should generate params { :controller => '<%= table_name %>', action => 'create' } from POST /<%= table_name %>" do
+    it "generates params for #create" do
       params_from(:post, "/<%= table_name %>").should == {:controller => "<%= table_name %>", :action => "create"}
     end
   
-    it "should generate params { :controller => '<%= table_name %>', action => 'show', id => '1' } from GET /<%= table_name %>/1" do
+    it "generates params for #show" do
       params_from(:get, "/<%= table_name %>/1").should == {:controller => "<%= table_name %>", :action => "show", :id => "1"}
     end
   
-    it "should generate params { :controller => '<%= table_name %>', action => 'edit', id => '1' } from GET /<%= table_name %>/1;edit" do
-      params_from(:get, "/<%= table_name %>/1<%= resource_edit_path %>").should == {:controller => "<%= table_name %>", :action => "edit", :id => "1"}
+    it "generates params for #edit" do
+      params_from(:get, "/<%= table_name %>/1/edit").should == {:controller => "<%= table_name %>", :action => "edit", :id => "1"}
     end
   
-    it "should generate params { :controller => '<%= table_name %>', action => 'update', id => '1' } from PUT /<%= table_name %>/1" do
+    it "generates params for #update" do
       params_from(:put, "/<%= table_name %>/1").should == {:controller => "<%= table_name %>", :action => "update", :id => "1"}
     end
   
-    it "should generate params { :controller => '<%= table_name %>', action => 'destroy', id => '1' } from DELETE /<%= table_name %>/1" do
+    it "generates params for #destroy" do
       params_from(:delete, "/<%= table_name %>/1").should == {:controller => "<%= table_name %>", :action => "destroy", :id => "1"}
     end
   end

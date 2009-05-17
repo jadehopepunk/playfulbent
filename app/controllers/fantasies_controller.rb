@@ -6,6 +6,7 @@ class FantasiesController < ApplicationController
   end
   
   def new
+    @fantasy = Fantasy.new
   end
   
   def create

@@ -29,19 +29,22 @@ describe "user tab page", :shared => true do
 end
 
 describe PhotoSetsController, "when logged out" do
+  before do
+    @user = model_factory.user
+  end
 
   it "should redirect to login on create" do
-    post :create, :user_id => 1
+    post :create, :user_id => @user.id
     response.should redirect_to(new_session_url)
   end
   
   it "should redirect to login on new" do
-    get :new, :user_id => 1
+    get :new, :user_id => @user.id
     response.should redirect_to(new_session_url)
   end
 
   it "should redirect to login on destroy" do
-    delete :destroy, :user_id => 1, :photo_set_id => 1
+    delete :destroy, :user_id => @user.id, :photo_set_id => 1
     response.should redirect_to(new_session_url)
   end
 

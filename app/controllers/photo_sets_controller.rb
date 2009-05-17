@@ -1,5 +1,4 @@
 class PhotoSetsController < UserBaseController
-  skip_before_filter :load_user
   skip_before_filter :load_user_base_tabs
 
   before_filter :login_required, :only => [:new, :create, :edit, :update, :destroy]

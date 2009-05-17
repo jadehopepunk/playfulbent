@@ -9,8 +9,8 @@ module Additional
       value.gsub("\n", "<br />\n")
     end
 
-    def pre_truncate(string, max_length)
-      truncate(string.reverse, :length => max_length).reverse
+    def pre_truncate(string, options)
+      truncate(string.reverse, options).reverse
     end
 
     def text_preview(string, max_length)

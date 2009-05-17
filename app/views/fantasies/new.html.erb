@@ -25,7 +25,7 @@
 		</div>
 	</div>	
 
-	<% form_for :fantasy, @fantasy, :url => fantasy_path(@fantasy), :method => :post, :builder => LabelledBuilder, :html => {:class => 'single_column two_thirds', :onsubmit => trigger_footer(:new_fantasy)} do |f| %>
+	<% form_for @fantasy, :method => :post, :builder => LabelledBuilder, :html => {:class => 'single_column two_thirds', :onsubmit => trigger_footer(:new_fantasy)} do |f| %>
 	
 		<p><strong>Here's how it works...</strong></p>
 
