@@ -47,12 +47,6 @@ Rails::Initializer.run do |config|
 
   # See Rails::Configuration for more options
   
-  # YAHOO INTEGRATION
-  config.app_config.yahoo_scraper_account = {:username => 'playfulbent_test_bot', :password => 'bootlace'}
-  config.app_config.mailing_list_collector_address = 'playfulbent_test_collector@portallus.com'
-  config.app_config.mailing_list_collector_password = 'bootlace'
-  config.app_config.mailing_list_collector_pop_host = 'mail.portallus.com'
-  
   # PAYPAL INTEGRATION
   config.app_config.paypal_url = 'https://www.sandbox.paypal.com/cgi-bin/webscr'
   config.app_config.paypal_email = 'payments@playfulbent.com'

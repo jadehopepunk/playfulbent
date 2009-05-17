@@ -20,8 +20,6 @@
 		'avatars', 
 		'activities', 
 		'profiles', 
-		'groups', 
-		'external_profiles', 
 		'threaded_list', 
 		'conversations', 
 		'relationships',
@@ -96,7 +94,6 @@
 				<ul id="navlist">
 					<li><%= link_to "<span>Forum</span>", conversations_url, :class => (site_section == :forum) ? "active" : nil %></li>
 					<li><%= link_to "<span>Blogs</span>", blogs_url(:id => nil), :class => (site_section == :blogs) ? "active" : nil %></li>
-					<%#= link_to "<span>Groups</span>", groups_url(:id => nil), :class => (site_section == :groups) ? "active" : nil %>
 					<li><%= link_to "<span>Profiles</span>", profiles_url, :class => (site_section == :profiles) ? "active" : nil %></li>
 					<li><%= link_to "<span>Stories</span>", stories_url(:id => nil), :class => (site_section == :stories) ? "active" : nil %></li>
 					<li><%= link_to "<span>Dares</span>", dare_responses_url(:id => nil), :class => (site_section == :dares) ? "active" : nil %></li>

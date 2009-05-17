@@ -23,16 +23,9 @@ config.action_mailer.delivery_method = :smtp
 ActionController::UrlWriter.default_url_options[:host] = "www.playfulbent.com"
 ActionController::Base.session_options[:session_domain] = 'playfulbent.com'
 
-# YAHOO INTEGRATION
-config.app_config.yahoo_scraper_account = {:username => 'playful_bent', :password => '45kjdfg9u342'}
-
 # PAYPAL INTEGRATION
 config.app_config.paypal_url = 'https://www.paypal.com/cgi-bin/webscr'
 config.app_config.paypal_email = 'paypal@bentproductions.biz'
-
-config.app_config.mailing_list_collector_address = 'groups@playfulbent.com'
-config.app_config.mailing_list_collector_password = '45kjdfg9u342'
-config.app_config.mailing_list_collector_pop_host = 'mail.playfulbent.com'
 
 config.app_config.google_maps_key = 'ABQIAAAAeBPm_-KwgwjbZtYJENq_NxSXaGM-1g05mGX6VFl9XFniu-YNshSTS7GIAFDjvGzJ53sScZO7htf4xw'
 

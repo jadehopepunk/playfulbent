@@ -19,17 +19,6 @@ module Additional
       link_to(avatar_image, user.profile_url, :class => 'mini_avatar_pointer') + image_tag('arrow.png', :alt => '', :class => 'mini_avatar_pointer')
     end
       
-    def mini_avatar_link_for_external_profile(user, html_image_options = {})
-      user = NullExternalProfile.new if user.nil?
-
-      html_image_options[:class] = html_image_options[:class].blank? ? "mini_avatar" : html_image_options[:class] + ' mini_avatar' 
-      html_image_options[:size] = '20x20'
-      html_image_options[:alt] = user.name
-      html_image_options[:title] = user.name
-      avatar_image = image_tag(user.avatar_thumb_image_url, html_image_options)
-      link_to(avatar_image, user.profile_url, :class => 'mini_avatar_pointer')
-    end
-
     def avatar_link_for(user, link_options = {})
       user = NullUser.new if user.nil?
       
@@ -51,16 +40,6 @@ module Additional
       link_to(avatar_image, user.profile_url, link_options) 
     end
     
-    def avatar_link_for_external_profile(external_profile, link_options = {})
-      external_profile = NullExternalProfile.new if external_profile.nil?
-      avatar_link_for(external_profile, link_options)
-    end
-    
-    def avatar_and_name_link_for_external_profile(external_profile, html_image_options = {})
-      external_profile = NullExternalProfile.new if external_profile.nil?
-      link_to(avatar_and_name_for_external_profile(external_profile, html_image_options), external_profile.url, :class => 'avatar_link avatar_link_with_name')
-    end
-
     def avatar_and_name_link_for(user, html_image_options = {})
       user = NullUser.new if user.nil?
       link_to(avatar_and_name(user, html_image_options), user.profile_url, :class => 'avatar_link avatar_link_with_name')
@@ -97,10 +76,6 @@ module Additional
       content_tag 'span', all_ticks, :class => 'interaction_tick_list', :title => title
     end
 
-    def interaction_ticks_for_external_profile(external_profile)
-      external_profile && external_profile.user ? interaction_ticks_for(external_profile.user) : ''
-    end
-    
     def tags_with_bold_shared(profile, tag_type, current_user, tag_limit)
       tag_method = "#{tag_type}_tags".to_sym
       has_tag_method = "has_#{tag_type}?".to_sym
@@ -115,10 +90,6 @@ module Additional
       end
       
       tag_spans.join(", ")
-    end
-    
-    def external_profile_tags_with_bold_shared(external_profile, tag_type, current_user, tag_limit)
-      tags_with_bold_shared(external_profile, tag_type, current_user, tag_limit)
     end
     
     def user_timestamp(user)

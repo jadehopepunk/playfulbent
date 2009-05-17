@@ -66,44 +66,6 @@ namespace :pb do
     system "rsync -az --progress #{host}:#{path}/private/ ./private"
   end
   
-  desc "Subscribe to group"
-  task :group_sub do
-    group = Group.find_by_name('craigsplayground')
-    group.subscribe_to_list
-  end
-  
-  desc "fetch group email"
-  task :fetch_email => [:environment] do
-    fetcher = MailFetcher.new
-    fetcher.fetch
-  end
-  
-  desc "re-initialise all mail messages from raw mail"
-  task :reparse_mail => [:environment] do
-    for message in MailingListMessage.find(:all)
-      message.update_from_raw_email
-      message.save
-    end
-  end
-  
-  desc "re-fetch data for all groups"
-  task :refetch_groups => [:environment] do
-    for group in Group.find(:all)
-      group.fetch_group_data
-      group.save
-    end
-  end
-  
-  desc "fetch all yahoo profile images and details"
-  task :scrape_profiles => [:environment] do
-    for profile in YahooProfile.find(:all)
-    #for profile in YahooProfile.find(:all, :conditions => ["scraped_at IS NULL || NOW() - scraped_at < ?", 1.week])
-      #profile.scrape_if_expired
-      profile.scrape
-      profile.save
-    end
-  end
-  
   desc "expire all open dares"
   task :expire_dares => [:environment] do
     for dare in Dare.find_open

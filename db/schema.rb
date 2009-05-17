@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080801103032) do
+ActiveRecord::Schema.define(:version => 20090517052012) do
 
   create_table "action_shots", :force => true do |t|
     t.integer "parent_id",    :limit => 11
@@ -150,19 +150,6 @@ ActiveRecord::Schema.define(:version => 20080801103032) do
     t.integer  "email_sender_id", :limit => 11
   end
 
-  create_table "external_profile_photos", :force => true do |t|
-    t.integer "parent_id",        :limit => 11
-    t.string  "content_type"
-    t.string  "filename"
-    t.string  "thumbnail"
-    t.integer "size",             :limit => 11
-    t.integer "width",            :limit => 11
-    t.integer "height",           :limit => 11
-    t.integer "yahoo_profile_id", :limit => 11
-  end
-
-  add_index "external_profile_photos", ["yahoo_profile_id"], :name => "index_external_profile_photos_on_yahoo_profile_id"
-
   create_table "fantasies", :force => true do |t|
     t.text     "description"
     t.datetime "created_at"
@@ -227,30 +214,6 @@ ActiveRecord::Schema.define(:version => 20080801103032) do
 
   create_table "genders", :force => true do |t|
     t.string "name"
-  end
-
-  create_table "group_memberships", :force => true do |t|
-    t.integer  "group_id",         :limit => 11
-    t.integer  "yahoo_profile_id", :limit => 11
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.datetime "scraped_at"
-  end
-
-  create_table "groups", :force => true do |t|
-    t.integer  "owner_id",                  :limit => 11
-    t.string   "group_name"
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "archive_access_level"
-    t.datetime "scraped_at"
-    t.string   "members_list_access_level"
-    t.integer  "external_member_count",     :limit => 11
-    t.float    "map_lat"
-    t.float    "map_long"
-    t.integer  "map_zoom",                  :limit => 11
   end
 
   create_table "interaction_counts", :force => true do |t|
@@ -335,20 +298,6 @@ ActiveRecord::Schema.define(:version => 20080801103032) do
     t.float   "standard_deviation"
     t.boolean "is_total",                         :default => false
     t.date    "created_on"
-  end
-
-  create_table "mailing_list_messages", :force => true do |t|
-    t.text     "raw_email"
-    t.string   "subject"
-    t.string   "sender_address"
-    t.integer  "sender_id",          :limit => 11
-    t.integer  "parent_id",          :limit => 11
-    t.integer  "group_id",           :limit => 11
-    t.text     "text_body"
-    t.datetime "received_at"
-    t.datetime "created_at"
-    t.integer  "sender_profile_id",  :limit => 11
-    t.string   "message_identifier"
   end
 
   create_table "message_readings", :force => true do |t|
@@ -631,15 +580,6 @@ ActiveRecord::Schema.define(:version => 20080801103032) do
     t.datetime "last_logged_in_at"
     t.boolean  "is_review_manager",                      :default => false
     t.integer  "primary_email_address_id", :limit => 11
-  end
-
-  create_table "yahoo_profiles", :force => true do |t|
-    t.string   "identifier"
-    t.integer  "user_id",           :limit => 11
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.datetime "scraped_at"
-    t.boolean  "viewable_on_yahoo",               :default => false
   end
 
 end

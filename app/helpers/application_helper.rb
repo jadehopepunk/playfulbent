@@ -148,8 +148,6 @@ module ApplicationHelper
       return :stories
     elsif ['blogs', 'my_blogs'].include?(controller.controller_name)
       return :blogs
-    elsif ['groups', 'group_members', 'mailing_list_messages', 'yahoo_profiles'].include?(controller.controller_name)
-      return :groups
     elsif ['conversations', 'comments'].include?(controller.controller_name)
       return :forum
     elsif ['profiles', 'avatar', 'crushes', 'invitations', 'massage_interactions', 'messages', 'relationships', 'settings', 'sponsorships'].include?(controller.controller_name)

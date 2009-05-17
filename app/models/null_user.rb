@@ -63,10 +63,6 @@ class NullUser
     "<a href=\"#{profile_url}\" style=\"#{user_styles}\">#{avatar_image}<span>#{name}</span></a>"
   end
   
-  def yahoo_profiles
-    []
-  end
-  
   def crush_on(other_user)
   end
   

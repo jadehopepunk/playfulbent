@@ -47,7 +47,6 @@ class User < ActiveRecord::Base
   has_many :interaction_counts_as_subject, :foreign_key => 'subject_id', :class_name => 'InteractionCount', :dependent => :destroy
   has_many :received_messages, :class_name => 'Message', :foreign_key => 'recipient_id', :order => 'created_on DESC'
   has_many :message_readings
-  has_many :yahoo_profiles
   has_many :strip_show_views, :dependent => :destroy
   has_many :crushes, :dependent => :destroy
   has_many :crushes_as_subject, :class_name => 'Crush', :foreign_key => 'subject_id', :dependent => :destroy

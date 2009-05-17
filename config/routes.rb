@@ -8,7 +8,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '', :controller => 'profiles', :action => 'show'
   map.connect 'index.:format', :controller => 'home', :action => 'index'
 
-  map.resources :performance_reports, :tags, :dare_responses, :pages, :external_profile_photos, :dare_rejections
+  map.resources :performance_reports, :tags, :dare_responses, :pages, :dare_rejections
   map.resources :crushes
   map.resource :session
   
@@ -19,11 +19,6 @@ ActionController::Routing::Routes.draw do |map|
     reviews.resources :action_shots
   end
 
-  map.resources :groups do |groups|
-    groups.resources :mailing_list_messages
-    groups.resources :group_members
-  end
-  map.resources :yahoo_profiles, :member => {:claim => :post}
   map.resources :home, :collection => { :new_index => :get, :about_interactions => :get, :credits => :get }
   
   map.resources :profiles, :member => { :update_welcome_text => :post, :update_interests => :post, :update_kinks => :post, :disable => :put, :enable => :put } do |profiles|
