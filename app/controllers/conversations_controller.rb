@@ -7,7 +7,7 @@ class ConversationsController < ApplicationController
 
     respond_to do |format|
       format.html do
-        @conversations = Conversation.find(:all, :order => 'created_at DESC', :conditions => 'subject_id IS NULL')
+        @conversations = Conversation.forum.paginate(:order => 'created_at DESC', :per_page => 20, :page => params[:page])
       end
       format.rss do
         render :xml => Comment.to_rss(Comment.find(:all, :order => 'created_at DESC', :limit => 100), base_url)

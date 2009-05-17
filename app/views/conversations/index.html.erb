@@ -14,7 +14,8 @@
 			you will be able to see which conversations have new messages that you haven't read yet.
 		</p>
 	<% end %>
-	
+
+	<p><%= link_to 'New conversation', new_conversation_url %>	</p>
 </div>
 
 <div class="conversations_body">
@@ -30,6 +31,8 @@
 			</li>
 		<% end %>
 	</ol>
+
+  <%= will_paginate @conversations %>
 
 	<%= link_to 'New conversation', new_conversation_url %>
 </div>

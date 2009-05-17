@@ -17,6 +17,8 @@ class Conversation < ActiveRecord::Base
   validates_presence_of :title, :if => Proc.new { |c| c.subject.nil? }
   validates_uniqueness_of :subject_type, :scope => :subject_id, :if => Proc.new { |c| !c.subject.nil? }
   
+  named_scope :forum, :conditions => 'subject_id IS NULL'
+  
   def self.find_for(subject, subject_class_name = nil)
     find(:first, :conditions => {:subject_id => subject.id, :subject_type => subject_class_name || subject.class.name}) unless subject.nil?
   end
