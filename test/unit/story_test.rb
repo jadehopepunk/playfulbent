@@ -49,14 +49,11 @@ class StoryTest < Test::Unit::TestCase
   end
   
   def test_subscription_returns_existing_subscription_if_exists
-    story = Story.new
-    story.stubs(:id).returns(22)
-    user = User.new
-    user.stubs(:id).returns(45)
-    expected_subscription = StorySubscription.new(:user => user)
-    
-    StorySubscription.expects(:find).with(:first, {:limit => nil, :conditions => 'story_subscriptions.story_id = 22 AND (user_id = 45)', :select => nil, :group => nil, :joins => nil, :include => nil, :offset => nil}).returns(expected_subscription)
-    assert_equal expected_subscription, story.subscription_for(user)
+    story = Factory.create(:story)
+    user = Factory.create(:user)
+    subscription = Factory.create(:story_subscription, :story => story, :user => user)
+        
+    assert_equal subscription, story.subscription_for(user)
   end
   
     
