@@ -33,7 +33,7 @@ class DareChallenge < ActiveRecord::Base
   attr_accessor :status
 
   def can_be_viewed_by?(viewing_user)
-    viewing_user && (viewing_user == subject || viewing_user == user)
+    viewing_user && (viewing_user == subject || viewing_user == user || viewing_user.is_admin?)
   end
   
   def subject_has_responded?
