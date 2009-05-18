@@ -101,10 +101,6 @@ form.single_column label.checkbox
   display: inline;
 }
 
-form.single_column select {
-  min-width: 150px;
-}
-
 .rating_selector {
   margin-bottom: 2em;
 }

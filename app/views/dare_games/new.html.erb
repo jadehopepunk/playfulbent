@@ -1,0 +1,22 @@
+<div class="dare_games">
+	<h1>Start a new game of "Strip-or-Dare poker"</h1>
+
+	<div class="box about_form_box">
+		<div class="box_heading">You're in for a treat</div>
+		<div class="box_contents">
+		  As the creator of the game, you set the tone. There aren't too many options to choose from here yet,
+		  let us know what other things you'd like to be able to control in your game. Invitation-only games
+		  and other privacy levels are definitely coming soon.
+		</div>
+	</div>	
+
+	<% form_for @dare_game, :method => :post, :builder => LabelledBuilder, :html => {:class => 'single_column two_thirds', :onsubmit => trigger_footer(:new_dare_game)} do |f| %>
+	  <%= f.text_field :name, :hint => "make something up", :label => "Game name", :class => 'text_field' %>
+	  
+	  <%= f.select :max_players, (1..DareGame::PLAYER_LIMIT).to_a, :prompt => '(default 10)' %>
+
+	  <%= f.text_area :instructions, :label => "Special instructions", :description => "If you like, you can write some instructions or notes here for your players. These could be about how you'd like them to treat the game, a special theme that you'd like for the photos, or just a message of encouragement." %>
+	      
+		<%= form_footer(:new_dare_game, :submit_name => 'Submit', :cancel_link => '/') %>
+	<% end %>
+</div>

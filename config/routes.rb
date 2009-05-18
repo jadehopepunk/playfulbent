@@ -75,6 +75,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :fantasy_roles
   map.resources :fantasy_actors
   
+  map.resources :dare_games do |dare_games|
+    dare_games.resources :players
+  end
+  
   # Install the default route as the lowest priority.
   map.connect 'invitations/:action/:id/:user_id', :controller => 'invitations'
   map.connect ':controller/:action/:id'

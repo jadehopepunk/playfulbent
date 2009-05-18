@@ -790,7 +790,7 @@ textarea.small
 
 /* TWO THIRDS PAGE WIDTH */
 
-form.two_thirds input.text_field, form.two_thirds textarea, form.two_thirds select
+form.two_thirds input.text_field, form.two_thirds textarea
 {
   width: 640px;
 }

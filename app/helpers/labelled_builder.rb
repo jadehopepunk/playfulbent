@@ -6,6 +6,7 @@ class LabelledBuilder < BaseBuilder
       if args && args.last && args.last.is_a?(Hash)
         hint = args.last[:hint]
         label_override = args.last[:label]
+        description = args.last[:description]
         other_validation_fields = args.last[:other_validation_fields]
       end
       
@@ -17,7 +18,11 @@ class LabelledBuilder < BaseBuilder
         label_inner_text += ' ' + hint_text
       end
       label_text = @template.content_tag('label', label_inner_text, :for => "#{@object_name}_#{label}")
-      field_text = super
+
+      field_text = ''
+      
+      field_text += @template.content_tag('div', description, :class => 'description') if description
+      field_text += super
       
       error_fields = [label]
       error_fields += other_validation_fields if other_validation_fields
