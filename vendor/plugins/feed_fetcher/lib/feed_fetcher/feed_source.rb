@@ -1,3 +1,4 @@
+FeedFetcher::PageFetcher
 
 module FeedFetcher
   class FeedSource
