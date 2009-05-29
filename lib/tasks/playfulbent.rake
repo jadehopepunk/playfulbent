@@ -37,8 +37,8 @@ namespace :pb do
   
   desc "Make local develoment site look like the live site"
   task :sync => [:environment] do
-    host = 'playfulbent.com'
-    path = '/var/www/apps/playfulbent/current'
+    host = 'playful@playfulbent.com'
+    path = '~/public_html/playfulbent.com/current'
     
     db_config = YAML.load_file('config/database.yml')
 
