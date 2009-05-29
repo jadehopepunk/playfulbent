@@ -24,7 +24,7 @@ module FeedFetcher
     end
     
     def get_rss
-      content = PageFetcher.fetch_page_if_exists(url)
+      content = PageFetcher.fetch_page(url)
       if content
         rss = RSS::Parser.parse(content, false)
         return rss
