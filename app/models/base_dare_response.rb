@@ -33,7 +33,7 @@ class BaseDareResponse < ActiveRecord::Base
       }
     }, 
     :store_dir => RAILS_ROOT + "/public/system/dare_response/photo", 
-    :base_url => "/images/system/dare_response/photo/"
+    :base_url => "/system/dare_response/photo/"
 
   def self.collection_to_rss(title, articles, base_url)
     rss = RSS::Rss.new( "2.0" )
