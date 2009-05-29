@@ -28,7 +28,7 @@ class Avatar < ActiveRecord::Base
       }
     }, 
     :store_dir => RAILS_ROOT + "/public/system/user/avatar/image", 
-    :base_url => "/system/user/avatar/image/"
+    :base_url => "system/user/avatar/image/"
       
   belongs_to :profile
   validates_presence_of :profile, :image
