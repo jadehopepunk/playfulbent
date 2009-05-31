@@ -18,7 +18,7 @@
 </div>
 
 <div class="blogs_section">
-	<%= filter_links [[:interact, 'People I Know'], [:interest, 'My Interests &amp; Kinks']] %>
+	<%= filter_links [[:interact, 'People I Know'], [:interest, 'My Interests &amp; Kinks']], false %>
 	
 	<ul class="blog_articles">
 		<% for article in @blog_articles %>

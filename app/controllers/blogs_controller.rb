@@ -34,14 +34,14 @@ protected
   def index_find_params
     conditions = []
     joins = []
-    includes = [{:syndicated_blog => {:user => {:profile => :avatar}}}, :tags]
+    includes = [:tags]
     group = nil
   
     conditions << @tag.taggable_conditions('SyndicatedBlogArticle') if @tag
     
     if @user
       if @filters.include? :interact
-        joins << "LEFT JOIN interactions ON syndicated_blogs.user_id = interactions.subject_id"
+        joins << {:syndicated_blog => {:user => :interactions}}
         conditions << "interactions.actor_id = #{@user.id}"
         group = 'syndicated_blog_articles.id'
       end
@@ -54,7 +54,6 @@ protected
     end
     
     conditions = conditions.empty? ? nil : conditions.join(' AND ')
-    joins = joins.empty? ? nil : joins.join(' ')
     
     {:order => 'published_at DESC', :conditions => conditions, :joins => joins, :group => group, :include => includes}
   end

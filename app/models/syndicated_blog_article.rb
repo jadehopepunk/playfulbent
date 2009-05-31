@@ -20,7 +20,7 @@ class SyndicatedBlogArticle < ActiveRecord::Base
   acts_as_taggable
   belongs_to :syndicated_blog
   include WhiteListHelper
-  
+
   #validates_uniqueness_of :link, :scope => :syndicated_blog_id
   
   def self.popular_ranked_tags(limit)
