@@ -14,6 +14,9 @@
 #
 
 class Dare < ActiveRecord::Base
+  MAX_OPEN = 6
+  EXPIRY_TIME = 3.weeks
+  
   acts_as_taggable
   
   belongs_to :creator, :class_name => 'User', :foreign_key => 'creator_id'
@@ -27,8 +30,6 @@ class Dare < ActiveRecord::Base
   after_save :notify_if_expired
   after_create :create_activity
 
-  MAX_OPEN = 6
-  
   def self.popular_ranked_tags(limit)
     TagRank.find(:all, :limit => limit, :order => 'dare_count DESC', :conditions => 'dare_count > 0')
   end
@@ -83,7 +84,11 @@ class Dare < ActiveRecord::Base
   end
   
   def should_expire?
-    (created_on <= 3.weeks.ago) && !responded_to
+    (created_on <= EXPIRY_TIME.ago) && !responded_to
+  end
+  
+  def expires_at
+    created_on + EXPIRY_TIME
   end
   
   def creator_name

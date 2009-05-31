@@ -60,6 +60,13 @@
 				<% for dare in @open_dares %>
 					<li class="dare">
 						<%= mini_avatar_link_for(dare.creator) %> <%= link_to dare.request, dare_url(dare), :class => 'dare' %>
+  					<div class="time_remaining">
+              <% if dare.expires_at > Time.now %>
+                <%= "expires in " + distance_of_time_in_words(Time.now, dare.expires_at) %>
+              <% else %>
+                about to expire!
+              <% end %>
+  					</div>
 					</li>
 				<% end %>
 			</ul>
