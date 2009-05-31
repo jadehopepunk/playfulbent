@@ -18,10 +18,7 @@
 </div>
 
 <div class="blogs_section">
-	<% if logged_in? %>
-		Show Only: 
-		<%= filter_links %>
-	<% end %>
+	<%= filter_links [[:interact, 'People I Know'], [:interest, 'My Interests &amp; Kinks']] %>
 	
 	<ul class="blog_articles">
 		<% for article in @blog_articles %>

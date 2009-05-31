@@ -156,5 +156,37 @@ module ApplicationHelper
       return :profiles
     end
   end
+
+  def filter_link(title, filter_param, active)
+    css_class = active ? 'active_filter' : nil
+    link_to(title, params.merge(:filter => filter_param), :class => css_class)
+  end
+
+  def filter_links(possible_filters, allow_multiple = true)
+    results = []
+    if logged_in?
+      all_filters = possible_filters.map {|filter_array| filter_array[0]}
+    
+      results << filter_link('All', nil, @filters.empty?) unless allow_multiple
+      
+      possible_filters.each do |filter_array|
+        filter_sym = filter_array[0]
+        filter_title = filter_array[1]
+        other_filters = @filters.reject {|f| f == filter_sym }
+      
+        if @filters.include?(filter_sym)
+          filter_param = other_filters.join(':')
+        else
+          filter_param = allow_multiple ? (other_filters + [filter_sym]).join(':') : filter_sym
+        end
+        filter_param = nil if filter_param.blank?
+        results << filter_link(filter_title, filter_param, @filters.include?(filter_sym))
+      end      
+    end
+    
+    return nil if results.empty?
+    prefix = allow_multiple ? "Show Only: " : "Show: "
+    prefix + results.join(' | ')
+  end
       
 end

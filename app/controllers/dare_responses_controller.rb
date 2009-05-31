@@ -2,11 +2,14 @@ class DareResponsesController < ApplicationController
   before_filter :store_location, :only => [:index, :show]
   before_filter :load_tag, :only => :index
   before_filter :login_required, :only => [:create]
+  before_filter :load_filters, :only => :index
   
   def index
     @open_dares = Dare.find_open
     @popular_tags = Dare.popular_ranked_tags(DEFAULT_TAG_CLOUD_SIZE)
-    
+    @possible_filters = [[:girls, 'Girls'], [:boys, 'Boys']]
+    @possible_filters << [:my_friends, 'My Friends'] if logged_in?
+        
     feed_title = 'Playful Bent - Recent Dare Responses'
     
     add_rss feed_title
@@ -18,7 +21,7 @@ class DareResponsesController < ApplicationController
     
     respond_to do |format|
       format.html do
-        @dare_responses = DareResponse.paginate(:all, {:per_page => 10, :page => params[:page]}.merge(index_params))
+        @dare_responses = DareResponse.filter_by(@filters, current_user).paginate(:all, {:per_page => 10, :page => params[:page]}.merge(index_params))
       end
       format.rss do
         @dare_responses = DareResponse.find(:all, index_params)

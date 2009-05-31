@@ -21,36 +21,57 @@ class DareResponse < BaseDareResponse
 
   after_create :update_interactions, :mark_dare_as_responded_to, :create_activity
   after_destroy :ensure_interactions_still_valid
+  
+  FILTERS = [:girls, :boys, :my_friends]
+  named_scope :girls, :include => {:user => :gender}, :conditions => ["genders.name = ?", 'female']
+  named_scope :boys, :include => {:user => :gender}, :conditions => ["genders.name = ?", 'male']
+  named_scope :my_friends, lambda {|user| {:conditions => ["base_dare_responses.user_id IN (SELECT subject_id FROM relationships WHERE user_id = ?)", user.id]}}
+  
+  class << self
+    def filter_by(filters, user)
+      result = self
+      filters.each do |filter|
+        if FILTERS.include?(filter)
+          if filter.to_s =~ /^my_/
+            result = result.send(filter, user)
+          else
+            result = result.send(filter)
+          end
+        end
+      end
+      result
+    end
+    
+    def find_with_picture(limit = nil)
+      find(:all, :order => 'created_on DESC', :conditions => 'photo IS NOT NULL', :limit => limit)
+    end
 
-  def self.find_with_picture(limit = nil)
-    find(:all, :order => 'created_on DESC', :conditions => 'photo IS NOT NULL', :limit => limit)
-  end
+    def find_with_text
+      find(:all, :order => 'created_on DESC', :conditions => "description != ''")
+    end
 
-  def self.find_with_text
-    find(:all, :order => 'created_on DESC', :conditions => "description != ''")
-  end
+    def responses_with_picture_to(user, options)
+      options[:conditions] = ["dares.creator_id = ? AND base_dare_responses.photo IS NOT NULL AND base_dare_responses.photo != ''", user.id]
+      options[:order] = "base_dare_responses.created_on DESC"
+      options[:include] = :dare
+      find(:all, options)
+    end
 
-  def self.responses_with_picture_to(user, options)
-    options[:conditions] = ["dares.creator_id = ? AND base_dare_responses.photo IS NOT NULL AND base_dare_responses.photo != ''", user.id]
-    options[:order] = "base_dare_responses.created_on DESC"
-    options[:include] = :dare
-    find(:all, options)
-  end
+    def find_users_responses_to(responder, darer)
+      find(:all, :include => :dare, :conditions => ["dares.creator_id = ? AND base_dare_responses.user_id = ?", darer.id, responder.id])
+    end
 
-  def self.find_users_responses_to(responder, darer)
-    find(:all, :include => :dare, :conditions => ["dares.creator_id = ? AND base_dare_responses.user_id = ?", darer.id, responder.id])
-  end
+    def count_users_responses_to(responder, darer)
+      count(:include => :dare, :conditions => ["dares.creator_id = ? AND base_dare_responses.user_id = ?", darer.id, responder.id])
+    end
 
-  def self.count_users_responses_to(responder, darer)
-    count(:include => :dare, :conditions => ["dares.creator_id = ? AND base_dare_responses.user_id = ?", darer.id, responder.id])
-  end
+    def count_with_photo
+      count(:conditions => 'photo IS NOT NULL')
+    end
 
-  def self.count_with_photo
-    count(:conditions => 'photo IS NOT NULL')
-  end
-
-  def self.count_with_description
-    count(:conditions => "description IS NOT NULL AND description != ''")
+    def count_with_description
+      count(:conditions => "description IS NOT NULL AND description != ''")
+    end
   end
 
   def darer
