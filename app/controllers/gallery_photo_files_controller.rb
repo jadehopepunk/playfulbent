@@ -5,13 +5,19 @@ class GalleryPhotoFilesController < ApplicationController
   def show
     @gallery_photo_file = @gallery_photo.get_file_for_role(params[:id])
     if @gallery_photo.can_be_viewed_by?(current_user)
-      x_send_file(@gallery_photo_file.full_filename, :type => @gallery_photo_file.content_type, :status => 200, :disposition => 'inline')
+      render_gallery_photo
     else
       x_send_file(access_denied_file, :type => 'image/jpg', :status => 200, :disposition => 'inline')
     end
   end
   
   protected
+  
+    def render_gallery_photo
+      x_send_file(@gallery_photo_file.full_filename, :type => @gallery_photo_file.content_type, :status => 200, :disposition => 'inline')
+    rescue ActionController::MissingFile
+      render :nothing => true, :status => 404
+    end
   
     def load_gallery_photo
       @gallery_photo = GalleryPhoto.find(params[:photo_id])
