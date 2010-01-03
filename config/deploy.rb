@@ -20,19 +20,6 @@ task :production do
   set :apache_proxy_servers, 4
 end
 
-task :email do
-  set :domain, "67.207.145.55"
-  role :web, domain
-  role :app, domain
-  role :email, domain
-  role :db,  domain, :primary => true
-
-  set :rails_env, "production"
-
-  set :apache_server_name, domain
-  set :apache_proxy_servers, 1
-end
-
 namespace :deploy do
 
   task :set_permissions, :roles => [:web, :app] do  #, :email

@@ -21,5 +21,5 @@ ActionController::UrlWriter.default_url_options[:host] = "www.localplayful.com:3
 ActionController::UrlWriter.default_url_options[:only_path] = false
 ActionController::Base.session_options[:session_domain] = 'localplayful.com'
 
-config.action_controller.asset_host = "http://www.localplayful.com:3000"
-config.action_controller.asset_host = "http://assets%d.localplayful.com:3000"
+config.action_controller.asset_host = "http://playfulbent.local"
+config.action_controller.asset_host = "http://playfulbent.local"
