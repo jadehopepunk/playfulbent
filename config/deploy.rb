@@ -3,15 +3,14 @@ ssh_options[:paranoid] = false
 set :keep_releases, 3 
 set :application, "playfulbent"
 set :scm, :git
-set :deploy_to, "/home/playful/public_html/playfulbent.com"
-set :user, "playful"
+set :deploy_to, "/home/craig/public_html/#{application}"
+set :user, "craig"
 set :repository, "git://github.com/craigambrose/playfulbent.git"
 
 task :production do
-  set :domain, "playfulbent.com"
+  set :domain, "craigambrose.com"
   role :web, domain
   role :app, domain
-  #role :email, '67.207.145.55'
   role :db,  domain, :primary => true
 
   set :rails_env, "production"

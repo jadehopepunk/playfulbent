@@ -5,3 +5,4 @@ public/images/system/*
 public/images/system
 public/.DS_Store
 tmp/restart.txt
+mkmf.log

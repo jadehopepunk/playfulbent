@@ -29,6 +29,9 @@ Rails::Initializer.run do |config|
   config.action_controller.session_store = :active_record_store
 
   config.gem "thoughtbot-factory_girl", :lib => "factory_girl", :source => "http://gems.github.com"
+  config.gem 'aws-s3', :version => '0.5.0', :lib => 'aws/s3'
+  # config.gem 'Linguistics', :version => '1.0.5'
+  config.gem 'paypal', :version => '2.0.0'
   
   # Enable page/fragment caching by setting a file-based store
   # (remember to create the caching directory and make it readable to the application)
