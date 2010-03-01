@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: comments
+#
+#  id              :integer(4)      not null, primary key
+#  content         :text
+#  conversation_id :integer(4)
+#  user_id         :integer(4)
+#  created_at      :datetime
+#  parent_id       :integer(4)
+#  lft             :integer(4)
+#  rgt             :integer(4)
+#
+
 require File.dirname(__FILE__) + '/../test_helper'
 
 class CommentTest < Test::Unit::TestCase

@@ -1,11 +1,10 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: notification_requests
 #
-#  id            :integer(11)   not null, primary key
-#  email_address :string(255)   
-#  created_on    :datetime      
+#  id            :integer(4)      not null, primary key
+#  email_address :string(255)
+#  created_on    :datetime
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

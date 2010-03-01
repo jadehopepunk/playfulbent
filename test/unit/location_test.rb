@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: locations
+#
+#  id         :integer(4)      not null, primary key
+#  country    :string(255)
+#  city       :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 require File.dirname(__FILE__) + '/../test_helper'
 
 class LocationTest < Test::Unit::TestCase

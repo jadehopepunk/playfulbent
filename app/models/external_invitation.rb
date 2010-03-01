@@ -1,17 +1,16 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: invitations
 #
-#  id            :integer(11)   not null, primary key
-#  name          :string(255)   
-#  email_address :string(255)   
-#  user_id       :integer(11)   
-#  message       :text          
-#  strip_show_id :integer(11)   
-#  created_on    :date          
-#  type          :string(255)   
-#  recipient_id  :integer(11)   
+#  id            :integer(4)      not null, primary key
+#  name          :string(255)
+#  email_address :string(255)
+#  user_id       :integer(4)
+#  message       :text(16777215)
+#  strip_show_id :integer(4)
+#  created_on    :date
+#  type          :string(255)
+#  recipient_id  :integer(4)
 #
 
 class ExternalInvitation < Invitation

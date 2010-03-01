@@ -1,12 +1,11 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: comment_readings
 #
-#  id         :integer(11)   not null, primary key
-#  comment_id :integer(11)   
-#  user_id    :integer(11)   
-#  created_on :datetime      
+#  id         :integer(4)      not null, primary key
+#  comment_id :integer(4)
+#  user_id    :integer(4)
+#  created_on :datetime
 #
 
 class CommentReading < ActiveRecord::Base

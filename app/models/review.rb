@@ -1,19 +1,18 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: reviews
 #
-#  id                :integer(11)   not null, primary key
-#  user_id           :integer(11)   
-#  product_id        :integer(11)   
-#  created_at        :datetime      
-#  updated_at        :datetime      
-#  sexyness_rating   :integer(11)   
-#  durability_rating :integer(11)   
-#  cleaning_rating   :integer(11)   
-#  pleasure_rating   :integer(11)   
-#  overall_rating    :integer(11)   
-#  body              :text          
+#  id                :integer(4)      not null, primary key
+#  user_id           :integer(4)
+#  product_id        :integer(4)
+#  created_at        :datetime
+#  updated_at        :datetime
+#  sexyness_rating   :integer(4)
+#  durability_rating :integer(4)
+#  cleaning_rating   :integer(4)
+#  pleasure_rating   :integer(4)
+#  overall_rating    :integer(4)
+#  body              :text
 #
 
 class Review < ActiveRecord::Base

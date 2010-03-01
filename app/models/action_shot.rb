@@ -1,17 +1,17 @@
 # == Schema Information
-# Schema version: 193
 #
 # Table name: action_shots
 #
-#  id           :integer(11)   not null, primary key
-#  parent_id    :integer(11)   
-#  content_type :string(255)   
-#  filename     :string(255)   
-#  thumbnail    :string(255)   
-#  size         :integer(11)   
-#  width        :integer(11)   
-#  height       :integer(11)   
-#  review_id    :integer(11)   
+#  id           :integer(4)      not null, primary key
+#  parent_id    :integer(4)
+#  content_type :string(255)
+#  filename     :string(255)
+#  thumbnail    :string(255)
+#  size         :integer(4)
+#  width        :integer(4)
+#  height       :integer(4)
+#  review_id    :integer(4)
+#  title        :string(255)
 #
 
 class ActionShot < ActiveRecord::Base

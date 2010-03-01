@@ -1,14 +1,13 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: crushes
 #
-#  id         :integer(11)   not null, primary key
-#  user_id    :integer(11)   
-#  subject_id :integer(11)   
-#  fantasy    :text          
-#  created_at :datetime      
-#  updated_at :datetime      
+#  id         :integer(4)      not null, primary key
+#  user_id    :integer(4)
+#  subject_id :integer(4)
+#  fantasy    :text
+#  created_at :datetime
+#  updated_at :datetime
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

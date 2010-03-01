@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: dares
+#
+#  id                   :integer(4)      not null, primary key
+#  request              :text(16777215)
+#  requires_photo       :boolean(1)
+#  requires_description :boolean(1)
+#  created_on           :datetime
+#  creator_id           :integer(4)
+#  responded_to         :boolean(1)
+#  expired              :boolean(1)
+#
+
 require File.dirname(__FILE__) + '/../test_helper'
 
 class DareTest < Test::Unit::TestCase

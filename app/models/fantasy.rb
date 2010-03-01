@@ -1,12 +1,12 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: fantasies
 #
-#  id          :integer(11)   not null, primary key
-#  description :text          
-#  created_at  :datetime      
-#  updated_at  :datetime      
+#  id          :integer(4)      not null, primary key
+#  description :text
+#  created_at  :datetime
+#  updated_at  :datetime
+#  creator_id  :integer(4)
 #
 
 class Fantasy < ActiveRecord::Base

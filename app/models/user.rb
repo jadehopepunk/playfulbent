@@ -1,22 +1,21 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: users
 #
-#  id                       :integer(11)   not null, primary key
-#  nick                     :string(80)    
-#  picture                  :string(255)   
-#  hashed_password          :string(255)   
-#  created_on               :datetime      
-#  gender_id                :integer(11)   
-#  likes_boys               :boolean(1)    
-#  likes_girls              :boolean(1)    
-#  is_admin                 :boolean(1)    
-#  permalink                :string(255)   
-#  updated_at               :datetime      
-#  last_logged_in_at        :datetime      
-#  is_review_manager        :boolean(1)    
-#  primary_email_address_id :integer(11)   
+#  id                       :integer(4)      not null, primary key
+#  nick                     :string(80)
+#  picture                  :string(255)
+#  hashed_password          :string(255)
+#  created_on               :datetime
+#  gender_id                :integer(4)
+#  likes_boys               :boolean(1)
+#  likes_girls              :boolean(1)
+#  is_admin                 :boolean(1)
+#  permalink                :string(255)
+#  updated_at               :datetime
+#  last_logged_in_at        :datetime
+#  is_review_manager        :boolean(1)
+#  primary_email_address_id :integer(4)
 #
 
 require 'digest/sha1'

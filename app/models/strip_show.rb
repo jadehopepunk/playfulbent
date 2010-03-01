@@ -1,13 +1,12 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: strip_shows
 #
-#  id           :integer(11)   not null, primary key
-#  user_id      :integer(11)   
-#  finished     :boolean(1)    
-#  title        :string(255)   
-#  published_at :datetime      
+#  id           :integer(4)      not null, primary key
+#  user_id      :integer(4)
+#  finished     :boolean(1)
+#  title        :string(255)
+#  published_at :datetime
 #
 
 class StripShow < ActiveRecord::Base

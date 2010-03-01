@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: relationships
+#
+#  id                   :integer(4)      not null, primary key
+#  user_id              :integer(4)
+#  subject_id           :integer(4)
+#  relationship_type_id :integer(4)
+#  created_at           :datetime
+#  description          :text
+#
+
 require File.dirname(__FILE__) + '/../test_helper'
 
 class RelationshipTest < Test::Unit::TestCase

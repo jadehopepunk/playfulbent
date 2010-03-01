@@ -1,13 +1,12 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: story_subscriptions
 #
-#  id                     :integer(11)   not null, primary key
-#  story_id               :integer(11)   
-#  user_id                :integer(11)   
-#  continue_page_i_wrote  :boolean(1)    default(true)
-#  continue_page_i_follow :boolean(1)    
+#  id                     :integer(4)      not null, primary key
+#  story_id               :integer(4)
+#  user_id                :integer(4)
+#  continue_page_i_wrote  :boolean(1)      default(TRUE)
+#  continue_page_i_follow :boolean(1)
 #
 
 class StorySubscription < ActiveRecord::Base

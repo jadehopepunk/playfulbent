@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: profiles
+#
+#  id           :integer(4)      not null, primary key
+#  user_id      :integer(4)
+#  created_on   :integer(4)
+#  welcome_text :text(16777215)
+#  published    :boolean(1)
+#  disabled     :boolean(1)
+#  location_id  :integer(4)
+#
+
 require File.dirname(__FILE__) + '/../test_helper'
 
 class ProfileTest < Test::Unit::TestCase

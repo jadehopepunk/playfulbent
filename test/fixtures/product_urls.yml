@@ -1,14 +1,13 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: product_urls
 #
-#  id            :integer(11)   not null, primary key
-#  original_url  :string(255)   
-#  affiliate_url :string(255)   
-#  product_id    :integer(11)   
-#  created_at    :datetime      
-#  updated_at    :datetime      
+#  id            :integer(4)      not null, primary key
+#  original_url  :string(255)
+#  affiliate_url :string(255)
+#  product_id    :integer(4)
+#  created_at    :datetime
+#  updated_at    :datetime
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

@@ -1,15 +1,14 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: page_versions
 #
-#  id         :integer(11)   not null, primary key
-#  text       :text          
-#  author_id  :integer(11)   
-#  parent_id  :integer(11)   
-#  story_id   :integer(11)   
-#  created_on :datetime      
-#  is_end     :boolean(1)    
+#  id         :integer(4)      not null, primary key
+#  text       :text(16777215)
+#  author_id  :integer(4)
+#  parent_id  :integer(4)
+#  story_id   :integer(4)
+#  created_on :datetime
+#  is_end     :boolean(1)
 #
 
 class PageVersion < ActiveRecord::Base

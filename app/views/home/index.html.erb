@@ -5,20 +5,22 @@
 		</div>
 		<hr />
 
-		<div class="extra_links">
-			stay updated at<br />
-			<%= link_to 'The Playful-Bent Blog', 'http://playfulbent.wordpress.com' %>
-			<%= link_to image_tag('rss.gif', :alt => 'RSS'), 'http://playfulbent.wordpress.com/feed/' %>
-		</div>
+    <% if false %>
+  		<div class="extra_links">
+  			stay updated at<br />
+  			<%= link_to 'The Playful-Bent Blog', 'http://playfulbent.wordpress.com' %>
+  			<%= link_to image_tag('rss.gif', :alt => 'RSS'), 'http://playfulbent.wordpress.com/feed/' %>
+  		</div>
 		
-		<div class="latest_blog_article">
-			<h2 class="title"><%= link_to h(@article.title), h(@article.link) %></h2>
-			<div class="description">
-				<%= @article.short_content %>
-			</div>
-		</div>		
+  		<div class="latest_blog_article">
+  			<h2 class="title"><%= link_to h(@article.title), h(@article.link) %></h2>
+  			<div class="description">
+  				<%= @article.short_content %>
+  			</div>
+  		</div>
 
-		<hr />
+  		<hr />
+  	<% end %>
 
 		<div class="homepage_activities">
 			<h2>Recently...</h2>

@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: emails
+#
+#  id              :integer(4)      not null, primary key
+#  raw             :text
+#  recipient_id    :integer(4)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  processed_at    :datetime
+#  email_sender_id :integer(4)
+#
+
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Email do  

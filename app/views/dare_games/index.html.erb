@@ -1,0 +1,10 @@
+<div class="dare_games">
+	<h1>Dare Games</h1>
+
+  <ul>
+    <% @dare_games.each do |dare_game| %>
+      <li><%= link_to dare_game.name, dare_game %></li>
+    <% end %>
+  </ul>
+  
+</div>

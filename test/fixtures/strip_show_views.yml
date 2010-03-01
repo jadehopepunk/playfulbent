@@ -1,14 +1,13 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: strip_show_views
 #
-#  id                  :integer(11)   not null, primary key
-#  strip_show_id       :integer(11)   
-#  user_id             :integer(11)   
-#  max_position_viewed :integer(11)   
-#  created_at          :datetime      
-#  updated_at          :datetime      
+#  id                  :integer(4)      not null, primary key
+#  strip_show_id       :integer(4)
+#  user_id             :integer(4)
+#  max_position_viewed :integer(4)
+#  created_at          :datetime
+#  updated_at          :datetime
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

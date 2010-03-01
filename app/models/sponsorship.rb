@@ -1,13 +1,12 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: sponsorships
 #
-#  id           :integer(11)   not null, primary key
-#  user_id      :integer(11)   
-#  amount_cents :integer(11)   
-#  created_at   :datetime      
-#  cancelled_at :datetime      
+#  id           :integer(4)      not null, primary key
+#  user_id      :integer(4)
+#  amount_cents :integer(4)
+#  created_at   :datetime
+#  cancelled_at :datetime
 #
 
 class Sponsorship < ActiveRecord::Base

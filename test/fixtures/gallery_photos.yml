@@ -1,18 +1,17 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: gallery_photos
 #
-#  id           :integer(11)   not null, primary key
-#  created_on   :datetime      
-#  title        :string(255)   default(Untitled)
-#  position     :integer(11)   
-#  photo_set_id :integer(11)   
-#  type         :string(255)   
-#  flickr_id    :string(255)   
-#  server       :string(255)   
-#  secret       :string(255)   
-#  version      :integer(11)   default(1)
+#  id           :integer(4)      not null, primary key
+#  created_on   :datetime
+#  title        :string(255)     default("Untitled")
+#  position     :integer(4)
+#  photo_set_id :integer(4)
+#  type         :string(255)
+#  flickr_id    :string(255)
+#  server       :string(255)
+#  secret       :string(255)
+#  version      :integer(4)      default(1)
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

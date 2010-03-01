@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: crushes
+#
+#  id         :integer(4)      not null, primary key
+#  user_id    :integer(4)
+#  subject_id :integer(4)
+#  fantasy    :text
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 require File.dirname(__FILE__) + '/../test_helper'
 
 class CrushTest < Test::Unit::TestCase

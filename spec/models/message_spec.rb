@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: messages
+#
+#  id           :integer(4)      not null, primary key
+#  sender_id    :integer(4)
+#  recipient_id :integer(4)
+#  subject      :string(255)
+#  body         :text
+#  created_on   :datetime
+#  parent_id    :integer(4)
+#
+
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Message, "when creating from email" do

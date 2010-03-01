@@ -1,15 +1,14 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: messages
 #
-#  id           :integer(11)   not null, primary key
-#  sender_id    :integer(11)   
-#  recipient_id :integer(11)   
-#  subject      :string(255)   
-#  body         :text          
-#  created_on   :datetime      
-#  parent_id    :integer(11)   
+#  id           :integer(4)      not null, primary key
+#  sender_id    :integer(4)
+#  recipient_id :integer(4)
+#  subject      :string(255)
+#  body         :text
+#  created_on   :datetime
+#  parent_id    :integer(4)
 #
 
 class Message < ActiveRecord::Base

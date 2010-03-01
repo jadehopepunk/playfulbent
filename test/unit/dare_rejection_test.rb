@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: dare_rejections
+#
+#  id                    :integer(4)      not null, primary key
+#  dare_challenge_id     :integer(4)
+#  user_id               :integer(4)
+#  rejected_dare_text    :text
+#  rejection_reason_text :text
+#  created_at            :datetime
+#
+
 require File.dirname(__FILE__) + '/../test_helper'
 
 class DareRejectionTest < Test::Unit::TestCase

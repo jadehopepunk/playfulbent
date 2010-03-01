@@ -1,13 +1,12 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: taggings
 #
-#  id            :integer(11)   not null, primary key
-#  tag_id        :integer(11)   
-#  taggable_id   :integer(11)   
-#  taggable_type :string(255)   
-#  created_at    :datetime      
+#  id            :integer(4)      not null, primary key
+#  tag_id        :integer(4)
+#  taggable_id   :integer(4)
+#  taggable_type :string(255)
+#  created_at    :datetime
 #
 
 class Tagging < ActiveRecord::Base

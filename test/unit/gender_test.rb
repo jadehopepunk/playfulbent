@@ -1,3 +1,11 @@
+# == Schema Information
+#
+# Table name: genders
+#
+#  id   :integer(4)      not null, primary key
+#  name :string(255)
+#
+
 require File.dirname(__FILE__) + '/../unit_test_helper'
 
 class UserTest < Test::Unit::TestCase

@@ -1,12 +1,11 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: syndicated_blogs
 #
-#  id       :integer(11)   not null, primary key
-#  title    :string(255)   
-#  feed_url :string(255)   
-#  user_id  :integer(11)   
+#  id       :integer(4)      not null, primary key
+#  title    :string(255)
+#  feed_url :string(255)
+#  user_id  :integer(4)
 #
 
 class SyndicatedBlog < ActiveRecord::Base

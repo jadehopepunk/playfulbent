@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: page_versions
+#
+#  id         :integer(4)      not null, primary key
+#  text       :text(16777215)
+#  author_id  :integer(4)
+#  parent_id  :integer(4)
+#  story_id   :integer(4)
+#  created_on :datetime
+#  is_end     :boolean(1)
+#
+
 require File.dirname(__FILE__) + '/../test_helper'
 
 class PageVersionTest < Test::Unit::TestCase

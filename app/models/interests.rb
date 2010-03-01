@@ -1,10 +1,9 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: interests
 #
-#  id         :integer(11)   not null, primary key
-#  profile_id :integer(11)   
+#  id         :integer(4)      not null, primary key
+#  profile_id :integer(4)
 #
 
 class Interests < ActiveRecord::Base

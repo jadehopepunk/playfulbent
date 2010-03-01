@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: email_senders
+#
+#  id         :integer(4)      not null, primary key
+#  address    :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe EmailSender do

@@ -21,4 +21,8 @@ class DareGamesController < ApplicationController
     @dare_game = DareGame.find(params[:id])
   end
   
+  def index
+    @dare_games = DareGame.all
+  end
+  
 end

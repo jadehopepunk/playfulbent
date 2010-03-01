@@ -1,15 +1,14 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: flickr_accounts
 #
-#  id         :integer(11)   not null, primary key
-#  nsid       :string(255)   
-#  token      :string(255)   
-#  username   :string(255)   
-#  user_id    :integer(11)   
-#  created_at :datetime      
-#  updated_at :datetime      
+#  id         :integer(4)      not null, primary key
+#  nsid       :string(255)
+#  token      :string(255)
+#  username   :string(255)
+#  user_id    :integer(4)
+#  created_at :datetime
+#  updated_at :datetime
 #
 
 class FlickrAccount < ActiveRecord::Base

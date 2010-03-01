@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: strip_photos
+#
+#  id            :integer(4)      not null, primary key
+#  strip_show_id :integer(4)
+#  image         :text(16777215)
+#  position      :integer(4)
+#
+
 require File.dirname(__FILE__) + '/../unit_test_helper'
 
 class StripPhotoTest < Test::Unit::TestCase

@@ -1,11 +1,10 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: avatars
 #
-#  id         :integer(11)   not null, primary key
-#  image      :string(255)   
-#  profile_id :integer(11)   
+#  id         :integer(4)      not null, primary key
+#  image      :string(255)
+#  profile_id :integer(4)
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

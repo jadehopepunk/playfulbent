@@ -1,19 +1,18 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: syndicated_blog_articles
 #
-#  id                 :integer(11)   not null, primary key
-#  title              :text          
-#  description        :text          
-#  published_at       :datetime      
-#  author             :text          
-#  link               :text          
-#  syndicated_blog_id :integer(11)   
-#  updated_at         :datetime      
-#  content            :text          
-#  raw_content        :text          
-#  raw_description    :text          
+#  id                 :integer(4)      not null, primary key
+#  title              :text
+#  description        :text
+#  published_at       :datetime
+#  author             :text
+#  link               :text
+#  syndicated_blog_id :integer(4)
+#  updated_at         :datetime
+#  content            :text
+#  raw_content        :text
+#  raw_description    :text
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

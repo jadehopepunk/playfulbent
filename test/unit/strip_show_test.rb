@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: strip_shows
+#
+#  id           :integer(4)      not null, primary key
+#  user_id      :integer(4)
+#  finished     :boolean(1)
+#  title        :string(255)
+#  published_at :datetime
+#
+
 require File.dirname(__FILE__) + '/../test_helper'
 
 class StripShowTest < Test::Unit::TestCase

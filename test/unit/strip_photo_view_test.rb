@@ -1,3 +1,12 @@
+# == Schema Information
+#
+# Table name: strip_photo_views
+#
+#  id             :integer(4)      not null, primary key
+#  strip_photo_id :integer(4)
+#  user_id        :integer(4)
+#
+
 require File.dirname(__FILE__) + '/../test_helper'
 
 class StripPhotoViewTest < Test::Unit::TestCase

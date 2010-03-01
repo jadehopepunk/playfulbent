@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: conversations
+#
+#  id             :integer(4)      not null, primary key
+#  title_override :string(255)
+#  created_at     :datetime
+#  subject_id     :integer(4)
+#  subject_type   :string(255)
+#
+
 require File.dirname(__FILE__) + '/../test_helper'
 
 class ConversationTest < Test::Unit::TestCase

@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: syndicated_blog_articles
+#
+#  id                 :integer(4)      not null, primary key
+#  title              :text
+#  description        :text
+#  published_at       :datetime
+#  author             :text
+#  link               :text
+#  syndicated_blog_id :integer(4)
+#  updated_at         :datetime
+#  content            :text
+#  raw_content        :text
+#  raw_description    :text
+#
+
 require File.dirname(__FILE__) + '/../test_helper'
 
 class SyndicatedBlogArticleTest < Test::Unit::TestCase

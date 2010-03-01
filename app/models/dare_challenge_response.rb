@@ -1,16 +1,15 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: base_dare_responses
 #
-#  id                :integer(11)   not null, primary key
-#  user_id           :integer(11)   
-#  dare_id           :integer(11)   
-#  created_on        :datetime      
-#  description       :text          
-#  photo             :string(255)   
-#  type              :string(255)   
-#  dare_challenge_id :integer(11)   
+#  id                :integer(4)      not null, primary key
+#  user_id           :integer(4)
+#  dare_id           :integer(4)
+#  created_on        :datetime
+#  description       :text(16777215)
+#  photo             :string(255)
+#  type              :string(255)
+#  dare_challenge_id :integer(4)
 #
 
 class DareChallengeResponse < BaseDareResponse

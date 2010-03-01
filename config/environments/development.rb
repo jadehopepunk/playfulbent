@@ -17,9 +17,9 @@ config.action_mailer.raise_delivery_errors = true
 
 ActionMailer::Base.delivery_method = :test
 
-ActionController::UrlWriter.default_url_options[:host] = "www.localplayful.com:3000"
+ActionController::UrlWriter.default_url_options[:host] = "playfulbent.local"
 ActionController::UrlWriter.default_url_options[:only_path] = false
-ActionController::Base.session_options[:session_domain] = 'localplayful.com'
+ActionController::Base.session_options[:session_domain] = 'playfulbent.local'
 
 config.action_controller.asset_host = "http://playfulbent.local"
 config.action_controller.asset_host = "http://playfulbent.local"

@@ -1,3 +1,12 @@
+# == Schema Information
+#
+# Table name: avatars
+#
+#  id         :integer(4)      not null, primary key
+#  image      :string(255)
+#  profile_id :integer(4)
+#
+
 require File.dirname(__FILE__) + '/../test_helper'
 
 class AvatarTest < Test::Unit::TestCase

@@ -1,12 +1,11 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: email_senders
 #
-#  id         :integer(11)   not null, primary key
-#  address    :string(255)   
-#  created_at :datetime      
-#  updated_at :datetime      
+#  id         :integer(4)      not null, primary key
+#  address    :string(255)
+#  created_at :datetime
+#  updated_at :datetime
 #
 
 class EmailSender < ActiveRecord::Base

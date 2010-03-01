@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: dare_challenges
+#
+#  id                :integer(4)      not null, primary key
+#  user_id           :integer(4)
+#  subject_id        :integer(4)
+#  created_at        :datetime
+#  updated_at        :datetime
+#  dare_level        :string(255)     default("flirty")
+#  subject_dare_text :text
+#  user_dare_text    :text
+#  response_added_at :datetime
+#  rejected_at       :datetime
+#  completed_at      :datetime
+#
+
 require File.dirname(__FILE__) + '/../test_helper'
 
 class DareChallengeTest < Test::Unit::TestCase

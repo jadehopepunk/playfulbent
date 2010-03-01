@@ -1,13 +1,12 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: interactions
 #
-#  id         :integer(11)   not null, primary key
-#  actor_id   :integer(11)   
-#  subject_id :integer(11)   
-#  type       :string(255)   
-#  created_at :datetime      
+#  id         :integer(4)      not null, primary key
+#  actor_id   :integer(4)
+#  subject_id :integer(4)
+#  type       :string(255)
+#  created_at :datetime
 #
 
 class InteractionHaveDarePerformed < Interaction

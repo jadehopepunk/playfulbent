@@ -1,19 +1,18 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: gallery_photo_files
 #
-#  id                     :integer(11)   not null, primary key
-#  size                   :integer(11)   
-#  content_type           :string(255)   
-#  filename               :string(255)   
-#  height                 :integer(11)   
-#  width                  :integer(11)   
-#  parent_id              :integer(11)   
-#  thumbnail              :string(255)   
-#  local_gallery_photo_id :integer(11)   
-#  created_at             :datetime      
-#  updated_at             :datetime      
+#  id                     :integer(4)      not null, primary key
+#  size                   :integer(4)
+#  content_type           :string(255)
+#  filename               :string(255)
+#  height                 :integer(4)
+#  width                  :integer(4)
+#  parent_id              :integer(4)
+#  thumbnail              :string(255)
+#  local_gallery_photo_id :integer(4)
+#  created_at             :datetime
+#  updated_at             :datetime
 #
 
 class GalleryPhotoFile < ActiveRecord::Base

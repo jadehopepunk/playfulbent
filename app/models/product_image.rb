@@ -1,19 +1,19 @@
 # == Schema Information
-# Schema version: 190
 #
 # Table name: product_images
 #
-#  id           :integer(11)   not null, primary key
-#  parent_id    :integer(11)   
-#  content_type :string(255)   
-#  filename     :string(255)   
-#  thumbnail    :string(255)   
-#  size         :integer(11)   
-#  width        :integer(11)   
-#  height       :integer(11)   
-#  product_id   :integer(11)   
-#  created_at   :datetime      
-#  updated_at   :datetime      
+#  id                 :integer(4)      not null, primary key
+#  original_image_url :string(255)
+#  parent_id          :integer(4)
+#  content_type       :string(255)
+#  filename           :string(255)
+#  thumbnail          :string(255)
+#  size               :integer(4)
+#  width              :integer(4)
+#  height             :integer(4)
+#  product_id         :integer(4)
+#  created_at         :datetime
+#  updated_at         :datetime
 #
 
 class ProductImage < ActiveRecord::Base

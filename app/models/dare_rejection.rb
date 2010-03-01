@@ -1,14 +1,13 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: dare_rejections
 #
-#  id                    :integer(11)   not null, primary key
-#  dare_challenge_id     :integer(11)   
-#  user_id               :integer(11)   
-#  rejected_dare_text    :text          
-#  rejection_reason_text :text          
-#  created_at            :datetime      
+#  id                    :integer(4)      not null, primary key
+#  dare_challenge_id     :integer(4)
+#  user_id               :integer(4)
+#  rejected_dare_text    :text
+#  rejection_reason_text :text
+#  created_at            :datetime
 #
 
 class DareRejection < ActiveRecord::Base

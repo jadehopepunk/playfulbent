@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: syndicated_blogs
+#
+#  id       :integer(4)      not null, primary key
+#  title    :string(255)
+#  feed_url :string(255)
+#  user_id  :integer(4)
+#
+
 require File.dirname(__FILE__) + '/../test_helper'
 require 'open-uri'
 

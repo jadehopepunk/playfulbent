@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: stories
+#
+#  id         :integer(4)      not null, primary key
+#  title      :string(255)
+#  created_on :datetime
+#  updated_at :datetime
+#
+
 require File.dirname(__FILE__) + '/../unit_test_helper'
 
 class StoryTest < Test::Unit::TestCase

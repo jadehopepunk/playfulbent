@@ -1,12 +1,11 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: sponsorship_payments
 #
-#  id             :integer(11)   not null, primary key
-#  sponsorship_id :integer(11)   
-#  amount_cents   :integer(11)   
-#  created_at     :datetime      
+#  id             :integer(4)      not null, primary key
+#  sponsorship_id :integer(4)
+#  amount_cents   :integer(4)
+#  created_at     :datetime
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

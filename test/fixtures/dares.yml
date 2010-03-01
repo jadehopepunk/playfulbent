@@ -1,16 +1,15 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: dares
 #
-#  id                   :integer(11)   not null, primary key
-#  request              :text          
-#  requires_photo       :boolean(1)    
-#  requires_description :boolean(1)    
-#  created_on           :datetime      
-#  creator_id           :integer(11)   
-#  responded_to         :boolean(1)    
-#  expired              :boolean(1)    
+#  id                   :integer(4)      not null, primary key
+#  request              :text(16777215)
+#  requires_photo       :boolean(1)
+#  requires_description :boolean(1)
+#  created_on           :datetime
+#  creator_id           :integer(4)
+#  responded_to         :boolean(1)
+#  expired              :boolean(1)
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

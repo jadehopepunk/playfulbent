@@ -1,12 +1,11 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: strip_photos
 #
-#  id            :integer(11)   not null, primary key
-#  strip_show_id :integer(11)   
-#  image         :text          
-#  position      :integer(11)   
+#  id            :integer(4)      not null, primary key
+#  strip_show_id :integer(4)
+#  image         :text(16777215)
+#  position      :integer(4)
 #
 
 class StripPhoto < ActiveRecord::Base

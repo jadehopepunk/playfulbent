@@ -1,11 +1,10 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: strip_photo_views
 #
-#  id             :integer(11)   not null, primary key
-#  strip_photo_id :integer(11)   
-#  user_id        :integer(11)   
+#  id             :integer(4)      not null, primary key
+#  strip_photo_id :integer(4)
+#  user_id        :integer(4)
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

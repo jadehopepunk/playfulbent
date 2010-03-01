@@ -1,13 +1,12 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: fantasy_roles
 #
-#  id         :integer(11)   not null, primary key
-#  name       :string(255)   
-#  fantasy_id :integer(11)   
-#  created_at :datetime      
-#  updated_at :datetime      
+#  id         :integer(4)      not null, primary key
+#  name       :string(255)
+#  fantasy_id :integer(4)
+#  created_at :datetime
+#  updated_at :datetime
 #
 
 class FantasyRole < ActiveRecord::Base

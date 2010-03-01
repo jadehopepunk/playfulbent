@@ -1,15 +1,14 @@
 # == Schema Information
-# Schema version: 258
 #
 # Table name: emails
 #
-#  id              :integer(11)   not null, primary key
-#  raw             :text          
-#  recipient_id    :integer(11)   
-#  created_at      :datetime      
-#  updated_at      :datetime      
-#  processed_at    :datetime      
-#  email_sender_id :integer(11)   
+#  id              :integer(4)      not null, primary key
+#  raw             :text
+#  recipient_id    :integer(4)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  processed_at    :datetime
+#  email_sender_id :integer(4)
 #
 
 class Email < ActiveRecord::Base
