@@ -1,38 +1,3 @@
 <h1><%= @dare_game.name %></h1>
 
-<div class="box about_form_box">
-	<div class="box_heading">Current Players</div>
-	<div class="box_contents">
-		<div class="avatar_set">
-			<% for user in @dare_game.players %>
-				<%= avatar_link_for(user) %>
-			<% end %>					
-		</div>
-		<%= link_to 'Join Game', new_dare_game_player_path(@dare_game) %>
-	</div>
-</div>	
-
-<div class="two_thirds">
-  <h2>Welcome to the Parlour</h2>
-
-  <p>This game is waiting to start. Once the game creator (<%= link_to_profile_for(@dare_game.creator) %>) is 
-  happy that enough people have joined, <%= @dare_game.creator.gender.third_person_active_pronoun %> will 
-  start the game.</p>
-  
-  <p>Perhaps you would like to join?</p>
-  
-  <p>This is a game of <strong>"strip or dare poker"</strong>. It's simple 5 card draw, and we hold your
-  hand if you don't know the rules. The first time you lose a hand, the you need to remove an article
-  of clothing and upload a photo of yourself. The second time you lose, you need to perform a dare (which
-  you've ranked as not too risque).</p>
-  
-  <p>The stripping and daring alternate if you lose more hands, with the dares getting progressively more
-  naughty, according to your own ranking of such things. People who loose too much are eventually knocked
-  out until a winner is determined.</p>
-  
-  <p>The first strip photo (you with four articles of clothing), and the first "level one" dare, are
-  viewable by the public. After that, everything is visible only to other people playing this game.</p>
-
-  <p>Feeling game? <%= link_to 'Join the game!', new_dare_game_player_path(@dare_game) %>
-	</p>
-</div>
+<p>Unknown game state</p>

@@ -1,0 +1,30 @@
+<h1><%= @dare_game.name %></h1>
+
+<div class="box about_form_box">
+  <%= render :partial => 'current_players' %>
+</div>	
+
+<div class="two_thirds">
+  <h2>Welcome to the Parlour</h2>
+
+  <p>This game is waiting to start. Once the game creator (<%= link_to_profile_for(@dare_game.creator) %>) is 
+  happy that enough people have joined, <%= @dare_game.creator.gender.third_person_active_pronoun %> will 
+  start the game.</p>
+  
+  <% if current_user == @dare_game.creator %>
+    <h3>You are the creator of this game.</h3>
+    
+    <p>Other people will see an invitation to join on this page. You can give the url of this page out to 
+    friends if you'd like them to join in.</p>
+
+    <%= render :partial => 'game_description' %>
+  <% else %>
+    <h3>Perhaps you would like to join?</h3>
+  
+    <%= render :partial => 'game_description' %>
+
+    <p>Feeling game? <%= link_to 'Join the game!', new_dare_game_player_path(@dare_game) %>
+  	</p>
+  <% end %>
+  
+</div>

@@ -20,4 +20,8 @@ class DareGame < ActiveRecord::Base
     [creator]
   end
   
+  def state
+    'open'
+  end
+  
 end

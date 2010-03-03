@@ -19,10 +19,20 @@ class DareGamesController < ApplicationController
   
   def show
     @dare_game = DareGame.find(params[:id])
+    
+    respond_to do |format|
+      format.html { render :template => show_template_name }
+    end
   end
   
   def index
     @dare_games = DareGame.all
   end
+  
+  private
+  
+    def show_template_name
+      "dare_games/show_#{@dare_game.state}"
+    end
   
 end
