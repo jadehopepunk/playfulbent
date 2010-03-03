@@ -75,7 +75,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :fantasy_roles
   map.resources :fantasy_actors
   
-  map.resources :dare_games do |dare_games|
+  map.resources :dare_games, :member => {:start => :put} do |dare_games|
     dare_games.resources :players, :controller => 'DareGamePlayers'
   end
   

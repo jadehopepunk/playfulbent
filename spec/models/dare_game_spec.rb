@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: dare_games
+#
+#  id           :integer(4)      not null, primary key
+#  creator_id   :integer(4)
+#  max_players  :integer(4)
+#  name         :string(255)
+#  instructions :text
+#  created_at   :datetime
+#  updated_at   :datetime
+#  state        :string(255)     default("open")
+#
+
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe DareGame do

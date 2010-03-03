@@ -18,6 +18,8 @@
     friends if you'd like them to join in.</p>
 
     <%= render :partial => 'game_description' %>
+
+    <p>Got enough players? <%= link_to 'Start the game!', start_dare_game_path(@dare_game), :method => :put %>
   <% elsif @dare_game.users.include?(current_user) %>
     <h3>Waiting for the game to start</h3>
     

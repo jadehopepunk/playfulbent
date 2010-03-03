@@ -9,6 +9,7 @@
 #  instructions :text
 #  created_at   :datetime
 #  updated_at   :datetime
+#  state        :string(255)     default("open")
 #
 
 class DareGame < ActiveRecord::Base
@@ -20,10 +21,6 @@ class DareGame < ActiveRecord::Base
   validates_presence_of :creator, :name  
   
   before_create :add_creator_to_users
-  
-  def state
-    'open'
-  end
   
   def user_is_player?(current_user)
     users.include?(current_user)
@@ -39,6 +36,13 @@ class DareGame < ActiveRecord::Base
   
   def add_user(user_to_add)
     self.users << user_to_add if !users.include?(user_to_add) && !player_limit_reached?
+  end
+  
+  def start!
+    if state == 'open'
+      self.state = 'started'
+      save
+    end
   end
   
   private

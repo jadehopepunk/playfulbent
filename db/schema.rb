@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100303072634) do
+ActiveRecord::Schema.define(:version => 20100303105922) do
 
   create_table "action_shots", :force => true do |t|
     t.integer "parent_id"
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(:version => 20100303072634) do
     t.text     "instructions"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "state",        :default => "open"
   end
 
   create_table "dare_rejections", :force => true do |t|
