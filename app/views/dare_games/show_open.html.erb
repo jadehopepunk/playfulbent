@@ -23,7 +23,7 @@
   
     <%= render :partial => 'game_description' %>
 
-    <p>Feeling game? <%= link_to 'Join the game!', new_dare_game_player_path(@dare_game) %>
+    <p>Feeling game? <%= link_to 'Join the game!', dare_game_players_path(@dare_game), :method => :post %>
   	</p>
   <% end %>
   

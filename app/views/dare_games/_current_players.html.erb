@@ -1,9 +1,13 @@
 <div class="box_heading">Current Players</div>
 <div class="box_contents">
 	<div class="avatar_set">
-		<% for user in @dare_game.players %>
+		<% for user in @dare_game.users %>
 			<%= avatar_link_for(user) %>
 		<% end %>					
 	</div>
-	<%= link_to 'Join Game', new_dare_game_player_path(@dare_game) %>
+	<% if @dare_game.users.include?(current_user) %>
+    <%= link_to 'Leave Game', dare_game_player_path(@dare_game), :method => :delete %>
+	<% else %>
+    <%= link_to 'Join Game', dare_game_players_path(@dare_game), :method => :post %>
+	<% end %>
 </div>

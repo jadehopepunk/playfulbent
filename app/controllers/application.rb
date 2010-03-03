@@ -83,7 +83,7 @@ protected
     when 'staging'
       'www.railsmanager.com'
     when 'development'
-      'www.localplayful.com:3000'
+      'playfulbent.local'
     when 'benchmarking'
       'www.localplayful.com:3000'
     when 'test'

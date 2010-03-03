@@ -13,3 +13,8 @@ Factory.define :story do |f|
   f.first_page_text "once upon a time"
   f.association :author, :factory => :user
 end
+
+Factory.define :dare_game do |f|
+  f.name "Jade's Game"
+  f.association :creator, :factory => :user
+end

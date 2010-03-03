@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090517052012) do
+ActiveRecord::Schema.define(:version => 20100303072634) do
 
   create_table "action_shots", :force => true do |t|
     t.integer "parent_id"
@@ -101,6 +101,25 @@ ActiveRecord::Schema.define(:version => 20090517052012) do
     t.datetime "response_added_at"
     t.datetime "rejected_at"
     t.datetime "completed_at"
+  end
+
+  create_table "dare_game_players", :force => true do |t|
+    t.integer  "dare_game_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "dare_game_players", ["dare_game_id"], :name => "index_dare_game_players_on_dare_game_id"
+  add_index "dare_game_players", ["user_id"], :name => "index_dare_game_players_on_user_id"
+
+  create_table "dare_games", :force => true do |t|
+    t.integer  "creator_id"
+    t.integer  "max_players"
+    t.string   "name"
+    t.text     "instructions"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "dare_rejections", :force => true do |t|
