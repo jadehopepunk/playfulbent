@@ -29,6 +29,18 @@ class DareGame < ActiveRecord::Base
     users.include?(current_user)
   end
   
+  def player_limit
+    max_players || PLAYER_LIMIT
+  end
+  
+  def player_limit_reached?
+    users.count >= player_limit
+  end
+  
+  def add_user(user_to_add)
+    self.users << user_to_add if !users.include?(user_to_add) && !player_limit_reached?
+  end
+  
   private
   
     def add_creator_to_users

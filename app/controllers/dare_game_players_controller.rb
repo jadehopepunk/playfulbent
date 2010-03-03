@@ -3,7 +3,7 @@ class DareGamePlayersController < ApplicationController
   before_filter :login_required
   
   def create
-    @dare_game.users << current_user unless @dare_game.users.include?(current_user)
+    @dare_game.add_user(current_user)
     redirect_to @dare_game
   end
   
