@@ -18,6 +18,12 @@
     friends if you'd like them to join in.</p>
 
     <%= render :partial => 'game_description' %>
+  <% elsif @dare_game.users.include?(current_user) %>
+    <h3>Waiting for the game to start</h3>
+    
+    <p>Once enough people have joined, <%= @dare_game.creator.name %> will start the game.</p>
+
+    <%= render :partial => 'game_description' %>  
   <% else %>
     <h3>Perhaps you would like to join?</h3>
   

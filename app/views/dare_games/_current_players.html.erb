@@ -5,9 +5,11 @@
 			<%= avatar_link_for(user) %>
 		<% end %>					
 	</div>
-	<% if @dare_game.users.include?(current_user) %>
-    <%= link_to 'Leave Game', dare_game_player_path(@dare_game), :method => :delete %>
-	<% else %>
-    <%= link_to 'Join Game', dare_game_players_path(@dare_game), :method => :post %>
+	<% if @dare_game.creator != current_user %>
+  	<% if @dare_game.users.include?(current_user) %>
+      <%= link_to 'Leave Game', dare_game_player_path(@dare_game), :method => :delete %>
+  	<% else %>
+      <%= link_to 'Join Game', dare_game_players_path(@dare_game), :method => :post %>
+  	<% end %>
 	<% end %>
 </div>
