@@ -7,7 +7,7 @@
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
-RAILS_GEM_VERSION = '2.2.2' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
 
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence those specified here
@@ -28,11 +28,11 @@ Rails::Initializer.run do |config|
   # (create the session table with 'rake create_sessions_table')
   config.action_controller.session_store = :active_record_store
 
-  config.gem "thoughtbot-factory_girl", :lib => "factory_girl", :source => "http://gems.github.com"
-  config.gem 'aws-s3', :version => '0.5.0', :lib => 'aws/s3'
-  # config.gem 'Linguistics', :version => '1.0.5'
-  config.gem 'paypal', :version => '2.0.0'
-  # config.gem 'inherited_resources', :version => '1.0.3'
+  # config.gem "thoughtbot-factory_girl", :lib => "factory_girl", :source => "http://gems.github.com"
+  # config.gem 'aws-s3', :version => '0.5.0', :lib => 'aws/s3'
+  # # config.gem 'Linguistics', :version => '1.0.5'
+  # config.gem 'paypal', :version => '2.0.0'
+  # # config.gem 'inherited_resources', :version => '1.0.3'
   
   # Enable page/fragment caching by setting a file-based store
   # (remember to create the caching directory and make it readable to the application)
