@@ -42,7 +42,7 @@ class NullUser
   end
   
   def profile_url
-    "http://#{ActionController::UrlWriter.default_url_options[:host]}"
+    "http://#{DEFAULT_HOST}"
   end
   
   def avatar_thumb_image_url

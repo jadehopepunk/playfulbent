@@ -35,7 +35,7 @@ class Avatar < ActiveRecord::Base
   after_create :inform_profile
   
   def self.blank_image_url
-    "http://#{ActionController::UrlWriter.default_url_options[:host]}/images/no-person-photo.jpg"
+    "http://#{DEFAULT_HOST}/images/no-person-photo.jpg"
   end
   
   def self.blank_polaroid_image_url

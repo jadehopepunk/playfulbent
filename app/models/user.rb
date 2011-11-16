@@ -172,7 +172,7 @@ class User < ActiveRecord::Base
   
   def profile_url
     return nil if dummy?
-    base_host = ActionController::UrlWriter.default_url_options[:host]
+    base_host = DEFAULT_HOST
     base_host = base_host[4..-1] if base_host.starts_with? 'www.'
     "http://#{permalink}.#{base_host}"
   end

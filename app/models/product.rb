@@ -119,7 +119,7 @@ class Product < ActiveRecord::Base
 	  end
 	  
 	  def blank_thumbnail_url
-	    "http://#{ActionController::UrlWriter.default_url_options[:host]}/images/no_image/#{type_name}.png"
+	    "http://#{DEFAULT_HOST}/images/no_image/#{type_name}.png"
 	  end
   
 end

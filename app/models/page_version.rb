@@ -113,7 +113,7 @@ class PageVersion < ActiveRecord::Base
   end
   
   def url
-    "http://#{ActionController::UrlWriter.default_url_options[:host]}/stories/#{story.id}/parent/#{parent ? parent.id : 0}/pages" if story && !story.new_record?
+    "http://#{DEFAULT_HOST}/stories/#{story.id}/parent/#{parent ? parent.id : 0}/pages" if story && !story.new_record?
   end
   
 protected

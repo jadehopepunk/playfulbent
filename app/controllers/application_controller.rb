@@ -79,18 +79,7 @@ protected
   end
   
   def default_host
-    case ENV['RAILS_ENV']
-    when 'staging'
-      'www.railsmanager.com'
-    when 'development'
-      'playfulbent.local'
-    when 'benchmarking'
-      'www.localplayful.com:3000'
-    when 'test'
-      'test.host'
-    else
-      'www.playfulbent.com'
-    end
+    DEFAULT_HOST
   end
   helper_method :default_host
   

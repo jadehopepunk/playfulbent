@@ -3,12 +3,12 @@ ssh_options[:paranoid] = false
 set :keep_releases, 3 
 set :application, "playfulbent"
 set :scm, :git
-set :deploy_to, "/home/craig/public_html/#{application}"
+set :deploy_to, "/home/craig/sites/#{application}"
 set :user, "craig"
 set :repository, "git://github.com/craigambrose/playfulbent.git"
 
 task :production do
-  set :domain, "craigambrose.com"
+  set :domain, "lucid.craigambrose.com"
   role :web, domain
   role :app, domain
   role :db,  domain, :primary => true
@@ -101,21 +101,6 @@ namespace :deploy do
     sudo "mkdir -p #{shared_path}/../current/tmp/attachment_fu"
     sudo "chgrp www-data #{shared_path}/../current/tmp/attachment_fu"
     sudo "chmod 775 #{shared_path}/../current/tmp/attachment_fu"
-  end
-
-  desc "changed by craig to use monit"
-  task :start_mongrel_cluster , :roles => :app do
-    sudo "monit start all -g #{monit_group}"
-  end
-
-  desc "changed by craig to use monit"
-  task :restart_mongrel_cluster , :roles => :app do
-    sudo "monit restart all -g #{monit_group}"
-  end
-
-  desc "changed by craig to use monit"
-  task :stop_mongrel_cluster , :roles => :app do
-    sudo "monit stop all -g #{monit_group}" 
   end
 
   # from Mike Clark's blog

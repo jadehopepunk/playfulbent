@@ -32,7 +32,7 @@ class Conversation < ActiveRecord::Base
   
   def url
     if subject_url.blank?
-      "http://#{ActionController::UrlWriter.default_url_options[:host]}/conversations/#{id}/comments"
+      "http://#{DEFAULT_HOST}/conversations/#{id}/comments"
     else
       subject_url
     end

@@ -20,5 +20,7 @@ config.action_controller.perform_caching             = true
 
 config.action_mailer.delivery_method = :smtp
 
-ActionController::UrlWriter.default_url_options[:host] = "www.playfulbent.com"
-ActionController::Base.session_options[:session_domain] = 'playfulbent.com'
+DEFAULT_HOST = 'www.playfulbent.com'
+config.action_mailer.default_url_options = {:host => DEFAULT_HOST}
+ActionController::Base.session_options[:session_domain] = DEFAULT_HOST
+config.action_controller.asset_host = "http://#{DEFAULT_HOST}"

@@ -112,7 +112,7 @@ class StripPhoto < ActiveRecord::Base
   end
   
   def url
-    "http://#{ActionController::UrlWriter.default_url_options[:host]}/strip_photos/#{to_param}" unless new_record?
+    "http://#{DEFAULT_HOST}/strip_photos/#{to_param}" unless new_record?
   end
   
   def title
@@ -170,7 +170,7 @@ protected
   end
   
   def site_base_url
-    'http://' + ActionController::UrlWriter.default_url_options[:host]
+    'http://' + DEFAULT_HOST
   end
   
   def valid_user_for_second(user)

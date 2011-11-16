@@ -18,6 +18,7 @@ config.action_controller.perform_caching             = false
 # ActionMailer::Base.deliveries array.
 config.action_mailer.delivery_method = :test
 
-ActionController::UrlWriter.default_url_options[:host] = "test.host"
-ActionController::UrlWriter.default_url_options[:only_path] = false
-ActionController::Base.session_options[:session_domain] = 'test.host'
+DEFAULT_HOST = 'test.host'
+config.action_mailer.default_url_options = {:host => DEFAULT_HOST}
+ActionController::Base.session_options[:session_domain] = DEFAULT_HOST
+config.action_controller.asset_host = "http://#{DEFAULT_HOST}"

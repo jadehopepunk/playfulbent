@@ -70,7 +70,7 @@ class Dare < ActiveRecord::Base
   end
   
   def url
-    "http://#{ActionController::UrlWriter.default_url_options[:host]}/dares/#{to_param}" unless new_record?
+    "http://#{DEFAULT_HOST}/dares/#{to_param}" unless new_record?
   end
   
   def title

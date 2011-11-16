@@ -98,7 +98,7 @@ class GalleryPhoto < ActiveRecord::Base
   end
   
   def url
-    "http://#{ActionController::UrlWriter.default_url_options[:host]}/users/#{user.to_param}/photo_sets/#{photo_set.to_param}/my_photos/#{to_param}"
+    "http://#{DEFAULT_HOST}/users/#{user.to_param}/photo_sets/#{photo_set.to_param}/my_photos/#{to_param}"
   end
   
 protected

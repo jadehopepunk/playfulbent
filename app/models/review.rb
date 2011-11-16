@@ -73,7 +73,7 @@ class Review < ActiveRecord::Base
   end
   
   def url
-    "http://#{ActionController::UrlWriter.default_url_options[:host]}/reviews/#{to_param}"
+    "http://#{DEFAULT_HOST}/reviews/#{to_param}"
   end
   
   def owners
